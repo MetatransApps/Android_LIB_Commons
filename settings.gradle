@@ -1,0 +1,3 @@
+rootProject.name = "MetatransApps_Android_LIB_Commons"
+
+include ':app'

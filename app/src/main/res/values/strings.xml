@@ -1,0 +1,218 @@
+<resources>
+    
+    <string name="game_over">Game Over</string>
+    
+    <string name="achievements">Achievements</string>
+    <string name="achievement">Achievement</string>
+    
+    <string name="achievements_alert_title">Congratulations!</string>
+    <string name="achievements_alert_message">You earned an achievement</string>
+    <string name="achievements_button_close">Close</string>
+    <string name="achievements_button_showme">Show me</string>
+    
+    <string name="achievements_hidden_title">Hidden</string>
+    <string name="achievements_locked_title">Locked</string>
+    <string name="achievements_locked_desc">This achievement is not unlocked yet</string>
+    
+    <string name="achievements_current_game_inprogress">Current game is still not finished &#8230;</string>
+    
+    <string name="levels">Levels</string>
+    <string name="level">Level</string>
+    <string name="make">Make</string>
+    <string name="or">or</string>
+    <string name="unlock_level_1">How to unlock</string>
+    <string name="unlock_level_2">Collect 3 stars in level</string>
+    <string name="unlock_level_3">Wait</string>
+    
+    <string name="menu_rate_review_upgrades_title">Rate, Review, Upgrades</string>
+    <string name="menu_checkforupdates_title">Check for Updates</string>
+    <string name="menu_checkforupdates_desc">Open Application Page</string>
+    
+    <string name="new_game_fulltext">New Game</string>
+    <string name="button_back">Back</string>
+    <string name="label_mode">Mode</string>
+    
+    <string name="social_play_services_error">Google Play services are not available.</string>
+    <string name="social_close">Close</string>
+    
+    <string name="social_invite_invitationto">Invitation to</string>
+    <string name="social_invite_isprettycool">is pretty cool.</string>
+    <string name="social_invite_checkitout">Check it out.</string>
+    <string name="social_invite_checkitout_ongps">Check it out on Google Play Games.</string>
+    <string name="social_invite_beatmyscore">See if you can beat my score!</string>
+    
+    <string name="label_noconnection">No Connection</string>
+    <string name="label_notsignedin">Signed Out</string>
+    <string name="label_connecting">Connecting &#8230;</string>
+    <string name="label_welcome">Welcome</string>
+    <string name="label_leaderboards_not_available">Leaderboards are not connected. SignIn required.</string>
+    
+    <string name="label_invite">Invite</string>
+    <string name="label_moregames">More</string>
+    <string name="label_installed">Installed</string>
+    
+    <string name="label_advertising_free_1">FREE</string>
+    <string name="label_advertising_free_2">With Ads</string>
+    <string name="label_advertising_paid_1">PAID</string>
+    <string name="label_advertising_paid_2">No Ads</string>
+    
+    <string name="app_cafk_name">Chess Art for Kids</string>
+    <string name="app_cafk_name_paid">Chess Art for Kids (No Ads)</string>
+	<string name="app_cafk_advertising1">Play Chess and Learn. Have fun.</string>
+	<string name="app_cafk_advertising2">Handsmade images and pieces sets.</string>
+	
+	<string name="app_bagaturchess_name">Bagatur Chess Engine</string>
+	<string name="app_bagaturchess_advertising1">Play Chess and Learn. Have fun.</string>
+	<string name="app_bagaturchess_advertising2">Play against Bagatur Engine</string>
+	
+	<string name="app_cafk_gps_name">Chess Art for Kids +Friends</string>
+	<string name="app_cafk_gps_advertising1">Play Chess and Learn. Have fun.</string>
+	<string name="app_cafk_gps_advertising2">Handsmade images and pieces sets.</string>
+	
+	<string name="app_mafk_name">Math Art for Kids</string>
+	<string name="app_mafk_name_paid">Math Art for Kids (No Ads)</string>
+	<string name="app_mafk_advertising1">Math - Play, Exam and Learn.</string>
+	<string name="app_mafk_advertising2">Arithmetic, Rows, Visual. Different Levels.</string>
+
+	<string name="app_mafk_gps_name">Math Art for Kids +Friends</string>
+	<string name="app_mafk_gps_advertising1">Math - Play, Exam and Learn.</string>
+	<string name="app_mafk_gps_advertising2">Arithmetic, Rows, Visual. Different Levels.</string>
+	
+	<string name="app_ec_name">Easy Colors</string>
+	<string name="app_ec_name_paid">Easy Colors (No Ads)</string>
+	<string name="app_ec_advertising1">Play Colors Game? Stroop Effect.</string>
+	<string name="app_ec_advertising2">Be Focused, Be Fast, Be Resistant.</string>
+	
+	<string name="app_ec_gps_name">Easy Colors +Friends</string>
+	<string name="app_ec_gps_advertising1">Play Colors Game? Stroop Effect.</string>
+	<string name="app_ec_gps_advertising2">Be Focused, Be Fast, Be Resistant.</string>
+	
+	<string name="app_mos_name">Maze of Squirrel</string>
+	<string name="app_mos_name_paid">Maze of Squirrel (No Ads)</string>
+	<string name="app_mos_advertising1">Get out of Maze.</string>
+	<string name="app_mos_advertising2">Different each time. Many levels.</string>	
+	
+	<string name="app_stb_name">Shoot The Balls</string>
+	<string name="app_stb_name_paid">Shoot The Balls (No Ads)</string>
+	<string name="app_stb_advertising1">Play with balls.</string>
+	<string name="app_stb_advertising2">Shoot the balls. Many levels.</string>
+	
+	<string name="app_gravity_name">Gravity Finger 137</string>
+	<string name="app_gravity_name_paid">Gravity Finger 137 (No Ads)</string>
+	<string name="app_gravity_advertising1">Play with gravity.</string>
+	<string name="app_gravity_advertising2">Use your fingers gravity.</string>
+	
+	<string name="app_wisconsin_name">Wisconsin Card Sorting Test</string>
+	<string name="app_wisconsin_name_paid">Wisconsin Card Sorting Test (No Ads)</string>
+	<string name="app_wisconsin_advertising1">Play with Wisconsin cards.</string>
+	<string name="app_wisconsin_advertising2">Make psychological test.</string>
+	
+	<string name="app_chessboardscanner_name">Chess Board Scanner and Analyser</string>
+	<string name="app_chessboardscanner_name_paid">Chess Board Scanner (No Ads)</string>
+	<string name="app_chessboardscanner_advertising1">Scan chess boards.</string>
+	<string name="app_chessboardscanner_advertising2">Analyse positions.</string>
+	
+    <string name="loading">Loading &#8230;</string>
+    <string name="button_start">Start</string>
+    
+    <string name="youhave">You have</string>
+    <string name="scores">Scores</string>
+    
+    <string name="imissyou">I miss You</string>
+    <string name="playwithme">Play with me</string>
+    
+    <string name="button_menu">Menu</string>
+    <string name="button_undo">Undo</string>
+    <string name="button_info">Info</string>
+    <string name="message_noinfo">No info</string>
+    <string name="message_nomoveinfoyet">No move info yet</string>
+        
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="new_game">New</string>
+    <string name="rate">Rate</string>
+    <string name="like">Like</string>
+    <string name="home">Home</string>
+    <string name="description">Description</string>
+    <string name="metatransapps">Metatrans Apps</string>
+    <string name="company_home_online">Company Web Site</string>
+    <string name="company_home_offline">Company Web Site - Offline</string>
+    <string name="buy_title">Paid Version</string>
+    <string name="buy_desc">No Advertisements</string>
+    
+    <string name="alert_title">Action alert</string>
+    <string name="alert_message_newgame">New game?</string>
+    <string name="alert_message_lower_difficulty">The difficulty will be switched to lower level</string>
+    <string name="alert_message_notenoughmemory">Not enough memory</string>
+    <string name="alert_message_lowmemory">Low memory than recommended</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+    <string name="megabytes">MB</string>
+    <string name="exit">Exit</string>
+    <string name="label_continue">Continue</string>
+    
+    <string name="alert_message_eula">License Agreement</string>
+    <string name="eula_open">Read</string>
+    <string name="agree">I agree</string>
+    <string name="disagree">I disagree</string>
+    
+    <string name="alert_message_exit">Exit application?</string>
+    
+    <string name="label_current">Current</string>
+    
+    <string name="menu_main">Main Menu</string>
+        
+    <string name="menu_colour_scheme">Colours</string>
+    <string name="colour_scheme">Colours Selection</string>
+    <string name="colour_scheme_blue_dove">Blue Dove</string>
+    <string name="colour_scheme_blue_petrol">Blue Petrol</string>
+    <string name="colour_scheme_green_warm">Green Warm</string>
+    <string name="colour_scheme_green_cool">Green Cool</string>
+    <string name="colour_scheme_red_warm">Red Warm</string>
+    <string name="colour_scheme_red_cool">Red Cool</string>
+    <string name="colour_scheme_violet_mauve">Violet Mauve</string>
+    <string name="colour_scheme_gray">Gray</string>
+    <string name="colour_scheme_brown">Brown</string>
+    
+    <string name="menu_difficulty">Difficulty</string>
+    <string name="menu_difficulty_desc">Difficulty Selection</string>
+    <string name="menu_difficulty_1">Level 1</string>
+    <string name="menu_difficulty_2">Level 2</string>
+    <string name="menu_difficulty_3">Level 3</string>
+    <string name="menu_difficulty_4">Level 4</string>
+    <string name="menu_difficulty_5">Level 5</string>
+    <string name="menu_difficulty_6">Level 6</string>
+    <string name="menu_difficulty_7">Level 7</string>
+    <string name="menu_difficulty_8">Level 8</string>
+    <string name="menu_difficulty_9">Level 9</string>
+    <string name="menu_difficulty_10">Level 10</string>
+    <string name="menu_difficulty_11">Level 11</string>
+    <string name="menu_difficulty_12">Level 12</string>
+    <string name="menu_difficulty_13">Level 13</string>
+    <string name="menu_difficulty_14">Level 14</string>
+    <string name="menu_difficulty_15">Level 15</string>
+    <string name="menu_difficulty_16">Level 16</string>
+    <string name="menu_difficulty_17">Level 17</string>
+    <string name="menu_difficulty_18">Level 18</string>
+    <string name="menu_difficulty_19">Level 19</string>
+    <string name="menu_difficulty_20">Level 20</string>
+    
+    <string name="achievement_title_invite_3_friends">Invite 3 friends</string>
+    <string name="achievement_title_stop_pieces">Stop the moving pictures</string>
+    <string name="achievement_title_change_colours">Try the colors</string>
+    <string name="achievement_title_change_mode">Try the modes of playing</string>
+    <string name="achievement_title_read_help">Read the help manual</string>
+    <string name="achievement_title_change_difficulty">Experiment with the difficulty</string>
+    
+    <string name="achievement_desc_invite_3_friends">You shared the game with your friends</string>
+	<string name="achievement_desc_stop_pieces">You stoped the moving pictures</string>
+    <string name="achievement_desc_change_colours">You tried the colors</string>
+    <string name="achievement_desc_change_mode">You tried the playing modes</string>
+    <string name="achievement_desc_read_help">You are aware of the full capabilities</string>
+    <string name="achievement_desc_change_difficulty">You tried different difficulty levels</string>
+    
+    <string name="menu_privacy">Privacy Policy</string>
+    <string name="menu_eula">License Agreement</string>
+    
+</resources>

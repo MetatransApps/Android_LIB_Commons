@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="ic_colours_bluedove" type="drawable"/>
+    <item name="ic_colours_bluepetrol" type="drawable"/>
+    <item name="ic_colours_brown" type="drawable"/>
+    <item name="ic_colours_gray" type="drawable"/>
+    <item name="ic_colours_greencool" type="drawable"/>
+    <item name="ic_colours_greenwarm" type="drawable"/>
+    <item name="ic_colours_redcool" type="drawable"/>
+    <item name="ic_colours_redwarm" type="drawable"/>
+    <item name="ic_colours_violetmauve" type="drawable"/>
+    
+</resources>

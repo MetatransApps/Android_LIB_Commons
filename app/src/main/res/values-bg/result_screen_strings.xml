@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	    
+    <string name="label_time">Време</string>
+    <string name="label_incorrect">Грешни</string>
+    <string name="label_correct">Верни</string>
+    <string name="label_best">Най-Добър</string>
+    <string name="label_your">Ваш</string>
+    <string name="label_result_outcome">Изход</string>
+    <string name="label_result_status_newrecord">Нов Рекорд</string>
+    <string name="label_result_status_allcorrect">Всичко Вярно</string>
+    <string name="label_result_status_youfinished">Вие Приключихте</string>
+    <string name="label_result_info">Резултати Записани на това Устройство</string>
+    
+</resources>

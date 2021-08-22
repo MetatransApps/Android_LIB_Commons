@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    <string name="game_over">Fin Del Juego</string>
+    
+    <string name="achievements">Logros</string>
+    <string name="achievement">Logro</string>
+    
+    <string name="achievements_alert_title">¡Felicidades!</string>
+    <string name="achievements_alert_message">Logro Victoria</string>
+    <string name="achievements_button_close">Cerca</string>
+    <string name="achievements_button_showme">Muéstrame</string>
+    
+    <string name="achievements_hidden_title">Oculto</string>
+    <string name="achievements_locked_title">Concluido</string>
+    <string name="achievements_locked_desc">Este logro no ha desbloqueado</string>
+    
+    <string name="achievements_current_game_inprogress">Juego actual aún no ha terminado &#8230;</string>
+    
+    <string name="levels">Niveles</string>
+    <string name="level">Nivel</string>
+    <string name="make">Hacer</string>
+    <string name="or">o</string>
+    <string name="unlock_level_1">Como desbloquear</string>
+    <string name="unlock_level_2">Recoge 3 estrellas en el nivel</string>
+    <string name="unlock_level_3">Еsperar</string>
+    
+    <string name="menu_rate_review_upgrades_title">Evaluar, Revisar, Actualizaciones</string>
+    <string name="menu_checkforupdates_title">Buscar Аctualizaciones</string>
+    <string name="menu_checkforupdates_desc">Aplicación Abrir Página</string>
+    
+    <string name="new_game_fulltext">Nuevo Juego</string>
+    <string name="button_back">Espalda</string>
+    <string name="label_mode">Modo</string>
+    
+    <string name="social_play_services_error">Servicios de Google Play no están disponibles.</string>
+    <string name="social_close">Cerca</string>
+    
+    <string name="social_invite_invitationto">Invitación a</string>
+    <string name="social_invite_isprettycool">es muy bueno.</string>
+    <string name="social_invite_checkitout">Échale un vistazo.</string>
+    <string name="social_invite_checkitout_ongps">Compruébelo usted mismo en Google Play Games.</string>
+    <string name="social_invite_beatmyscore">A ver si puedes vencer a mi cuenta!</string>
+    
+    <string name="label_noconnection">Sin conexión</string>
+    <string name="label_notsignedin">Firmado Salida</string>
+    <string name="label_connecting">Conexión &#8230;</string>
+    <string name="label_welcome">Bienvenida</string>
+    <string name="label_leaderboards_not_available">Tablas de clasificación no están conectados. SignIn requiere.</string>
+    
+    <string name="label_invite">Invita Amigos</string>
+    <string name="label_moregames">Más Juegos</string>
+    <string name="label_installed">Instalado</string>
+    
+    <string name="label_advertising_free_1">GRATIS</string>
+    <string name="label_advertising_free_2">Con Anuncios</string>
+    <string name="label_advertising_paid_1">PAGADO</string>
+    <string name="label_advertising_paid_2">Sin Anuncios</string>
+    
+    <string name="app_cafk_name">Arte Ajedrez para Niños</string>
+    <string name="app_cafk_name_paid">Arte Ajedrez para Niños (Sin Anuncios)</string>
+	<string name="app_cafk_advertising1">Jugar al Ajedrez y Aprender. Que te Diviertas.</string>
+	<string name="app_cafk_advertising2">Imágenes hechas a mano y piezas conjuntos.</string>
+	
+	<string name="app_bagaturchess_name">Motor de ajedrez Bagatur</string>
+	<string name="app_bagaturchess_advertising1">Jugar al Ajedrez y Aprender. Que te Diviertas.</string>
+	<string name="app_bagaturchess_advertising2">Juega contra el motor de Bagatur</string>
+	
+	<string name="app_cafk_gps_name">Arte Ajedrez Niños +Amigos</string>
+	<string name="app_cafk_gps_advertising1">Jugar al Ajedrez y Aprender. Que te Diviertas.</string>
+	<string name="app_cafk_gps_advertising2">Imágenes hechas a mano y piezas conjuntos.</string>
+	
+	<string name="app_mafk_name">Arte de la Matemáticas para Niños</string>
+	<string name="app_mafk_name_paid">Arte de la Matemáticas para Niños (Sin Anuncios)</string>
+	<string name="app_mafk_advertising1">Math - Juego, Examen y Aprender.</string>
+	<string name="app_mafk_advertising2">Aritmética, Filas, Visual. Niveles Diferentes.</string>
+
+	<string name="app_mafk_gps_name">Arte de la Matemáticas para Niños +Amigos</string>
+	<string name="app_mafk_gps_advertising1">Math - Juego, Examen y Aprender.</string>
+	<string name="app_mafk_gps_advertising2">Aritmética, Filas, Visual. Niveles Diferentes.</string>
+	
+	<string name="app_ec_name">Colores Fácil</string>
+	<string name="app_ec_name_paid">Colores Fácil (Sin Anuncios)</string>
+	<string name="app_ec_advertising1">Juega el Juego de Colores? Efecto Stroop.</string>
+	<string name="app_ec_advertising2">La Fuerza, la Velocidad, la Perseverancia.</string>
+	
+	<string name="app_ec_gps_name">Colores Fácil +Amigos</string>
+	<string name="app_ec_gps_advertising1">Juega el Juego de Colores? Efecto Stroop.</string>
+	<string name="app_ec_gps_advertising2">La Fuerza, la Velocidad, la Perseverancia.</string>
+	
+	<string name="app_mos_name">Laberinto de la Ardilla</string>
+	<string name="app_mos_name_paid">Laberinto de la Ardilla (Sin Anuncios)</string>
+	<string name="app_mos_advertising1">Escapar de Laberinto.</string>
+	<string name="app_mos_advertising2">Diferente cada Vez. Muchos Niveles.</string>
+	
+	<string name="app_stb_name">Disparar las Bolas</string>
+	<string name="app_stb_name_paid">Disparar las Bolas (Sin Anuncios)</string>
+	<string name="app_stb_advertising1">Jugar con pelotas.</string>
+	<string name="app_stb_advertising2">Dispara a las bolas. Muchos niveles.</string>	
+	
+	<string name="app_gravity_name">Dedo de Gravedad 137</string>
+	<string name="app_gravity_name_paid">Dedo de Gravedad 137 (Sin Anuncios)</string>
+	<string name="app_gravity_advertising1">Jugar con la gravedad.</string>
+	<string name="app_gravity_advertising2">Usa la gravedad de tus dedos.</string>
+	
+    <string name="loading">Loading &#8230;</string>
+    <string name="button_start">Comienzo</string>
+    
+    <string name="scores">Puntajes</string>
+    <string name="youhave">Usted tiene</string>
+    
+    <string name="imissyou">Te echo de menos</string>
+    <string name="playwithme">Juega conmigo</string>
+    
+    <string name="button_menu">Menú</string>
+    <string name="button_undo">Espalda</string>
+	<string name="button_info">Info</string>
+    <string name="message_noinfo">Sin información</string>
+    <string name="message_nomoveinfoyet">Sin información</string>
+    
+    <string name="help">Ayudar</string>
+    <string name="about">Acerca de</string>
+    <string name="new_game">Nuevo</string>
+    <string name="rate">Descrito</string>
+    <string name="like">Likes</string>
+    <string name="description">Descripción</string>
+    <string name="metatransapps">Metatrans Apps</string>
+    <string name="company_home_online">Sitio web de la Empresa</string>
+    <string name="company_home_offline">Sitio web de la Empresa - Desconectado</string>
+    <string name="buy_title">Versión de Pago</string>
+    <string name="buy_desc">No Publicidad</string>
+    
+    <string name="alert_title">Advertencia antes de la acción</string>
+    <string name="alert_message_newgame">Nuevo juego?</string>
+    <string name="alert_message_lower_difficulty">La dificultad se reducirá</string>
+    <string name="alert_message_notenoughmemory">Hace falta memoria</string>
+    <string name="alert_message_lowmemory">Menos memoria que la recomendada</string>
+    <string name="yes">Que</string>
+    <string name="no">No</string>
+    <string name="ok">Bien</string>
+    <string name="megabytes">MB</string>
+    <string name="exit">Salida</string>
+    <string name="label_continue">Continuar</string>
+    
+    <string name="alert_message_eula">Condiciones del servicio</string>
+    <string name="eula_open">Leer</string>
+    <string name="agree">Convenido</string>
+    <string name="disagree">No está de acuerdo</string>
+    
+    <string name="alert_message_exit">Salga de la aplicación?</string>
+    
+    <string name="label_current">Corriente</string>
+        
+    <string name="menu_main">Menú Principal</string>
+
+    <string name="menu_colour_scheme">Colores</string>
+    <string name="colour_scheme">Seleccione un color</string>
+    <string name="colour_scheme_blue_dove">Paloma azul</string>
+    <string name="colour_scheme_blue_petrol">Gas azul</string>
+    <string name="colour_scheme_green_warm">Warm verde</string>
+    <string name="colour_scheme_green_cool">Cold Green</string>
+    <string name="colour_scheme_red_warm">Warm Red</string>
+    <string name="colour_scheme_red_cool">Red fría</string>
+    <string name="colour_scheme_violet_mauve">Violeta</string>
+    <string name="colour_scheme_gray">Gris</string>
+    <string name="colour_scheme_brown">Marrón</string>
+    
+    <string name="menu_difficulty">Dificultad</string>
+    <string name="menu_difficulty_desc">Elección de dificultad</string>
+    <string name="menu_difficulty_1">Nivel 1</string>
+    <string name="menu_difficulty_2">Nivel 2</string>
+    <string name="menu_difficulty_3">Nivel 3</string>
+    <string name="menu_difficulty_4">Nivel 4</string>
+    <string name="menu_difficulty_5">Nivel 5</string>
+    <string name="menu_difficulty_6">Nivel 6</string>
+    <string name="menu_difficulty_7">Nivel 7</string>
+    <string name="menu_difficulty_8">Nivel 8</string>
+    <string name="menu_difficulty_9">Nivel 9</string>
+    <string name="menu_difficulty_10">Nivel 10</string>
+    <string name="menu_difficulty_11">Nivel 11</string>
+    <string name="menu_difficulty_12">Nivel 12</string>
+    <string name="menu_difficulty_13">Nivel 13</string>
+    <string name="menu_difficulty_14">Nivel 14</string>
+    <string name="menu_difficulty_15">Nivel 15</string>
+    <string name="menu_difficulty_16">Nivel 16</string>
+    <string name="menu_difficulty_17">Nivel 17</string>
+    <string name="menu_difficulty_18">Nivel 18</string>
+    <string name="menu_difficulty_19">Nivel 19</string>
+    <string name="menu_difficulty_20">Nivel 20</string>
+    
+    <string name="achievement_title_invite_3_friends">Invite a 3 amigos</string>
+    <string name="achievement_title_stop_pieces">Detener las imágenes en movimiento</string>
+    <string name="achievement_title_change_colours">Prueba los colores</string>
+    <string name="achievement_title_change_mode">Prueba los modos de juego</string>
+    <string name="achievement_title_read_help">Lea el manual</string>
+    <string name="achievement_title_change_difficulty">Experimente con dificultad</string>
+    
+    <string name="achievement_desc_invite_3_friends">Usted compartió el juego con tus amigos</string>
+	<string name="achievement_desc_stop_pieces">Dejaste de las imágenes en movimiento</string>
+    <string name="achievement_desc_change_colours">Ha intentado los colores</string>
+    <string name="achievement_desc_change_mode">Ha intentado los modos de juego</string>
+    <string name="achievement_desc_read_help">Usted es consciente de todo el potencial</string>
+    <string name="achievement_desc_change_difficulty">Intenta diferente dificultad del juego</string>
+    
+    <string name="menu_privacy">Intimidad</string>
+    <string name="menu_eula">Contrato de licencia</string>
+    
+</resources>

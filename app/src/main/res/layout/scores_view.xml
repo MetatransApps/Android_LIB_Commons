@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scores_view_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/scores_view_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:drawableRight="@android:drawable/ic_menu_help"
+        android:paddingBottom="15dip"
+        android:paddingTop="15dip"
+        android:gravity="center"
+        android:textStyle="italic"/>
+	
+    <TextView
+        android:id="@+id/scores_view_text1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scores_view_title"
+        android:paddingBottom="15dip"
+        android:paddingTop="15dip"
+        android:gravity="center"
+        android:textStyle="italic"/>
+	
+    <TextView
+        android:id="@+id/scores_view_text2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scores_view_title"
+        android:paddingBottom="15dip"
+        android:paddingTop="15dip"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:ellipsize="end"
+    	android:maxLines="5" />
+		
+</RelativeLayout>

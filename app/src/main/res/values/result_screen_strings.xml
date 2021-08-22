@@ -1,0 +1,14 @@
+<resources>
+        
+    <string name="label_time">Time</string>
+    <string name="label_incorrect">Incorrect</string>
+    <string name="label_correct">Correct</string>
+    <string name="label_best">Best</string>
+    <string name="label_your">Your</string>
+    <string name="label_result_outcome">Outcome</string>
+    <string name="label_result_status_newrecord">New Record</string>
+    <string name="label_result_status_allcorrect">All Correct</string>
+    <string name="label_result_status_youfinished">You Finished</string>
+    <string name="label_result_info">Results Saved on This Device</string>
+    
+</resources>

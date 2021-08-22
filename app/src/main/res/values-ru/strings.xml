@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    <string name="game_over">Игра Закончена</string>
+    
+    <string name="achievements">Достижения</string>
+    <string name="achievement">Достижение</string>
+    
+    <string name="achievements_alert_title">Поздравляю!</string>
+    <string name="achievements_alert_message">Доля достижение</string>
+    <string name="achievements_button_close">Закрывать</string>
+    <string name="achievements_button_showme">Покажите мне</string>
+    
+    <string name="achievements_hidden_title">Скрытый</string>
+    <string name="achievements_locked_title">Взаперти</string>
+    <string name="achievements_locked_desc">Это достижение не разблокирована</string>
+    
+    <string name="achievements_current_game_inprogress">Текущий игра еще не закончена &#8230;</string>
+    
+    <string name="levels">Уровни</string>
+    <string name="level">Уровень</string>
+    <string name="make">Делать</string>
+    <string name="or">или</string>
+    <string name="unlock_level_1">Как разблокировать</string>
+    <string name="unlock_level_2">Соберите 3 звезды в уровне</string>
+    <string name="unlock_level_3">Подожди</string>
+    
+    <string name="menu_rate_review_upgrades_title">Рейтинг, Обзор, Обновления</string>
+    <string name="menu_checkforupdates_title">Проверить Обновления</string>
+    <string name="menu_checkforupdates_desc">Открывает страницу приложение</string>
+    
+    <string name="new_game_fulltext">Новая Игра</string>
+    <string name="button_back">Назад</string>
+    <string name="label_mode">Режим</string>
+    
+    <string name="social_play_services_error">Услуги Google Play не доступны.</string>
+    <string name="social_close">Зкрытие</string>
+    
+    <string name="social_invite_invitationto">Приглашение для</string>
+    <string name="social_invite_isprettycool">очень здорово.</string>
+    <string name="social_invite_checkitout">Проверьте это</string>
+    <string name="social_invite_checkitout_ongps">Проверьте это на Google Play Games.</string>
+    <string name="social_invite_beatmyscore">Давайте посмотрим, если вы можете превзойти мои количество очков!</string>
+    
+    <string name="label_noconnection">Нет соединения</string>
+    <string name="label_notsignedin">Вышли</string>
+    <string name="label_connecting">Соединение &#8230;</string>
+    <string name="label_welcome">Добро Пожаловать</string>
+    <string name="label_leaderboards_not_available">Leaderboards не доступны. Требовать ввод.</string>
+    
+    <string name="label_invite">Пригласить</string>
+    <string name="label_moregames">Другие Игры</string>
+    <string name="label_installed">Установленная</string>
+    
+    <string name="label_advertising_free_1">СВОБОДНО</string>
+    <string name="label_advertising_free_2">С Рекламой</string>
+    <string name="label_advertising_paid_1">ПЛАТНЫЕ</string>
+    <string name="label_advertising_paid_2">Без Рекламы</string>
+    
+    <string name="app_cafk_name">Шахматы Искусство для Детей</string>
+    <string name="app_cafk_name_paid">Шахматы Искусство для Детей (Без Рекламы)</string>
+	<string name="app_cafk_advertising1">Учиться и играть в шахматы. Веселиться.</string>
+	<string name="app_cafk_advertising2">Ручная работа формы и изображения</string>
+	
+	<string name="app_bagaturchess_name">Багатур Шахматный Движок</string>
+	<string name="app_bagaturchess_advertising1">Учиться и играть в шахматы. Веселиться.</string>
+	<string name="app_bagaturchess_advertising2">Играть против Багатур Шахматный Движок</string>
+	
+	<string name="app_cafk_gps_name">Шахматы Искусст. Детей +Друзей</string>
+	<string name="app_cafk_gps_advertising1">Учиться и играть в шахматы. Веселиться.</string>
+	<string name="app_cafk_gps_advertising2">Ручная работа формы и изображения</string>
+	
+	<string name="app_mafk_name">Математическое Искусство Детей</string>
+	<string name="app_mafk_name_paid">Математическое Искусство Детей (Без Рекламы)</string>
+	<string name="app_mafk_advertising1">Математика - Игры, Упражнения, Учиться.</string>
+	<string name="app_mafk_advertising2">Арифметика, Ряды, Визуальные. Различные Уровни.</string>
+
+	<string name="app_mafk_gps_name">Математическое Искусство Детей +Друзей</string>
+	<string name="app_mafk_gps_advertising1">Математика - Игры, Упражнения, Учиться.</string>
+	<string name="app_mafk_gps_advertising2">Арифметика, Ряды, Визуальные. Различные Уровни.</string>
+	
+	<string name="app_ec_name">Легкий Цветы</string>
+	<string name="app_ec_name_paid">Легкий Цветы (Без Рекламы)</string>
+	<string name="app_ec_advertising1">Играть в игру Цвета? Штруп эффект.</string>
+	<string name="app_ec_advertising2">Сила, Скорость, Настойчивость.</string>
+	
+	<string name="app_ec_gps_name">Легкий Цветы +Друзей</string>
+	<string name="app_ec_gps_advertising1">Играть в игру Цвета? Штруп эффект.</string>
+	<string name="app_ec_gps_advertising2">Сила, Скорость, Настойчивость.</string>
+	
+	<string name="app_mos_name">Лабиринт Белка</string>
+	<string name="app_mos_name_paid">Лабиринт Белка (Без Рекламы)</string>
+	<string name="app_mos_advertising1">Побег из Лабиринта. Сохранить белка.</string>
+	<string name="app_mos_advertising2">Каждый раз Разные. Много Уровней.</string>
+	
+	<string name="app_stb_name">Стрелять Шарами</string>
+	<string name="app_stb_name_paid">Стрелять Шарами (Без Рекламы)</string>
+	<string name="app_stb_advertising1">Играть с шарами.</string>
+	<string name="app_stb_advertising2">Стреляй по шарам. Много уровней.</string>
+	
+	<string name="app_gravity_name">Гравитационный Палец 137</string>
+	<string name="app_gravity_name_paid">Гравитационный Палец 137 (Без Рекламы)</string>
+	<string name="app_gravity_advertising1">Играть с гравитацией.</string>
+	<string name="app_gravity_advertising2">Используйте гравитацию на вашем пальце.</string>
+	
+    <string name="loading">Загрузка &#8230;</string>
+    <string name="button_start">Начало</string>
+    
+    <string name="scores">Баллов</string>
+    <string name="youhave">У вас есть</string>
+    
+    <string name="imissyou">Я скучаю по тебе</string>
+    <string name="playwithme">Играть со мной</string>
+    
+    <string name="button_menu">Меню</string>
+    <string name="button_undo">Назад</string>
+    <string name="button_info">Инфо</string>
+    <string name="message_noinfo">Нет информации</string>
+    <string name="message_nomoveinfoyet">Нет информации</string>
+    
+    <string name="help">Помощь</string>
+    <string name="about">Информация</string>
+    <string name="new_game">Новая</string>
+    <string name="rate">Описанный</string>
+    <string name="like">Симпатии</string>
+    <string name="description">Описание</string>
+    <string name="metatransapps">Метатранс Апс</string>
+    <string name="company_home_online">Сайт Компании</string>
+    <string name="company_home_offline">Сайт Компании - Оффлайновый</string>
+    <string name="buy_title">Платная Версия</string>
+    <string name="buy_desc">Никакой Рекламы</string>
+    
+    <string name="alert_title">Предупреждение перед действием</string>
+    <string name="alert_message_newgame">Новая игра?</string>
+    <string name="alert_message_lower_difficulty">Трудность будет снижена</string>
+    <string name="alert_message_notenoughmemory">Недостаточно памяти</string>
+    <string name="alert_message_lowmemory">Меньше памяти, чем рекомендуется</string>
+    <string name="yes">Да</string>
+    <string name="no">Не</string>
+    <string name="ok">Хорошо</string>
+    <string name="megabytes">МБ</string>
+    <string name="exit">Выход</string>
+    <string name="label_continue">Продолжать</string>
+    
+    <string name="alert_message_eula">Условия предоставления услуг</string>
+    <string name="eula_open">Прочтите</string>
+    <string name="agree">Соглашаться</string>
+    <string name="disagree">Не соглашаться</string>
+    
+    <string name="alert_message_exit">Выход из приложения?</string>
+    
+    <string name="label_current">Нынешних</string>
+        
+    <string name="menu_main">Главное меню</string>
+        
+    <string name="menu_colour_scheme">Цвета</string>
+    <string name="colour_scheme">Выберите цвет</string>
+    <string name="colour_scheme_blue_dove">Синий Голубь</string>
+    <string name="colour_scheme_blue_petrol">Голубой Газ</string>
+    <string name="colour_scheme_green_warm">Теплый Зеленый</string>
+    <string name="colour_scheme_green_cool">Холодный Зеленый</string>
+    <string name="colour_scheme_red_warm">Теплый Красный</string>
+    <string name="colour_scheme_red_cool">Холодный Красный</string>
+    <string name="colour_scheme_violet_mauve">Виолетта</string>
+    <string name="colour_scheme_gray">Грэй</string>
+    <string name="colour_scheme_brown">Коричневый</string>
+    
+    <string name="menu_difficulty">Трудность</string>
+    <string name="menu_difficulty_desc">Выберите Трудность</string>
+    <string name="menu_difficulty_1">Уровень 1</string>
+    <string name="menu_difficulty_2">Уровень 2</string>
+    <string name="menu_difficulty_3">Уровень 3</string>
+    <string name="menu_difficulty_4">Уровень 4</string>
+    <string name="menu_difficulty_5">Уровень 5</string>
+    <string name="menu_difficulty_6">Уровень 6</string>
+    <string name="menu_difficulty_7">Уровень 7</string>
+    <string name="menu_difficulty_8">Уровень 8</string>
+    <string name="menu_difficulty_9">Уровень 9</string>
+    <string name="menu_difficulty_10">Уровень 10</string>
+    <string name="menu_difficulty_11">Уровень 11</string>
+    <string name="menu_difficulty_12">Уровень 12</string>
+    <string name="menu_difficulty_13">Уровень 13</string>
+    <string name="menu_difficulty_14">Уровень 14</string>
+    <string name="menu_difficulty_15">Уровень 15</string>
+    <string name="menu_difficulty_16">Уровень 16</string>
+    <string name="menu_difficulty_17">Уровень 17</string>
+    <string name="menu_difficulty_18">Уровень 18</string>
+    <string name="menu_difficulty_19">Уровень 19</string>
+    <string name="menu_difficulty_20">Уровень 20</string>
+    
+    <string name="achievement_title_invite_3_friends">Пригласить 3 друзей</string>
+    <string name="achievement_title_stop_pieces">Остановка движущихся изображений</string>
+    <string name="achievement_title_change_colours">Попробуйте цвета</string>
+    <string name="achievement_title_change_mode">Попробуйте режимы игры</string>
+    <string name="achievement_title_read_help">Читайте руководство</string>
+    <string name="achievement_title_change_difficulty">Эксперимент с трудом</string>
+    
+    <string name="achievement_desc_invite_3_friends">Вы разделили игру с друзьями</string>
+	<string name="achievement_desc_stop_pieces">Вы остановили движущиеся изображения</string>
+    <string name="achievement_desc_change_colours">Вы пытаетесь из цветов</string>
+    <string name="achievement_desc_change_mode">Вы пытаетесь режим игры</string>
+    <string name="achievement_desc_read_help">Вы знаете, в полной мере потенциал</string>
+    <string name="achievement_desc_change_difficulty">Вы попробуйте другую сложность игры</string>
+    
+    <string name="menu_privacy">Конфиденциальность</string>
+    <string name="menu_eula">Лицензионное соглашение</string>
+    
+    
+</resources>

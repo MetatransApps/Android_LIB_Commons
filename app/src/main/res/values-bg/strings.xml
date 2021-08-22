@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    <string name="game_over">Играта Приключи</string>
+    
+    <string name="achievements">Постижения</string>
+    <string name="achievement">Постижение</string>
+    
+    <string name="achievements_alert_title">Поздравления!</string>
+    <string name="achievements_alert_message">Спечелихте постижение</string>
+    <string name="achievements_button_close">Затвори</string>
+    <string name="achievements_button_showme">Покажи ми</string>
+    
+    <string name="achievements_hidden_title">Скрито</string>
+    <string name="achievements_locked_title">Заключено</string>
+    <string name="achievements_locked_desc">Това постижение още не е отключено</string>
+    
+    <string name="achievements_current_game_inprogress">Текущата игра все още не е приключила &#8230;</string>
+    
+    <string name="levels">Нива</string>
+    <string name="level">Ниво</string>
+    <string name="make">Направи</string>
+    <string name="or">или</string>
+    <string name="unlock_level_1">Как да се отключи</string>
+    <string name="unlock_level_2">Събери 3 звезди на ниво</string>
+    <string name="unlock_level_3">Чакай</string>
+    
+    <string name="menu_rate_review_upgrades_title">Рейтинг, Ревю, Обновления</string>
+    <string name="menu_checkforupdates_title">Проверка за Обновление</string>
+    <string name="menu_checkforupdates_desc">Отваря страницата на приложението</string>
+    
+    <string name="new_game_fulltext">Нова Игра</string>
+    <string name="button_back">Назад</string>
+    <string name="label_mode">Режим</string>
+    
+    <string name="social_play_services_error">Услугите на Google Play не са достъпни.</string>
+    <string name="social_close">Затвори</string>
+    
+    <string name="social_invite_invitationto">Покана за</string>
+    <string name="social_invite_isprettycool">е доста яко.</string>
+    <string name="social_invite_checkitout">Провери го.</string>
+    <string name="social_invite_checkitout_ongps">Провери го на Google Play Games.</string>
+    <string name="social_invite_beatmyscore">Да видим можеш ли да надминеш точките ми!</string>
+    
+    <string name="label_noconnection">Няма връзка</string>
+    <string name="label_notsignedin">Излязохте</string>
+    <string name="label_connecting">Свързване &#8230;</string>
+    <string name="label_welcome">Добре дошли</string>
+    <string name="label_leaderboards_not_available">Leaderboards не са достъпни. Изискват вход.</string>
+    
+    <string name="label_invite">Покани</string>
+    <string name="label_moregames">Още Игри</string>
+    <string name="label_installed">Инсталирано</string>
+    
+    <string name="label_advertising_free_1">БЕЗПЛАТНО</string>
+    <string name="label_advertising_free_2">С Реклами</string>
+    <string name="label_advertising_paid_1">ПЛАТЕНО</string>
+    <string name="label_advertising_paid_2">Без Реклами</string>
+    
+    
+    <string name="app_cafk_name">Шах Изкуство за Деца</string>
+    <string name="app_cafk_name_paid">Шах Изкуство за Деца (Без Реклами)</string>
+	<string name="app_cafk_advertising1">Учи и Играй Шах. Забавлявай се.</string>
+	<string name="app_cafk_advertising2">Ръчно правени фигури и картинки.</string>
+	
+	<string name="app_bagaturchess_name">Шах Двигател Багатур</string>
+	<string name="app_bagaturchess_advertising1">Учи и Играй Шах. Забавлявай се.</string>
+	<string name="app_bagaturchess_advertising2">Играй срещу Багатур</string>
+	
+	<string name="app_cafk_gps_name">Шах Изкуство за Деца +Приятели</string>
+	<string name="app_cafk_gps_advertising1">Учи и Играй Шах. Забавлявай се.</string>
+	<string name="app_cafk_gps_advertising2">Ръчно правени фигури и картинки.</string>
+	
+	<string name="app_mafk_name">Математическо Изкуство за Деца</string>
+	<string name="app_mafk_name_paid">Математическо Изкуство за Деца (Без Реклами)</string>
+	<string name="app_mafk_advertising1">Математика - Играй, Упражнявай, Учи.</string>
+	<string name="app_mafk_advertising2">Аритметика, Редици, Визуални. Различни Нива.</string>
+
+	<string name="app_mafk_gps_name">Математическо Изкуство за Деца +Приятели</string>
+	<string name="app_mafk_gps_advertising1">Математика - Играй, Упражнявай, Учи.</string>
+	<string name="app_mafk_gps_advertising2">Аритметика, Редици, Визуални. Различни Нива.</string>
+	
+	<string name="app_ec_name">Лесни Цветове</string>
+	<string name="app_ec_name_paid">Лесни Цветове (Без Реклами)</string>
+	<string name="app_ec_advertising1">Играй игра с Цветове? Ефекта на Струп.</string>
+	<string name="app_ec_advertising2">Концентрация, Бързина, Постоянство.</string>
+	
+	<string name="app_ec_gps_name">Лесни Цветове +Приятели</string>
+	<string name="app_ec_gps_advertising1">Играй игра с Цветове? Ефекта на Струп.</string>
+	<string name="app_ec_gps_advertising2">Концентрация, Бързина, Постоянство.</string>
+	
+	<string name="app_mos_name">Лабиринтът на Катеричката</string>
+	<string name="app_mos_name_paid">Лабиринтът на Катеричката (Без Реклами)</string>
+	<string name="app_mos_advertising1">Измъкни се от Лабиринтът.</string>
+	<string name="app_mos_advertising2">Всеки път Различен. Много Нива.</string>
+	
+	<string name="app_stb_name">Стреляй Топките</string>
+	<string name="app_stb_name_paid">Стреляй Топките (Без Реклами)</string>
+	<string name="app_stb_advertising1">Играй с топки.</string>
+	<string name="app_stb_advertising2">Стреляй топките. Много нива.</string>	
+	
+	<string name="app_gravity_name">Гравитационен Пръст 137</string>
+	<string name="app_gravity_name_paid">Гравитационен Пръст 137 (Без Реклами)</string>
+	<string name="app_gravity_advertising1">Играй си с гравитацията.</string>
+	<string name="app_gravity_advertising2">Използвай гравитацията на пръста си.</string>
+	
+    <string name="loading">Зареждане &#8230;</string>
+    <string name="button_start">Старт</string>
+    
+    <string name="scores">Точки</string>
+    <string name="youhave">Вие имате</string>
+    
+    <string name="imissyou">Липсваш ми</string>
+    <string name="playwithme">Поиграй си с мен</string>
+    
+    <string name="button_menu">Меню</string>
+    <string name="button_undo">Назад</string>
+    <string name="button_info">Инфо</string>
+    <string name="message_noinfo">Няма информация</string>
+    <string name="message_nomoveinfoyet">Още няма информация за хода</string>
+    
+    <string name="help">Помощ</string>
+    <string name="about">Относно</string>
+    <string name="new_game">Нова</string>
+    <string name="rate">Окачестви</string>
+    <string name="like">Харесай</string>
+    <string name="description">Описание</string>
+    <string name="metatransapps">Метатранс Апс</string>
+    <string name="company_home_online">Уеб Сайт на Компанията</string>
+    <string name="company_home_offline">Уеб Сайт на Компанията - Локално</string>
+    <string name="buy_title">Платена Версия</string>
+    <string name="buy_desc">Без Реклами</string>
+    
+    <string name="alert_title">Предупреждение преди действие</string>
+    <string name="alert_message_newgame">Нова игра?</string>
+    <string name="alert_message_lower_difficulty">Трудността ще бъде намалена</string>
+    <string name="alert_message_notenoughmemory">Няма достатъчно памет</string>
+    <string name="alert_message_lowmemory">По-малко памет от препоръчителното</string>
+    <string name="yes">Да</string>
+    <string name="no">Не</string>
+    <string name="ok">Добре</string>
+    <string name="megabytes">МБ</string>
+    <string name="exit">Изход</string>
+    <string name="label_continue">Продължи</string>
+    
+    <string name="alert_message_eula">Условия за Ползване</string>
+    <string name="eula_open">Прочети</string>
+    <string name="agree">Съгласен</string>
+    <string name="disagree">Не съгласен</string>
+    
+    <string name="alert_message_exit">Излизане от приложението?</string>
+    
+    <string name="label_current">Текущ</string>
+        
+    <string name="menu_main">Главно Меню</string>
+        
+    <string name="menu_colour_scheme">Цветове</string>
+    <string name="colour_scheme">Избор На Цветове</string>
+    <string name="colour_scheme_blue_dove">Син Гълъб</string>
+    <string name="colour_scheme_blue_petrol">Син Газ</string>
+    <string name="colour_scheme_green_warm">Топъл Зелен</string>
+    <string name="colour_scheme_green_cool">Студен Зелен</string>
+    <string name="colour_scheme_red_warm">Топъл Червен</string>
+    <string name="colour_scheme_red_cool">Студен Червен</string>
+    <string name="colour_scheme_violet_mauve">Виолетов</string>
+    <string name="colour_scheme_gray">Сив</string>
+    <string name="colour_scheme_brown">Кафяв</string>
+
+    <string name="menu_difficulty">Трудност</string>
+    <string name="menu_difficulty_desc">Избор На Трудност</string>
+    <string name="menu_difficulty_1">Ниво 1</string>
+    <string name="menu_difficulty_2">Ниво 2</string>
+    <string name="menu_difficulty_3">Ниво 3</string>
+    <string name="menu_difficulty_4">Ниво 4</string>
+    <string name="menu_difficulty_5">Ниво 5</string>
+    <string name="menu_difficulty_6">Ниво 6</string>
+    <string name="menu_difficulty_7">Ниво 7</string>
+    <string name="menu_difficulty_8">Ниво 8</string>
+    <string name="menu_difficulty_9">Ниво 9</string>
+    <string name="menu_difficulty_10">Ниво 10</string>
+    <string name="menu_difficulty_11">Ниво 11</string>
+    <string name="menu_difficulty_12">Ниво 12</string>
+    <string name="menu_difficulty_13">Ниво 13</string>
+    <string name="menu_difficulty_14">Ниво 14</string>
+    <string name="menu_difficulty_15">Ниво 15</string>
+    <string name="menu_difficulty_16">Ниво 16</string>
+    <string name="menu_difficulty_17">Ниво 17</string>
+    <string name="menu_difficulty_18">Ниво 18</string>
+    <string name="menu_difficulty_19">Ниво 19</string>
+    <string name="menu_difficulty_20">Ниво 20</string>
+    
+    <string name="achievement_title_invite_3_friends">Покани 3-ма приятели</string>
+    <string name="achievement_title_stop_pieces">Спри движещите се картинки</string>
+    <string name="achievement_title_change_colours">Пробвай цветовете</string>
+    <string name="achievement_title_change_mode">Пробвай режимите на игра</string>
+    <string name="achievement_title_read_help">Прочетете упътването</string>
+    <string name="achievement_title_change_difficulty">Експериментирайте с трудността</string>
+    
+    <string name="achievement_desc_invite_3_friends">Вие споделихте играта с вашите приятели</string>
+	<string name="achievement_desc_stop_pieces">Вие спряхте движещите се картинки</string>
+    <string name="achievement_desc_change_colours">Вие изпробвахте цветовете</string>
+    <string name="achievement_desc_change_mode">Вие изпробвахте режимите на игра</string>
+    <string name="achievement_desc_read_help">Вие сте наясно с пълните възможности</string>
+    <string name="achievement_desc_change_difficulty">Вие изпробвахте различни трудности на игра</string>
+    
+    <string name="menu_privacy">Поверителност</string>
+    <string name="menu_eula">Лицензно споразумение</string>
+    
+</resources>
