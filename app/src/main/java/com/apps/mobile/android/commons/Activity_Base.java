@@ -78,14 +78,17 @@ public abstract class Activity_Base extends Activity {
 	@SuppressWarnings("deprecation")
 	@SuppressLint("NewApi")
 	private void setBackgroundPoster(View view, int alpha) {
-		
-		Drawable drawable = BitmapUtils.createDrawable(this, getBitmapCache().getBitmap(this, getBackgroundImageID()));
-		drawable.setAlpha(alpha);
-		
-		if (android.os.Build.VERSION.SDK_INT >= 16) {
-			view.setBackground(drawable);		
-		} else {
-			view.setBackgroundDrawable(drawable);
+
+		if (getBackgroundImageID() != 0) {
+
+			Drawable drawable = BitmapUtils.createDrawable(this, getBitmapCache().getBitmap(this, getBackgroundImageID()));
+			drawable.setAlpha(alpha);
+
+			if (android.os.Build.VERSION.SDK_INT >= 16) {
+				view.setBackground(drawable);
+			} else {
+				view.setBackgroundDrawable(drawable);
+			}
 		}
 	}	
 	
