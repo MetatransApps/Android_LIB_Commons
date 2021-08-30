@@ -22,7 +22,6 @@ import android.graphics.drawable.Drawable;
 import android.text.Layout.Alignment;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.view.View;
 
 
 public class BitmapUtils {

@@ -1,7 +1,6 @@
 package com.apps.mobile.android.commons.engagement.achievements;
 
 
-import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 
 import com.apps.mobile.android.commons.Activity_Base;
 import com.apps.mobile.android.commons.R;
-import com.apps.mobile.android.commons.ui.images.IBitmapCache;
 import com.apps.mobile.android.commons.ui.utils.BitmapUtils;
 import com.apps.mobile.android.commons.ui.utils.ScreenUtils;
 

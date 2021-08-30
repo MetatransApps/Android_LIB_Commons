@@ -169,7 +169,7 @@ public class SocialProvider_Dummy implements ISocialProvider {
 		      
 		} else {
 			
-			//Toast_Base.showToast_InCenter_Long(app, app.getString(com.apps.mobile.android.commons.R.string.label_leaderboards_not_available));
+			//Toast_Base.showToast_InCenter_Long(app, app.getString(com.apps.mobile.android.org.metatransapps.commons.R.string.label_leaderboards_not_available));
 			
 			connect();
 			

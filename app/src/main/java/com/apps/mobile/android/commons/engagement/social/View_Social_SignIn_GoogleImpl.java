@@ -6,7 +6,6 @@ import android.content.Context;
 import com.apps.mobile.android.commons.R;
 import com.apps.mobile.android.commons.cfg.colours.IConfigurationColours;
 import com.apps.mobile.android.commons.engagement.ISocialProvider;
-import com.apps.mobile.android.commons.engagement.social.View_Social_SignIn_Base;
 
 
 public class View_Social_SignIn_GoogleImpl extends View_Social_SignIn_Base {

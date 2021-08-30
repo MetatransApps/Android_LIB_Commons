@@ -3,11 +3,8 @@ package com.apps.mobile.android.commons.web;
 
 import com.apps.mobile.android.commons.DeviceUtils;
 import com.apps.mobile.android.commons.R;
-import com.apps.mobile.android.commons.app.Application_Base;
 import com.apps.mobile.android.commons.cfg.appstore.IAppStore;
 import com.apps.mobile.android.commons.cfg.publishedapp.IPublishedApplication;
-import com.apps.mobile.android.commons.events.api.IEvent_Base;
-import com.apps.mobile.android.commons.events.api.IEventsManager;
 import com.apps.mobile.android.commons.ui.Toast_Base;
 
 import android.content.Context;

@@ -1,10 +1,7 @@
 package com.apps.mobile.android.commons.web;
 
 
-import android.view.View;
 import android.webkit.WebChromeClient;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 
 
 //http://stackoverflow.com/questions/14763483/android-webview-with-an-embedded-youtube-video-full-screen-button-freezes-video/15127046#15127046

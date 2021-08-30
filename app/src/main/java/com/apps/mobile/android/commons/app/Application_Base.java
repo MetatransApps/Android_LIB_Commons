@@ -22,7 +22,6 @@ import com.apps.mobile.android.commons.engagement.ILeaderboardsProvider;
 import com.apps.mobile.android.commons.engagement.ISocialProvider;
 import com.apps.mobile.android.commons.engagement.achievements.AchievementsProvider_Base;
 import com.apps.mobile.android.commons.engagement.social.SocialProvider_Dummy;
-import com.apps.mobile.android.commons.events.EventsData_Base;
 import com.apps.mobile.android.commons.events.EventsManager_Base;
 import com.apps.mobile.android.commons.events.api.IEventsManager;
 import com.apps.mobile.android.commons.model.GameData_Base;
@@ -30,7 +29,6 @@ import com.apps.mobile.android.commons.model.UserSettings_Base;
 import com.apps.mobile.android.commons.storage.StorageUtils;
 
 import android.app.Activity;
-import android.app.AlarmManager;
 import android.app.Application;
 
 

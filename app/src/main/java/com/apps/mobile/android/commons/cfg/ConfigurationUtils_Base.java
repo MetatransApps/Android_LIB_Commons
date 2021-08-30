@@ -4,8 +4,6 @@ package com.apps.mobile.android.commons.cfg;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.apps.mobile.android.commons.cfg.IConfigurationEntry;
-
 import android.annotation.SuppressLint;
 
 
