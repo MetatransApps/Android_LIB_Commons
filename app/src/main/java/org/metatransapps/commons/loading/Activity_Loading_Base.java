@@ -1,0 +1,395 @@
+package org.metatransapps.commons.loading;
+
+
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import org.metatransapps.commons.Activity_Base;
+import org.metatransapps.commons.Alerts_Base;
+import org.metatransapps.commons.R;
+import org.metatransapps.commons.app.Application_Base;
+import org.metatransapps.commons.cfg.colours.IConfigurationColours;
+import org.metatransapps.commons.engagement.ISocialProvider;
+import org.metatransapps.commons.engagement.social.View_Social_InviteFriends;
+import org.metatransapps.commons.menu.Activity_Menu_Colours_Base;
+import org.metatransapps.commons.model.GameData_Base;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.graphics.RectF;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+
+
+public abstract class Activity_Loading_Base extends Activity_Base {
+	
+	
+	protected static final int VIEW_ID_LOADING = 352462787;
+	protected static final int VIEW_ID_INVITE = 12397343;
+	
+	
+	private ExecutorService executor;
+	private Handler uiHandler;
+	
+	protected boolean loaded = false;
+	
+	private long timestamp_created;
+	
+	private int old_colours_cfg_id = -1;
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		
+		
+		boolean currentGameCompleted = getGameData().isCountedAsCompleted();
+		((Application_Base)getApplication()).getEngagementProvider().getLeaderboardsProvider().setEnabled(currentGameCompleted);
+		
+		
+		super.onCreate(savedInstanceState);
+		
+		System.out.println("Activity_Loading_Base:  onCreate");
+		
+		try {
+			
+			getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+			
+			executor = Executors.newCachedThreadPool();
+			uiHandler = new Handler(Looper.getMainLooper());
+			
+			//initUI();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		timestamp_created = System.currentTimeMillis();
+	}
+	
+	
+	protected GameData_Base getGameData() { 
+		return ((Application_Base)getApplication()).getGameData();
+	}
+	
+	
+	protected void load() {
+		try {
+			if (System.currentTimeMillis() - timestamp_created < 3000) {
+				Thread.sleep(3000 - (System.currentTimeMillis() - timestamp_created));	
+			}
+		} catch (InterruptedException e) {}
+	}
+	
+	protected abstract Class<? extends Activity_Base> getNextActivityClass();
+	
+	protected abstract Class<? extends Activity_Base> getActivityClass_Menu2();
+	
+	protected abstract View_Loading_Base getLoadingView();
+	
+	protected abstract IConfigurationColours getColoursCfg();
+	
+	protected abstract void openInterstitial();
+	
+	
+	protected Class<? extends Activity_Base> getActivityClass_Menu1() {
+		return Activity_Menu_Colours_Base.class;
+	}
+	
+	
+	protected int getText_Menu0() {
+		return R.string.button_start;
+	}
+	
+	protected int getText_Menu1() {
+		return R.string.menu_colour_scheme;
+	}
+	
+	
+	protected abstract int getText_Menu2();
+	
+	
+	protected int getRateReviewIconID() {
+		return R.drawable.ic_hearts;
+	}
+	
+	
+	protected int getLayout() {
+		return R.layout.commons_loading;
+	}
+	
+	protected int getLayoutID() {
+		return R.id.commons_layout_loading;
+	}
+	
+	
+	@Override
+	public void onStart() {
+		
+		super.onStart();
+		
+		if (!getSocialProvider().isConnected()
+				&& !getSocialProvider().isSignInRejected()) {
+			getSocialProvider().connect();
+		}
+	}
+	
+	
+	@Override
+	public void onStop() {
+		
+		
+		if (uiHandler != null) uiHandler.removeCallbacksAndMessages(null);
+		
+		super.onStop();
+	}
+	
+	
+	@Override
+	protected void onDestroy() {
+		
+		List<Runnable> rejected = executor.shutdownNow();
+		System.out.println("Activity_Loading_Base: shuting down executor -> rejected " + rejected.size() + " jobs.");
+		
+		if (uiHandler != null) uiHandler.removeCallbacksAndMessages(null);
+		
+		executor = null;
+		
+		uiHandler = null;
+		
+		super.onDestroy();
+		
+		System.gc();
+		
+		
+		if (getSocialProvider().isConnected()) {
+			getSocialProvider().disconnect();
+		}
+	}
+	
+	
+	@Override
+	public void onPause() {
+		
+		System.out.println("Activity_Loading_Base:  onPause");
+		
+		if (uiHandler != null) uiHandler.removeCallbacksAndMessages(null);
+		
+		super.onPause();
+		
+		System.gc();
+	}
+	
+	
+	@Override
+	protected void onResume() {
+		
+		System.out.println("Activity_Loading_Base:  onResume");
+		
+		super.onResume();
+		
+		try {
+			
+			initUI();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	private void dettachTopViews(ViewGroup frame) {
+		View old_view_invite_friends = frame.findViewById(VIEW_ID_INVITE);
+		if (old_view_invite_friends != null) {
+			frame.removeView(old_view_invite_friends);
+		}
+		getSocialProvider().detachSignInView(frame);
+		getSocialProvider().detachLikeView(frame);
+		Application_Base.getInstance().getEngagementProvider().getLeaderboardsProvider().detachLeaderboardView(frame);
+	}
+	
+	
+	private void attachTopViews(ViewGroup frame) {
+		
+		//View_Loading_Base view_loading = (View_Loading_Base) frame.findViewById(VIEW_ID_LOADING);
+		//view_loading.createButtons();
+		
+		View_Loading_Base view_loading = (View_Loading_Base) frame.findViewById(VIEW_ID_LOADING);
+		
+		IConfigurationColours coloursCfg = getColoursCfg();
+		
+		//Add invite friends view
+		View view_invite_friends = new View_Social_InviteFriends(this, view_loading.getRectangle_InviteFriends(),
+			getSocialProvider(), coloursCfg);
+		view_invite_friends.setId(VIEW_ID_INVITE);
+		frame.addView(view_invite_friends);
+		
+		//Add SignIn view
+		View view_social = getSocialProvider().getSignInView(coloursCfg);
+		if (view_social != null) {
+			frame.addView(view_social);
+		} else {
+			System.out.println("Activity_Loading_Base:  onResume> SignIn view is null");
+		}
+		
+		//Add Like view
+		if (false && getSocialProvider().isConnected()) {
+			
+			View view_like = getSocialProvider().getLikeView(coloursCfg, view_loading.getRectangle_GooglePlus());
+			if (view_like != null) {
+				frame.addView(view_like);
+			} else {
+				System.out.println("Like view is null");
+			}
+		}
+		
+		//Add achievements and leaderboard view
+		RectF rectf_leaderboards = view_loading.getRectangle_LeaderBoards();
+		View _view_leaderboards = Application_Base.getInstance().getEngagementProvider().getLeaderboardsProvider().getLeaderboardView(coloursCfg, rectf_leaderboards);
+		View _view_achievements = Application_Base.getInstance().getEngagementProvider().getAchievementsProvider().getAchievementsView(coloursCfg, rectf_leaderboards);
+			
+		if (_view_leaderboards != null && _view_achievements != null) {
+			if (_view_leaderboards != _view_achievements) {
+				throw new IllegalStateException("_view_leaderboards != _view_achievements");
+			}
+		}
+		
+		System.out.println("Activity_Loading_Base:  onResume> rectf_leaderboards=" + rectf_leaderboards);
+		
+		if (_view_leaderboards != null) {
+			frame.addView(_view_leaderboards);
+		}
+	}
+	
+	
+	private Application_Base getApp() {
+		return (Application_Base)getApplication();
+	}
+	
+	
+	private ISocialProvider getSocialProvider() {
+		return getApp().getEngagementProvider().getSocialProvider();
+	}
+	
+	
+	private void initUI() {
+		
+		System.out.println("Activity_Loading_Base: initUI");
+		
+		IConfigurationColours coloursCfg = getColoursCfg();
+		
+		//if (old_colours_cfg_id == -1 || old_colours_cfg_id != coloursCfg.getID()) {
+			
+			setContentView(getLayout());
+			
+			FrameLayout frame = (FrameLayout) findViewById(getLayoutID());
+			
+			//Remove old view if exists
+			View_Loading_Base old_view = (View_Loading_Base) findViewById(VIEW_ID_LOADING);
+			if (old_view != null) {
+				frame.removeView(old_view);	
+			}
+			
+			//Add new view
+			View_Loading_Base view_loading = getLoadingView();
+			view_loading.setId(VIEW_ID_LOADING);
+			view_loading.setOnTouchListener(new OnTouchListener_Loading(view_loading));
+			frame.addView(view_loading);
+			
+			
+			//Attach top view
+			dettachTopViews(frame);
+			attachTopViews(frame);
+			
+			
+			//Backup CFG
+			//old_colours_cfg_id = coloursCfg.getID();
+			
+
+			getExecutor().execute(new Runnable() {
+				
+				@Override
+				public void run() {
+					
+					try {
+						View_Loading_Base view = (View_Loading_Base) findViewById(VIEW_ID_LOADING);
+						
+						while (!view.isInitilized()) {
+							try {
+								Thread.sleep(99);
+							} catch (InterruptedException e) {}
+						}
+						
+						
+						view.initPiecesBitmaps();
+						
+					} catch(Exception e) {
+						e.printStackTrace();
+					}
+				}
+
+			});
+			
+			
+			getExecutor().execute(new Runnable() {
+				
+				@Override
+				public void run() {
+					
+					try {
+						
+						if (!loaded) {
+							
+							load();
+							
+							loaded = true;
+						}
+						
+					} catch(Exception e) {
+						e.printStackTrace();
+					}
+				}
+
+			});
+		//}
+	}
+	
+	
+	@Override
+	public void onBackPressed() {
+		
+		AlertDialog.Builder adb = Alerts_Base.createAlertDialog_Exit(Activity_Loading_Base.this,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						
+						openInterstitial();
+						
+						dialog.dismiss();
+						finish();
+					}
+				});
+		
+		adb.show();
+	}
+	
+	
+	public ExecutorService getExecutor() {
+		return executor;
+	}
+	
+	
+	public Handler getUiHandler() {
+		return uiHandler;
+	}
+	
+	
+	public boolean isDone() {
+		return loaded;
+	}
+}
