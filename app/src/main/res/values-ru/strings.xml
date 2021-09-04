@@ -57,52 +57,51 @@
     <string name="label_advertising_paid_1">ПЛАТНЫЕ</string>
     <string name="label_advertising_paid_2">Без Рекламы</string>
     
-    <string name="app_cafk_name">Шахматы Искусство для Детей</string>
-    <string name="app_cafk_name_paid">Шахматы Искусство для Детей (Без Рекламы)</string>
+    <string name="app_cafk_name">Шахматы для Детей</string>
+    <string name="app_cafk_name_paid">Шахматы для Детей (Без Рекламы)</string>
 	<string name="app_cafk_advertising1">Учиться и играть в шахматы. Веселиться.</string>
-	<string name="app_cafk_advertising2">Ручная работа формы и изображения</string>
+	<string name="app_cafk_advertising2">Обучение шахматам. Разные уровни силы.</string>
 	
-	<string name="app_bagaturchess_name">Багатур Шахматный Движок</string>
-	<string name="app_bagaturchess_advertising1">Учиться и играть в шахматы. Веселиться.</string>
+	<string name="app_bagaturchess_name">Движок для Шахмат Багатур</string>
+    <string name="app_bagaturchess_name_paid">Движок для Шахмат Багатур (Без Рекламы)</string>
+	<string name="app_bagaturchess_advertising1">Оффлайн шахматы с 16 уровней силы.</string>
 	<string name="app_bagaturchess_advertising2">Играть против Багатур Шахматный Движок</string>
 	
-	<string name="app_cafk_gps_name">Шахматы Искусст. Детей +Друзей</string>
-	<string name="app_cafk_gps_advertising1">Учиться и играть в шахматы. Веселиться.</string>
-	<string name="app_cafk_gps_advertising2">Ручная работа формы и изображения</string>
-	
-	<string name="app_mafk_name">Математическое Искусство Детей</string>
-	<string name="app_mafk_name_paid">Математическое Искусство Детей (Без Рекламы)</string>
-	<string name="app_mafk_advertising1">Математика - Игры, Упражнения, Учиться.</string>
+	<string name="app_mafk_name">Детская математика для 1 2 3 4 класс: Вопросы</string>
+	<string name="app_mafk_name_paid">Детская математика для 1 2 3 4 класс: Вопросы (Без Рекламы)</string>
+	<string name="app_mafk_advertising1">Детская математика для дошкольного, 1 2 3 4 класс.</string>
 	<string name="app_mafk_advertising2">Арифметика, Ряды, Визуальные. Различные Уровни.</string>
+	
+	<string name="app_ec_name">Струп Эффект Тест: Вызов Мозга</string>
+	<string name="app_ec_name_paid">Струп Эффект Тест: Вызов Мозга (Без Рекламы)</string>
+	<string name="app_ec_advertising1">Штруп эффект. Играть в игру Цвета?</string>
+	<string name="app_ec_advertising2">Демонстрирует Эффект Струпа и проверяет вас.</string>
+	
+	<string name="app_mos_name">Бегущий в Лабиринт 2D: Оффлайн Игры Лабиринт</string>
+	<string name="app_mos_name_paid">Бегущий в Лабиринт 2D: Оффлайн Игры Лабиринт (Без Рекламы)</string>
+	<string name="app_mos_advertising1">Лабиринт бегун 2D. Каждый раз новый лабиринт. Много уровней.</string>
+	<string name="app_mos_advertising2">Спасите белку. Много Уровней.</string>
+	
+	<string name="app_stb_name">Беспосадочные Воздушные Шары: Стреляйте в Шары</string>
+	<string name="app_stb_name_paid">Беспосадочные Воздушные Шары: Стреляйте в Шары (Без Рекламы)</string>
+	<string name="app_stb_advertising1">Бесконечные воздушные шары. Стрельба по ним.</string>
+	<string name="app_stb_advertising2">Стрельба для детей и взрослых.</string>
+	
+	<string name="app_gravity_name">Гравитационный Палец 137: Пересечь Орбиты</string>
+	<string name="app_gravity_name_paid">Гравитационный Палец 137: Пересечь Орбиты (Без Рекламы)</string>
+	<string name="app_gravity_advertising1">Пересекайте орбиты объектов и собирайте их.</string>
+	<string name="app_gravity_advertising2">Физика. Используйте гравитацию на вашем пальце.</string>
 
-	<string name="app_mafk_gps_name">Математическое Искусство Детей +Друзей</string>
-	<string name="app_mafk_gps_advertising1">Математика - Игры, Упражнения, Учиться.</string>
-	<string name="app_mafk_gps_advertising2">Арифметика, Ряды, Визуальные. Различные Уровни.</string>
-	
-	<string name="app_ec_name">Легкий Цветы</string>
-	<string name="app_ec_name_paid">Легкий Цветы (Без Рекламы)</string>
-	<string name="app_ec_advertising1">Играть в игру Цвета? Штруп эффект.</string>
-	<string name="app_ec_advertising2">Сила, Скорость, Настойчивость.</string>
-	
-	<string name="app_ec_gps_name">Легкий Цветы +Друзей</string>
-	<string name="app_ec_gps_advertising1">Играть в игру Цвета? Штруп эффект.</string>
-	<string name="app_ec_gps_advertising2">Сила, Скорость, Настойчивость.</string>
-	
-	<string name="app_mos_name">Лабиринт Белка</string>
-	<string name="app_mos_name_paid">Лабиринт Белка (Без Рекламы)</string>
-	<string name="app_mos_advertising1">Побег из Лабиринта. Сохранить белка.</string>
-	<string name="app_mos_advertising2">Каждый раз Разные. Много Уровней.</string>
-	
-	<string name="app_stb_name">Стрелять Шарами</string>
-	<string name="app_stb_name_paid">Стрелять Шарами (Без Рекламы)</string>
-	<string name="app_stb_advertising1">Играть с шарами.</string>
-	<string name="app_stb_advertising2">Стреляй по шарам. Много уровней.</string>
-	
-	<string name="app_gravity_name">Гравитационный Палец 137</string>
-	<string name="app_gravity_name_paid">Гравитационный Палец 137 (Без Рекламы)</string>
-	<string name="app_gravity_advertising1">Играть с гравитацией.</string>
-	<string name="app_gravity_advertising2">Используйте гравитацию на вашем пальце.</string>
-	
+    <string name="app_wisconsin_name">Тест Сортировки Карты Висконсина: Тесты и Карты</string>
+    <string name="app_wisconsin_name_paid">Тест Сортировки Карты Висконсина: Тесты и Карты (Без Рекламы)</string>
+    <string name="app_wisconsin_advertising1">Психологический тест. Карты Висконсина.</string>
+    <string name="app_wisconsin_advertising2">Играйте в бесплатную офлайн-игру разума.</string>
+
+    <string name="app_chessboardscanner_name">Сканер, Редактор и Анализатор Шахматной Позиции</string>
+    <string name="app_chessboardscanner_name_paid">Сканер, Редактор и Анализатор Шахматной Позиции (Без Рекламы)</string>
+    <string name="app_chessboardscanner_advertising1">Приложение, которое сканирует двухмерное изображение шахматной доски.</string>
+    <string name="app_chessboardscanner_advertising2">Снимайте другие экраны и анализируйте шахматные позиции.</string>
+
     <string name="loading">Загрузка &#8230;</string>
     <string name="button_start">Начало</string>
     

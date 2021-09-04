@@ -56,61 +56,50 @@
     <string name="label_advertising_paid_1">PAID</string>
     <string name="label_advertising_paid_2">No Ads</string>
     
-    <string name="app_cafk_name">Chess Art for Kids</string>
+    <string name="app_cafk_name">Chess Art for Kids </string>
     <string name="app_cafk_name_paid">Chess Art for Kids (No Ads)</string>
 	<string name="app_cafk_advertising1">Play Chess and Learn. Have fun.</string>
-	<string name="app_cafk_advertising2">Handsmade images and pieces sets.</string>
+	<string name="app_cafk_advertising2">Kindergarten to Grandmaster.</string>
 	
-	<string name="app_bagaturchess_name">Bagatur Chess Engine</string>
-	<string name="app_bagaturchess_advertising1">Play Chess and Learn. Have fun.</string>
-	<string name="app_bagaturchess_advertising2">Play against Bagatur Engine</string>
+	<string name="app_bagaturchess_name">Bagatur Chess Engine with GUI</string>
+    <string name="app_bagaturchess_name_paid">Bagatur Chess Engine with GUI (No Ads)</string>
+	<string name="app_bagaturchess_advertising1">Offline chess play with 16 strength levels.</string>
+	<string name="app_bagaturchess_advertising2">Chess AI. Play against Bagatur Chess Engine</string>
 	
-	<string name="app_cafk_gps_name">Chess Art for Kids +Friends</string>
-	<string name="app_cafk_gps_advertising1">Play Chess and Learn. Have fun.</string>
-	<string name="app_cafk_gps_advertising2">Handsmade images and pieces sets.</string>
+	<string name="app_mafk_name">Math for Kids: Kindergarten to 4th Grade</string>
+	<string name="app_mafk_name_paid">Math for Kids: Kindergarten to 4th Grade (No Ads)</string>
+	<string name="app_mafk_advertising1">Play Math, Exam and Learn.</string>
+	<string name="app_mafk_advertising2">Different Levels. Arithmetic, Rows, Visuals.</string>
 	
-	<string name="app_mafk_name">Math Art for Kids</string>
-	<string name="app_mafk_name_paid">Math Art for Kids (No Ads)</string>
-	<string name="app_mafk_advertising1">Math - Play, Exam and Learn.</string>
-	<string name="app_mafk_advertising2">Arithmetic, Rows, Visual. Different Levels.</string>
-
-	<string name="app_mafk_gps_name">Math Art for Kids +Friends</string>
-	<string name="app_mafk_gps_advertising1">Math - Play, Exam and Learn.</string>
-	<string name="app_mafk_gps_advertising2">Arithmetic, Rows, Visual. Different Levels.</string>
+	<string name="app_ec_name">Stroop Effect Test: Challenge Your Brain</string>
+	<string name="app_ec_name_paid">Stroop Effect Test: Challenge Your Brain (No Ads)</string>
+	<string name="app_ec_advertising1">Stroop Effect. Play Colors Game?</string>
+	<string name="app_ec_advertising2">Demonstrates the Stroop Effect and tests you.</string>
 	
-	<string name="app_ec_name">Easy Colors</string>
-	<string name="app_ec_name_paid">Easy Colors (No Ads)</string>
-	<string name="app_ec_advertising1">Play Colors Game? Stroop Effect.</string>
-	<string name="app_ec_advertising2">Be Focused, Be Fast, Be Resistant.</string>
+	<string name="app_mos_name">Maze Runner 2D: Old School Labyrinth</string>
+	<string name="app_mos_name_paid">Maze Runner 2D: Old School Labyrinth (No Ads)</string>
+	<string name="app_mos_advertising1">Maze Labyrinth Runner 2D. Different each time.</string>
+	<string name="app_mos_advertising2">Release the Squirrel. Many levels.</string>
 	
-	<string name="app_ec_gps_name">Easy Colors +Friends</string>
-	<string name="app_ec_gps_advertising1">Play Colors Game? Stroop Effect.</string>
-	<string name="app_ec_gps_advertising2">Be Focused, Be Fast, Be Resistant.</string>
+	<string name="app_stb_name">Non Stop Balloons: Shooter for Kids and Adults</string>
+	<string name="app_stb_name_paid">Non Stop Balloons: Shooter for Kids and Adults (No Ads)</string>
+	<string name="app_stb_advertising1">Balloon shooting. Shooter for kids and adults.</string>
+	<string name="app_stb_advertising2">Flying balloon shooter. Action.</string>
 	
-	<string name="app_mos_name">Maze of Squirrel</string>
-	<string name="app_mos_name_paid">Maze of Squirrel (No Ads)</string>
-	<string name="app_mos_advertising1">Get out of Maze.</string>
-	<string name="app_mos_advertising2">Different each time. Many levels.</string>	
+	<string name="app_gravity_name">Gravity Force Finger 137: Cross the Orbits</string>
+	<string name="app_gravity_name_paid">Gravity Force Finger 137: Cross the Orbits (No Ads)</string>
+	<string name="app_gravity_advertising1">Physics. One finger on the app.</string>
+	<string name="app_gravity_advertising2">Cross the orbits of objects and collect them.</string>
 	
-	<string name="app_stb_name">Shoot The Balls</string>
-	<string name="app_stb_name_paid">Shoot The Balls (No Ads)</string>
-	<string name="app_stb_advertising1">Play with balls.</string>
-	<string name="app_stb_advertising2">Shoot the balls. Many levels.</string>
+	<string name="app_wisconsin_name">Wisconsin Card Sorting Test (WCST): Cards</string>
+	<string name="app_wisconsin_name_paid">Wisconsin Card Sorting Test (WCST): Cards (No Ads)</string>
+	<string name="app_wisconsin_advertising1">Psychology. Psychological test.</string>
+	<string name="app_wisconsin_advertising2">Play with Wisconsin cards. Card sorting game.</string>
 	
-	<string name="app_gravity_name">Gravity Finger 137</string>
-	<string name="app_gravity_name_paid">Gravity Finger 137 (No Ads)</string>
-	<string name="app_gravity_advertising1">Play with gravity.</string>
-	<string name="app_gravity_advertising2">Use your fingers gravity.</string>
-	
-	<string name="app_wisconsin_name">Wisconsin Card Sorting Test</string>
-	<string name="app_wisconsin_name_paid">Wisconsin Card Sorting Test (No Ads)</string>
-	<string name="app_wisconsin_advertising1">Play with Wisconsin cards.</string>
-	<string name="app_wisconsin_advertising2">Make psychological test.</string>
-	
-	<string name="app_chessboardscanner_name">Chess Board Scanner and Analyser</string>
-	<string name="app_chessboardscanner_name_paid">Chess Board Scanner (No Ads)</string>
-	<string name="app_chessboardscanner_advertising1">Scan chess boards.</string>
-	<string name="app_chessboardscanner_advertising2">Analyse positions.</string>
+	<string name="app_chessboardscanner_name">Chess Position Scanner, Editor and Analyzer</string>
+	<string name="app_chessboardscanner_name_paid">Chess Position Scanner, Editor and Analyzer (No Ads)</string>
+	<string name="app_chessboardscanner_advertising1">App which scans and analysis 2D chess boards.</string>
+	<string name="app_chessboardscanner_advertising2">Capture from other screens and analyse positions.</string>
 	
     <string name="loading">Loading &#8230;</string>
     <string name="button_start">Start</string>

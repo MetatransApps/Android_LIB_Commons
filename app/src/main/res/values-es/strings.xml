@@ -66,27 +66,15 @@
 	<string name="app_bagaturchess_advertising1">Jugar al Ajedrez y Aprender. Que te Diviertas.</string>
 	<string name="app_bagaturchess_advertising2">Juega contra el motor de Bagatur</string>
 	
-	<string name="app_cafk_gps_name">Arte Ajedrez Niños +Amigos</string>
-	<string name="app_cafk_gps_advertising1">Jugar al Ajedrez y Aprender. Que te Diviertas.</string>
-	<string name="app_cafk_gps_advertising2">Imágenes hechas a mano y piezas conjuntos.</string>
-	
 	<string name="app_mafk_name">Arte de la Matemáticas para Niños</string>
 	<string name="app_mafk_name_paid">Arte de la Matemáticas para Niños (Sin Anuncios)</string>
 	<string name="app_mafk_advertising1">Math - Juego, Examen y Aprender.</string>
 	<string name="app_mafk_advertising2">Aritmética, Filas, Visual. Niveles Diferentes.</string>
-
-	<string name="app_mafk_gps_name">Arte de la Matemáticas para Niños +Amigos</string>
-	<string name="app_mafk_gps_advertising1">Math - Juego, Examen y Aprender.</string>
-	<string name="app_mafk_gps_advertising2">Aritmética, Filas, Visual. Niveles Diferentes.</string>
 	
 	<string name="app_ec_name">Colores Fácil</string>
 	<string name="app_ec_name_paid">Colores Fácil (Sin Anuncios)</string>
 	<string name="app_ec_advertising1">Juega el Juego de Colores? Efecto Stroop.</string>
 	<string name="app_ec_advertising2">La Fuerza, la Velocidad, la Perseverancia.</string>
-	
-	<string name="app_ec_gps_name">Colores Fácil +Amigos</string>
-	<string name="app_ec_gps_advertising1">Juega el Juego de Colores? Efecto Stroop.</string>
-	<string name="app_ec_gps_advertising2">La Fuerza, la Velocidad, la Perseverancia.</string>
 	
 	<string name="app_mos_name">Laberinto de la Ardilla</string>
 	<string name="app_mos_name_paid">Laberinto de la Ardilla (Sin Anuncios)</string>

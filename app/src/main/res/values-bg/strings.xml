@@ -58,52 +58,51 @@
     <string name="label_advertising_paid_2">Без Реклами</string>
     
     
-    <string name="app_cafk_name">Шах Изкуство за Деца</string>
-    <string name="app_cafk_name_paid">Шах Изкуство за Деца (Без Реклами)</string>
-	<string name="app_cafk_advertising1">Учи и Играй Шах. Забавлявай се.</string>
-	<string name="app_cafk_advertising2">Ръчно правени фигури и картинки.</string>
+    <string name="app_cafk_name">Шах за Деца</string>
+    <string name="app_cafk_name_paid">Шах за Деца (Без Реклами)</string>
+	<string name="app_cafk_advertising1">Играй и Учи Шах. Забавлявай се.</string>
+	<string name="app_cafk_advertising2">От Детската Градина до Гросмайстор.</string>
 	
 	<string name="app_bagaturchess_name">Шах Двигател Багатур</string>
-	<string name="app_bagaturchess_advertising1">Учи и Играй Шах. Забавлявай се.</string>
-	<string name="app_bagaturchess_advertising2">Играй срещу Багатур</string>
+    <string name="app_bagaturchess_name_paid">Шах Двигател Багатур (Без Реклами)</string>
+	<string name="app_bagaturchess_advertising1">Изкуствен Интелект за Шах.</string>
+	<string name="app_bagaturchess_advertising2">Играй срещу Двигателя Багатур</string>
 	
-	<string name="app_cafk_gps_name">Шах Изкуство за Деца +Приятели</string>
-	<string name="app_cafk_gps_advertising1">Учи и Играй Шах. Забавлявай се.</string>
-	<string name="app_cafk_gps_advertising2">Ръчно правени фигури и картинки.</string>
-	
-	<string name="app_mafk_name">Математическо Изкуство за Деца</string>
-	<string name="app_mafk_name_paid">Математическо Изкуство за Деца (Без Реклами)</string>
-	<string name="app_mafk_advertising1">Математика - Играй, Упражнявай, Учи.</string>
+	<string name="app_mafk_name">Детска Математика за 1 2 3 4 Клас: Въпроси</string>
+	<string name="app_mafk_name_paid">Детска Математика за 1 2 3 4 Клас: Въпроси (Без Реклами)</string>
+	<string name="app_mafk_advertising1">Математика за Градината и 1-ви 2-ри 3-ти 4-ти клас.</string>
 	<string name="app_mafk_advertising2">Аритметика, Редици, Визуални. Различни Нива.</string>
+	
+	<string name="app_ec_name">Струп Ефект Тест: Предизвикайте Мозъка</string>
+	<string name="app_ec_name_paid">Струп Ефект Тест: Предизвикайте Мозъка (Без Реклами)</string>
+	<string name="app_ec_advertising1">Ефекта на Струп. Играй игра с Цветове?</string>
+	<string name="app_ec_advertising2">Демонстрира ефекта на Струп и те тества.</string>
+	
+	<string name="app_mos_name">Бегач в Лабиринт 2D: Старомодна Офлайн Игра</string>
+	<string name="app_mos_name_paid">Бегач в Лабиринт 2D: Старомодна Офлайн Игра (Без Реклами)</string>
+	<string name="app_mos_advertising1">Лабиринтов бегач 2D. Всеки път различен лабиринт.</string>
+	<string name="app_mos_advertising2">Спасете катерицата. Много нива.</string>
+	
+	<string name="app_stb_name">Нонстоп Балони: Стреляй по Балоните</string>
+	<string name="app_stb_name_paid">Нонстоп Балони: Стреляй по Балоните (Без Реклами)</string>
+	<string name="app_stb_advertising1">Балони без край. Стреляне по тях.</string>
+	<string name="app_stb_advertising2">Стрелба за деца и възрастни. Много Нива.</string>
+	
+	<string name="app_gravity_name">Гравитационен Пръст 137: Пресечи Орбитите</string>
+	<string name="app_gravity_name_paid">Гравитационен Пръст 137: Пресечи Орбитите (Без Реклами)</string>
+	<string name="app_gravity_advertising1">Пресечи орбитите на обектите и ги събери.</string>
+	<string name="app_gravity_advertising2">Физика. Използвай гравитацията на пръста си.</string>
 
-	<string name="app_mafk_gps_name">Математическо Изкуство за Деца +Приятели</string>
-	<string name="app_mafk_gps_advertising1">Математика - Играй, Упражнявай, Учи.</string>
-	<string name="app_mafk_gps_advertising2">Аритметика, Редици, Визуални. Различни Нива.</string>
-	
-	<string name="app_ec_name">Лесни Цветове</string>
-	<string name="app_ec_name_paid">Лесни Цветове (Без Реклами)</string>
-	<string name="app_ec_advertising1">Играй игра с Цветове? Ефекта на Струп.</string>
-	<string name="app_ec_advertising2">Концентрация, Бързина, Постоянство.</string>
-	
-	<string name="app_ec_gps_name">Лесни Цветове +Приятели</string>
-	<string name="app_ec_gps_advertising1">Играй игра с Цветове? Ефекта на Струп.</string>
-	<string name="app_ec_gps_advertising2">Концентрация, Бързина, Постоянство.</string>
-	
-	<string name="app_mos_name">Лабиринтът на Катеричката</string>
-	<string name="app_mos_name_paid">Лабиринтът на Катеричката (Без Реклами)</string>
-	<string name="app_mos_advertising1">Измъкни се от Лабиринтът.</string>
-	<string name="app_mos_advertising2">Всеки път Различен. Много Нива.</string>
-	
-	<string name="app_stb_name">Стреляй Топките</string>
-	<string name="app_stb_name_paid">Стреляй Топките (Без Реклами)</string>
-	<string name="app_stb_advertising1">Играй с топки.</string>
-	<string name="app_stb_advertising2">Стреляй топките. Много нива.</string>	
-	
-	<string name="app_gravity_name">Гравитационен Пръст 137</string>
-	<string name="app_gravity_name_paid">Гравитационен Пръст 137 (Без Реклами)</string>
-	<string name="app_gravity_advertising1">Играй си с гравитацията.</string>
-	<string name="app_gravity_advertising2">Използвай гравитацията на пръста си.</string>
-	
+    <string name="app_wisconsin_name">Тест за Сортиране на Карти на Уисконсин</string>
+    <string name="app_wisconsin_name_paid">Тест за Сортиране на Карти на Уисконсин</string>
+    <string name="app_wisconsin_advertising1">Психологически Тест. Карти Уисконсин.</string>
+    <string name="app_wisconsin_advertising2">Играй Безплатна Офлайн Игра за Ума.</string>
+
+    <string name="app_chessboardscanner_name">Скенер, Редактор и Анализатор на Шах Позиция</string>
+    <string name="app_chessboardscanner_name_paid">Скенер, Редактор и Анализатор на Шах Позиция (Без Реклами)</string>
+    <string name="app_chessboardscanner_advertising1">Приложение, което сканира 2D изображение на шах дъска.</string>
+    <string name="app_chessboardscanner_advertising2">Снимай други екрани и анализирай шах позиции.</string>
+
     <string name="loading">Зареждане &#8230;</string>
     <string name="button_start">Старт</string>
     
