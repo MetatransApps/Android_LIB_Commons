@@ -54,7 +54,13 @@ public abstract class PublishedApplication_Base implements IPublishedApplication
 		return getAppStore().getName() + ":" + getPackage();
 	}
 	
-	
+
+	@Override
+	public boolean hasAds() {
+		return true;
+	}
+
+
 	@Override
 	public String getMarketURL() {
 		
