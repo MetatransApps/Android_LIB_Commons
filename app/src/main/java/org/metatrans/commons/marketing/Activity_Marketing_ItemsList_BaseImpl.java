@@ -92,7 +92,11 @@ public abstract class Activity_Marketing_ItemsList_BaseImpl extends Activity_Bas
 			if (app.getMarketURL() != null) {
 				
 				Bitmap bitmap = BitmapUtils.fromResource(this, app.getIconResID(), getIconSize());
-				String description = getString(app.getDescription_Line1()) + " " + getString(app.getDescription_Line2());
+
+				String description =
+						getString(app.getDescription_Line1())
+						+ getDescriptionsDelim()
+						+ getString(app.getDescription_Line2());
 				
 				boolean available = isAvailable(app);
 				
@@ -115,8 +119,13 @@ public abstract class Activity_Marketing_ItemsList_BaseImpl extends Activity_Bas
 		
 		return rowItems;
 	}
+
 	
-	
+	protected String getDescriptionsDelim() {
+		return " ";
+	}
+
+
 	private class OnItemClickListener_Menu implements
 			AdapterView.OnItemClickListener {
 		
