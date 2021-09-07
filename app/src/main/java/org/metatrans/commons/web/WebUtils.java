@@ -44,7 +44,7 @@ public class WebUtils {
 				e.printStackTrace();
 			}
 			
-		} else if (app.getAppStore().getID() == IAppStore.ID_SAMSUNG) {
+		} /*else if (app.getAppStore().getID() == IAppStore.ID_SAMSUNG) {
 			
 			try {
 				
@@ -87,7 +87,7 @@ public class WebUtils {
 					e1.printStackTrace();
 				}
 			}
-		}
+		}*/
 		
 		
 		//Standard flow

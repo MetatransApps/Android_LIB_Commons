@@ -77,9 +77,27 @@ public class PublishedApplication_Utils {
 	static {
 		
 		//APPSLIST_SAMSUNG_NON_SOCIAL.add(new PublishedApplication_EC(IAppStore.OBJ_SAMSUNG, "000001002742"));
-		IPublishedApplication app_cafk 	= new PublishedApplication_CAFK(IAppStore.OBJ_SAMSUNG, "000000806963");
-		
+		//IPublishedApplication app_cafk 			= new PublishedApplication_CAFK(IAppStore.OBJ_SAMSUNG, "000000806963");
+
+		IPublishedApplication app_cafk 				= new PublishedApplication_CAFK(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_mafk 				= new PublishedApplication_MAFK(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_ec 				= new PublishedApplication_EC(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_mos 				= new PublishedApplication_MOS(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_bagaturchess		= new PublishedApplication_BagaturChess(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_stoptheballs 		= new PublishedApplication_StopTheBalls(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_SAMSUNG);
+
 		APPSLIST_SAMSUNG_ALL.add(app_cafk);
+		APPSLIST_SAMSUNG_ALL.add(app_mafk);
+		APPSLIST_SAMSUNG_ALL.add(app_ec);
+		APPSLIST_SAMSUNG_ALL.add(app_mos);
+		APPSLIST_SAMSUNG_ALL.add(app_bagaturchess);
+		APPSLIST_SAMSUNG_ALL.add(app_stoptheballs);
+		APPSLIST_SAMSUNG_ALL.add(app_gravityfinger137);
+		APPSLIST_SAMSUNG_ALL.add(app_wisconsin);
+		APPSLIST_SAMSUNG_ALL.add(app_chessboardscanner);
 		
 	}
 	

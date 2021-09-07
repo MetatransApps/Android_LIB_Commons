@@ -224,7 +224,7 @@ public abstract class Application_Base extends Application {
 	
 	public static Application_Base getInstance() {
 		if (singleton == null) {
-			throw new IllegalStateException("Application_CAFK singleton is null");
+			throw new IllegalStateException("Application singleton is null");
 		}
 		return singleton;
 	}
