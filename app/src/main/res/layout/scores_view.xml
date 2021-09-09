@@ -10,7 +10,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:drawableRight="@android:drawable/ic_menu_help"
         android:paddingBottom="15dip"
         android:paddingTop="15dip"
         android:gravity="center"
