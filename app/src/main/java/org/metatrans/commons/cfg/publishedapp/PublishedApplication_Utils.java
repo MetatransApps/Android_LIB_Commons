@@ -39,10 +39,10 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_wisconsin_paid = new PublishedApplication_Wisconsin_Paid(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_chessboardscanner_paid = new PublishedApplication_Scanner_Paid(IAppStore.OBJ_GOOGLE);
-
-		IPublishedApplication app_stoptheballs = new PublishedApplication_StopTheBalls(IAppStore.OBJ_GOOGLE);
-		
+		IPublishedApplication app_stoptheballs = new PublishedApplication_Balloons(IAppStore.OBJ_GOOGLE);
+		IPublishedApplication app_stoptheballs_paid = new PublishedApplication_Balloons_Paid(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_gravityfinger137 = new PublishedApplication_GravityFinger137(IAppStore.OBJ_GOOGLE);
+		IPublishedApplication app_gravityfinger137_paid = new PublishedApplication_GravityFinger137_Paid(IAppStore.OBJ_GOOGLE);
 		
 		app_mos.setPaidVersion(app_mos_paid);
 		app_ec.setPaidVersion(app_ec_paid);
@@ -51,14 +51,17 @@ public class PublishedApplication_Utils {
 		app_bagaturchess.setPaidVersion(app_bagaturchess_paid);
 		app_wisconsin.setPaidVersion(app_wisconsin_paid);
 		app_chessboardscanner.setPaidVersion(app_chessboardscanner_paid);
-
+		app_stoptheballs.setPaidVersion(app_stoptheballs_paid);
+		app_gravityfinger137.setPaidVersion(app_gravityfinger137_paid);
 
 		APPSLIST_GOOGLE_ALL.add(app_chessboardscanner);
 		APPSLIST_GOOGLE_ALL.add(app_chessboardscanner_paid);
 		APPSLIST_GOOGLE_ALL.add(app_wisconsin);
 		APPSLIST_GOOGLE_ALL.add(app_wisconsin_paid);
 		APPSLIST_GOOGLE_ALL.add(app_gravityfinger137);
+		APPSLIST_GOOGLE_ALL.add(app_gravityfinger137_paid);
 		APPSLIST_GOOGLE_ALL.add(app_stoptheballs);
+		APPSLIST_GOOGLE_ALL.add(app_stoptheballs_paid);
 		APPSLIST_GOOGLE_ALL.add(app_bagaturchess);
 		APPSLIST_GOOGLE_ALL.add(app_bagaturchess_paid);
 		APPSLIST_GOOGLE_ALL.add(app_mos);
@@ -84,7 +87,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_ec 				= new PublishedApplication_EC(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_mos 				= new PublishedApplication_MOS(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_bagaturchess		= new PublishedApplication_BagaturChess(IAppStore.OBJ_SAMSUNG);
-		IPublishedApplication app_stoptheballs 		= new PublishedApplication_StopTheBalls(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_stoptheballs 		= new PublishedApplication_Balloons(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_SAMSUNG);
@@ -155,7 +158,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_ec 				= new PublishedApplication_EC(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_mos 				= new PublishedApplication_MOS(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_bagaturchess		= new PublishedApplication_BagaturChess(IAppStore.OBJ_HUAWEI);
-		IPublishedApplication app_stoptheballs 		= new PublishedApplication_StopTheBalls(IAppStore.OBJ_HUAWEI);
+		IPublishedApplication app_stoptheballs 		= new PublishedApplication_Balloons(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_HUAWEI);
@@ -180,7 +183,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_ec 				= new PublishedApplication_EC(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_mos 				= new PublishedApplication_MOS(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_bagaturchess		= new PublishedApplication_BagaturChess(IAppStore.OBJ_FDROID_OWN);
-		IPublishedApplication app_stoptheballs 		= new PublishedApplication_StopTheBalls(IAppStore.OBJ_FDROID_OWN);
+		IPublishedApplication app_stoptheballs 		= new PublishedApplication_Balloons(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_FDROID_OWN);
@@ -205,7 +208,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_ec 				= new PublishedApplication_EC(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_mos 				= new PublishedApplication_MOS(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_bagaturchess		= new PublishedApplication_BagaturChess(IAppStore.OBJ_FDROID_OFFICIAL);
-		IPublishedApplication app_stoptheballs 		= new PublishedApplication_StopTheBalls(IAppStore.OBJ_FDROID_OFFICIAL);
+		IPublishedApplication app_stoptheballs 		= new PublishedApplication_Balloons(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_FDROID_OFFICIAL);
