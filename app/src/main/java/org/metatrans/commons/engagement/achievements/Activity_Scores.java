@@ -88,7 +88,8 @@ public class Activity_Scores extends Activity_Base {
 			//webView.loadUrl("file:///android_asset/www/help.html#scores");
 			
 			//android:drawableLeft="@drawable/up_count_big"
-			
+
+			/*
 			titleView.setOnTouchListener(
 					
 					new View.OnTouchListener() {
@@ -148,7 +149,8 @@ public class Activity_Scores extends Activity_Base {
 						}
 					}
 			);
-			
+			*/
+
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

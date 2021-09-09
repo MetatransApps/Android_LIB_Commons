@@ -45,7 +45,10 @@ public class Config_MenuMain_About extends Config_MenuMain_Base {
 			
 			@Override
 			public void run() {
-				Activity currentActivity = Application_Base.getInstance().getCurrentActivity();
+
+				throw new UnsupportedOperationException();
+
+				/*Activity currentActivity = Application_Base.getInstance().getCurrentActivity();
 				if (currentActivity != null) {
 		           	Intent intent = new Intent(currentActivity, Activity_WebView_StatePreservingImpl_With_VideoPlayer.class);
 	            	intent.putExtra("URL", "file:///android_asset/www/games.html#" + Application_Base.getInstance().getAppConfig().getTag_RevisionHistory());
@@ -55,7 +58,7 @@ public class Config_MenuMain_About extends Config_MenuMain_Base {
 	            	IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
 	            	eventsManager.register(Application_Base.getInstance(), eventsManager.create(IEvent_Base.MENU_OPERATION, IEvent_Base.MENU_OPERATION_OPEN_ABOUT,
 							"MENU_OPERATION", "OPEN_ABOUT"));
-				}
+				}*/
 			}
 		};
 	}

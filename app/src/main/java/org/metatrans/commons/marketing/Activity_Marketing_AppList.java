@@ -24,7 +24,7 @@ public class Activity_Marketing_AppList extends Activity_Marketing_ItemsList_Bas
 
 		List<IPublishedApplication> apps = null;
 
-		if (Application_Base.getInstance().getAppConfig().isPaid()) {
+		if (Application_Base.getInstance().getApp_Me().isPaid()) {
 			apps = PublishedApplication_Utils.getStoreApps_PreferPaid(((Application_Base)getApplication()).getAppStore());
 		} else {
 			apps = PublishedApplication_Utils.getStoreApps_FreeOnly(((Application_Base)getApplication()).getAppStore());
