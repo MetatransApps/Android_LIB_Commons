@@ -22,7 +22,7 @@ public class Config_MenuMain_InviteFriends extends Config_MenuMain_Base {
 	
 	@Override
 	public int getIconResID() {
-		return R.drawable.ic_invite_white;
+		return R.drawable.ic_action_users_white;
 	}
 	
 	

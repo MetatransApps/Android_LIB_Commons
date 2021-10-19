@@ -21,7 +21,7 @@ public class Config_MenuMain_Exit extends Config_MenuMain_Base {
 
 	@Override
 	public int getIconResID() {
-		return R.drawable.btn_exit;
+		return R.drawable.ic_action_halt_white;
 	}
 
 	@Override

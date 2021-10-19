@@ -103,6 +103,11 @@
     <string name="app_chessboardscanner_advertising1">Приложение, което сканира 2D изображение на шах дъска.</string>
     <string name="app_chessboardscanner_advertising2">Снимай други екрани и анализирай шах позиции.</string>
 
+    <string name="app_words_de_for_bg_name">Упражнения с Германски Думи за Българи</string>
+    <string name="app_words_de_for_bg_name_paid">Упражнения с Германски Думи за Българи (Без Реклами)</string>
+    <string name="app_words_de_for_bg_advertising1">Играй с тези Карти за да Обогатиш пасивната си Памет.</string>
+    <string name="app_words_de_for_bg_advertising2">Потвърди чрез Практика Играейки.</string>
+
     <string name="loading">Зареждане &#8230;</string>
     <string name="button_start">Старт</string>
     
@@ -164,6 +169,7 @@
     <string name="colour_scheme_violet_mauve">Виолетов</string>
     <string name="colour_scheme_gray">Сив</string>
     <string name="colour_scheme_brown">Кафяв</string>
+    <string name="colour_scheme_blue_sky_on_gray">Небесно Синьо на сив фон</string>
 
     <string name="menu_difficulty">Трудност</string>
     <string name="menu_difficulty_desc">Избор На Трудност</string>

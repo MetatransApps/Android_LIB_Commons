@@ -27,7 +27,7 @@ public class Config_MenuMain_RateReviewUpgrades extends Config_MenuMain_Base {
 	
 	@Override
 	public int getIconResID() {
-		return R.drawable.ic_vote_thumb_up_gray1;
+		return R.drawable.ic_action_like_white;
 	}
 	
 	

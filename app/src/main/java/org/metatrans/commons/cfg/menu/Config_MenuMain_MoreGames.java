@@ -26,7 +26,7 @@ public class Config_MenuMain_MoreGames extends Config_MenuMain_Base {
 	
 	@Override
 	public int getIconResID() {
-		return R.drawable.ic_colours_tube;
+		return R.drawable.ic_action_wizard_white;
 	}
 	
 	

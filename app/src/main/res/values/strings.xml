@@ -100,7 +100,12 @@
 	<string name="app_chessboardscanner_name_paid">Chess Position Scanner, Editor and Analyzer (No Ads)</string>
 	<string name="app_chessboardscanner_advertising1">App which scans and analysis 2D chess boards.</string>
 	<string name="app_chessboardscanner_advertising2">Capture from other screens and analyse positions.</string>
-	
+
+    <string name="app_words_de_for_bg_name">German Words Exercises for Bulgarians</string>
+    <string name="app_words_de_for_bg_name_paid">German Words Exercises for Bulgarians (No Ads)</string>
+    <string name="app_words_de_for_bg_advertising1">Play Cards with Words and enrich Your passive Memory.</string>
+    <string name="app_words_de_for_bg_advertising2">Affirm with Practice by Playing.</string>
+
     <string name="loading">Loading &#8230;</string>
     <string name="button_start">Start</string>
     

@@ -27,7 +27,7 @@ public class Config_MenuMain_Colors extends Config_MenuMain_Base {
 	
 	@Override
 	public int getIconResID() {
-		return R.drawable.ic_colours;
+		return R.drawable.ic_action_gear_white;
 	}
 	
 	@Override
@@ -50,6 +50,7 @@ public class Config_MenuMain_Colors extends Config_MenuMain_Base {
 					
 					Intent i = new Intent(currentActivity, Activity_Menu_Colours_Base.class);
 					currentActivity.startActivity(i);
+					//currentActivity.navigateUpTo(i);
 				}
 			}
 		};
