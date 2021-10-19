@@ -163,7 +163,8 @@
     <string name="colour_scheme_violet_mauve">Violet Mauve</string>
     <string name="colour_scheme_gray">Gray</string>
     <string name="colour_scheme_brown">Brown</string>
-    
+    <string name="colour_scheme_blue_sky_on_gray">Blue Sky on gray</string>
+
     <string name="menu_difficulty">Difficulty</string>
     <string name="menu_difficulty_desc">Difficulty Selection</string>
     <string name="menu_difficulty_1">Level 1</string>

@@ -11,21 +11,25 @@ public class DrawingUtils {
 	
 	
 	public static void drawRoundRectangle(Canvas canvas, Paint paint, RectF rect, int radius) {
-		canvas.drawRoundRect(rect, radius, radius, paint);
+		float radx = radius;//rect.width() / (float) 12;
+		float rady = radius;//rect.height() / (float) 12;
+		canvas.drawRoundRect(rect, radx, rady, paint);
 	}
 	
 	
 	public static void drawRoundRectangle(Canvas canvas, Paint paint, RectF rect) {
-		float rady = rect.height() / (float) 12;
-		float radx = rect.width() / (float) 12;
+		drawRoundRectangle(canvas, paint, rect, 0);
+	}
+
+
+	private static void drawRoundTextArea(Canvas canvas, Paint paint, RectF rect, int radius) {
+		float rady = radius;//rect.height() / (float) 12;
+		float radx = radius;//rect.width() / (float) 12;
 		canvas.drawRoundRect(rect, radx, rady, paint);
 	}
-	
-	
+
 	public static void drawRoundTextArea(Canvas canvas, Paint paint, RectF rect) {
-		float rady = rect.height() / (float) 3;
-		float radx = rect.width() / (float) 3;
-		canvas.drawRoundRect(rect, radx, rady, paint);
+		drawRoundTextArea(canvas, paint, rect, 50);
 	}
 	
 	

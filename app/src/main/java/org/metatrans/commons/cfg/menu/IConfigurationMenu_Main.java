@@ -19,6 +19,7 @@ public interface IConfigurationMenu_Main extends IConfigurationEntry {
 	public static int CFG_MENU_COMPANY_ONLINE 		= 10;
 	public static int CFG_MENU_PAID_VERSION	 		= 11;
 	public static int CFG_MENU_INVITE_FRIENDS		= 12;
-	
+	public static int CFG_MENU_EXIT			 		= 18;
+
 	public Runnable getAction();
 }

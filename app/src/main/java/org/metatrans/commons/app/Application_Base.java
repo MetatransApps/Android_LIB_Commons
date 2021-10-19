@@ -202,8 +202,8 @@ public abstract class Application_Base extends Application {
 		StorageUtils.writeStore(this, GameData_Base.FILE_NAME_GAME_DATA, data);
 		StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
 		
-		IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
-		eventsManager.handleGameEvents_OnStart(Application_Base.getInstance().getCurrentActivity(), data);
+		//IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
+		//eventsManager.handleGameEvents_OnStart(Application_Base.getInstance().getCurrentActivity(), data);
 	}
 	
 	

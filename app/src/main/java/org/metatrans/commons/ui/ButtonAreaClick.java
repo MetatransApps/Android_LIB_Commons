@@ -15,7 +15,13 @@ public class ButtonAreaClick extends TextArea {
 		super(_rect, _text, _colour_area, _colour_text);
 		colour_selection = _colour_selection;
 	}
-	
+
+
+	public ButtonAreaClick(RectF _rect, String _text, boolean drawTextOnly, int _colour_area, int _colour_text, int _colour_selection) {
+		super(_rect, drawTextOnly, _text, _colour_area, _colour_text);
+		colour_selection = _colour_selection;
+	}
+
 	
 	public void select() {
 		setColour_Area(colour_selection);

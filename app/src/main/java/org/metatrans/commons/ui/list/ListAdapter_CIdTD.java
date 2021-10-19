@@ -13,6 +13,11 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import org.metatrans.commons.Activity_Base;
+import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
+import org.metatrans.commons.cfg.colours.IConfigurationColours;
+
 
 public class ListAdapter_CIdTD extends BaseAdapter {
 	
@@ -25,7 +30,7 @@ public class ListAdapter_CIdTD extends BaseAdapter {
 	private int resID_icon;
 	private int resID_title;
 	private int resID_description;
-	
+
 	private int textcolour_backup = -123;
 	
 	
@@ -87,11 +92,16 @@ public class ListAdapter_CIdTD extends BaseAdapter {
         ImageView imageView = (ImageView) convertView.findViewById(resID_icon);
         TextView txtTitle = (TextView) convertView.findViewById(resID_title);
         TextView txtDesc = (TextView) convertView.findViewById(resID_description);
-        
+
+        //Set text color
+        IConfigurationColours coloursCfg = ConfigurationUtils_Colours.getConfigByID(((Application_Base)((Activity_Base) convertView.getContext()).getApplication()).getUserSettings().uiColoursID);
+        txtTitle.setTextColor(Color.WHITE);//coloursCfg.getColour_Square_White());
+        txtDesc.setTextColor(Color.WHITE);//coloursCfg.getColour_Square_White());
+
         if (textcolour_backup == -123) {
         	textcolour_backup = txtDesc.getCurrentTextColor();
         }
-        
+
         //Fill with data
         RowItem_CIdTD rowItem = (RowItem_CIdTD) getItem(position);
         radiobutton.setChecked(rowItem.isChecked());

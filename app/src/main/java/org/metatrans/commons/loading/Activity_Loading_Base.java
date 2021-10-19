@@ -78,15 +78,6 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 		return ((Application_Base)getApplication()).getGameData();
 	}
 	
-	
-	protected void load() {
-		try {
-			if (System.currentTimeMillis() - timestamp_created < 3000) {
-				Thread.sleep(3000 - (System.currentTimeMillis() - timestamp_created));	
-			}
-		} catch (InterruptedException e) {}
-	}
-	
 	protected abstract Class<? extends Activity_Base> getNextActivityClass();
 	
 	protected abstract Class<? extends Activity_Base> getActivityClass_Menu2();
@@ -116,7 +107,7 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 	
 	
 	protected int getRateReviewIconID() {
-		return R.drawable.ic_hearts;
+		return R.drawable.ic_vote_thumb_up_gray1;
 	}
 	
 	
@@ -251,19 +242,23 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 		
 		//Add achievements and leaderboard view
 		RectF rectf_leaderboards = view_loading.getRectangle_LeaderBoards();
-		View _view_leaderboards = Application_Base.getInstance().getEngagementProvider().getLeaderboardsProvider().getLeaderboardView(coloursCfg, rectf_leaderboards);
-		View _view_achievements = Application_Base.getInstance().getEngagementProvider().getAchievementsProvider().getAchievementsView(coloursCfg, rectf_leaderboards);
-			
-		if (_view_leaderboards != null && _view_achievements != null) {
-			if (_view_leaderboards != _view_achievements) {
-				throw new IllegalStateException("_view_leaderboards != _view_achievements");
+
+		if (rectf_leaderboards != null) {
+
+			View _view_leaderboards = Application_Base.getInstance().getEngagementProvider().getLeaderboardsProvider().getLeaderboardView(coloursCfg, rectf_leaderboards);
+			View _view_achievements = Application_Base.getInstance().getEngagementProvider().getAchievementsProvider().getAchievementsView(coloursCfg, rectf_leaderboards);
+
+			if (_view_leaderboards != null && _view_achievements != null) {
+				if (_view_leaderboards != _view_achievements) {
+					throw new IllegalStateException("_view_leaderboards != _view_achievements");
+				}
 			}
-		}
-		
-		System.out.println("Activity_Loading_Base:  onResume> rectf_leaderboards=" + rectf_leaderboards);
-		
-		if (_view_leaderboards != null) {
-			frame.addView(_view_leaderboards);
+
+			System.out.println("Activity_Loading_Base:  onResume> rectf_leaderboards=" + rectf_leaderboards);
+
+			if (_view_leaderboards != null) {
+				frame.addView(_view_leaderboards);
+			}
 		}
 	}
 	
@@ -306,37 +301,8 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 			//Attach top view
 			dettachTopViews(frame);
 			attachTopViews(frame);
-			
-			
-			//Backup CFG
-			//old_colours_cfg_id = coloursCfg.getID();
-			
 
-			getExecutor().execute(new Runnable() {
-				
-				@Override
-				public void run() {
-					
-					try {
-						View_Loading_Base view = (View_Loading_Base) findViewById(VIEW_ID_LOADING);
-						
-						while (!view.isInitilized()) {
-							try {
-								Thread.sleep(99);
-							} catch (InterruptedException e) {}
-						}
-						
-						
-						view.initPiecesBitmaps();
-						
-					} catch(Exception e) {
-						e.printStackTrace();
-					}
-				}
 
-			});
-			
-			
 			getExecutor().execute(new Runnable() {
 				
 				@Override
@@ -357,9 +323,40 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 				}
 
 			});
-		//}
+
+		getExecutor().execute(new Runnable() {
+
+			@Override
+			public void run() {
+
+				try {
+
+					try {
+						//Wait images to fully load in the memory before drawing them on the screen
+						Thread.sleep(500);
+					} catch (InterruptedException e) {}
+
+					View_Loading_Base view = (View_Loading_Base) findViewById(VIEW_ID_LOADING);
+					view.initPiecesBitmaps();
+
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+
+		});
 	}
-	
+
+
+	protected void load() {
+		try {
+			//Wait images to fully load in the memory before drawing them on the screen
+			if (System.currentTimeMillis() - timestamp_created < 1000) {
+				Thread.sleep(1000 - (System.currentTimeMillis() - timestamp_created));
+			}
+		} catch (InterruptedException e) {}
+	}
+
 	
 	@Override
 	public void onBackPressed() {

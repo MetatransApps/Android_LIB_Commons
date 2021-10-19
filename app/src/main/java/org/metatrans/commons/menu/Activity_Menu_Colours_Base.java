@@ -37,7 +37,12 @@ public class Activity_Menu_Colours_Base extends Activity_Base {
 		int currOrderNumber = ConfigurationUtils_Colours.getOrderNumber(((Application_Base)getApplication()).getUserSettings().uiColoursID);
 		
 		LayoutInflater inflater = LayoutInflater.from(this);
-		ViewGroup frame = ListViewFactory.create_CITD_ByXML(this, inflater, buildRows(currOrderNumber), currOrderNumber, new OnItemClickListener_Menu());
+
+		IConfigurationColours coloursCfg = ConfigurationUtils_Colours.getConfigByID(((Application_Base) getApplication()).getUserSettings().uiColoursID);
+
+		int color_background = coloursCfg.getColour_Delimiter();
+
+		ViewGroup frame = ListViewFactory.create_CITD_ByXML(this, inflater, buildRows(currOrderNumber), color_background, currOrderNumber, new OnItemClickListener_Menu());
 		
 		setContentView(frame);
 		

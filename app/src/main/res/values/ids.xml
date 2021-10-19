@@ -10,5 +10,6 @@
     <item name="ic_colours_redcool" type="drawable"/>
     <item name="ic_colours_redwarm" type="drawable"/>
     <item name="ic_colours_violetmauve" type="drawable"/>
+    <item name="ic_colours_blueskyongray" type="drawable"/>
     
 </resources>

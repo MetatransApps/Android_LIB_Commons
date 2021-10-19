@@ -10,47 +10,42 @@ import android.annotation.SuppressLint;
 public class ConfigurationUtils_Base {
 	
 	
-	private static Map<String, ConfigurationUtils_Base> all_cfgs = new HashMap<String, ConfigurationUtils_Base>();
+	private static final Map<String, ConfigurationUtils_Base> all_cfgs = new HashMap<String, ConfigurationUtils_Base>();
 	
 	
 	private IConfigurationEntry[] ALL_CFGs;
 	//private static String[] ALL_Names;
-	
+
+
 	@SuppressLint("UseSparseArrays")
 	private final Map<Integer, IConfigurationEntry> mapping_id = new HashMap<Integer, IConfigurationEntry>();
 	//private static final Map<String, IConfigurationEntry> mapping_name = new HashMap<String, IConfigurationEntry>();
-	
-	//private Context context;
+
+
 	private boolean initialized = false;
-	
-	
-	public static ConfigurationUtils_Base getInstance(String tag) {
-		
-		synchronized (all_cfgs) {
-			
-			ConfigurationUtils_Base cur = all_cfgs.get(tag);
-			if (cur == null) {
-				throw new IllegalStateException("CFG instance with tag '" + tag + "' not found.");
-			}
-			
-			return cur;
-		}
-	}
 	
 
 	protected static void createInstance(String tag, ConfigurationUtils_Base instance, IConfigurationEntry[] cfgs_entries) {
-		
+
+		/*if (true) {
+			throw new UnsupportedOperationException("Fix menus!");
+		}*/
+
 		synchronized (all_cfgs) {
 			
 			ConfigurationUtils_Base new_inst = all_cfgs.get(tag);
+
 			if (new_inst != null) {
 				throw new IllegalStateException("CFG instance with tag '" + tag + "' already exists.");
 			}
 			
 			new_inst = instance;
+
 			if (new_inst == null) {
+
 				new_inst = new ConfigurationUtils_Base();
 			}
+
 			new_inst.init(cfgs_entries);
 			
 			all_cfgs.put(tag, new_inst);
@@ -58,17 +53,15 @@ public class ConfigurationUtils_Base {
 	}
 	
 	
-	protected void init(/*Context _context,*/ IConfigurationEntry[] cfgs_entries) {
-		
-		//context = _context;
+	protected void init(IConfigurationEntry[] cfgs_entries) {
 		
 		if (!initialized) { 
 			
 			 ALL_CFGs = cfgs_entries;
-			 
+
 			 //ALL_Names = new String[ALL_CFGs.length];
-		 
-		 
+
+
 			for (int i=0; i<ALL_CFGs.length; i++) {
 				
 				Integer id = ALL_CFGs[i].getID();
@@ -78,8 +71,10 @@ public class ConfigurationUtils_Base {
 				IConfigurationEntry cfg = ALL_CFGs[i];
 				
 				if (mapping_id.containsKey(id)) {
+
 					throw new IllegalStateException("Duplicated cfg id: " + id);
 				}
+
 				mapping_id.put(id, cfg);
 				
 				//if (mapping_name.containsKey(id)) {
@@ -92,8 +87,24 @@ public class ConfigurationUtils_Base {
 			initialized = true;
 		}
 	}
-	
-	
+
+
+	public static ConfigurationUtils_Base getInstance(String tag) {
+
+		synchronized (all_cfgs) {
+
+			ConfigurationUtils_Base cur = all_cfgs.get(tag);
+
+			if (cur == null) {
+
+				throw new IllegalStateException("CFG instance with tag '" + tag + "' not found.");
+			}
+
+			return cur;
+		}
+	}
+
+
 	public IConfigurationEntry[] getAll() {
 		return ALL_CFGs;
 	}
@@ -105,12 +116,17 @@ public class ConfigurationUtils_Base {
 	*/
 	
 	public int getOrderNumber(int cfgID) {
+
 		for (int i=0; i<ALL_CFGs.length; i++) {
+
 			Integer id = ALL_CFGs[i].getID();
+
 			if (id == cfgID) {
+
 				return i;
 			}
 		}
+
 		throw new IllegalStateException("CFG identifier " + cfgID + " not found.");
 	}
 	

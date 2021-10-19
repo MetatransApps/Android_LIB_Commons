@@ -4,6 +4,7 @@ package org.metatrans.commons.ui.list;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +66,8 @@ public class ListAdapter_IdT extends BaseAdapter {
         
         ImageView imageView = (ImageView) convertView.findViewById(resID_icon);
         TextView txtTitle = (TextView) convertView.findViewById(resID_title);
-        
+        txtTitle.setTextColor(Color.WHITE);//coloursCfg.getColour_Square_White());
+
         //Fill with data
         RowItem_IdT rowItem = (RowItem_IdT) getItem(position);
         imageView.setImageDrawable(rowItem.getDrawable());

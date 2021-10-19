@@ -20,19 +20,29 @@ public class ListViewFactory {
 	
 	public static ViewGroup create_ITD_ByXML(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, OnItemClickListener listener) {
 		
-		return create_ITD_ByXML(activity, inflater, rowItems, listener, AbsListView.CHOICE_MODE_NONE);
+		return create_ITD_ByXML(activity, inflater, rowItems, -1, listener, AbsListView.CHOICE_MODE_NONE);
+	}
+
+
+	public static ViewGroup create_ITD_ByXML(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, int color_background, OnItemClickListener listener) {
+
+		return create_ITD_ByXML(activity, inflater, rowItems, color_background, listener, AbsListView.CHOICE_MODE_NONE);
 	}
 
 	
 	public static ViewGroup create_ITD_ByXML_NoChoice(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, OnItemClickListener listener) {
-		return create_ITD_ByXML(activity, inflater, rowItems, listener, AbsListView.CHOICE_MODE_NONE);
+		return create_ITD_ByXML(activity, inflater, rowItems, -1, listener, AbsListView.CHOICE_MODE_NONE);
 	}
 	
 	
-	private static ViewGroup create_ITD_ByXML(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, OnItemClickListener listener, int mode) {
+	private static ViewGroup create_ITD_ByXML(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, int color_background, OnItemClickListener listener, int mode) {
 		
 		FrameLayout view = (FrameLayout) inflater.inflate(R.layout.commons_listview_layout, null);
-		
+
+		if (color_background != -1) {
+			view.setBackgroundColor(color_background);
+		}
+
 		ListAdapter_IdTD adapter = new ListAdapter_IdTD(activity, rowItems,
 				R.layout.commons_listview_item_itd,
 				R.id.commons_listitem_icon,
@@ -47,12 +57,21 @@ public class ListViewFactory {
 		
 	    return view;
 	}
-	
-	
+
+
 	public static ViewGroup create_CITD_ByXML(Activity activity, LayoutInflater inflater, List<RowItem_CIdTD> rowItems, int initialSelection, OnItemClickListener listener) {
+		return create_CITD_ByXML(activity, inflater, rowItems, -1, initialSelection, listener);
+	}
+
+
+	public static ViewGroup create_CITD_ByXML(Activity activity, LayoutInflater inflater, List<RowItem_CIdTD> rowItems, int color_background, int initialSelection, OnItemClickListener listener) {
 		
 		FrameLayout view = (FrameLayout) inflater.inflate(R.layout.commons_listview_layout, null);
-		
+
+		if (color_background != -1) {
+			view.setBackgroundColor(color_background);
+		}
+
 		ListAdapter_CIdTD adapter = new ListAdapter_CIdTD(activity, rowItems,
 				R.layout.commons_listview_item_citd,
 				R.id.commons_listitem_radio,

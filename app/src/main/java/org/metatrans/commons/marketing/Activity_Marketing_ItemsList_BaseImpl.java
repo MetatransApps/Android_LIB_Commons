@@ -13,6 +13,8 @@ import android.widget.AdapterView;
 import org.metatrans.commons.Activity_Base;
 import org.metatrans.commons.R;
 import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
+import org.metatrans.commons.cfg.colours.IConfigurationColours;
 import org.metatrans.commons.cfg.publishedapp.IHomeAdInfo;
 import org.metatrans.commons.events.api.IEvent_Base;
 import org.metatrans.commons.events.api.IEventsManager;
@@ -39,8 +41,15 @@ public abstract class Activity_Marketing_ItemsList_BaseImpl extends Activity_Bas
 		try {
 			
 			LayoutInflater inflater = LayoutInflater.from(this);
+
 			ViewGroup frame = ListViewFactory.create_ITD_ByXML(this, inflater, buildRows(), new OnItemClickListener_Menu());
-			
+
+			IConfigurationColours coloursCfg = ConfigurationUtils_Colours.getConfigByID(((Application_Base) getApplication()).getUserSettings().uiColoursID);
+
+			int color_background = coloursCfg.getColour_Delimiter();
+
+			frame.setBackgroundColor(color_background);
+
 			setContentView(frame);
 			
 			setBackgroundPoster(R.id.commons_listview_frame, 55);

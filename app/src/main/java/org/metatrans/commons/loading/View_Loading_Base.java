@@ -33,9 +33,7 @@ public abstract class View_Loading_Base extends View {
 	int STEP = 10;
 	
 	private List<MovingEntry> entries;
-	
-	private boolean initialized;
-	
+
 	
 	private RectF rectf_main;
 	private RectF rectf_buttons;
@@ -97,11 +95,6 @@ public abstract class View_Loading_Base extends View {
 	protected abstract Bitmap getBitmapBackground();//Can be null
 	
 	
-	protected boolean isInitilized() {
-		return initialized;
-	}
-	
-	
 	public RectF getRectangle_LeaderBoards() {
 		return rectf_leaderboards;
 	}
@@ -136,7 +129,7 @@ public abstract class View_Loading_Base extends View {
 		
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 		
-		if (!initialized) {
+		//if (!initialized) {
 			
 			rectf_main.left = 0;
 			rectf_main.right = getMeasuredWidth();
@@ -217,8 +210,8 @@ public abstract class View_Loading_Base extends View {
 			this.setMeasuredDimension( (int) (rectf_main.right - rectf_main.left), (int) (rectf_main.bottom - rectf_main.top) );
 			
 			
-			initialized = true;
-		}
+			//initialized = true;
+		//}
 	}
 	
 	

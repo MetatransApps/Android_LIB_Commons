@@ -6,6 +6,9 @@ import java.util.List;
 
 import org.metatrans.commons.Activity_Base;
 import org.metatrans.commons.R;
+import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
+import org.metatrans.commons.cfg.colours.IConfigurationColours;
 import org.metatrans.commons.cfg.menu.IConfigurationMenu_Main;
 import org.metatrans.commons.ui.Toast_Base;
 import org.metatrans.commons.ui.list.ListViewFactory;
@@ -13,6 +16,7 @@ import org.metatrans.commons.ui.list.RowItem_IdTD;
 import org.metatrans.commons.ui.utils.BitmapUtils;
 
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -37,7 +41,12 @@ public abstract class Activity_Menu_Base extends Activity_Base {
 			entries = getEntries();
 			
 			LayoutInflater inflater = LayoutInflater.from(this);
-			ViewGroup frame = ListViewFactory.create_ITD_ByXML(this, inflater, buildRows(entries), new OnItemClickListener_Menu());
+
+			IConfigurationColours coloursCfg = ConfigurationUtils_Colours.getConfigByID(((Application_Base) getApplication()).getUserSettings().uiColoursID);
+
+			int color_background = coloursCfg.getColour_Delimiter();
+
+			ViewGroup frame = ListViewFactory.create_ITD_ByXML(this, inflater, buildRows(entries), color_background, new OnItemClickListener_Menu());
 			
 			setContentView(frame);
 			
@@ -95,6 +104,7 @@ public abstract class Activity_Menu_Base extends Activity_Base {
 			Drawable drawable = BitmapUtils.createDrawable(this, BitmapUtils.fromResource(this, entry.getIconResID(), getIconSize()));
 			
 			RowItem_IdTD item = new RowItem_IdTD(drawable, title, description);
+
 			rowItems.add(item);
 		}
 		
