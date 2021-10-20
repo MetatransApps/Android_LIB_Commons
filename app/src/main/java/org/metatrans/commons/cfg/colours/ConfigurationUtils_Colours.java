@@ -21,11 +21,11 @@ public class ConfigurationUtils_Colours {
 		new Config_Colours_RedCool(),
 		new Config_Colours_GreenCool(),
 		new Config_Colours_BlueSkyOnGray(),
-		new Config_Colours_AutoByBaseColor(12, 186,225,255),
-		new Config_Colours_AutoByBaseColor(13, 186,255,201),
+		//new Config_Colours_AutoByBaseColor(12, 186,225,255),
+		//new Config_Colours_AutoByBaseColor(13, 186,255,201),
 		//new Config_Colours_AutoByBaseColor(14, 255,255,186), //Too light yellow
-		new Config_Colours_AutoByBaseColor(15, 255,223,186),
-		new Config_Colours_AutoByBaseColor(16, 255,179,186),
+		//new Config_Colours_AutoByBaseColor(15, 255,223,186),
+		//new Config_Colours_AutoByBaseColor(16, 255,179,186),
 		//new Config_Colours_AutoByBaseColor(17, 160, 221, 160),
 
 	};

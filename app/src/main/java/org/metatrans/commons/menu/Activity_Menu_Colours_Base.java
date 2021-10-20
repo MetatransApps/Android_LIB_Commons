@@ -40,7 +40,7 @@ public class Activity_Menu_Colours_Base extends Activity_Base {
 
 		IConfigurationColours coloursCfg = ConfigurationUtils_Colours.getConfigByID(((Application_Base) getApplication()).getUserSettings().uiColoursID);
 
-		int color_background = coloursCfg.getColour_Delimiter();
+		int color_background = coloursCfg.getColour_Background();
 
 		ViewGroup frame = ListViewFactory.create_CITD_ByXML(this, inflater, buildRows(currOrderNumber), color_background, currOrderNumber, new OnItemClickListener_Menu());
 		

@@ -9,6 +9,9 @@ import org.metatrans.commons.R;
 public class Config_Colours_BlueSkyOnGray extends Config_Colours_Base {
 
 
+	private static float factor = 0.5f;
+
+
 	public Config_Colours_BlueSkyOnGray() {
 		super();
 	}
@@ -34,7 +37,7 @@ public class Config_Colours_BlueSkyOnGray extends Config_Colours_Base {
 
 	@Override
 	public int getColour_Background() {
-		return Color.rgb((int) (0.75 * 153), (int) (0.75 * 153), (int) (0.75 * 153));
+		return Color.rgb((int) (factor * 153), (int) (factor * 153), (int) (factor * 153));
 	}
 
 
@@ -45,7 +48,7 @@ public class Config_Colours_BlueSkyOnGray extends Config_Colours_Base {
 	
 	
 	public int getColour_Square_Black() {
-		return Color.rgb((int) (0.75 * 135), (int) (0.75 * 206), (int) (0.75 * 235));
+		return Color.rgb((int) (factor * 135), (int) (factor * 206), (int) (factor * 235));
 	}
 	
 	

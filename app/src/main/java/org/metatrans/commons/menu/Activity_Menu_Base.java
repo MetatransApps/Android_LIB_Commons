@@ -44,7 +44,7 @@ public abstract class Activity_Menu_Base extends Activity_Base {
 
 			IConfigurationColours coloursCfg = ConfigurationUtils_Colours.getConfigByID(((Application_Base) getApplication()).getUserSettings().uiColoursID);
 
-			int color_background = coloursCfg.getColour_Delimiter();
+			int color_background = coloursCfg.getColour_Background();
 
 			ViewGroup frame = ListViewFactory.create_ITD_ByXML(this, inflater, buildRows(entries), color_background, new OnItemClickListener_Menu());
 			

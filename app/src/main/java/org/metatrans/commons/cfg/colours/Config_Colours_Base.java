@@ -9,7 +9,7 @@ import android.graphics.Color;
 public abstract class Config_Colours_Base extends ConfigurationEntry_Base implements IConfigurationColours {
 	
 
-	private static final float percent = 1.00f;
+	private static final float percent = 0.9f;
 
 
 	public Config_Colours_Base() {

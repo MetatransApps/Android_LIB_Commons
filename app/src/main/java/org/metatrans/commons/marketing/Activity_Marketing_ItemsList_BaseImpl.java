@@ -46,7 +46,7 @@ public abstract class Activity_Marketing_ItemsList_BaseImpl extends Activity_Bas
 
 			IConfigurationColours coloursCfg = ConfigurationUtils_Colours.getConfigByID(((Application_Base) getApplication()).getUserSettings().uiColoursID);
 
-			int color_background = coloursCfg.getColour_Delimiter();
+			int color_background = coloursCfg.getColour_Background();
 
 			frame.setBackgroundColor(color_background);
 
