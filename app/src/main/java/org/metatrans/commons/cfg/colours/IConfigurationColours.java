@@ -18,6 +18,7 @@ public interface IConfigurationColours extends IConfigurationEntry {
 	public static int CFG_COLOUR_BLUE_STRONG 		= 10;
 	public static int CFG_COLOUR_BLUE_SKY_ON_GRAY 	= 11;
 
+
 	public int getColour_Background();
 	public int getColour_Delimiter();
 	public int getColour_Square_Black();
