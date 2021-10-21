@@ -4,8 +4,6 @@ package org.metatrans.commons.loading;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.events.api.IEvent_Base;
 import org.metatrans.commons.events.api.IEventsManager;
-import org.metatrans.commons.marketing.Activity_Marketing_AppList;
-import org.metatrans.commons.ui.Toast_Base;
 import org.metatrans.commons.web.WebUtils;
 
 import android.app.Activity;
@@ -64,20 +62,6 @@ public class OnTouchListener_Loading implements OnTouchListener {
 			
 			view.selectButton_Start();
 			
-		} else if (view.isOverMoreGamesButton(x, y)) {
-			
-			view.selectButton_MoreGames();
-		} else if (view.isOverSelectColorButton(x, y)) {
-			
-			view.selectButton_SelectColor();
-		} else if (view.isOverSelectLevelButton(x, y)) {
-	
-			view.selectButton_SelectLevel();
-
-		} else if (view.isOverRateButton(x, y)) {
-			
-			view.selectButton_Rate();
-			
 		} else {
 			view.pushed(x, y);	
 		}
@@ -98,49 +82,6 @@ public class OnTouchListener_Loading implements OnTouchListener {
 			view.deselectButton_Start();
 			
 		}
-		
-		
-		if (view.isOverMoreGamesButton(x, y)) {
-			
-			view.selectButton_MoreGames();
-
-		} else {
-			
-			view.deselectButton_MoreGames();
-			
-		}
-		
-		
-		if (view.isOverSelectColorButton(x, y)) {
-			
-			view.selectButton_SelectColor();
-
-		} else {
-			
-			view.deselectButton_SelectColor();
-			
-		}
-		
-		
-		if (view.isOverSelectLevelButton(x, y)) {
-			
-			view.selectButton_SelectLevel();
-
-		} else {
-			
-			view.deselectButton_SelectLevel();
-			
-		}
-		
-		if (view.isOverRateButton(x, y)) {
-			
-			view.selectButton_Rate();
-			
-		} else {
-			
-			view.deselectButton_Rate();
-			
-		}
 	}
 	
 	
@@ -152,37 +93,14 @@ public class OnTouchListener_Loading implements OnTouchListener {
 		
 		
 		view.deselectButton_Start();
-		view.deselectButton_MoreGames();
-		view.deselectButton_SelectColor();
-		view.deselectButton_SelectLevel();
-		view.deselectButton_Rate();
-		
+
+
 		view.invalidate();
 		
 		
 		if (view.isOverStartButton(x, y)) {
 			Intent i = new Intent(view.getContext(), ((Activity_Loading_Base)view.getContext()).getNextActivityClass());
 			view.getContext().startActivity(i);
-		}
-		
-		if (view.isOverMoreGamesButton(x, y)) {
-			Intent i = new Intent(view.getContext(), Activity_Marketing_AppList.class);
-			view.getContext().startActivity(i);
-		}
-		
-		if (view.isOverSelectColorButton(x, y)) {
-			Intent i = new Intent(view.getContext(), ((Activity_Loading_Base)view.getContext()).getActivityClass_Menu1());
-			view.getContext().startActivity(i);
-		}
-		
-		if (view.isOverSelectLevelButton(x, y)) {
-			Class menu2 = ((Activity_Loading_Base)view.getContext()).getActivityClass_Menu2();
-			if (menu2 != null) {
-				Intent i = new Intent(view.getContext(), menu2);
-				view.getContext().startActivity(i);
-			} else {
-				Toast_Base.showToast_InBottom_Long(view.getContext(), "Under construction");
-			}
 		}
 		
 		if (view.isOverRateButton(x, y)) {

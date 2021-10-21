@@ -16,6 +16,7 @@ import org.metatrans.commons.menu.Activity_Menu_Colours_Base;
 import org.metatrans.commons.model.GameData_Base;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.RectF;
 import android.os.Bundle;
@@ -49,8 +50,11 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 		
 		
 		boolean currentGameCompleted = getGameData().isCountedAsCompleted();
-		((Application_Base)getApplication()).getEngagementProvider().getLeaderboardsProvider().setEnabled(currentGameCompleted);
-		
+
+
+		if (((Application_Base)getApplication()).getEngagementProvider().getLeaderboardsProvider() != null) {
+			((Application_Base) getApplication()).getEngagementProvider().getLeaderboardsProvider().setEnabled(currentGameCompleted);
+		}
 		
 		super.onCreate(savedInstanceState);
 		
@@ -82,7 +86,7 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 	
 	protected abstract Class<? extends Activity_Base> getActivityClass_Menu2();
 	
-	protected abstract View_Loading_Base getLoadingView();
+	protected abstract View getLoadingView();
 	
 	protected abstract IConfigurationColours getColoursCfg();
 	
@@ -202,7 +206,10 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 		}
 		getSocialProvider().detachSignInView(frame);
 		getSocialProvider().detachLikeView(frame);
-		Application_Base.getInstance().getEngagementProvider().getLeaderboardsProvider().detachLeaderboardView(frame);
+
+		if (Application_Base.getInstance().getEngagementProvider().getLeaderboardsProvider() != null) {
+			Application_Base.getInstance().getEngagementProvider().getLeaderboardsProvider().detachLeaderboardView(frame);
+		}
 	}
 	
 	
@@ -210,16 +217,10 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 		
 		//View_Loading_Base view_loading = (View_Loading_Base) frame.findViewById(VIEW_ID_LOADING);
 		//view_loading.createButtons();
-		
-		View_Loading_Base view_loading = (View_Loading_Base) frame.findViewById(VIEW_ID_LOADING);
+
+		ViewWithLeaderBoard view_loading = frame.findViewById(VIEW_ID_LOADING);
 		
 		IConfigurationColours coloursCfg = getColoursCfg();
-		
-		//Add invite friends view
-		View view_invite_friends = new View_Social_InviteFriends(this, view_loading.getRectangle_InviteFriends(),
-			getSocialProvider(), coloursCfg);
-		view_invite_friends.setId(VIEW_ID_INVITE);
-		frame.addView(view_invite_friends);
 		
 		//Add SignIn view
 		View view_social = getSocialProvider().getSignInView(coloursCfg);
@@ -232,18 +233,18 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 		//Add Like view
 		if (false && getSocialProvider().isConnected()) {
 			
-			View view_like = getSocialProvider().getLikeView(coloursCfg, view_loading.getRectangle_GooglePlus());
+			/*View view_like = getSocialProvider().getLikeView(coloursCfg, view_loading.getRectangle_GooglePlus());
 			if (view_like != null) {
 				frame.addView(view_like);
 			} else {
 				System.out.println("Like view is null");
-			}
+			}*/
 		}
 		
 		//Add achievements and leaderboard view
 		RectF rectf_leaderboards = view_loading.getRectangle_LeaderBoards();
 
-		if (rectf_leaderboards != null) {
+		if (rectf_leaderboards != null && Application_Base.getInstance().getEngagementProvider().getLeaderboardsProvider() != null) {
 
 			View _view_leaderboards = Application_Base.getInstance().getEngagementProvider().getLeaderboardsProvider().getLeaderboardView(coloursCfg, rectf_leaderboards);
 			View _view_achievements = Application_Base.getInstance().getEngagementProvider().getAchievementsProvider().getAchievementsView(coloursCfg, rectf_leaderboards);
@@ -286,15 +287,17 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 			FrameLayout frame = (FrameLayout) findViewById(getLayoutID());
 			
 			//Remove old view if exists
-			View_Loading_Base old_view = (View_Loading_Base) findViewById(VIEW_ID_LOADING);
+			View old_view = findViewById(VIEW_ID_LOADING);
+
 			if (old_view != null) {
 				frame.removeView(old_view);	
 			}
 			
 			//Add new view
-			View_Loading_Base view_loading = getLoadingView();
+			View view_loading = getLoadingView();
+
 			view_loading.setId(VIEW_ID_LOADING);
-			view_loading.setOnTouchListener(new OnTouchListener_Loading(view_loading));
+
 			frame.addView(view_loading);
 			
 			
@@ -336,7 +339,8 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 						Thread.sleep(500);
 					} catch (InterruptedException e) {}
 
-					View_Loading_Base view = (View_Loading_Base) findViewById(VIEW_ID_LOADING);
+					ViewWithLeaderBoard view = (ViewWithLeaderBoard) findViewById(VIEW_ID_LOADING);
+
 					view.initPiecesBitmaps();
 
 				} catch(Exception e) {
@@ -388,5 +392,19 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 	
 	public boolean isDone() {
 		return loaded;
+	}
+
+
+	public static abstract class ViewWithLeaderBoard extends View {
+
+
+		public ViewWithLeaderBoard(Context context) {
+			super(context);
+		}
+
+
+		public abstract RectF getRectangle_LeaderBoards();
+
+		public abstract void initPiecesBitmaps();
 	}
 }

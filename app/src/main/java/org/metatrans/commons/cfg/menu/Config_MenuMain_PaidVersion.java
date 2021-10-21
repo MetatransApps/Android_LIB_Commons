@@ -27,7 +27,8 @@ public class Config_MenuMain_PaidVersion extends Config_MenuMain_Base {
 	
 	@Override
 	public int getIconResID() {
-		return R.drawable.ic_paid_version;
+		//return R.drawable.ic_action_achievement_white;
+		return R.drawable.ic_action_heart_white;
 	}
 	
 	

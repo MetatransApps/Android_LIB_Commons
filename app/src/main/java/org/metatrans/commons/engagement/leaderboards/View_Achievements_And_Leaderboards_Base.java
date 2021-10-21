@@ -21,15 +21,15 @@ import android.view.View.OnTouchListener;
 
 
 public abstract class View_Achievements_And_Leaderboards_Base extends View implements OnTouchListener {
-	
-	
+
+
 	private boolean initialized;
 	
 	private RectF rectf_main;
 	private RectF rectangle_icon;
 	private RectF rectangle_button_leaderboards;
 	private RectF rectangle_button_achievements;
-	
+
 	private IButtonArea buttonarea_icon;
 	private IButtonArea buttonarea_button_leaderboards;
 	private IButtonArea buttonarea_button_achievements;
@@ -68,29 +68,29 @@ public abstract class View_Achievements_And_Leaderboards_Base extends View imple
 	public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-		
+
 		if (!initialized) {
-			
-			int MARGIN = 10;
-			
+
+			int MARGIN = 7;
+
 			int count_buttons = 3;
-			
+
 			rectangle_icon.left = rectf_main.left + MARGIN;
 			rectangle_icon.right = rectangle_icon.left + (1 * (rectf_main.right - rectf_main.left - (count_buttons + 1) * MARGIN)) / count_buttons;
 			rectangle_icon.top = rectf_main.top + MARGIN;
 			rectangle_icon.bottom = rectf_main.bottom - MARGIN;
-			
+
 			rectangle_button_leaderboards.left = rectangle_icon.right + MARGIN;
 			rectangle_button_leaderboards.right = rectangle_button_leaderboards.left + (1 * (rectf_main.right - rectf_main.left - (count_buttons + 1) * MARGIN)) / count_buttons;
 			rectangle_button_leaderboards.top = rectf_main.top + MARGIN;
 			rectangle_button_leaderboards.bottom = rectf_main.bottom - MARGIN;
-			
+
 			rectangle_button_achievements.left = rectangle_button_leaderboards.right + MARGIN;
 			rectangle_button_achievements.right = rectf_main.right - MARGIN;
 			rectangle_button_achievements.top = rectf_main.top + MARGIN;
 			rectangle_button_achievements.bottom = rectf_main.bottom - MARGIN;
-			
-			
+
+
 			buttonarea_icon =  new ButtonAreaClick_Image(rectangle_icon,
 					BitmapUtils.fromResource(getContext(), getResID_Icon_Leaderboard()),
 					coloursCfg.getColour_Delimiter(),
@@ -98,24 +98,24 @@ public abstract class View_Achievements_And_Leaderboards_Base extends View imple
 					coloursCfg.getColour_Square_White(),
 					false
 					);
-			
+
 			buttonarea_button_leaderboards =  new ButtonAreaClick_Image(rectangle_button_leaderboards,
 					BitmapUtils.fromResource(getContext(), getResID_Button_OpenLeaderboard()),
 					coloursCfg.getColour_Square_ValidSelection(),
 					coloursCfg.getColour_Square_MarkingSelection(),
 					false
 					);
-			
+
 			buttonarea_button_achievements =  new ButtonAreaClick_Image(rectangle_button_achievements,
 					BitmapUtils.fromResource(getContext(), getResID_Button_OpenAchievements()),
 					coloursCfg.getColour_Square_ValidSelection(),
 					coloursCfg.getColour_Square_MarkingSelection(),
 					false
 					);
-			
-			
+
+
 			initialized = true;
-			
+
 			setMeasuredDimension( (int) (rectf_main.right - rectf_main.left), (int) (rectf_main.bottom - rectf_main.top));
 		}
 	}
@@ -134,7 +134,8 @@ public abstract class View_Achievements_And_Leaderboards_Base extends View imple
 		super.onDraw(canvas);
 		
 		paint_background.setColor(coloursCfg.getColour_Delimiter());
-		DrawingUtils.drawRoundRectangle(canvas, paint_background, rectf_main);
+
+		DrawingUtils.drawRoundRectangle(canvas, paint_background, rectf_main, 50);
 		
 		buttonarea_icon.draw(canvas);
 		
@@ -250,6 +251,7 @@ public abstract class View_Achievements_And_Leaderboards_Base extends View imple
 		if (isOverButton_OpenLeaderboard(x, y)) {
 			
 			int modeID = Application_Base.getInstance().getUserSettings().modeID;
+
 			provider.getLeaderboardsProvider().openLeaderboard_LocalOnly(modeID);
 			provider.getLeaderboardsProvider().openLeaderboard(modeID);
 			

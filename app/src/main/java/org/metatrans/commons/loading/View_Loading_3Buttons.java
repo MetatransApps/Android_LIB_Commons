@@ -12,40 +12,39 @@ import org.metatrans.commons.events.api.IEvent_Base;
 import org.metatrans.commons.events.api.IEventsManager;
 import org.metatrans.commons.loading.logic.MovingEntry;
 import org.metatrans.commons.ui.ButtonAreaClick;
-import org.metatrans.commons.ui.ButtonAreaClick_Image;
 import org.metatrans.commons.ui.IButtonArea;
 import org.metatrans.commons.ui.TextArea;
-import org.metatrans.commons.ui.utils.BitmapUtils;
 import org.metatrans.commons.ui.utils.DrawingUtils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.View;
 
 
-public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLeaderBoard {
+public abstract class View_Loading_3Buttons extends Activity_Loading_Base.ViewWithLeaderBoard implements View.OnTouchListener {
+	
+	int MAX_ITERS = 4;
 
-
-	private static final int MAX_ITERS = 4;
-
-
+	int STEP = 10;
+	
 	private List<MovingEntry> entries;
 
 	
 	private RectF rectf_main;
-
-	private RectF rectf_leaderboards;
 	private RectF rectf_button_start;
-	
-	private RectF rectf_button_googleplus;
-	private RectF rectf_button_rate_review;
+	private RectF rectf_button_menu2;
+	private RectF rectf_button_menu1;
 	
 	private TextArea textarea_label_loading;
 	private IButtonArea buttonarea_start;
+	private IButtonArea buttonarea_menu2;
+	private IButtonArea buttonarea_menu1;
 	
 	protected Paint paint_background;
 	protected Paint paint_images;
@@ -56,17 +55,15 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 	private boolean sent_event_all_stoped = false;
 	
 	
-	public View_Loading_Base(Context context) {
-		
+	public View_Loading_3Buttons(Context context) {
+
 		super(context);
 		
 		rectf_main 					= new RectF();
 		rectf_button_start 			= new RectF();
 		
-		rectf_leaderboards 			= new RectF();
-		
-		rectf_button_googleplus		= new RectF();
-		rectf_button_rate_review	= new RectF();
+		rectf_button_menu2			= new RectF();
+		rectf_button_menu1			= new RectF();
 		
 		paint_background 			= new Paint();
 		paint_images 				= new Paint();
@@ -83,12 +80,17 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 	
 	
 	public RectF getRectangle_LeaderBoards() {
-		return rectf_leaderboards;
+		return null;
+	}
+	
+	
+	public RectF getRectangle_InviteFriends() {
+		return null;
 	}
 	
 	
 	public RectF getRectangle_GooglePlus() {
-		return rectf_button_googleplus;
+		return null;
 	}
 	
 	
@@ -110,69 +112,45 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-		
-		//if (!initialized) {
+
+		rectf_main.left = 0;
+		rectf_main.right = getMeasuredWidth();
+		rectf_main.top = 0;
+		rectf_main.bottom = getMeasuredHeight();
+
+		int MARGIN = 10;
+		int buttons_width = getMeasuredWidth() / 2;
+		int buttons_height =  getMeasuredHeight() / 11;
+		int buttons_distance =  (getMeasuredHeight() - 6 * buttons_height) / 7;
+
+		if (getMeasuredWidth() > getMeasuredHeight()) {
+			buttons_height *= 1.5;
+			buttons_distance =  (getMeasuredHeight() - 6 * buttons_height) / 7;
+		}
+
+		rectf_button_start.left = (rectf_main.right - rectf_main.left) / 2 - buttons_width / 2;
+		rectf_button_start.right = (rectf_main.right - rectf_main.left) / 2 + buttons_width / 2;
+		rectf_button_start.top = (rectf_main.bottom - rectf_main.top) / 2 - buttons_height / 2;
+		rectf_button_start.bottom = (rectf_main.bottom - rectf_main.top) / 2 + buttons_height / 2;
+
+		rectf_button_menu2.left = rectf_button_start.left;
+		rectf_button_menu2.right = rectf_button_start.right;
+		rectf_button_menu2.top = (rectf_main.bottom - rectf_main.top) / 2 - (rectf_main.bottom - rectf_main.top) / 4 - buttons_height / 2;
+		rectf_button_menu2.bottom = rectf_button_menu2.top + buttons_height;
+
+		rectf_button_menu1.left = rectf_button_start.left;
+		rectf_button_menu1.right = rectf_button_start.right;
+		rectf_button_menu1.top = (rectf_main.bottom - rectf_main.top) / 2 + (rectf_main.bottom - rectf_main.top) / 4 - buttons_height / 2;
+		rectf_button_menu1.bottom = rectf_button_menu1.top + buttons_height;
+
+
+		createButtons();
+
+
+		this.setMeasuredDimension( (int) (rectf_main.right - rectf_main.left), (int) (rectf_main.bottom - rectf_main.top) );
+
 			
-			rectf_main.left = 0;
-			rectf_main.right = getMeasuredWidth();
-			rectf_main.top = 0;
-			rectf_main.bottom = getMeasuredHeight();
-			
-			int MARGIN = 10;
-			int buttons_width = getMeasuredWidth() / 2;
-			int buttons_height =  getMeasuredHeight() / 11;
-			int buttons_distance =  (getMeasuredHeight() - 6 * buttons_height) / 7;
-
-			if (getMeasuredWidth() > getMeasuredHeight()) {
-				buttons_height *= 1.5;
-				buttons_distance =  (getMeasuredHeight() - 6 * buttons_height) / 7;
-			}
-
-			rectf_button_start.left = (rectf_main.right - rectf_main.left) / 2 - buttons_width / 2;
-			rectf_button_start.right = (rectf_main.right - rectf_main.left) / 2 + buttons_width / 2;
-			rectf_button_start.top = (rectf_main.bottom - rectf_main.top) / 2 - buttons_height / 2;
-			rectf_button_start.bottom = (rectf_main.bottom - rectf_main.top) / 2 + 2 * buttons_height / 2;
-
-
-			float googleplus_button_half_size = buttons_width / 6;
-
-			if (getMeasuredHeight() > getMeasuredWidth()) {
-
-				rectf_leaderboards.left = rectf_button_start.left;
-				rectf_leaderboards.right = rectf_button_start.right;
-				rectf_leaderboards.top = rectf_button_start.top / 2 - buttons_height / 2;
-				rectf_leaderboards.bottom = rectf_leaderboards.top + buttons_height;
-
-			} else {
-
-				googleplus_button_half_size /= 2;
-
-				rectf_leaderboards.left = rectf_button_start.left + 1 * (rectf_button_start.right - rectf_button_start.left) / 4;
-				rectf_leaderboards.right = rectf_leaderboards.left + 2 * (rectf_button_start.right - rectf_button_start.left) / 4;
-				rectf_leaderboards.top = rectf_button_start.top / 2 - buttons_height / 2;
-				rectf_leaderboards.bottom = rectf_leaderboards.top + buttons_height;
-			}
-
-
-			rectf_button_googleplus.left = rectf_leaderboards.left / 2 - googleplus_button_half_size;
-			rectf_button_googleplus.top = rectf_button_start.top;
-			rectf_button_googleplus.right = rectf_leaderboards.left / 2 + googleplus_button_half_size;
-			rectf_button_googleplus.bottom = rectf_button_start.bottom;
-			
-			rectf_button_rate_review.left = rectf_leaderboards.right + (rectf_main.right - rectf_leaderboards.right) / 2 - googleplus_button_half_size;
-			rectf_button_rate_review.top = rectf_button_start.top + (rectf_button_start.bottom - rectf_button_start.top) / 2 - googleplus_button_half_size;
-			rectf_button_rate_review.right = rectf_leaderboards.right + (rectf_main.right - rectf_leaderboards.right) / 2 + googleplus_button_half_size;
-			rectf_button_rate_review.bottom = rectf_button_start.top + (rectf_button_start.bottom - rectf_button_start.top) / 2 + googleplus_button_half_size;
-			
-			createButtons();
-			
-			this.setMeasuredDimension( (int) (rectf_main.right - rectf_main.left), (int) (rectf_main.bottom - rectf_main.top) );
-			
-			
-			//initialized = true;
-		//}
-
-		setOnTouchListener(new OnTouchListener_Loading(this));
+		setOnTouchListener(this);
 	}
 	
 	
@@ -194,6 +172,18 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 				//getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection(),
 				//getLoadingActivity().getColoursCfg().getColour_Square_Black()
 				);
+		
+		buttonarea_menu2 =  new ButtonAreaClick(rectf_button_menu2, "  " + getContext().getString(getLoadingActivity().getText_Menu2()) + "  ",
+				//coloursCfg.getColour_Delimiter(), coloursCfg.getColour_Square_White(), coloursCfg.getColour_Square_ValidSelection());
+				getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection(),
+				getLoadingActivity().getColoursCfg().getColour_Square_Black(),
+				getLoadingActivity().getColoursCfg().getColour_Square_MarkingSelection());
+		
+		buttonarea_menu1 =  new ButtonAreaClick(rectf_button_menu1, "  " + getContext().getString(getLoadingActivity().getText_Menu1()) + "  ",
+				//coloursCfg.getColour_Delimiter(), coloursCfg.getColour_Square_White(), coloursCfg.getColour_Square_ValidSelection());
+				getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection(),
+				getLoadingActivity().getColoursCfg().getColour_Square_Black(),
+				getLoadingActivity().getColoursCfg().getColour_Square_MarkingSelection());
 	}
 	
 	
@@ -202,13 +192,18 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 	}
 	
 	
-	public boolean isOverRateButton(float x, float y) {
-		return rectf_button_rate_review.contains(x, y);
+	public boolean isOverStartButton(float x, float y) {
+		return rectf_button_start.contains(x, y) && getLoadingActivity().isDone();
 	}
 	
 	
-	public boolean isOverStartButton(float x, float y) {
-		return rectf_button_start.contains(x, y) && getLoadingActivity().isDone();
+	public boolean isOverMenu1Button(float x, float y) {
+		return rectf_button_menu1.contains(x, y);
+	}
+	
+	
+	public boolean isOverMenu2Button(float x, float y) {
+		return rectf_button_menu2.contains(x, y);
 	}
 	
 	
@@ -221,6 +216,34 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 	public void deselectButton_Start() {
 		
 		buttonarea_start.deselect();
+		invalidate();
+	}
+	
+	
+	public void selectButton_Menu1() {
+		
+		buttonarea_menu1.select();
+		invalidate();
+	}
+	
+	
+	public void deselectButton_Menu1() {
+		
+		buttonarea_menu1.deselect();
+		invalidate();
+	}
+	
+	
+	public void selectButton_Menu2() {
+		
+		buttonarea_menu2.select();
+		invalidate();
+	}
+	
+	
+	public void deselectButton_Menu2() {
+		
+		buttonarea_menu2.deselect();
 		invalidate();
 	}
 	
@@ -327,7 +350,8 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 		
 		super.onDraw(canvas);
 		
-		paint_background.setColor(ConfigurationUtils_Colours.getConfigByID(Application_Base.getInstance().getUserSettings().uiColoursID).getColour_Square_Black());
+		paint_background.setColor(ConfigurationUtils_Colours.getConfigByID(Application_Base.getInstance().getUserSettings().uiColoursID).getColour_Background());
+
 		if (getBitmapBackground() != null) {
 			paint_background.setAlpha(77);
 			canvas.drawBitmap(getBitmapBackground(), null, rectf_main, paint_background);
@@ -347,28 +371,30 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 			}
 		}
 		
-		//paint_background.setColor(getLoadingActivity().getColoursCfg().getColour_Delimiter());
-		//DrawingUtils.drawRoundRectangle(canvas, paint_background, rectf_buttons);
-		
 		if (getLoadingActivity().isDone()) {
 			buttonarea_start.draw(canvas);	
 		} else {
 			textarea_label_loading.draw(canvas);
 		}
+
+		buttonarea_menu2.draw(canvas);
+		buttonarea_menu1.draw(canvas);
 		
 		updateCoordinates();
 		
 		getLoadingActivity().getUiHandler().post(refresher);
+
+		invalidate();
 	}
-	
-	
+
+
 	private void updateCoordinates() {
-		
-		
+
+
 		for (int i=0; i<entries.size(); i++) {
-			
+
 			MovingEntry entry = entries.get(i);
-			
+
 			if (entry.clicks >= MAX_ITERS) {
 				continue;
 			}
@@ -378,27 +404,123 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 
 			entry.coordinates.x += speed_x;
 			entry.coordinates.y += speed_y;
-			
+
 			if (entry.coordinates.x < 0) {
 				entry.coordinates.x = 0;
 				entry.speed_x = -entry.speed_x;
 			}
+
 			if (entry.coordinates.x > rectf_main.width()) {
 				entry.coordinates.x = rectf_main.width();
 				entry.speed_x = -entry.speed_x;
 			}
+
 			if (entry.coordinates.y < 0) {
 				entry.coordinates.y = 0;
 				entry.speed_y = -entry.speed_y;
 			}
+
 			if (entry.coordinates.y > rectf_main.height()) {
 				entry.coordinates.y = rectf_main.height();
 				entry.speed_y = -entry.speed_y;
 			}
 		}
 	}
-	
-	
+
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+
+		int action = event.getAction();
+
+		if (action == MotionEvent.ACTION_DOWN) {
+
+			float x = event.getX();
+			float y = event.getY();
+
+			if (isOverStartButton(x, y)) {
+
+				selectButton_Start();
+
+			} else if (isOverMenu1Button(x, y)) {
+
+				selectButton_Menu1();
+
+			} else if (isOverMenu2Button(x, y)) {
+
+				selectButton_Menu2();
+
+			} else {
+
+				pushed(x, y);
+			}
+
+
+		} else if (action == MotionEvent.ACTION_MOVE) {
+
+			float x = event.getX();
+			float y = event.getY();
+
+			if (isOverStartButton(x, y)) {
+
+				selectButton_Start();
+
+			} else {
+
+				deselectButton_Start();
+			}
+
+			if (isOverMenu1Button(x, y)) {
+
+				selectButton_Menu1();
+
+			} else {
+
+				deselectButton_Menu1();
+			}
+
+			if (isOverMenu2Button(x, y)) {
+
+				selectButton_Menu2();
+
+			} else {
+
+				deselectButton_Menu2();
+			}
+
+		} else if (action == MotionEvent.ACTION_UP) {
+
+			float x = event.getX();
+			float y = event.getY();
+
+			deselectButton_Start();
+			deselectButton_Menu1();
+			deselectButton_Menu2();
+
+			if (isOverStartButton(x, y)) {
+				Intent i = new Intent(getContext(), ((Activity_Loading_Base) getContext()).getNextActivityClass());
+				getContext().startActivity(i);
+			}
+
+			if (isOverMenu1Button(x, y)) {
+				Intent menu1 = new Intent(getContext(), ((Activity_Loading_Base) getContext()).getActivityClass_Menu1());
+				getContext().startActivity(menu1);
+			}
+
+			if (isOverMenu2Button(x, y)) {
+				Intent i = new Intent(getContext(), ((Activity_Loading_Base) getContext()).getActivityClass_Menu2());
+				getContext().startActivity(i);
+			}
+		}
+
+
+		invalidate();
+
+
+		return true;
+	}
+
+
 	private static class Update implements Runnable {
 		
 		

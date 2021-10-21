@@ -27,7 +27,7 @@ public class Config_MenuMain_Colors extends Config_MenuMain_Base {
 	
 	@Override
 	public int getIconResID() {
-		return R.drawable.ic_action_gear_white;
+		return R.drawable.ic_action_lab_white;
 	}
 	
 	@Override

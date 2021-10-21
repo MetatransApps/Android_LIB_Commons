@@ -56,41 +56,52 @@
     <string name="label_advertising_free_2">Con Anuncios</string>
     <string name="label_advertising_paid_1">PAGADO</string>
     <string name="label_advertising_paid_2">Sin Anuncios</string>
-    
-    <string name="app_cafk_name">Arte Ajedrez para Niños</string>
-    <string name="app_cafk_name_paid">Arte Ajedrez para Niños (Sin Anuncios)</string>
-	<string name="app_cafk_advertising1">Jugar al Ajedrez y Aprender. Que te Diviertas.</string>
-	<string name="app_cafk_advertising2">Imágenes hechas a mano y piezas conjuntos.</string>
+
+    <string name="app_cafk_name">Arte de Ajedrez para Niños</string>
+    <string name="app_cafk_name_paid">Arte de Ajedrez para Niños (Sin Anuncios)</string>
+	<string name="app_cafk_advertising1">Juega al Ajedrez y Aprende y Diviértete</string>
+	<string name="app_cafk_advertising2">Jardín de Infancia a Gran Maestro</string>
+
+	<string name="app_bagaturchess_name">Motor de Ajedrez Bagatur</string>
+    <string name="app_bagaturchess_name_paid">Motor de Ajedrez Bagatur (Sin Anuncios)</string>
+	<string name="app_bagaturchess_advertising1">Ajedrez Sin Conexión con 16 Niveles</string>
+	<string name="app_bagaturchess_advertising2">Juega con AI Bagatur 2.2e</string>
+
+	<string name="app_mafk_name">Matemáticas para Niños: Preescolar a 4 Grado</string>
+	<string name="app_mafk_name_paid">Matemáticas para Niños: Preescolar a 4 Grado (Sin Anuncios)</string>
+	<string name="app_mafk_advertising1">Juego Examen y Aprender</string>
+	<string name="app_mafk_advertising2">Contar, Formas, Aritmética, Filas</string>
 	
-	<string name="app_bagaturchess_name">Motor de ajedrez Bagatur</string>
-	<string name="app_bagaturchess_advertising1">Jugar al Ajedrez y Aprender. Que te Diviertas.</string>
-	<string name="app_bagaturchess_advertising2">Juega contra el motor de Bagatur</string>
+	<string name="app_ec_name">Prueba de Efecto Stroop</string>
+	<string name="app_ec_name_paid">Prueba de Efecto Stroop (Sin Anuncios)</string>
+	<string name="app_ec_advertising1">Juega con Colores y Palabras</string>
+	<string name="app_ec_advertising2">Demuestra para ti el Efecto Stroop</string>
 	
-	<string name="app_mafk_name">Arte de la Matemáticas para Niños</string>
-	<string name="app_mafk_name_paid">Arte de la Matemáticas para Niños (Sin Anuncios)</string>
-	<string name="app_mafk_advertising1">Math - Juego, Examen y Aprender.</string>
-	<string name="app_mafk_advertising2">Aritmética, Filas, Visual. Niveles Diferentes.</string>
+	<string name="app_mos_name">Huida de la Ardilla: Laberinto 2D</string>
+	<string name="app_mos_name_paid">Huida de la Ardilla: Laberinto 2D (Sin Anuncios)</string>
+	<string name="app_mos_advertising1">Laberinto Diferente Cada Vez</string>
+	<string name="app_mos_advertising2">Libera a la Ardilla</string>
 	
-	<string name="app_ec_name">Colores Fácil</string>
-	<string name="app_ec_name_paid">Colores Fácil (Sin Anuncios)</string>
-	<string name="app_ec_advertising1">Juega el Juego de Colores? Efecto Stroop.</string>
-	<string name="app_ec_advertising2">La Fuerza, la Velocidad, la Perseverancia.</string>
-	
-	<string name="app_mos_name">Laberinto de la Ardilla</string>
-	<string name="app_mos_name_paid">Laberinto de la Ardilla (Sin Anuncios)</string>
-	<string name="app_mos_advertising1">Escapar de Laberinto.</string>
-	<string name="app_mos_advertising2">Diferente cada Vez. Muchos Niveles.</string>
-	
-	<string name="app_stb_name">Disparar las Bolas</string>
-	<string name="app_stb_name_paid">Disparar las Bolas (Sin Anuncios)</string>
-	<string name="app_stb_advertising1">Jugar con pelotas.</string>
-	<string name="app_stb_advertising2">Dispara a las bolas. Muchos niveles.</string>	
-	
-	<string name="app_gravity_name">Dedo de Gravedad 137</string>
-	<string name="app_gravity_name_paid">Dedo de Gravedad 137 (Sin Anuncios)</string>
-	<string name="app_gravity_advertising1">Jugar con la gravedad.</string>
-	<string name="app_gravity_advertising2">Usa la gravedad de tus dedos.</string>
-	
+	<string name="app_stb_name">Globos Sin Parar</string>
+	<string name="app_stb_name_paid">Globos Sin Parar (Sin Anuncios)</string>
+	<string name="app_stb_advertising1">Juego simple para Niños y Adultos</string>
+	<string name="app_stb_advertising2">Tirador de Globos Voladores</string>
+
+	<string name="app_gravity_name">Dedo de Fuerza de Gravedad 137</string>
+	<string name="app_gravity_name_paid">Dedo de Fuerza de Gravedad 137 (Sin Anuncios)</string>
+	<string name="app_gravity_advertising1">Juego de Física Con un Dedo en la Aplicación</string>
+	<string name="app_gravity_advertising2">Cruza las órbitas de los Objetos Espaciales</string>
+
+    <string name="app_wisconsin_name">Prueba de Wisconsin (WCST)</string>
+    <string name="app_wisconsin_name_paid">Prueba de Wisconsin (WCST) (Sin Anuncios)</string>
+    <string name="app_wisconsin_advertising1">Psicología y Prueba Psicológica</string>
+    <string name="app_wisconsin_advertising2">Juega con Cartas de Wisconsin</string>
+
+    <string name="app_chessboardscanner_name">Escáner de Ajedrez de Posición Análisis Editor</string>
+    <string name="app_chessboardscanner_name_paid">Escáner de Ajedrez de Posición Análisis Editor (No Ads)</string>
+    <string name="app_chessboardscanner_advertising1">Aplicación que Escanea y Analiza Tableros 2D</string>
+    <string name="app_chessboardscanner_advertising2">Capture desde otras Pantallas y Analice</string>
+
     <string name="loading">Loading &#8230;</string>
     <string name="button_start">Comienzo</string>
     

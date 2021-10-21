@@ -65,6 +65,7 @@ public class LeaderboardsProvider_Base_Scores implements ILeaderboardsProvider {
 		if (view_leaderboard == null) {
 			
 			view_leaderboard = new View_Achievements_And_Leaderboards_Offline(app, rectf, app.getEngagementProvider(), coloursCfg, activator);
+
 			view_leaderboard.setId(VIEWID_LEADERBOARDS);
 			
 		}
