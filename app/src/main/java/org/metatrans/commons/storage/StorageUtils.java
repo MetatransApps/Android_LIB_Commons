@@ -34,6 +34,7 @@ public class StorageUtils {
 	public static synchronized Object readStorage(Context context, String storename) {
 		
 		Object cached = cache.get(storename);
+		
 		if (cached != null) {
 			return cached;
 		}

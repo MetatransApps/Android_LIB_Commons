@@ -5,7 +5,7 @@
     <string name="label_incorrect">Неправильно</string>
     <string name="label_correct">Правильно</string>
     <string name="label_best">Лучший</string>
-    <string name="label_your">Ваш</string>
+    <string name="label_your">Последний</string>
     <string name="label_result_outcome">Выход</string>
     <string name="label_result_status_newrecord">Новый Рекорд</string>
     <string name="label_result_status_allcorrect">Все Верно</string>

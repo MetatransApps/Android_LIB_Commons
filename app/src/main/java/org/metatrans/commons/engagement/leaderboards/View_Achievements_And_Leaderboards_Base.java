@@ -94,7 +94,6 @@ public abstract class View_Achievements_And_Leaderboards_Base extends View imple
 			buttonarea_icon =  new ButtonAreaClick_Image(rectangle_icon,
 					BitmapUtils.fromResource(getContext(), getResID_Icon_Leaderboard()),
 					coloursCfg.getColour_Delimiter(),
-					//coloursCfg.getColour_Square_Black(),
 					coloursCfg.getColour_Square_White(),
 					false
 					);

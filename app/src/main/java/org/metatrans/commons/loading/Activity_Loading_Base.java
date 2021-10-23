@@ -52,9 +52,9 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 		boolean currentGameCompleted = getGameData().isCountedAsCompleted();
 
 
-		if (((Application_Base)getApplication()).getEngagementProvider().getLeaderboardsProvider() != null) {
+		/*if (((Application_Base)getApplication()).getEngagementProvider().getLeaderboardsProvider() != null) {
 			((Application_Base) getApplication()).getEngagementProvider().getLeaderboardsProvider().setEnabled(currentGameCompleted);
-		}
+		}*/
 		
 		super.onCreate(savedInstanceState);
 		

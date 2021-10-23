@@ -8,6 +8,8 @@ import org.metatrans.commons.R;
 import org.metatrans.commons.achievements.IAchievementsManager;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.achievements.IConfigurationAchievements;
+import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
+import org.metatrans.commons.cfg.colours.IConfigurationColours;
 import org.metatrans.commons.ui.list.ListViewFactory;
 import org.metatrans.commons.ui.list.RowItem_IdTD;
 
@@ -36,8 +38,7 @@ public class Activity_Achievements_Base extends Activity_Base {
 		super.onResume();
 		
 		System.out.println("Activity_Achievements_Base: onResume");
-		
-		
+
 		updateUI();
 	}
 	
@@ -45,13 +46,18 @@ public class Activity_Achievements_Base extends Activity_Base {
 	private void updateUI() {
 		
 		LayoutInflater inflater = LayoutInflater.from(this);
-		
-		//IAchievementsManager achievementsManager = ((Application_Base)getApplication()).getAchievementsManager();
+
+		IConfigurationColours coloursCfg = ConfigurationUtils_Colours.getConfigByID(((Application_Base) getApplication()).getUserSettings().uiColoursID);
+
+		int color_background = coloursCfg.getColour_Background();
+
 		List<RowItem_IdTD> rows = ((AchievementsProvider_Base)((Application_Base)getApplication()).getEngagementProvider().getAchievementsProvider()).getAchievementsList(getIconSize(), this);//achievementsManager.getAchievementsList(getIconSize(), this);
-		ViewGroup frame = ListViewFactory.create_ITD_ByXML_NoChoice(this, inflater, rows, new OnItemClickListener_Menu());
-		
+
+		ViewGroup frame = ListViewFactory.create_ITD_ByXML_NoChoice(this, inflater, rows, color_background, new OnItemClickListener_Menu());
+
+		frame.setBackgroundColor(color_background);
+
 		setContentView(frame);
-		//setFrame(frame);
 		
 		setBackgroundPoster(R.id.commons_listview_frame, 77);
 		

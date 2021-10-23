@@ -27,9 +27,9 @@ public class ConfigurationUtils_Base {
 
 	protected static void createInstance(String tag, ConfigurationUtils_Base instance, IConfigurationEntry[] cfgs_entries) {
 
-		if (true) {
+		/*if (true) {
 			throw new UnsupportedOperationException("Fix Menus!");
-		}
+		}*/
 
 		synchronized (all_cfgs) {
 			

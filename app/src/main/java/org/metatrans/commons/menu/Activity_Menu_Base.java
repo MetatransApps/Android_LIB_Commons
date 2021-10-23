@@ -94,7 +94,7 @@ public abstract class Activity_Menu_Base extends Activity_Base {
 		
 		for (int i = 0; i < entries.size(); i++) {
 			
-			IConfigurationMenu_Main entry = (IConfigurationMenu_Main) entries.get(i);
+			IConfigurationMenu_Main entry = entries.get(i);
 			
 			String title = entry.getName_String();
 			String description = entry.getDescription_String();

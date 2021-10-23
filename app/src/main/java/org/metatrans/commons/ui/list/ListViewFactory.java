@@ -33,7 +33,12 @@ public class ListViewFactory {
 	public static ViewGroup create_ITD_ByXML_NoChoice(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, OnItemClickListener listener) {
 		return create_ITD_ByXML(activity, inflater, rowItems, -1, listener, AbsListView.CHOICE_MODE_NONE);
 	}
-	
+
+
+	public static ViewGroup create_ITD_ByXML_NoChoice(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, int color_background, OnItemClickListener listener) {
+		return create_ITD_ByXML(activity, inflater, rowItems, color_background, listener, AbsListView.CHOICE_MODE_NONE);
+	}
+
 	
 	private static ViewGroup create_ITD_ByXML(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, int color_background, OnItemClickListener listener, int mode) {
 		
@@ -79,7 +84,7 @@ public class ListViewFactory {
 				R.id.commons_listitem_title,
 				R.id.commons_listitem_description);
 		
-		ListView list = (ListView) view.findViewById(R.id.commons_listview);
+		ListView list = view.findViewById(R.id.commons_listview);
 		list.setAdapter(adapter);
 		list.setOnItemClickListener(listener);
 		

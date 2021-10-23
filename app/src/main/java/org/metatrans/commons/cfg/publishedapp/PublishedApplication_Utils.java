@@ -43,7 +43,8 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_stoptheballs_paid = new PublishedApplication_Balloons_Paid(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_gravityfinger137 = new PublishedApplication_GravityFinger137(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_gravityfinger137_paid = new PublishedApplication_GravityFinger137_Paid(IAppStore.OBJ_GOOGLE);
-		
+		IPublishedApplication app_words_de_for_bg = new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_GOOGLE);
+
 		app_mos.setPaidVersion(app_mos_paid);
 		app_ec.setPaidVersion(app_ec_paid);
 		app_mafk.setPaidVersion(app_mafk_paid);
@@ -53,6 +54,7 @@ public class PublishedApplication_Utils {
 		app_chessboardscanner.setPaidVersion(app_chessboardscanner_paid);
 		app_stoptheballs.setPaidVersion(app_stoptheballs_paid);
 		app_gravityfinger137.setPaidVersion(app_gravityfinger137_paid);
+
 
 		APPSLIST_GOOGLE_ALL.add(app_chessboardscanner);
 		APPSLIST_GOOGLE_ALL.add(app_chessboardscanner_paid);
@@ -72,7 +74,8 @@ public class PublishedApplication_Utils {
 		APPSLIST_GOOGLE_ALL.add(app_mafk_paid);
 		APPSLIST_GOOGLE_ALL.add(app_ec);
 		APPSLIST_GOOGLE_ALL.add(app_ec_paid);
-		
+		APPSLIST_GOOGLE_ALL.add(app_words_de_for_bg);
+
 	}
 	
 	
@@ -91,6 +94,8 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_words_de_for_bg 	= new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_SAMSUNG);
+
 
 		APPSLIST_SAMSUNG_ALL.add(app_cafk);
 		APPSLIST_SAMSUNG_ALL.add(app_mafk);
@@ -101,52 +106,8 @@ public class PublishedApplication_Utils {
 		APPSLIST_SAMSUNG_ALL.add(app_gravityfinger137);
 		APPSLIST_SAMSUNG_ALL.add(app_wisconsin);
 		APPSLIST_SAMSUNG_ALL.add(app_chessboardscanner);
-		
-	}
-	
-	
-	//Init Opera store published applications
-	static {
-		
-		IPublishedApplication app_cafk 		= new PublishedApplication_CAFK(IAppStore.OBJ_OPERA, 	"718528");
-		IPublishedApplication app_mafk 		= new PublishedApplication_MAFK(IAppStore.OBJ_OPERA, 	"721004");
-		IPublishedApplication app_ec 		= new PublishedApplication_EC(IAppStore.OBJ_OPERA, 	 	"721082");
-		IPublishedApplication app_mos 		= new PublishedApplication_MOS(IAppStore.OBJ_OPERA, 	"786014");
-		
-		APPSLIST_OPERA_ALL.add(app_mos);
-		APPSLIST_OPERA_ALL.add(app_cafk);
-		APPSLIST_OPERA_ALL.add(app_mafk);
-		APPSLIST_OPERA_ALL.add(app_ec);
-	}
-	
-	
-	//Init Amazon store published applications
-	static {
-		
-		IPublishedApplication app_cafk 	= new PublishedApplication_CAFK(IAppStore.OBJ_AMAZON, 	"B00IWB69ZY"); 
-		IPublishedApplication app_mafk 	= new PublishedApplication_MAFK(IAppStore.OBJ_AMAZON,  	"B00TII2X3M");
-		IPublishedApplication app_ec 	= new PublishedApplication_EC(IAppStore.OBJ_AMAZON, 	"B00TIEQ7TW");
-		IPublishedApplication app_mos 	= new PublishedApplication_MOS(IAppStore.OBJ_AMAZON, 	"B017IVKW0G");
-		
-		APPSLIST_AMAZON_ALL.add(app_mos);
-		APPSLIST_AMAZON_ALL.add(app_cafk);
-		APPSLIST_AMAZON_ALL.add(app_mafk);
-		APPSLIST_AMAZON_ALL.add(app_ec);
-	}
-	
-	
-	//Init Yandex store published applications
-	static {
-		
-		IPublishedApplication app_cafk 	= new PublishedApplication_CAFK(IAppStore.OBJ_YANDEX, 	(String) null); 
-		IPublishedApplication app_mafk 	= new PublishedApplication_MAFK(IAppStore.OBJ_YANDEX,  	(String) null);
-		IPublishedApplication app_ec 	= new PublishedApplication_EC(IAppStore.OBJ_YANDEX, 	(String) null);
-		IPublishedApplication app_mos 	= new PublishedApplication_MOS(IAppStore.OBJ_YANDEX, 	(String) null);
-		
-		APPSLIST_YANDEX_ALL.add(app_mos);
-		APPSLIST_YANDEX_ALL.add(app_cafk);
-		APPSLIST_YANDEX_ALL.add(app_mafk);
-		APPSLIST_YANDEX_ALL.add(app_ec);
+		APPSLIST_SAMSUNG_ALL.add(app_words_de_for_bg);
+
 	}
 
 
@@ -162,6 +123,8 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_HUAWEI);
+		IPublishedApplication app_words_de_for_bg 	= new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_HUAWEI);
+
 
 		APPSLIST_HUAWEI_ALL.add(app_cafk);
 		APPSLIST_HUAWEI_ALL.add(app_mafk);
@@ -172,6 +135,8 @@ public class PublishedApplication_Utils {
 		APPSLIST_HUAWEI_ALL.add(app_gravityfinger137);
 		APPSLIST_HUAWEI_ALL.add(app_wisconsin);
 		APPSLIST_HUAWEI_ALL.add(app_chessboardscanner);
+		APPSLIST_HUAWEI_ALL.add(app_words_de_for_bg);
+
 	}
 
 
@@ -187,6 +152,8 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_FDROID_OWN);
+		IPublishedApplication app_words_de_for_bg 	= new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_FDROID_OWN);
+
 
 		APPSLIST_FDROID_OWN_ALL.add(app_cafk);
 		APPSLIST_FDROID_OWN_ALL.add(app_mafk);
@@ -197,6 +164,8 @@ public class PublishedApplication_Utils {
 		APPSLIST_FDROID_OWN_ALL.add(app_gravityfinger137);
 		APPSLIST_FDROID_OWN_ALL.add(app_wisconsin);
 		APPSLIST_FDROID_OWN_ALL.add(app_chessboardscanner);
+		APPSLIST_FDROID_OWN_ALL.add(app_words_de_for_bg);
+
 	}
 
 
@@ -212,6 +181,8 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_FDROID_OFFICIAL);
+		IPublishedApplication app_words_de_for_bg 	= new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_FDROID_OFFICIAL);
+
 
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_cafk);
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_mafk);
@@ -222,6 +193,56 @@ public class PublishedApplication_Utils {
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_gravityfinger137);
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_wisconsin);
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_chessboardscanner);
+		APPSLIST_FDROID_OFFICIAL_ALL.add(app_words_de_for_bg);
+
+	}
+
+
+	//Init Amazon store published applications
+	static {
+
+		IPublishedApplication app_cafk 	= new PublishedApplication_CAFK(IAppStore.OBJ_AMAZON, 	"B00IWB69ZY");
+		IPublishedApplication app_mafk 	= new PublishedApplication_MAFK(IAppStore.OBJ_AMAZON,  	"B00TII2X3M");
+		IPublishedApplication app_ec 	= new PublishedApplication_EC(IAppStore.OBJ_AMAZON, 	"B00TIEQ7TW");
+		IPublishedApplication app_mos 	= new PublishedApplication_MOS(IAppStore.OBJ_AMAZON, 	"B017IVKW0G");
+
+
+		APPSLIST_AMAZON_ALL.add(app_mos);
+		APPSLIST_AMAZON_ALL.add(app_cafk);
+		APPSLIST_AMAZON_ALL.add(app_mafk);
+		APPSLIST_AMAZON_ALL.add(app_ec);
+	}
+
+
+	//Init Yandex store published applications
+	static {
+
+		IPublishedApplication app_cafk 	= new PublishedApplication_CAFK(IAppStore.OBJ_YANDEX, 	(String) null);
+		IPublishedApplication app_mafk 	= new PublishedApplication_MAFK(IAppStore.OBJ_YANDEX,  	(String) null);
+		IPublishedApplication app_ec 	= new PublishedApplication_EC(IAppStore.OBJ_YANDEX, 	(String) null);
+		IPublishedApplication app_mos 	= new PublishedApplication_MOS(IAppStore.OBJ_YANDEX, 	(String) null);
+
+
+		APPSLIST_YANDEX_ALL.add(app_mos);
+		APPSLIST_YANDEX_ALL.add(app_cafk);
+		APPSLIST_YANDEX_ALL.add(app_mafk);
+		APPSLIST_YANDEX_ALL.add(app_ec);
+	}
+
+
+	//Init Opera store published applications
+	static {
+
+		IPublishedApplication app_cafk 		= new PublishedApplication_CAFK(IAppStore.OBJ_OPERA, 	"718528");
+		IPublishedApplication app_mafk 		= new PublishedApplication_MAFK(IAppStore.OBJ_OPERA, 	"721004");
+		IPublishedApplication app_ec 		= new PublishedApplication_EC(IAppStore.OBJ_OPERA, 	 	"721082");
+		IPublishedApplication app_mos 		= new PublishedApplication_MOS(IAppStore.OBJ_OPERA, 	"786014");
+
+
+		APPSLIST_OPERA_ALL.add(app_mos);
+		APPSLIST_OPERA_ALL.add(app_cafk);
+		APPSLIST_OPERA_ALL.add(app_mafk);
+		APPSLIST_OPERA_ALL.add(app_ec);
 	}
 
 

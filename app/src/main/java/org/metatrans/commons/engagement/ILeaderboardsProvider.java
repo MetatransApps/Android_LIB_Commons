@@ -22,5 +22,5 @@ public interface ILeaderboardsProvider {
 	
 	public void detachLeaderboardView(ViewGroup frame);
 	
-	public void setEnabled(boolean enabled);
+	//public void setEnabled(boolean enabled);
 }

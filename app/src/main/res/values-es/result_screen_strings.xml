@@ -5,7 +5,7 @@
     <string name="label_incorrect">Incorrecto</string>
     <string name="label_correct">Correcto</string>
     <string name="label_best">Mejor</string>
-    <string name="label_your">Su</string>
+    <string name="label_your">Último</string>
     <string name="label_result_outcome">Resultado</string>
     <string name="label_result_status_newrecord">Nuevo Registro</string>
     <string name="label_result_status_allcorrect">Todo Correcta</string>

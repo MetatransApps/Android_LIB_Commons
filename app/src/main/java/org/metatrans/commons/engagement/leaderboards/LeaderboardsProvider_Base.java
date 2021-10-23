@@ -22,14 +22,18 @@ public class LeaderboardsProvider_Base implements ILeaderboardsProvider {
 	  
 	
 	private Application_Base app;
+	
 	private Class<? extends Activity_Base> activityClass_Result;
+	
 	private View view_leaderboard;
 	
-	private boolean enabled;
+	private boolean enabled = true;
 	
 	
 	public LeaderboardsProvider_Base(Application_Base _app, Class<? extends Activity_Base> _activityClass_Result) {
+		
 		app = _app;
+		
 		activityClass_Result = _activityClass_Result;
 	}
 	
@@ -46,8 +50,11 @@ public class LeaderboardsProvider_Base implements ILeaderboardsProvider {
 		if (enabled) {
 			
 			Activity currentActivity = app.getCurrentActivity();
+
 			if (currentActivity != null) {
+
 				Intent intent = new Intent(currentActivity, activityClass_Result);
+
 				currentActivity.startActivity(intent);
 			}
 			
@@ -77,6 +84,7 @@ public class LeaderboardsProvider_Base implements ILeaderboardsProvider {
 		if (view_leaderboard == null) {
 			
 			view_leaderboard = new View_Achievements_And_Leaderboards_Offline(app, rectf, app.getEngagementProvider(), coloursCfg, activator);
+
 			view_leaderboard.setId(VIEWID_LEADERBOARDS);
 			
 		}
@@ -104,8 +112,8 @@ public class LeaderboardsProvider_Base implements ILeaderboardsProvider {
 	}
 
 
-	@Override
+	/*@Override
 	public void setEnabled(boolean _enabled) {
 		enabled = _enabled;
-	}
+	}*/
 }
