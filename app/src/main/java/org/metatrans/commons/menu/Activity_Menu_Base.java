@@ -59,13 +59,6 @@ public abstract class Activity_Menu_Base extends Activity_Base {
 	
 	
 	@Override
-	protected int getBackgroundImageID() {
-		boolean left_handed = (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE);
-		return left_handed ? R.drawable.ic_bell_landscape : R.drawable.ic_bell_portrait;
-	}
-	
-	
-	@Override
 	public void onPause() {
 		
 		System.out.println("Activity_Menu_Main: onPause()");
