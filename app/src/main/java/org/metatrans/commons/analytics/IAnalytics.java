@@ -14,10 +14,8 @@ public interface IAnalytics {
 	public void sendEvent(IEvent_Base event);
 	
 	public void onActivity_Create(Activity activity);
-	
-	public void onActivity_Start(Activity activity);
-	
-	public void onActivity_Stop(Activity activity);
+
+	public void onActivity_Destroy(Activity activity);
 	
 	public Activity getCurrentActivity();
 }

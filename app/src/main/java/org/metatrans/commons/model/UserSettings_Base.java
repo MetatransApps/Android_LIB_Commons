@@ -1,6 +1,8 @@
 package org.metatrans.commons.model;
 
 
+import org.metatrans.commons.app.Application_Base;
+
 import java.io.Serializable;
 
 
@@ -14,10 +16,16 @@ public class UserSettings_Base implements Serializable {
 	
 	
 	public int uiColoursID;
+
 	public int modeID;
 	
 	
 	protected UserSettings_Base() {
 		
+	}
+
+
+	public void save() {
+		Application_Base.getInstance().storeUserSettings();
 	}
 }

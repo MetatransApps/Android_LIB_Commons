@@ -1,6 +1,8 @@
 package org.metatrans.commons.model;
 
 
+import org.metatrans.commons.app.Application_Base;
+
 import java.io.Serializable;
 
 
@@ -26,11 +28,9 @@ public class GameData_Base implements Serializable {
 	}
 	
 	
-	/*@Override
-	public String toString() {
-		String result = "";
-		return result;
-	}*/
+	public void save() {
+		Application_Base.getInstance().storeGameData();
+	}
 	
 	
 	public long getAccumulated_time_inmainscreen() {

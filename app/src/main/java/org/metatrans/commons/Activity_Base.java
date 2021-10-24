@@ -39,9 +39,18 @@ public abstract class Activity_Base extends Activity {
 		
 		((Application_Base)getApplication()).getAnalytics().onActivity_Create(this);
 	}
-	
-	
+
+
 	@Override
+	protected void onDestroy() {
+
+		((Application_Base)getApplication()).getAnalytics().onActivity_Destroy(this);
+
+		super.onDestroy();
+	}
+
+	
+	/*@Override
 	public void onStart(){
 		
 		super.onStart();
@@ -56,7 +65,7 @@ public abstract class Activity_Base extends Activity {
 		((Application_Base)getApplication()).getAnalytics().onActivity_Stop(this);
 		
 		super.onStop();
-	}
+	}*/
 	
 	
 	protected int getBackgroundImageID() {
@@ -184,11 +193,12 @@ public abstract class Activity_Base extends Activity {
 	
 	
 	private Application_Base getApp() {
-		return (Application_Base)getApplication();
+		return (Application_Base) getApplication();
 	}
 	
 	
 	private ISocialProvider getSocialProvider() {
+
 		return getApp().getEngagementProvider().getSocialProvider();
 	}
 	

@@ -1,8 +1,10 @@
 package org.metatrans.commons.ui;
 
 
+import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.ui.utils.DrawingUtils;
 
+import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
@@ -13,23 +15,32 @@ import android.text.Layout.Alignment;
 
 
 public class TextArea implements IButtonArea {
-	
+
+
+	private static final int LEFT_MARGIN = 3;
+
+
 	private RectF rect;
+
 	private String text;
 
 	private boolean drawTextOnly;
 	
 	protected int colour_area;
+
 	private int colour_text;
 
-	private int left_right_border = 3;
+	//private int left_right_border = 3;
 	
 	private StaticLayout box;
+
 	private float x;
+
 	private float y;
 	
 
 	private Paint paint;
+
 	private TextPaint textPaint;
 	
 	private boolean resizetext;
@@ -39,14 +50,17 @@ public class TextArea implements IButtonArea {
 		this(_rect, _text, false, _colour_area, _colour_text, true);
 	}
 
+
 	public TextArea(RectF _rect, boolean _drawTextOnly, String _text, int _colour_area, int _colour_text) {
 		this(_rect, _text, _drawTextOnly, _colour_area, _colour_text, true);
 	}
 
+
 	public TextArea(RectF _rect, String _text, int _colour_text) {
 		this(_rect, _text, true, -1, _colour_text, false);
 	}
-	
+
+
 	/*public TextArea(RectF _rect, String _text, int _colour_area, int _colour_text, boolean _resizetext) {
 		this(_rect, _text, false, _colour_area, _colour_text, _resizetext);
 	}*/
@@ -68,10 +82,11 @@ public class TextArea implements IButtonArea {
 		textPaint.setColor(colour_text);
 		textPaint.setTextAlign(Align.CENTER);
 		textPaint.setAntiAlias(true);
-		
+
 		paint = new Paint();
 		paint.setColor(colour_area);
-		
+
+
 		init();
 	}
 	
@@ -79,7 +94,9 @@ public class TextArea implements IButtonArea {
 	public void setText(String _text) {
 		
 		if (text != null) {
+
 			if (text.equals(_text)) {
+
 				return;
 			}
 		}
@@ -87,15 +104,28 @@ public class TextArea implements IButtonArea {
 		text = _text;
 		
 		if (resizetext) {
+
 			init();
+
 		} else {
+
 			int width = (int) getWidth();
-			if (width <= 0) {//Bugfixing for rare cases, StaticLayout/android.text.Layout.<init> throws IllegalArgumentException when the width < 0
+
+			//Bugfixing for rare cases, StaticLayout/android.text.Layout.<init> throws IllegalArgumentException when the width < 0
+			if (width <= 0) {
+
 				return;
 			}
-			
-			box = new StaticLayout(text, textPaint, width, getAlignment(text), 1F, 0F, true);
-			//box.
+
+			StaticLayout.Builder builder = StaticLayout.Builder.obtain(text, 0, text.length(), textPaint, width)
+					.setAlignment(getAlignment(text))
+					.setLineSpacing(0F, 1F)
+					.setIncludePad(true)
+					.setMaxLines(3);
+
+			box = builder.build();
+
+			//box = new StaticLayout(text, textPaint, width, getAlignment(text), 1F, 0F, true);
 		}
 	}
 	
@@ -103,23 +133,43 @@ public class TextArea implements IButtonArea {
 	private void init() {
 		
 		//System.out.println("Creating TEXT AREA: " + "rectangle=" + rect);
-		
+
 		int height = (int) (rect.bottom - rect.top);
+
 		int width = (int) getWidth();
+
 		if (width <= 0) {//Bugfixing for rare cases, StaticLayout/android.text.Layout.<init> throws IllegalArgumentException when the width < 0
+
 			return;
 		}
 		
 		int textSize = 100;
+
+		boolean is_1_line = !text.contains("\r\n");
+
 		do {
+
 			textPaint.setTextSize(textSize);
+
+			StaticLayout.Builder builder = StaticLayout.Builder.obtain(text, 0, text.length(), textPaint, width)
+					.setAlignment(getAlignment(text))
+					.setLineSpacing(0F, 1F)
+					.setIncludePad(true)
+					.setMaxLines(3);
+
+			box = builder.build();
+
+			//box = new StaticLayout(text, textPaint, width, getAlignment(text), 1F, 0F, true);
+
 			textSize -= 1;
 			//System.out.println("TEXT AREA creating: x=" + x + ", y=" + y + ", textsize=" + textPaint.getTextSize() + ", rectangle=" + rect);
-			
-			box = new StaticLayout(text, textPaint, width, getAlignment(text), 1F, 0F, true);
-		} while (textSize > 0 && (box.getHeight() > height || textPaint.measureText(text) > width));
-		
-		x = rect.left + width / 2 + left_right_border;
+
+		} while (textSize > 0
+				&& (box.getHeight() > height || textPaint.measureText(text) > (is_1_line ? width : 2 * width)));
+
+
+		x = rect.left + width / 2 + LEFT_MARGIN;
+
 		y = rect.bottom - height / 2 - box.getHeight() / 2;
 		
 		//System.out.println("TEXT AREA created: x=" + x + ", y=" + y + ", textsize=" + textPaint.getTextSize() + ", rectangle=" + rect);
@@ -127,46 +177,46 @@ public class TextArea implements IButtonArea {
 	
 	
 	public void draw(Canvas canvas) {
-		
-		if (getWidth() <= 0) {//Bugfixing for rare cases, StaticLayout/android.text.Layout.<init> throws IllegalArgumentException when the width < 0
+
+		//Bugfixing for rare cases, StaticLayout/android.text.Layout.<init> throws IllegalArgumentException when the width < 0
+		if (getWidth() <= 0) {
+
 			return;
 		}
 		
 		if (!drawTextOnly) {
+
 			DrawingUtils.drawRoundTextArea(canvas, paint, rect);
 		}
 		
 		canvas.save();
+
 		canvas.translate(x, y);
 		
 		box.draw(canvas);
-		
+
 		canvas.restore();
 	}
 	
 	
 	private float getWidth() {
-		return rect.right - rect.left - 2 * left_right_border;
+		return rect.right - rect.left;
 	}
 	
 	
 	public void setColour_Text(int colour_text) {
 		
 		if (this.colour_text == colour_text) {
+
 			return;
 		}
 		
 		this.colour_text = colour_text;
+
 		textPaint.setColor(colour_text);
 	}
 	
 	public void setColour_Area(int colour_area) {
-		
-		//if (this.colour_area == colour_area) {
-		//	return;
-		//}
-		
-		//this.colour_area = colour_area;
 		
 		paint.setColor(colour_area);
 	}
@@ -175,21 +225,7 @@ public class TextArea implements IButtonArea {
 	public String getText() {
 		return text;
 	}
-	
-	
-	@Override
-	public void select() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
-	@Override
-	public void deselect() {
-		// TODO Auto-generated method stub
-		
-	}
-	
+
 	
 	private static Alignment getAlignment(String text) {
 	    for (char character : text.toCharArray()) {
@@ -198,5 +234,19 @@ public class TextArea implements IButtonArea {
 	        }
 	    }
 	    return Alignment.ALIGN_NORMAL;
+	}
+
+
+	@Override
+	public void select() {
+		// TODO Auto-generated method stub
+
+	}
+
+
+	@Override
+	public void deselect() {
+		// TODO Auto-generated method stub
+
 	}
 }
