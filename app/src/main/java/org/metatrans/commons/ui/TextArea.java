@@ -17,7 +17,7 @@ import android.text.Layout.Alignment;
 public class TextArea implements IButtonArea {
 
 
-	private static final int LEFT_MARGIN = 3;
+	private static final int LEFT_MARGIN = 5;
 
 
 	private RectF rect;
@@ -200,7 +200,7 @@ public class TextArea implements IButtonArea {
 	
 	
 	private float getWidth() {
-		return rect.right - rect.left;
+		return rect.right - rect.left -2 * LEFT_MARGIN;
 	}
 	
 	
