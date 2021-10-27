@@ -15,7 +15,7 @@ public class PublishedApplication_Words_DE_for_BG extends PublishedApplication_B
 	
 	@Override
 	public String getPackage() {
-		return "com.words.exercise.german_for_bulgarians";
+		return "com.metatransapps.german_for_bulgarians";
 	}
 	
 	
