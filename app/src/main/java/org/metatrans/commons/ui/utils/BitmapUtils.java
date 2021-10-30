@@ -36,15 +36,24 @@ public class BitmapUtils {
 		
 		InputStream is = null;
 		try {
+
 			is = context.getResources().openRawResource(resid);
+
 			bitmap = BitmapFactory.decodeStream(is);
+
 		} catch (Exception e) {
-			e.printStackTrace();
+
 			//Do nothing
+			e.printStackTrace();
+
 		} finally {
+
 			if (is != null) {
+
 				try {
+
 					is.close();
+
 				} catch (IOException e) {
 					//Do nothing
 				}

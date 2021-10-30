@@ -10,8 +10,8 @@ import org.metatrans.commons.Alerts_Base;
 import org.metatrans.commons.R;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.colours.IConfigurationColours;
+import org.metatrans.commons.engagement.IAchievementsProvider;
 import org.metatrans.commons.engagement.ISocialProvider;
-import org.metatrans.commons.engagement.social.View_Social_InviteFriends;
 import org.metatrans.commons.menu.Activity_Menu_Colours_Base;
 import org.metatrans.commons.model.GameData_Base;
 
@@ -42,20 +42,18 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 	
 	private long timestamp_created;
 	
-	private int old_colours_cfg_id = -1;
-	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
-		
+
+		/*
 		boolean currentGameCompleted = getGameData().isCountedAsCompleted();
-
-
-		/*if (((Application_Base)getApplication()).getEngagementProvider().getLeaderboardsProvider() != null) {
+		if (((Application_Base)getApplication()).getEngagementProvider().getLeaderboardsProvider() != null) {
 			((Application_Base) getApplication()).getEngagementProvider().getLeaderboardsProvider().setEnabled(currentGameCompleted);
 		}*/
-		
+
+
 		super.onCreate(savedInstanceState);
 		
 		System.out.println("Activity_Loading_Base:  onCreate");
@@ -247,7 +245,12 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 		if (rectf_leaderboards != null && Application_Base.getInstance().getEngagementProvider().getLeaderboardsProvider() != null) {
 
 			View _view_leaderboards = Application_Base.getInstance().getEngagementProvider().getLeaderboardsProvider().getLeaderboardView(coloursCfg, rectf_leaderboards);
-			View _view_achievements = Application_Base.getInstance().getEngagementProvider().getAchievementsProvider().getAchievementsView(coloursCfg, rectf_leaderboards);
+
+			IAchievementsProvider achievements_provider = Application_Base.getInstance().getEngagementProvider().getAchievementsProvider();
+			View _view_achievements = null;
+			if (achievements_provider != null) {
+				_view_achievements = Application_Base.getInstance().getEngagementProvider().getAchievementsProvider().getAchievementsView(coloursCfg, rectf_leaderboards);
+			}
 
 			if (_view_leaderboards != null && _view_achievements != null) {
 				if (_view_leaderboards != _view_achievements) {
@@ -278,7 +281,7 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 		
 		System.out.println("Activity_Loading_Base: initUI");
 		
-		IConfigurationColours coloursCfg = getColoursCfg();
+		//IConfigurationColours coloursCfg = getColoursCfg();
 		
 		//if (old_colours_cfg_id == -1 || old_colours_cfg_id != coloursCfg.getID()) {
 			

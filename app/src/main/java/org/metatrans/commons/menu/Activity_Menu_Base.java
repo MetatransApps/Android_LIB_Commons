@@ -15,8 +15,6 @@ import org.metatrans.commons.ui.list.ListViewFactory;
 import org.metatrans.commons.ui.list.RowItem_IdTD;
 import org.metatrans.commons.ui.utils.BitmapUtils;
 
-import android.content.res.Configuration;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;

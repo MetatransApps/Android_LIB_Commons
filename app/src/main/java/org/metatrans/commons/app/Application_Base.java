@@ -108,7 +108,8 @@ public abstract class Application_Base extends Application {
 	
 	
 	protected IAchievementsManager createAchievementsManager() {
-		return new AchievementsManager_Base(this);
+		return null;
+		//return new AchievementsManager_Base(this);
 	}
 	
 	
@@ -121,11 +122,6 @@ public abstract class Application_Base extends Application {
 	public IEngagementProvider getEngagementProvider() {
 		return engagementProvider;
 	}
-	
-	
-	/*public ISocialProvider getSocialProvider() {
-		return engagementProvider.getSocialProvider();
-	}*/
 	
 	
 	public IEventsManager getEventsManager() {
@@ -142,12 +138,10 @@ public abstract class Application_Base extends Application {
 		return analytics_dummy;
 	}
 
-	public int getAnalyticsID() {
-		return 0;
-	}
 
 	public abstract boolean isTestMode();
-	
+
+
 	protected abstract UserSettings_Base createUserSettingsObject();
 
 	
@@ -210,10 +204,15 @@ public abstract class Application_Base extends Application {
 	public IConfigurationColours getColoursCfg() {
 		return ConfigurationUtils_Colours.getConfigByID(getUserSettings().uiColoursID);
 	}
-	
-	
+
+
 	public void storeUserSettings() {
-		StorageUtils.writeStore(this, UserSettings_Base.FILE_NAME_USER_SETTINGS, getUserSettings());
+		storeUserSettings(getUserSettings());
+	}
+
+
+	public void storeUserSettings(UserSettings_Base settings) {
+		StorageUtils.writeStore(this, UserSettings_Base.FILE_NAME_USER_SETTINGS, settings);
 	}
 	
 	
