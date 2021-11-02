@@ -89,8 +89,7 @@ public abstract class Activity_Marketing_ItemsList_BaseImpl extends Activity_Bas
 	protected abstract boolean openTarget(IHomeAdInfo promoted);
 
 
-	public List<RowItem_IdTD> buildRows() throws NotFoundException, SAXException,
-			IOException, ParserConfigurationException {
+	public List<RowItem_IdTD> buildRows() throws NotFoundException {
 		
 		List<RowItem_IdTD> rowItems = new ArrayList<RowItem_IdTD>();
 		
@@ -111,15 +110,17 @@ public abstract class Activity_Marketing_ItemsList_BaseImpl extends Activity_Bas
 				
 				if (!available) {
 					
-					Bitmap bitmap_org = bitmap;
-					bitmap = BitmapUtils.toGrayscale(bitmap);
-					BitmapUtils.recycle(bitmap, bitmap_org);
+					//Bitmap bitmap_org = bitmap;
+					//bitmap = BitmapUtils.toGrayscale(bitmap);
+					//BitmapUtils.recycle(bitmap, bitmap_org);
 					
 					description = getString(R.string.label_installed).toUpperCase();
 				}
 				
 				Drawable drawable = BitmapUtils.createDrawable(this, bitmap);
-				
+
+				available = true;
+
 				RowItem_IdTD item = new RowItem_IdTD(available, drawable, getString(app.getName()), description);
 				
 				rowItems.add(item);

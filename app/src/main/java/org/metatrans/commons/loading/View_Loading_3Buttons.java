@@ -157,7 +157,7 @@ public abstract class View_Loading_3Buttons extends Activity_Loading_Base.ViewWi
 	private void createButtons() {
 		
 		
-		textarea_label_loading = new TextArea(rectf_button_start, false, " " + getLoadingActivity().getString(R.string.loading) + " ",
+		textarea_label_loading = new TextArea(rectf_button_start, false, " " + getLoadingActivity().getString(getLoadingActivity().getText_Loading()) + " ",
 				getLoadingActivity().getColoursCfg().getColour_Square_Black(),
 				getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection());
 		

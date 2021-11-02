@@ -88,13 +88,13 @@ public class ListAdapter_CIdTD extends BaseAdapter {
             convertView = inflater.inflate(resID_listitem, parent, false);
         }
         
-        RadioButton radiobutton = (RadioButton) convertView.findViewById(resID_radio);
-        ImageView imageView = (ImageView) convertView.findViewById(resID_icon);
-        TextView txtTitle = (TextView) convertView.findViewById(resID_title);
-        TextView txtDesc = (TextView) convertView.findViewById(resID_description);
+        RadioButton radiobutton = convertView.findViewById(resID_radio);
+        ImageView imageView = convertView.findViewById(resID_icon);
+        TextView txtTitle = convertView.findViewById(resID_title);
+        TextView txtDesc = convertView.findViewById(resID_description);
 
         //Set text color
-        IConfigurationColours coloursCfg = ConfigurationUtils_Colours.getConfigByID(((Application_Base)((Activity_Base) convertView.getContext()).getApplication()).getUserSettings().uiColoursID);
+        //IConfigurationColours coloursCfg = ConfigurationUtils_Colours.getConfigByID(((Application_Base)((Activity_Base) convertView.getContext()).getApplication()).getUserSettings().uiColoursID);
         txtTitle.setTextColor(Color.WHITE);//coloursCfg.getColour_Square_White());
         txtDesc.setTextColor(Color.WHITE);//coloursCfg.getColour_Square_White());
 

@@ -13,11 +13,9 @@
         />
 
         <!--
-        TODO: research
         android:dividerHeight="5dp"
         android:footerDividersEnabled="true"
         android:headerDividersEnabled="true"
-        android:listSelector="@drawable/ic_blue3"
         android:stateListAnimator="" -->
 
 </FrameLayout>

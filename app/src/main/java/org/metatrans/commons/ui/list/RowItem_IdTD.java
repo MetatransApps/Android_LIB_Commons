@@ -8,24 +8,36 @@ public class RowItem_IdTD {
     
 
 	private boolean available;
+    private boolean checked;
 	private Drawable drawable;
     private String title;
     private String desc;
     
     
     public RowItem_IdTD(boolean available, Drawable drawable, String title, String desc) {
-    	this.available = available;
+    	this(available, false, drawable, title, desc);
+    }
+
+
+    public RowItem_IdTD(boolean available, boolean checked, Drawable drawable, String title, String desc) {
+        this.available = available;
+        this.checked = checked;
         this.drawable = drawable;
         this.title = title;
         this.desc = desc;
     }
-    
-    
+
+
     public RowItem_IdTD(Drawable drawable, String title, String desc) {
         this(true, drawable, title, desc);
     }
-    
-    
+
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+
     public Drawable getDrawable() {
         return drawable;
     }

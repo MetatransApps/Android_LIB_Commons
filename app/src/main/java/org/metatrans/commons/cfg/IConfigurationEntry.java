@@ -4,8 +4,10 @@ package org.metatrans.commons.cfg;
 public interface IConfigurationEntry {
 	
 	public int getID();
-	public int getName();
+
 	public int getIconResID();
+
+	public int getName();
 	public int getDescription();
 	
 	public String getName_String();

@@ -94,8 +94,13 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 	protected Class<? extends Activity_Base> getActivityClass_Menu1() {
 		return Activity_Menu_Colours_Base.class;
 	}
-	
-	
+
+
+	protected int getText_Loading() {
+		return R.string.loading;
+	}
+
+
 	protected int getText_Menu0() {
 		return R.string.button_start;
 	}

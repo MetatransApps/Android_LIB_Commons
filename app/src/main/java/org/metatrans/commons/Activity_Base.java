@@ -22,9 +22,6 @@ import android.view.View;
 public abstract class Activity_Base extends Activity {
 	
 	
-	private static final int ICON_FULL_SIZE	= 150;
-	
-	
 	private int icon_size;
 	
 	
@@ -131,7 +128,7 @@ public abstract class Activity_Base extends Activity {
 		
 		int factor = 9;
 		icon_size = Math.min(screen_width / factor, screen_height / factor);
-		icon_size = Math.min(icon_size, ICON_FULL_SIZE);
+		icon_size = (int) (1.23 * icon_size);
 		
 		/*
 		BitmapFactory.Options o = new BitmapFactory.Options();

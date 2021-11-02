@@ -79,6 +79,7 @@ public class ConfigurationUtils_Colours {
 				return i;
 			}
 		}
+
 		throw new IllegalStateException("CFG identifier " + cfgID + " not found.");
 	}
 }

@@ -20,46 +20,60 @@ public class ListViewFactory {
 	
 	public static ViewGroup create_ITD_ByXML(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, OnItemClickListener listener) {
 		
-		return create_ITD_ByXML(activity, inflater, rowItems, -1, listener, AbsListView.CHOICE_MODE_NONE);
+		return create_ITD_ByXML(activity, inflater, rowItems, -1, -1, -1, listener, AbsListView.CHOICE_MODE_NONE);
 	}
 
 
-	public static ViewGroup create_ITD_ByXML(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, int color_background, OnItemClickListener listener) {
+	public static ViewGroup create_ITD_ByXML(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, int initialSelection, int color_background, OnItemClickListener listener) {
 
-		return create_ITD_ByXML(activity, inflater, rowItems, color_background, listener, AbsListView.CHOICE_MODE_NONE);
+		return create_ITD_ByXML(activity, inflater, rowItems, initialSelection, R.id.commons_listitem_radio, color_background, listener, AbsListView.CHOICE_MODE_NONE);
 	}
 
-	
+
+	public static ViewGroup create_ITD_ByXML(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, int initialSelection, int radio_button_id, int color_background, OnItemClickListener listener) {
+
+		return create_ITD_ByXML(activity, inflater, rowItems, initialSelection, radio_button_id, color_background, listener, AbsListView.CHOICE_MODE_NONE);
+	}
+
+
 	public static ViewGroup create_ITD_ByXML_NoChoice(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, OnItemClickListener listener) {
-		return create_ITD_ByXML(activity, inflater, rowItems, -1, listener, AbsListView.CHOICE_MODE_NONE);
+		return create_ITD_ByXML(activity, inflater, rowItems, -1, R.id.commons_listitem_radio, -1, listener, AbsListView.CHOICE_MODE_NONE);
 	}
 
 
 	public static ViewGroup create_ITD_ByXML_NoChoice(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, int color_background, OnItemClickListener listener) {
-		return create_ITD_ByXML(activity, inflater, rowItems, color_background, listener, AbsListView.CHOICE_MODE_NONE);
+		return create_ITD_ByXML(activity, inflater, rowItems, -1, R.id.commons_listitem_radio, color_background, listener, AbsListView.CHOICE_MODE_NONE);
 	}
 
 	
-	private static ViewGroup create_ITD_ByXML(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, int color_background, OnItemClickListener listener, int mode) {
+	private static ViewGroup create_ITD_ByXML(Activity activity, LayoutInflater inflater, List<RowItem_IdTD> rowItems, int initialSelection, int radio_button_id, int color_background, OnItemClickListener listener, int mode) {
 		
-		FrameLayout view = (FrameLayout) inflater.inflate(R.layout.commons_listview_layout, null);
+		FrameLayout view = (FrameLayout) inflater.inflate(R.layout.commons_listview_layout_no_selector, null);
 
 		if (color_background != -1) {
 			view.setBackgroundColor(color_background);
 		}
 
 		ListAdapter_IdTD adapter = new ListAdapter_IdTD(activity, rowItems,
-				R.layout.commons_listview_item_itd,
+				radio_button_id == -1 ? R.layout.commons_listview_item_itd_no_radio : R.layout.commons_listview_item_itd,
+				radio_button_id,
 				R.id.commons_listitem_icon,
 				R.id.commons_listitem_title,
 				R.id.commons_listitem_description);
 		
-		ListView list = (ListView) view.findViewById(R.id.commons_listview);
+		ListView list = view.findViewById(R.id.commons_listview);
+
 		list.setAdapter(adapter);
+
 		list.setOnItemClickListener(listener);
 		
 		list.setChoiceMode(mode);
-		
+
+		if (initialSelection != -1) {
+			list.setSelection(initialSelection);
+			list.setItemChecked(initialSelection, true);
+		}
+
 	    return view;
 	}
 
@@ -104,6 +118,7 @@ public class ListViewFactory {
 		
 		ListAdapter_IdTD adapter = new ListAdapter_IdTD(activity, rowItems,
 				R.layout.commons_listview_item_itd,
+				R.id.commons_listitem_radio,
 				R.id.commons_listitem_icon,
 				R.id.commons_listitem_title,
 				R.id.commons_listitem_description);
