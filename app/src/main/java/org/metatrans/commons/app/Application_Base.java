@@ -154,7 +154,17 @@ public abstract class Application_Base extends Application {
 		}
 		return settings;
 	}
-	
+
+
+	public void recreateUserSettings() {
+
+		System.out.println("Application_Base.recreateUserSettings");
+
+		UserSettings_Base settings = createUserSettingsObject();
+		StorageUtils.writeStore(this, UserSettings_Base.FILE_NAME_USER_SETTINGS, settings);
+		StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
+	}
+
 	
 	protected abstract GameData_Base createGameDataObject();
 	
@@ -182,7 +192,7 @@ public abstract class Application_Base extends Application {
 	
 	public void storeGameData(GameData_Base gameData) {
 		
-		System.out.println("GAMEDATA Store");
+		System.out.println("Application_Base.storeGameData");
 		
 		StorageUtils.writeStore(this, GameData_Base.FILE_NAME_GAME_DATA, gameData);
 	}
@@ -190,7 +200,7 @@ public abstract class Application_Base extends Application {
 	
 	public void recreateGameDataObject() {
 		
-		System.out.println("GAMEDATA recreateGameDataObject");
+		System.out.println("Application_Base.recreateGameDataObject");
 		
 		GameData_Base data = createGameDataObject();
 		StorageUtils.writeStore(this, GameData_Base.FILE_NAME_GAME_DATA, data);
