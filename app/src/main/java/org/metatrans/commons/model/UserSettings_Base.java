@@ -26,6 +26,6 @@ public class UserSettings_Base implements Serializable {
 
 
 	public void save() {
-		Application_Base.getInstance().storeUserSettings();
+		Application_Base.getInstance().storeUserSettings(this);
 	}
 }

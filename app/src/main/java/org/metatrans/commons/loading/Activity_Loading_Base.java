@@ -313,28 +313,6 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 			dettachTopViews(frame);
 			attachTopViews(frame);
 
-
-			getExecutor().execute(new Runnable() {
-				
-				@Override
-				public void run() {
-					
-					try {
-						
-						if (!loaded) {
-							
-							load();
-							
-							loaded = true;
-						}
-						
-					} catch(Exception e) {
-						e.printStackTrace();
-					}
-				}
-
-			});
-
 		getExecutor().execute(new Runnable() {
 
 			@Override
@@ -344,12 +322,41 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 
 					try {
 						//Wait images to fully load in the memory before drawing them on the screen
-						Thread.sleep(500);
+						Thread.sleep(333);
 					} catch (InterruptedException e) {}
 
 					ViewWithLeaderBoard view = (ViewWithLeaderBoard) findViewById(VIEW_ID_LOADING);
 
 					view.initPiecesBitmaps();
+
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+
+		});
+
+
+		getExecutor().execute(new Runnable() {
+
+			@Override
+			public void run() {
+
+				try {
+
+					if (!loaded) {
+
+						try {
+
+							//Wait images to fully load in the memory before drawing them on the screen
+							Thread.sleep(111);
+
+						} catch (InterruptedException e) {}
+
+						load();
+
+						loaded = true;
+					}
 
 				} catch(Exception e) {
 					e.printStackTrace();

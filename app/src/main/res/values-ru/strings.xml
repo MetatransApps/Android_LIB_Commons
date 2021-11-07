@@ -133,6 +133,7 @@
     
     <string name="alert_title">Предупреждение перед действием</string>
     <string name="alert_message_newgame">Новая игра?</string>
+    <string name="alert_message_newmove">Вы хотите отменить текущую последовательность ходов, начиная с текущего хода?</string>
     <string name="alert_message_lower_difficulty">Трудность будет снижена</string>
     <string name="alert_message_notenoughmemory">Недостаточно памяти</string>
     <string name="alert_message_lowmemory">Меньше памяти, чем рекомендуется</string>

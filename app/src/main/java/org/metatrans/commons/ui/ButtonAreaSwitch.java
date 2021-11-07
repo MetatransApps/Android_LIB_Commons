@@ -41,14 +41,16 @@ public class ButtonAreaSwitch extends ButtonAreaClick {
 	
 	
 	public void finish() {
+
 		active = !active;
-		
-		boolean backup = active;
-		if (backup) {
+
+		if (active) {
+
 			super.select();
+
 		} else {
+
 			super.deselect();
 		}
-		active = backup;
 	}
 }

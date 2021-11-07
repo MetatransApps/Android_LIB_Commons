@@ -132,6 +132,7 @@
     
     <string name="alert_title">Advertencia antes de la acción</string>
     <string name="alert_message_newgame">Nuevo juego?</string>
+    <string name="alert_message_newmove">¿Quieres anular la secuencia actual de movimientos a partir del movimiento actual?</string>
     <string name="alert_message_lower_difficulty">La dificultad se reducirá</string>
     <string name="alert_message_notenoughmemory">Hace falta memoria</string>
     <string name="alert_message_lowmemory">Menos memoria que la recomendada</string>

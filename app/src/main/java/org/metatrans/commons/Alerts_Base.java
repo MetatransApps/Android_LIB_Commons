@@ -33,17 +33,22 @@ public class Alerts_Base {
 	
 	
 	public static AlertDialog.Builder createAlertDialog_LoseGame(Context context, OnClickListener possitive, OnClickListener negative) {
-		return createAlertDialog(context, possitive, negative, R.string.alert_message_newgame);
+		return createAlertDialog(context, possitive, negative, null, R.string.alert_message_newgame);
 	}
-	
-	
+
+
+	public static AlertDialog.Builder createAlertDialog_OverrideMoveSequence(Context context, OnClickListener possitive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener) {
+		return createAlertDialog(context, possitive, negative, onCancelListener, R.string.alert_message_newmove);
+	}
+
+
 	protected static AlertDialog.Builder createAlertDialog_LowerDifficulty(Context context, OnClickListener possitive, OnClickListener negative) {
-		return createAlertDialog(context, possitive, negative, R.string.alert_message_lower_difficulty);
+		return createAlertDialog(context, possitive, negative, null, R.string.alert_message_lower_difficulty);
 	}
 	
 	
 	protected static AlertDialog.Builder createAlertDialog_Exit(Context context, OnClickListener possitive, OnClickListener negative) {
-		return createAlertDialog(context, possitive, negative, R.string.alert_message_exit);
+		return createAlertDialog(context, possitive, negative, null, R.string.alert_message_exit);
 	}
 	
 	
@@ -55,17 +60,21 @@ public class Alerts_Base {
 		return createAlertDialog_Continue(context, negative, message);
 	}
 	
-	protected static AlertDialog.Builder createAlertDialog(Context context, OnClickListener possitive, OnClickListener negative, int messageID) {
+	protected static AlertDialog.Builder createAlertDialog(Context context, OnClickListener possitive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener, int messageID) {
 		
 		AlertDialog.Builder adb = new AlertDialog.Builder(context);
-		
-		//adb.setView(list);
+
 		adb.setIcon(android.R.drawable.ic_dialog_alert);
 		adb.setTitle(R.string.alert_title);
 		adb.setMessage(messageID);
 		adb.setPositiveButton(R.string.yes, possitive);
 		adb.setNegativeButton(R.string.no, negative);
-		
+
+		if (onCancelListener != null) {
+
+			adb.setOnCancelListener(onCancelListener);
+		}
+
 		return adb;
 	}
 	

@@ -29,7 +29,7 @@ public class GameData_Base implements Serializable {
 	
 	
 	public void save() {
-		Application_Base.getInstance().storeGameData();
+		Application_Base.getInstance().storeGameData(this);
 	}
 	
 	

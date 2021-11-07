@@ -51,8 +51,9 @@ public abstract class ImageArea implements IButtonArea {
 		scaleImage = _scaleImage;
 		
 		paint = new Paint();
+
 		paint.setColor(colour_area);
-		
+
 		int MARGIN =  (int) Math.max(rect.height() / 10, rect.width()/ 10);
 		
 		src = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
@@ -86,20 +87,24 @@ public abstract class ImageArea implements IButtonArea {
 			dest = new RectF(left + MARGIN, top + MARGIN, right - MARGIN, bottom - MARGIN);
 		}
 	}
-	
-	
+
+
+	public void setColour_Area(int colour_area) {
+
+		paint.setColor(colour_area);
+	}
+
+
 	public void draw(Canvas canvas) {
-		
-		if (!drawImageOnly) DrawingUtils.drawRoundTextArea(canvas, paint, rect);
+
+		if (!drawImageOnly) {
+
+			DrawingUtils.drawRoundTextArea(canvas, paint, rect);
+		}
 		
 		canvas.save();
 		canvas.drawBitmap(bitmap, src, dest, paint);
 		canvas.restore();
 		
-	}
-	
-	
-	public void setColour_Area(int colour_area) {
-		paint.setColor(colour_area);
 	}
 }

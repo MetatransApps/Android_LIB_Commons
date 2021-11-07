@@ -32,8 +32,10 @@ public class ButtonAreaClick_Image extends ImageArea {
 		setColour_Area(colour_area);
 		active = false;
 	}
-	
-	public boolean isActive() {
+
+
+	public boolean isSelected() {
+
 		return active;
 	}
 }
