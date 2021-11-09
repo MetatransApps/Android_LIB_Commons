@@ -321,8 +321,10 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 				try {
 
 					try {
+
 						//Wait images to fully load in the memory before drawing them on the screen
-						Thread.sleep(333);
+						Thread.sleep(555);
+
 					} catch (InterruptedException e) {}
 
 					ViewWithLeaderBoard view = (ViewWithLeaderBoard) findViewById(VIEW_ID_LOADING);

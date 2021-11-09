@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import org.metatrans.commons.achievements.AchievementsManager_Base;
 import org.metatrans.commons.achievements.IAchievementsManager;
 import org.metatrans.commons.analytics.Analytics_DummyImpl;
 import org.metatrans.commons.analytics.IAnalytics;
@@ -47,8 +46,11 @@ public abstract class Application_Base extends Application {
 	private IEventsManager eventsManager;
 	
 	private IAnalytics analytics_dummy = new Analytics_DummyImpl();
-	
-	
+
+	private Class <? extends UserSettings_Base> settings_latest_model_class;
+	private Class <? extends GameData_Base>  gamedata_latest_model_class;
+
+
 	@Override
 	public void onCreate() {
 		
@@ -79,6 +81,13 @@ public abstract class Application_Base extends Application {
 		
 		
 		ConfigurationUtils_Colours.class.getName();
+
+
+		UserSettings_Base settings_test = createUserSettingsObject();
+		settings_latest_model_class = settings_test.getClass();
+
+		GameData_Base gameData_test = createGameDataObject();
+		gamedata_latest_model_class = gameData_test.getClass();
 	}
 	
 	
@@ -146,12 +155,43 @@ public abstract class Application_Base extends Application {
 
 	
 	public UserSettings_Base getUserSettings() {
-		UserSettings_Base settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
-		if (settings == null) {
-			settings = createUserSettingsObject();
-			StorageUtils.writeStore(this, UserSettings_Base.FILE_NAME_USER_SETTINGS, settings);
+
+		UserSettings_Base settings;
+
+		try {
+
+			settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
+
+			if (settings == null) {
+
+				Application_Base.getInstance().recreateUserSettings();
+				settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
+
+			} else {
+
+				//Check if model class has changed from prev version
+				if (!settings_latest_model_class.equals(settings.getClass())) {
+
+					Application_Base.getInstance().recreateUserSettings();
+					settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
+				}
+			}
+
+		} catch (Exception e) {
+
+			if (Application_Base.getInstance().isTestMode()) {
+
+				throw e;
+			}
+
+			e.printStackTrace();
+
+			//In case of incompatible change of UserSettings class and failed deserialization, we lose the current settings and create new one
+			Application_Base.getInstance().recreateUserSettings();
+
 			settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
 		}
+
 		return settings;
 	}
 
@@ -170,18 +210,49 @@ public abstract class Application_Base extends Application {
 	
 	
 	public GameData_Base getGameData() {
-		GameData_Base data = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
-		if (data == null) {
-			data = createGameDataObject();
-			StorageUtils.writeStore(this, GameData_Base.FILE_NAME_GAME_DATA, data);
-			data = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
-			
-			/*IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
-			if (getInstance().getCurrentActivity() != null) {
-				eventsManager.handleGameEvents_OnStart(getInstance().getCurrentActivity(), data);
-			}*/
+
+		GameData_Base gameData;
+
+		try {
+
+			gameData = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
+
+			if (gameData == null) {
+
+				Application_Base.getInstance().recreateGameDataObject();
+				gameData = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
+
+			} else {
+
+				//Check if model class has changed from prev version
+				if (!gamedata_latest_model_class.equals(gameData.getClass())) {
+
+					Application_Base.getInstance().recreateGameDataObject();
+					gameData = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
+				}
+			}
+
+		} catch (Exception e) {
+
+			if (Application_Base.getInstance().isTestMode()) {
+
+				throw e;
+			}
+
+			e.printStackTrace();
+
+			//In case of incompatible change of GameData class and failed deserialization or BoardManager creation, we lose the current game and create new one
+			Application_Base.getInstance().recreateGameDataObject();
+
+			gameData = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
 		}
-		return data;
+
+		/*IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
+		if (getInstance().getCurrentActivity() != null) {
+			eventsManager.handleGameEvents_OnStart(getInstance().getCurrentActivity(), data);
+		}*/
+
+		return gameData;
 	}
 	
 	
