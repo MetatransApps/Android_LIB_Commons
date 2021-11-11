@@ -188,7 +188,6 @@ public abstract class Application_Base extends Application {
 
 			//In case of incompatible change of UserSettings class and failed deserialization, we lose the current settings and create new one
 			Application_Base.getInstance().recreateUserSettings();
-
 			settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
 		}
 
@@ -243,7 +242,6 @@ public abstract class Application_Base extends Application {
 
 			//In case of incompatible change of GameData class and failed deserialization or BoardManager creation, we lose the current game and create new one
 			Application_Base.getInstance().recreateGameDataObject();
-
 			gameData = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
 		}
 
@@ -293,6 +291,9 @@ public abstract class Application_Base extends Application {
 
 
 	public void storeUserSettings(UserSettings_Base settings) {
+
+		System.out.println("Application_Base.storeUserSettings");
+
 		StorageUtils.writeStore(this, UserSettings_Base.FILE_NAME_USER_SETTINGS, settings);
 	}
 	

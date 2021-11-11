@@ -49,7 +49,7 @@ public class Config_Colours_Gray extends Config_Colours_Base {
 	}
 	
 	public int getColour_Square_White() {
+
 		return Color.rgb(153, 153, 153);
-		//return Color.rgb(204, 204, 204);
 	}
 }

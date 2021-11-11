@@ -36,6 +36,7 @@ public class StorageUtils {
 		Object cached = cache.get(storename);
 		
 		if (cached != null) {
+
 			return cached;
 		}
 		
@@ -107,8 +108,11 @@ public class StorageUtils {
 			cache.put(storename, obj);
 			
 		} catch (IOException e) {
+
 			e.printStackTrace();
+
 		} finally {
+
 			if (output != null) {
 				try {
 					output.close();

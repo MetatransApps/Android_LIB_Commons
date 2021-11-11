@@ -18,8 +18,10 @@ import org.metatrans.commons.events.api.IEvent_Base;
 import org.metatrans.commons.events.api.IEventsManager;
 import org.metatrans.commons.loading.logic.MovingEntry;
 import org.metatrans.commons.ui.ButtonAreaClick;
+import org.metatrans.commons.ui.ButtonAreaClick_Image;
 import org.metatrans.commons.ui.IButtonArea;
 import org.metatrans.commons.ui.TextArea;
+import org.metatrans.commons.ui.utils.BitmapUtils;
 import org.metatrans.commons.ui.utils.DrawingUtils;
 
 import java.util.ArrayList;
@@ -30,8 +32,6 @@ import java.util.Vector;
 public abstract class View_Loading_2Buttons extends Activity_Loading_Base.ViewWithLeaderBoard implements View.OnTouchListener {
 
 	int MAX_ITERS = 4;
-
-	int STEP = 10;
 
 	private List<MovingEntry> entries;
 
@@ -149,23 +149,20 @@ public abstract class View_Loading_2Buttons extends Activity_Loading_Base.ViewWi
 	private void createButtons() {
 		
 		
-		textarea_label_loading = new TextArea(rectf_button_start, false, " " + getLoadingActivity().getString(getLoadingActivity().getText_Loading()) + " ",
+		textarea_label_loading = new TextArea(rectf_button_start,
+				false,
+				getLoadingActivity().getString(getLoadingActivity().getText_Loading()),
 				getLoadingActivity().getColoursCfg().getColour_Square_Black(),
 				getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection());
-		
-		//Color.rgb(51, 51, 51) delimeter
-		//Color.rgb(153, 153, 153) white
-		//Color.rgb(102, 102, 102) black
-		buttonarea_start = new ButtonAreaClick(rectf_button_start, "  " + getLoadingActivity().getString(getLoadingActivity().getText_Menu0()) + "  ",
+
+		buttonarea_start = new ButtonAreaClick_Image(rectf_button_start,
+				BitmapUtils.fromResource(getContext(), R.drawable.ic_action_playback_play_white),
 				getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection(),
-				getLoadingActivity().getColoursCfg().getColour_Square_Black(),
-				getLoadingActivity().getColoursCfg().getColour_Square_MarkingSelection()
-				//getLoadingActivity().getColoursCfg().getColour_Delimiter(),
-				//getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection(),
-				//getLoadingActivity().getColoursCfg().getColour_Square_Black()
-				);
+				getLoadingActivity().getColoursCfg().getColour_Square_MarkingSelection(),
+				false
+			);
 		
-		buttonarea_menu1 =  new ButtonAreaClick(rectf_button_menu1, "  " + getContext().getString(getLoadingActivity().getText_Menu1()) + "  ",
+		buttonarea_menu1 =  new ButtonAreaClick(rectf_button_menu1, getContext().getString(getLoadingActivity().getText_Menu1()),
 				//coloursCfg.getColour_Delimiter(), coloursCfg.getColour_Square_White(), coloursCfg.getColour_Square_ValidSelection());
 				getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection(),
 				getLoadingActivity().getColoursCfg().getColour_Square_Black(),
@@ -178,26 +175,25 @@ public abstract class View_Loading_2Buttons extends Activity_Loading_Base.ViewWi
 	}
 	
 	
-	public boolean isOverStartButton(float x, float y) {
-		return rectf_button_start.contains(x, y) && getLoadingActivity().isDone();
-	}
-	
-	
 	public boolean isOverMenu1Button(float x, float y) {
 		return rectf_button_menu1.contains(x, y);
 	}
-	
-	
+
+
+	public boolean isOverStartButton(float x, float y) {
+
+		return rectf_button_start.contains(x, y);
+	}
+
+
 	public void selectButton_Start() {
 		
 		buttonarea_start.select();
-		invalidate();
 	}
 	
 	public void deselectButton_Start() {
 		
 		buttonarea_start.deselect();
-		invalidate();
 	}
 	
 	
@@ -447,15 +443,23 @@ public abstract class View_Loading_2Buttons extends Activity_Loading_Base.ViewWi
 			float y = event.getY();
 
 			deselectButton_Start();
+
 			deselectButton_Menu1();
 
 			if (isOverStartButton(x, y)) {
-				Intent i = new Intent(getContext(), ((Activity_Loading_Base) getContext()).getNextActivityClass());
-				getContext().startActivity(i);
+
+				if (getLoadingActivity().isDone()) {
+
+					Intent i = new Intent(getContext(), ((Activity_Loading_Base) getContext()).getNextActivityClass());
+
+					getContext().startActivity(i);
+				}
 			}
 
 			if (isOverMenu1Button(x, y)) {
+
 				Intent menu1 = new Intent(getContext(), ((Activity_Loading_Base) getContext()).getActivityClass_Menu1());
+
 				getContext().startActivity(menu1);
 			}
 		}

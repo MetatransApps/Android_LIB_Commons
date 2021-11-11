@@ -6,35 +6,46 @@ import android.graphics.RectF;
 
 public class ButtonAreaClick extends TextArea {
 
-	
-	private int colour_selection;
-	protected boolean active = false;
+
+	//True when user finger is moving inside the button's rectangle
+	protected boolean selected = false;
+
+	protected int colour_selection;
 	
 	
 	public ButtonAreaClick(RectF _rect, String _text, int _colour_area, int _colour_text, int _colour_selection) {
+
 		super(_rect, _text, _colour_area, _colour_text);
+
 		colour_selection = _colour_selection;
 	}
 
 
 	public ButtonAreaClick(RectF _rect, String _text, boolean drawTextOnly, int _colour_area, int _colour_text, int _colour_selection) {
+
 		super(_rect, drawTextOnly, _text, _colour_area, _colour_text);
+
 		colour_selection = _colour_selection;
 	}
 
 	
 	public void select() {
+
+		selected = true;
+
 		setColour_Area(colour_selection);
-		active = true;
 	}
 	
 	
 	public void deselect() {
+
+		selected = false;
+
 		setColour_Area(colour_area);
-		active = false;
 	}
-	
-	public boolean isActive() {
-		return active;
+
+
+	public boolean isSelected() {
+		return selected;
 	}
 }

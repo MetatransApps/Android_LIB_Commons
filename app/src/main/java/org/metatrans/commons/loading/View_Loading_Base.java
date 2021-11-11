@@ -20,14 +20,16 @@ import org.metatrans.commons.ui.utils.DrawingUtils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.View;
 
 
-public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLeaderBoard {
+public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLeaderBoard implements View.OnTouchListener {
 
 
 	private static final int MAX_ITERS = 4;
@@ -50,8 +52,6 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 	protected Paint paint_background;
 	protected Paint paint_images;
 	
-	private Runnable refresher; 
-	
 	private boolean sent_event_one_stoped = false;
 	private boolean sent_event_all_stoped = false;
 	
@@ -72,13 +72,13 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 		paint_images 				= new Paint();
 		
 		entries 					= new Vector<MovingEntry>();
-		
-		refresher 					= new Update(this);
 	}
 	
 	
 	public abstract void initPiecesBitmaps();
+
 	protected abstract Bitmap[] getCommonBitmaps();
+
 	protected abstract Bitmap getBitmapBackground();//Can be null
 	
 	
@@ -86,11 +86,7 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 		return rectf_leaderboards;
 	}
 	
-	
-	public RectF getRectangle_GooglePlus() {
-		return rectf_button_googleplus;
-	}
-	
+
 	
 	//@Override
 	protected void registerEvent_AllStopped() {
@@ -110,90 +106,82 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-		
-		//if (!initialized) {
-			
-			rectf_main.left = 0;
-			rectf_main.right = getMeasuredWidth();
-			rectf_main.top = 0;
-			rectf_main.bottom = getMeasuredHeight();
-			
-			int MARGIN = 10;
-			int buttons_width = getMeasuredWidth() / 2;
-			int buttons_height =  getMeasuredHeight() / 11;
-			int buttons_distance =  (getMeasuredHeight() - 6 * buttons_height) / 7;
 
-			if (getMeasuredWidth() > getMeasuredHeight()) {
-				buttons_height *= 1.5;
-				buttons_distance =  (getMeasuredHeight() - 6 * buttons_height) / 7;
-			}
+		rectf_main.left = 0;
+		rectf_main.right = getMeasuredWidth();
+		rectf_main.top = 0;
+		rectf_main.bottom = getMeasuredHeight();
 
-			rectf_button_start.left = (rectf_main.right - rectf_main.left) / 2 - buttons_width / 2;
-			rectf_button_start.right = (rectf_main.right - rectf_main.left) / 2 + buttons_width / 2;
-			rectf_button_start.top = (rectf_main.bottom - rectf_main.top) / 2 - buttons_height / 2;
-			rectf_button_start.bottom = (rectf_main.bottom - rectf_main.top) / 2 + 2 * buttons_height / 2;
+		int MARGIN = 10;
+		int buttons_width = getMeasuredWidth() / 2;
+		int buttons_height =  getMeasuredHeight() / 11;
+		int buttons_distance =  (getMeasuredHeight() - 6 * buttons_height) / 7;
+
+		if (getMeasuredWidth() > getMeasuredHeight()) {
+			buttons_height *= 1.5;
+			buttons_distance =  (getMeasuredHeight() - 6 * buttons_height) / 7;
+		}
+
+		rectf_button_start.left = (rectf_main.right - rectf_main.left) / 2 - buttons_width / 2;
+		rectf_button_start.right = (rectf_main.right - rectf_main.left) / 2 + buttons_width / 2;
+		rectf_button_start.top = (rectf_main.bottom - rectf_main.top) / 2 - buttons_height / 2;
+		rectf_button_start.bottom = (rectf_main.bottom - rectf_main.top) / 2 + 2 * buttons_height / 2;
 
 
-			float googleplus_button_half_size = buttons_width / 6;
+		float googleplus_button_half_size = buttons_width / 6;
 
-			if (getMeasuredHeight() > getMeasuredWidth()) {
+		if (getMeasuredHeight() > getMeasuredWidth()) {
 
-				rectf_leaderboards.left = rectf_button_start.left;
-				rectf_leaderboards.right = rectf_button_start.right;
-				rectf_leaderboards.top = rectf_button_start.top / 2 - buttons_height / 2;
-				rectf_leaderboards.bottom = rectf_leaderboards.top + buttons_height;
+			rectf_leaderboards.left = rectf_button_start.left;
+			rectf_leaderboards.right = rectf_button_start.right;
+			rectf_leaderboards.top = rectf_button_start.top / 2 - buttons_height / 2;
+			rectf_leaderboards.bottom = rectf_leaderboards.top + buttons_height;
 
-			} else {
+		} else {
 
-				googleplus_button_half_size /= 2;
+			googleplus_button_half_size /= 2;
 
-				rectf_leaderboards.left = rectf_button_start.left + 1 * (rectf_button_start.right - rectf_button_start.left) / 4;
-				rectf_leaderboards.right = rectf_leaderboards.left + 2 * (rectf_button_start.right - rectf_button_start.left) / 4;
-				rectf_leaderboards.top = rectf_button_start.top / 2 - buttons_height / 2;
-				rectf_leaderboards.bottom = rectf_leaderboards.top + buttons_height;
-			}
+			rectf_leaderboards.left = rectf_button_start.left + 1 * (rectf_button_start.right - rectf_button_start.left) / 4;
+			rectf_leaderboards.right = rectf_leaderboards.left + 2 * (rectf_button_start.right - rectf_button_start.left) / 4;
+			rectf_leaderboards.top = rectf_button_start.top / 2 - buttons_height / 2;
+			rectf_leaderboards.bottom = rectf_leaderboards.top + buttons_height;
+		}
 
 
-			rectf_button_googleplus.left = rectf_leaderboards.left / 2 - googleplus_button_half_size;
-			rectf_button_googleplus.top = rectf_button_start.top;
-			rectf_button_googleplus.right = rectf_leaderboards.left / 2 + googleplus_button_half_size;
-			rectf_button_googleplus.bottom = rectf_button_start.bottom;
-			
-			rectf_button_rate_review.left = rectf_leaderboards.right + (rectf_main.right - rectf_leaderboards.right) / 2 - googleplus_button_half_size;
-			rectf_button_rate_review.top = rectf_button_start.top + (rectf_button_start.bottom - rectf_button_start.top) / 2 - googleplus_button_half_size;
-			rectf_button_rate_review.right = rectf_leaderboards.right + (rectf_main.right - rectf_leaderboards.right) / 2 + googleplus_button_half_size;
-			rectf_button_rate_review.bottom = rectf_button_start.top + (rectf_button_start.bottom - rectf_button_start.top) / 2 + googleplus_button_half_size;
-			
-			createButtons();
-			
-			this.setMeasuredDimension( (int) (rectf_main.right - rectf_main.left), (int) (rectf_main.bottom - rectf_main.top) );
-			
-			
-			//initialized = true;
-		//}
+		rectf_button_googleplus.left = rectf_leaderboards.left / 2 - googleplus_button_half_size;
+		rectf_button_googleplus.top = rectf_button_start.top;
+		rectf_button_googleplus.right = rectf_leaderboards.left / 2 + googleplus_button_half_size;
+		rectf_button_googleplus.bottom = rectf_button_start.bottom;
 
-		setOnTouchListener(new OnTouchListener_Loading(this));
+		rectf_button_rate_review.left = rectf_leaderboards.right + (rectf_main.right - rectf_leaderboards.right) / 2 - googleplus_button_half_size;
+		rectf_button_rate_review.top = rectf_button_start.top + (rectf_button_start.bottom - rectf_button_start.top) / 2 - googleplus_button_half_size;
+		rectf_button_rate_review.right = rectf_leaderboards.right + (rectf_main.right - rectf_leaderboards.right) / 2 + googleplus_button_half_size;
+		rectf_button_rate_review.bottom = rectf_button_start.top + (rectf_button_start.bottom - rectf_button_start.top) / 2 + googleplus_button_half_size;
+
+		createButtons();
+
+		this.setMeasuredDimension( (int) (rectf_main.right - rectf_main.left), (int) (rectf_main.bottom - rectf_main.top) );
+
+
+		initPiecesBitmaps();
+
+
+		setOnTouchListener(this);
 	}
 	
 	
 	private void createButtons() {
 		
-		
 		textarea_label_loading = new TextArea(rectf_button_start, false, " " + getLoadingActivity().getString(getLoadingActivity().getText_Loading()) + " ",
 				getLoadingActivity().getColoursCfg().getColour_Square_Black(),
 				getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection());
-		
-		//Color.rgb(51, 51, 51) delimeter
-		//Color.rgb(153, 153, 153) white
-		//Color.rgb(102, 102, 102) black
-		buttonarea_start = new ButtonAreaClick(rectf_button_start, "  " + getLoadingActivity().getString(getLoadingActivity().getText_Menu0()) + "  ",
+
+		buttonarea_start = new ButtonAreaClick_Image(rectf_button_start,
+				BitmapUtils.fromResource(getContext(), R.drawable.ic_action_playback_play_white),
 				getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection(),
-				getLoadingActivity().getColoursCfg().getColour_Square_Black(),
-				getLoadingActivity().getColoursCfg().getColour_Square_MarkingSelection()
-				//getLoadingActivity().getColoursCfg().getColour_Delimiter(),
-				//getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection(),
-				//getLoadingActivity().getColoursCfg().getColour_Square_Black()
-				);
+				getLoadingActivity().getColoursCfg().getColour_Square_MarkingSelection(),
+				false
+		);
 	}
 	
 	
@@ -202,26 +190,21 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 	}
 	
 	
-	public boolean isOverRateButton(float x, float y) {
-		return rectf_button_rate_review.contains(x, y);
-	}
-	
-	
 	public boolean isOverStartButton(float x, float y) {
-		return rectf_button_start.contains(x, y) && getLoadingActivity().isDone();
+
+		return rectf_button_start.contains(x, y);
 	}
 	
 	
 	public void selectButton_Start() {
-		
+
 		buttonarea_start.select();
-		invalidate();
 	}
-	
+
+
 	public void deselectButton_Start() {
 		
 		buttonarea_start.deselect();
-		invalidate();
 	}
 	
 	
@@ -323,7 +306,7 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 	
 	
 	@Override
-	protected synchronized void onDraw(Canvas canvas) {
+	protected void onDraw(Canvas canvas) {
 		
 		super.onDraw(canvas);
 		
@@ -346,19 +329,20 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 				}
 			}
 		}
-		
-		//paint_background.setColor(getLoadingActivity().getColoursCfg().getColour_Delimiter());
-		//DrawingUtils.drawRoundRectangle(canvas, paint_background, rectf_buttons);
-		
+
+
 		if (getLoadingActivity().isDone()) {
-			buttonarea_start.draw(canvas);	
+
+			buttonarea_start.draw(canvas);
+
 		} else {
+
 			textarea_label_loading.draw(canvas);
 		}
 		
 		updateCoordinates();
-		
-		getLoadingActivity().getUiHandler().post(refresher);
+
+		invalidate();
 	}
 	
 	
@@ -397,27 +381,91 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 			}
 		}
 	}
-	
-	
-	private static class Update implements Runnable {
-		
-		
-		private View view;
-		
-		
-		public Update(View _view) {
-			view = _view;
+
+
+	@Override
+	public boolean onTouch(View _view, MotionEvent event) {
+
+		int action = event.getAction();
+
+		System.out.println("View_Loading_Base.onTouch: action=" + action);
+
+		if (action == MotionEvent.ACTION_DOWN) {
+
+			processEvent_DOWN(event);
+
+		} else if (action == MotionEvent.ACTION_MOVE) {
+
+			processEvent_MOVE(event);
+
+		} else if (action == MotionEvent.ACTION_UP) {
+
+			processEvent_UP(event);
+
 		}
-		
-		
-		@Override
-		public void run() {
-			
-			try {
-				Thread.sleep(35);
-			} catch (InterruptedException e) {}
-			
-			view.invalidate();
+
+		invalidate();
+
+		return true;
+	}
+
+
+	private void processEvent_DOWN(MotionEvent event) {
+
+		float x = event.getX();
+
+		float y = event.getY();
+
+
+		if (isOverStartButton(x, y)) {
+
+			selectButton_Start();
+
+		} else {
+
+			pushed(x, y);
+		}
+	}
+
+
+	private void processEvent_MOVE(MotionEvent event) {
+
+		float x = event.getX();
+
+		float y = event.getY();
+
+		if (isOverStartButton(x, y)) {
+
+			selectButton_Start();
+
+			System.out.println("View_Loading_Base.processEvent_MOVE: select start button");
+		} else {
+
+			deselectButton_Start();
+
+			System.out.println("View_Loading_Base.processEvent_MOVE: de-select start button");
+		}
+	}
+
+
+	private void processEvent_UP(MotionEvent event) {
+
+
+		float x = event.getX();
+		float y = event.getY();
+
+
+		deselectButton_Start();
+
+
+		if (isOverStartButton(x, y)) {
+
+			if (getLoadingActivity().isDone()) {
+
+				Intent i = new Intent(getContext(), ((Activity_Loading_Base) getContext()).getNextActivityClass());
+
+				getContext().startActivity(i);
+			}
 		}
 	}
 }

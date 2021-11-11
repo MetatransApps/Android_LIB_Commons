@@ -1,10 +1,8 @@
 package org.metatrans.commons.ui;
 
 
-import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.ui.utils.DrawingUtils;
 
-import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
@@ -29,8 +27,6 @@ public class TextArea implements IButtonArea {
 	protected int colour_area;
 
 	private int colour_text;
-
-	//private int left_right_border = 3;
 	
 	private StaticLayout box;
 
@@ -84,6 +80,7 @@ public class TextArea implements IButtonArea {
 		textPaint.setAntiAlias(true);
 
 		paint = new Paint();
+
 		paint.setColor(colour_area);
 
 
@@ -215,9 +212,10 @@ public class TextArea implements IButtonArea {
 
 		textPaint.setColor(colour_text);
 	}
-	
+
+
 	public void setColour_Area(int colour_area) {
-		
+
 		paint.setColor(colour_area);
 	}
 	
@@ -239,14 +237,12 @@ public class TextArea implements IButtonArea {
 
 	@Override
 	public void select() {
-		// TODO Auto-generated method stub
-
+		//Do nothing
 	}
 
 
 	@Override
 	public void deselect() {
-		// TODO Auto-generated method stub
-
+		//Do nothing
 	}
 }

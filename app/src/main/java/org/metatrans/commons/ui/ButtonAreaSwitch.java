@@ -5,52 +5,85 @@ import android.graphics.RectF;
 
 
 public class ButtonAreaSwitch extends ButtonAreaClick {
-	
-	
-	public ButtonAreaSwitch(RectF _rect, String _text, int _colour_area, int _colour_text, int _colour_selection, boolean _active) {
-		super(_rect, _text, _colour_area, _colour_text, _colour_selection);
-		active = _active;
-		if (active){
-			super.select();
-		}
-	}
-	
-	
-	@Override
-	public void select() {
-		boolean backup = active;
-		if (backup) {
-			super.deselect();
-		} else {
-			super.select();
-		}
-		active = backup;
-	}
-	
-	
-	@Override
-	public void deselect() {
-		boolean backup = active;
-		if (backup) {
-			super.select();
-		} else {
-			super.deselect();
-		}
-		active = backup;
-	}
-	
-	
-	public void finish() {
 
-		active = !active;
+
+	//True when the represented by this button option is active / enabled
+	private boolean active;
+
+	private int colour_area_enabled;
+
+	private int colour_area_disabled;
+
+
+	public ButtonAreaSwitch(RectF _rect, String _text, int _colour_area_enabled, int _colour_area_disabled, int _colour_text, int _colour_selection, boolean _active) {
+
+		super(_rect, _text, -1, _colour_text, _colour_selection);
+
+		active = _active;
+
+		colour_area_enabled = _colour_area_enabled;
+
+		colour_area_disabled = _colour_area_disabled;
 
 		if (active) {
 
-			super.select();
+			activate();
 
 		} else {
 
-			super.deselect();
+			deactivate();
 		}
+	}
+
+
+	public void activate() {
+
+		active = true;
+
+		if (isSelected()) {
+
+			setColour_Area(colour_selection);
+
+		} else {
+
+			setColour_Area(colour_area_enabled);
+		}
+	}
+
+
+	public void deactivate() {
+
+		active = false;
+
+		if (isSelected()) {
+
+			setColour_Area(colour_selection);
+
+		} else {
+
+			setColour_Area(colour_area_disabled);
+		}
+	}
+
+
+	@Override
+	public void deselect() {
+
+		super.deselect();
+
+		if (active) {
+
+			setColour_Area(colour_area_enabled);
+
+		} else {
+
+			setColour_Area(colour_area_disabled);
+
+		}
+	}
+
+
+	public boolean isActive() {
+		return active;
 	}
 }

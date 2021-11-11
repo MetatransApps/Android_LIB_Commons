@@ -22,6 +22,7 @@ public abstract class ImageArea implements IButtonArea {
 	private Bitmap bitmap;
 	
 	private Rect src;
+
 	private RectF dest;
 	
 	private Paint paint;
@@ -54,7 +55,7 @@ public abstract class ImageArea implements IButtonArea {
 
 		paint.setColor(colour_area);
 
-		int MARGIN =  (int) Math.max(rect.height() / 10, rect.width()/ 10);
+		int MARGIN =  1;//(int) Math.max(rect.height() / 10, rect.width()/ 10);
 		
 		src = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
 		

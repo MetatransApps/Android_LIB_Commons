@@ -285,58 +285,29 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 	private void initUI() {
 		
 		System.out.println("Activity_Loading_Base: initUI");
-		
-		//IConfigurationColours coloursCfg = getColoursCfg();
-		
-		//if (old_colours_cfg_id == -1 || old_colours_cfg_id != coloursCfg.getID()) {
 			
-			setContentView(getLayout());
-			
-			FrameLayout frame = (FrameLayout) findViewById(getLayoutID());
-			
-			//Remove old view if exists
-			View old_view = findViewById(VIEW_ID_LOADING);
+		setContentView(getLayout());
 
-			if (old_view != null) {
-				frame.removeView(old_view);	
-			}
-			
-			//Add new view
-			View view_loading = getLoadingView();
+		FrameLayout frame = (FrameLayout) findViewById(getLayoutID());
 
-			view_loading.setId(VIEW_ID_LOADING);
+		//Remove old view if exists
+		View old_view = findViewById(VIEW_ID_LOADING);
 
-			frame.addView(view_loading);
-			
-			
-			//Attach top view
-			dettachTopViews(frame);
-			attachTopViews(frame);
+		if (old_view != null) {
+			frame.removeView(old_view);
+		}
 
-		getExecutor().execute(new Runnable() {
+		//Add new view
+		View view_loading = getLoadingView();
 
-			@Override
-			public void run() {
+		view_loading.setId(VIEW_ID_LOADING);
 
-				try {
+		frame.addView(view_loading);
 
-					try {
 
-						//Wait images to fully load in the memory before drawing them on the screen
-						Thread.sleep(555);
-
-					} catch (InterruptedException e) {}
-
-					ViewWithLeaderBoard view = (ViewWithLeaderBoard) findViewById(VIEW_ID_LOADING);
-
-					view.initPiecesBitmaps();
-
-				} catch(Exception e) {
-					e.printStackTrace();
-				}
-			}
-
-		});
+		//Attach top view
+		dettachTopViews(frame);
+		attachTopViews(frame);
 
 
 		getExecutor().execute(new Runnable() {
@@ -348,19 +319,13 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 
 					if (!loaded) {
 
-						try {
-
-							//Wait images to fully load in the memory before drawing them on the screen
-							Thread.sleep(111);
-
-						} catch (InterruptedException e) {}
-
 						load();
 
 						loaded = true;
 					}
 
 				} catch(Exception e) {
+
 					e.printStackTrace();
 				}
 			}
@@ -370,12 +335,7 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 
 
 	protected void load() {
-		try {
-			//Wait images to fully load in the memory before drawing them on the screen
-			if (System.currentTimeMillis() - timestamp_created < 1000) {
-				Thread.sleep(1000 - (System.currentTimeMillis() - timestamp_created));
-			}
-		} catch (InterruptedException e) {}
+		//Do nothing
 	}
 
 	
