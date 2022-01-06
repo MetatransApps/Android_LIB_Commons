@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.MotionEvent;
@@ -163,26 +164,32 @@ public abstract class View_Loading_3Buttons extends Activity_Loading_Base.ViewWi
 		
 		
 		textarea_label_loading = new TextArea(rectf_button_start, false, " " + getLoadingActivity().getString(getLoadingActivity().getText_Loading()) + " ",
-				getLoadingActivity().getColoursCfg().getColour_Square_Black(),
-				getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection());
+				getLoadingActivity().getColoursCfg().getColour_Square_White(),
+				Color.WHITE //getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection()
+		);
 
-		buttonarea_start = new ButtonAreaClick_Image(rectf_button_start,
+		/*buttonarea_start = new ButtonAreaClick_Image(rectf_button_start,
 				BitmapUtils.fromResource(getContext(), R.drawable.ic_action_playback_play_white),
 				getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection(),
 				getLoadingActivity().getColoursCfg().getColour_Square_MarkingSelection(),
 				false
-		);
-		
+		);*/
+
+		buttonarea_start = new ButtonAreaClick(rectf_button_start, "  " + getLoadingActivity().getString(getLoadingActivity().getText_Menu0()) + "  ",
+				getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection(),
+				Color.WHITE, //getLoadingActivity().getColoursCfg().getColour_Square_Black(),
+				getLoadingActivity().getColoursCfg().getColour_Square_MarkingSelection());
+
 		buttonarea_menu2 =  new ButtonAreaClick(rectf_button_menu2, "  " + getContext().getString(getLoadingActivity().getText_Menu2()) + "  ",
 				//coloursCfg.getColour_Delimiter(), coloursCfg.getColour_Square_White(), coloursCfg.getColour_Square_ValidSelection());
 				getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection(),
-				getLoadingActivity().getColoursCfg().getColour_Square_Black(),
+				Color.WHITE, //getLoadingActivity().getColoursCfg().getColour_Square_Black(),
 				getLoadingActivity().getColoursCfg().getColour_Square_MarkingSelection());
 		
 		buttonarea_menu1 =  new ButtonAreaClick(rectf_button_menu1, "  " + getContext().getString(getLoadingActivity().getText_Menu1()) + "  ",
 				//coloursCfg.getColour_Delimiter(), coloursCfg.getColour_Square_White(), coloursCfg.getColour_Square_ValidSelection());
 				getLoadingActivity().getColoursCfg().getColour_Square_ValidSelection(),
-				getLoadingActivity().getColoursCfg().getColour_Square_Black(),
+				Color.WHITE, //getLoadingActivity().getColoursCfg().getColour_Square_Black(),
 				getLoadingActivity().getColoursCfg().getColour_Square_MarkingSelection());
 	}
 	
