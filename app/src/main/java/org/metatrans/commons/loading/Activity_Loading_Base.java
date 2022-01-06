@@ -294,6 +294,7 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 		View old_view = findViewById(VIEW_ID_LOADING);
 
 		if (old_view != null) {
+			
 			frame.removeView(old_view);
 		}
 

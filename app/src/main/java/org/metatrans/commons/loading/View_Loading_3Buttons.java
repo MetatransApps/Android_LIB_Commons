@@ -153,6 +153,9 @@ public abstract class View_Loading_3Buttons extends Activity_Loading_Base.ViewWi
 
 			
 		setOnTouchListener(this);
+
+
+		initPiecesBitmaps();
 	}
 	
 	
