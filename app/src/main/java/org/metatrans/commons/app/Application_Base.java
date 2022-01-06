@@ -50,6 +50,8 @@ public abstract class Application_Base extends Application {
 	private Class <? extends UserSettings_Base> settings_latest_model_class;
 	private Class <? extends GameData_Base>  gamedata_latest_model_class;
 
+	protected UserSettings_Base settings_test;
+
 
 	@Override
 	public void onCreate() {
@@ -83,11 +85,16 @@ public abstract class Application_Base extends Application {
 		ConfigurationUtils_Colours.class.getName();
 
 
-		UserSettings_Base settings_test = createUserSettingsObject();
+		settings_test = createUserSettingsObject();
 		settings_latest_model_class = settings_test.getClass();
 
 		GameData_Base gameData_test = createGameDataObject();
 		gamedata_latest_model_class = gameData_test.getClass();
+
+		settings_test = null;
+
+		//StorageUtils.clearStore(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
+		//StorageUtils.clearStore(this, GameData_Base.FILE_NAME_GAME_DATA);
 	}
 	
 	
@@ -156,6 +163,8 @@ public abstract class Application_Base extends Application {
 	
 	public UserSettings_Base getUserSettings() {
 
+		//System.out.println("Application_Base.getUserSettings: called");
+
 		UserSettings_Base settings;
 
 		try {
@@ -164,7 +173,9 @@ public abstract class Application_Base extends Application {
 
 			if (settings == null) {
 
-				Application_Base.getInstance().recreateUserSettings();
+				System.out.println("Application_Base.getUserSettings: settings == null ... recreateUserSettings");
+
+				recreateUserSettings();
 				settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
 
 			} else {
@@ -172,14 +183,18 @@ public abstract class Application_Base extends Application {
 				//Check if model class has changed from prev version
 				if (!settings_latest_model_class.equals(settings.getClass())) {
 
-					Application_Base.getInstance().recreateUserSettings();
+					System.out.println("Application_Base.getUserSettings: !settings_latest_model_class.equals(settings.getClass())");
+
+					recreateUserSettings();
 					settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
 				}
 			}
 
 		} catch (Exception e) {
 
-			if (Application_Base.getInstance().isTestMode()) {
+			System.out.println("Application_Base.getUserSettings: Exception");
+
+			if (isTestMode()) {
 
 				throw e;
 			}
@@ -187,7 +202,7 @@ public abstract class Application_Base extends Application {
 			e.printStackTrace();
 
 			//In case of incompatible change of UserSettings class and failed deserialization, we lose the current settings and create new one
-			Application_Base.getInstance().recreateUserSettings();
+			recreateUserSettings();
 			settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
 		}
 
@@ -201,7 +216,8 @@ public abstract class Application_Base extends Application {
 
 		UserSettings_Base settings = createUserSettingsObject();
 		StorageUtils.writeStore(this, UserSettings_Base.FILE_NAME_USER_SETTINGS, settings);
-		StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
+
+		settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
 	}
 
 	
@@ -218,7 +234,9 @@ public abstract class Application_Base extends Application {
 
 			if (gameData == null) {
 
-				Application_Base.getInstance().recreateGameDataObject();
+				System.out.println("Application_Base.getGameData: gameData == null ... recreateGameDataObject");
+
+				recreateGameDataObject();
 				gameData = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
 
 			} else {
@@ -226,14 +244,18 @@ public abstract class Application_Base extends Application {
 				//Check if model class has changed from prev version
 				if (!gamedata_latest_model_class.equals(gameData.getClass())) {
 
-					Application_Base.getInstance().recreateGameDataObject();
+					System.out.println("Application_Base.getGameData: !gamedata_latest_model_class.equals(gameData.getClass())");
+
+					recreateGameDataObject();
 					gameData = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
 				}
 			}
 
 		} catch (Exception e) {
 
-			if (Application_Base.getInstance().isTestMode()) {
+			System.out.println("Application_Base.getGameData: Exception");
+
+			if (isTestMode()) {
 
 				throw e;
 			}
@@ -241,7 +263,7 @@ public abstract class Application_Base extends Application {
 			e.printStackTrace();
 
 			//In case of incompatible change of GameData class and failed deserialization or BoardManager creation, we lose the current game and create new one
-			Application_Base.getInstance().recreateGameDataObject();
+			recreateGameDataObject();
 			gameData = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
 		}
 
@@ -273,7 +295,8 @@ public abstract class Application_Base extends Application {
 		
 		GameData_Base data = createGameDataObject();
 		StorageUtils.writeStore(this, GameData_Base.FILE_NAME_GAME_DATA, data);
-		StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
+
+		data = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
 		
 		//IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
 		//eventsManager.handleGameEvents_OnStart(Application_Base.getInstance().getCurrentActivity(), data);

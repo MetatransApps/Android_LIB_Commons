@@ -10,8 +10,8 @@ public class MovingEntry {
 
 
 	//= 10;//(float) ((Math.random() - 0.5) * (STEP + 4 * entry.clicks * STEP));
-	public float speed_x = (float) (50 * (Math.random() - 0.5f));
-	public float speed_y = (float) (50 * (Math.random() - 0.5f));
+	public float speed_x = (float) (15 * (Math.random() - 0.5f));
+	public float speed_y = (float) (15 * (Math.random() - 0.5f));
 
 	public Coordinates coordinates = new Coordinates();
 

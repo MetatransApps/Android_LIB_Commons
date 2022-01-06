@@ -12,6 +12,7 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.util.Hashtable;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.metatrans.commons.app.Application_Base;
 
@@ -22,7 +23,7 @@ import android.content.Context;
 public class StorageUtils {
 	
 	
-	private static Map<String, Object> cache = new Hashtable<String, Object>();
+	private static Map<String, Object> cache = new ConcurrentHashMap<String, Object>();
 	
 	
 	public static synchronized boolean storageFileExists(Context context, String storename) {
@@ -77,7 +78,7 @@ public class StorageUtils {
 	public static synchronized void writeStore(Context context, String storename) {
 		
 		Object cached = cache.get(storename);
-		if (cached == null) {
+		/*if (cached == null) {
 			
 			if (Application_Base.getInstance().isTestMode()) {
 				throw new IllegalStateException("Cached object is null in static utils");
@@ -85,7 +86,7 @@ public class StorageUtils {
 			
 			//No need to write. It is not used and hence not edited.
 			return;
-		}
+		}*/
 		
 		writeStore(context, storename, cached);
 	}
@@ -105,7 +106,7 @@ public class StorageUtils {
 			
 			output.flush();
 			
-			cache.put(storename, obj);
+			if (obj != null) cache.put(storename, obj);
 			
 		} catch (IOException e) {
 
