@@ -41,6 +41,7 @@ public abstract class Application_Base extends Application {
 	private ExecutorService executor;
 	
 	private IEngagementProvider engagementProvider;
+
 	private IAchievementsManager achievementsManager;
 	
 	private IEventsManager eventsManager;
@@ -48,6 +49,7 @@ public abstract class Application_Base extends Application {
 	private IAnalytics analytics_dummy = new Analytics_DummyImpl();
 
 	private Class <? extends UserSettings_Base> settings_latest_model_class;
+
 	private Class <? extends GameData_Base>  gamedata_latest_model_class;
 
 	protected UserSettings_Base settings_test;
@@ -66,6 +68,7 @@ public abstract class Application_Base extends Application {
 		
 		
 		executor = Executors.newCachedThreadPool();
+
 		engagementProvider = new EngagementProvider_Base();
 		
 		
@@ -73,6 +76,7 @@ public abstract class Application_Base extends Application {
 		achievementsManager = createAchievementsManager();
 		
 		eventsManager = createEventsManager();
+
 		eventsManager.init(this);
 		
 		
