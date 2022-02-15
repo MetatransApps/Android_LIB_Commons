@@ -31,16 +31,18 @@ public class WebUtils {
 		}
 		
     	
-    	boolean openned = false;
+    	boolean opened = false;
     	
 		if (app.getAppStore().getID() == IAppStore.ID_GOOGLE) {
 			
 			try {
 				
 				parent.startActivity(getViewIntent(Uri.parse("market://details?id=" + app.getPackage())));
-				openned = true;
+
+				opened = true;
 				
 			} catch (Exception e) {
+
 				e.printStackTrace();
 			}
 			
@@ -49,7 +51,7 @@ public class WebUtils {
 			try {
 				
 				parent.startActivity(getViewIntent(Uri.parse("samsungapps://ProductDetail/" + app.getPackage())));
-				openned = true;
+				opened = true;
 				
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -60,7 +62,7 @@ public class WebUtils {
 			try {
 				
 				parent.startActivity(getViewIntent(Uri.parse("amzn://apps/android?p=" + app.getPackage())));
-				openned = true;
+				opened = true;
 				
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -71,7 +73,7 @@ public class WebUtils {
 			try {
 				
 				parent.startActivity(getViewIntent(Uri.parse("yastore://details?id=" + app.getPackage())));
-				openned = true;
+				opened = true;
 				
 			} catch (Exception e) {
 				
@@ -81,7 +83,7 @@ public class WebUtils {
 				try {
 					
 					parent.startActivity(getViewIntent(Uri.parse("market://details?id=" + app.getPackage())));
-					openned = true;
+					opened = true;
 					
 				} catch (Exception e1) {
 					e1.printStackTrace();
@@ -91,14 +93,16 @@ public class WebUtils {
 		
 		
 		//Standard flow
-		if (!openned) {
+		if (!opened) {
 			
-	    	Intent intent = new Intent(parent, Activity_WebView_StatePreservingImpl_With_VideoPlayer.class);
+	    	/*Intent intent = new Intent(parent, Activity_WebView_StatePreservingImpl_With_VideoPlayer.class);
 	    	intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
 	    	intent.putExtra("URL", app.getMarketURL());
 	    	intent.putExtra("titleID", app.getName());
-	    	parent.startActivity(intent);
-	    	
+	    	parent.startActivity(intent);*/
+
+			parent.startActivity(getViewIntent(Uri.parse(app.getMarketURL())));
+
 	    	return true;
 	    	
 		} else {
@@ -109,9 +113,11 @@ public class WebUtils {
 
 
 	private static Intent getViewIntent(Uri uri) {
+
 		Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+
 		return intent;
 	}
-	
 }
