@@ -52,9 +52,9 @@
     <string name="label_moregames">Más Juegos</string>
     <string name="label_installed">Instalado</string>
     
-    <string name="label_advertising_free_1">GRATIS</string>
+    <string name="label_advertising_free_1">Anuncio</string>
     <string name="label_advertising_free_2">Con Anuncios</string>
-    <string name="label_advertising_paid_1">PAGADO</string>
+    <string name="label_advertising_paid_1">Anuncio</string>
     <string name="label_advertising_paid_2">Sin Anuncios</string>
 
     <string name="app_cafk_name">Arte de Ajedrez para Niños</string>

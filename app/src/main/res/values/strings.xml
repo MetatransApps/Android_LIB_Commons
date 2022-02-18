@@ -51,9 +51,9 @@
     <string name="label_moregames">More</string>
     <string name="label_installed">Installed</string>
     
-    <string name="label_advertising_free_1">FREE</string>
+    <string name="label_advertising_free_1">Advertisement</string>
     <string name="label_advertising_free_2">With Ads</string>
-    <string name="label_advertising_paid_1">PAID</string>
+    <string name="label_advertising_paid_1">Advertisement</string>
     <string name="label_advertising_paid_2">No Ads</string>
     
     <string name="app_cafk_name">Chess Art for Kids</string>

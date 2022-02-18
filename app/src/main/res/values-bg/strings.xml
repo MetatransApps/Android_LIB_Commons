@@ -52,9 +52,9 @@
     <string name="label_moregames">Още Игри</string>
     <string name="label_installed">Инсталирано</string>
     
-    <string name="label_advertising_free_1">БЕЗПЛАТНО</string>
+    <string name="label_advertising_free_1">Реклама</string>
     <string name="label_advertising_free_2">С Реклами</string>
-    <string name="label_advertising_paid_1">ПЛАТЕНО</string>
+    <string name="label_advertising_paid_1">Реклама</string>
     <string name="label_advertising_paid_2">Без Реклами</string>
 
 
