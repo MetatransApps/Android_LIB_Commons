@@ -76,13 +76,13 @@
 	<string name="app_ec_advertising1">Play game with colors and words</string>
 	<string name="app_ec_advertising2">Demonstrates for You the Stroop Effect</string>
 	
-	<string name="app_mos_name">Squirrel Escape: Maze 2D</string>
-	<string name="app_mos_name_paid">Squirrel Escape: Maze 2D (No Ads)</string>
-	<string name="app_mos_advertising1">Different maze each time</string>
-	<string name="app_mos_advertising2">Release the Squirrel</string>
+	<string name="app_mos_name">The Squirrel\' Maze 2D</string>
+	<string name="app_mos_name_paid">The Squirrel\' Maze 2D (No Ads)</string>
+	<string name="app_mos_advertising1">Escape the Squirrel</string>
+	<string name="app_mos_advertising2">Different maze each time</string>
 
-    <string name="app_mod_name">Dinosaurs\' Maze 2D</string>
-    <string name="app_mod_name_paid">Dinosaurs\' Maze 2D (No Ads)</string>
+    <string name="app_mod_name">The Dinosaurs\' Maze 2D</string>
+    <string name="app_mod_name_paid">The Dinosaurs\' Maze 2D (No Ads)</string>
     <string name="app_mod_advertising1">Escape the Dinosaur</string>
     <string name="app_mod_advertising2">Different maze each time</string>
 
