@@ -77,11 +77,16 @@
 	<string name="app_ec_advertising1">Juega con Colores y Palabras</string>
 	<string name="app_ec_advertising2">Demuestra para ti el Efecto Stroop</string>
 	
-	<string name="app_mos_name">Huida de la Ardilla: Laberinto 2D</string>
-	<string name="app_mos_name_paid">Huida de la Ardilla: Laberinto 2D (Sin Anuncios)</string>
-	<string name="app_mos_advertising1">Laberinto Diferente Cada Vez</string>
-	<string name="app_mos_advertising2">Libera a la Ardilla</string>
-	
+	<string name="app_mos_name">El Laberinto de la Ardilla 2D</string>
+	<string name="app_mos_name_paid">El Laberinto de la Ardilla 2D (Sin Anuncios)</string>
+	<string name="app_mos_advertising1">Escapar del Ardilla</string>
+	<string name="app_mos_advertising2">Laberinto diferente cada vez</string>
+
+    <string name="app_mod_name">El Laberinto de los Dinosaurios 2D</string>
+    <string name="app_mod_name_paid">El Laberinto de los Dinosaurios 2D (Sin Anuncios)</string>
+    <string name="app_mod_advertising1">Escapar del Dinosaurio</string>
+    <string name="app_mod_advertising2">Laberinto diferente cada vez</string>
+
 	<string name="app_stb_name">Globos Sin Parar</string>
 	<string name="app_stb_name_paid">Globos Sin Parar (Sin Anuncios)</string>
 	<string name="app_stb_advertising1">Juego simple para Niños y Adultos</string>

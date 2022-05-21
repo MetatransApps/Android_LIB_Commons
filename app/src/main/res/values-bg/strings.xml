@@ -78,10 +78,15 @@
 	<string name="app_ec_advertising1">Играй Игра с Цветове и Думи</string>
 	<string name="app_ec_advertising2">Демонстрира за Вас Ефекта на Струп</string>
 
-	<string name="app_mos_name">Спаси Катерицата: Лабиринт 2D</string>
-	<string name="app_mos_name_paid">Спаси Катерицата: Лабиринт 2D (Без Реклами)</string>
-	<string name="app_mos_advertising1">Различен Лабиринт всеки път</string>
-	<string name="app_mos_advertising2">Спасете Катерицата</string>
+	<string name="app_mos_name">Лабиринтът на Катерицата 2D</string>
+	<string name="app_mos_name_paid">Лабиринтът на Катерицата 2D (Без Реклами)</string>
+	<string name="app_mos_advertising1">Помогни на Катерицата</string>
+	<string name="app_mos_advertising2">Всеки път различен лабиринт</string>
+
+    <string name="app_mod_name">Лабиринтът на Динозавърът 2D</string>
+    <string name="app_mod_name_paid">Лабиринтът на Динозавърът 2D (Без Реклами)</string>
+    <string name="app_mod_advertising1">Помогни на Динозавърът</string>
+    <string name="app_mod_advertising2">Всеки път различен лабиринт</string>
 
 	<string name="app_stb_name">Нонстоп Балони</string>
 	<string name="app_stb_name_paid">Нонстоп Балони (Без Реклами)</string>

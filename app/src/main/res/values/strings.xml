@@ -78,12 +78,12 @@
 	
 	<string name="app_mos_name">The Squirrel\' Maze 2D</string>
 	<string name="app_mos_name_paid">The Squirrel\' Maze 2D (No Ads)</string>
-	<string name="app_mos_advertising1">Escape the Squirrel</string>
+	<string name="app_mos_advertising1">Help the Squirrel</string>
 	<string name="app_mos_advertising2">Different maze each time</string>
 
     <string name="app_mod_name">The Dinosaurs\' Maze 2D</string>
     <string name="app_mod_name_paid">The Dinosaurs\' Maze 2D (No Ads)</string>
-    <string name="app_mod_advertising1">Escape the Dinosaur</string>
+    <string name="app_mod_advertising1">Help the Dinosaur</string>
     <string name="app_mod_advertising2">Different maze each time</string>
 
 	<string name="app_stb_name">Non Stop Balloons</string>

@@ -121,7 +121,17 @@ public abstract class Activity_Marketing_ItemsList_BaseImpl extends Activity_Bas
 
 				available = true;
 
-				RowItem_IdTD item = new RowItem_IdTD(available, drawable, getString(app.getName()), description);
+				RowItem_IdTD item = new RowItem_IdTD(
+						available,
+						drawable,
+						(app.isPaid() ? getResources().getString(R.string.label_advertising_paid_1) : getResources().getString(R.string.label_advertising_free_1))
+								+ ": "
+								+ getString(app.getName())
+								//+ "("
+								//+ (app.isPaid() ? getResources().getString(R.string.label_advertising_paid_2) : getResources().getString(R.string.label_advertising_free_2))
+								//+ ")"
+						, description
+				);
 				
 				rowItems.add(item);
 			}
