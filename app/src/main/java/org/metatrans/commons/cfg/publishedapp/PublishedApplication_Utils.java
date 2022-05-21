@@ -32,6 +32,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_ec 		= new PublishedApplication_EC(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_ec_paid	= new PublishedApplication_EC_Paid(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_mos 		= new PublishedApplication_MOS(IAppStore.OBJ_GOOGLE);
+		IPublishedApplication app_mod 		= new PublishedApplication_MOD(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_mos_paid  = new PublishedApplication_MOS_Paid(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_bagaturchess = new PublishedApplication_BagaturChess(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_bagaturchess_paid = new PublishedApplication_Bagatur_Paid(IAppStore.OBJ_GOOGLE);
@@ -46,6 +47,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_words_de_for_bg = new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_GOOGLE);
 
 		app_mos.setPaidVersion(app_mos_paid);
+		//app_mod.setPaidVersion(null);
 		app_ec.setPaidVersion(app_ec_paid);
 		app_mafk.setPaidVersion(app_mafk_paid);
 		app_cafk.setPaidVersion(app_cafk_paid);
@@ -56,6 +58,7 @@ public class PublishedApplication_Utils {
 		app_gravityfinger137.setPaidVersion(app_gravityfinger137_paid);
 
 
+		APPSLIST_GOOGLE_ALL.add(app_mod);
 		APPSLIST_GOOGLE_ALL.add(app_chessboardscanner);
 		APPSLIST_GOOGLE_ALL.add(app_chessboardscanner_paid);
 		APPSLIST_GOOGLE_ALL.add(app_wisconsin);

@@ -80,7 +80,12 @@
 	<string name="app_mos_name_paid">Squirrel Escape: Maze 2D (No Ads)</string>
 	<string name="app_mos_advertising1">Different maze each time</string>
 	<string name="app_mos_advertising2">Release the Squirrel</string>
-	
+
+    <string name="app_mod_name">Dinosaurs\' Maze 2D</string>
+    <string name="app_mod_name_paid">Dinosaurs\' Maze 2D (No Ads)</string>
+    <string name="app_mod_advertising1">Escape the Dinosaur</string>
+    <string name="app_mod_advertising2">Different maze each time</string>
+
 	<string name="app_stb_name">Non Stop Balloons</string>
 	<string name="app_stb_name_paid">Non Stop Balloons (No Ads)</string>
 	<string name="app_stb_advertising1">Simple game for kids and adults</string>

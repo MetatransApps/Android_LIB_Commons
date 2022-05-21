@@ -213,19 +213,27 @@ public class BitmapUtils {
 	    
 	    return bmpGrayscale;
 	}
-	
-	
+
+
 	public static Bitmap combineImages_H(Bitmap b1_org, Bitmap b2_org) {
+
+		return combineImages_H(b1_org, b2_org, true);
+	}
+
+
+	public static Bitmap combineImages_H(Bitmap b1_org, Bitmap b2_org, boolean recycle) {
 		
 		int width = 2 * Math.max(b1_org.getWidth(), b2_org.getWidth());
 		int height = Math.max(b1_org.getHeight(), b2_org.getHeight());
 		
 		Bitmap b1 = createScaledBitmap(b1_org, width / 2, height, false);
 		Bitmap b2 = createScaledBitmap(b2_org, width / 2, height, false);
-		
-		recycle(b1, b1_org);
-		recycle(b2, b2_org);
-		
+
+		if (recycle) {
+			recycle(b1, b1_org);
+			recycle(b2, b2_org);
+		}
+
 		Bitmap result = Bitmap.createBitmap(width, height, bitmapConfig);
 		
 		Canvas canvas = new Canvas(result);
@@ -263,8 +271,27 @@ public class BitmapUtils {
 		
 		return result;
 	}
-	
-	
+
+
+	public static Bitmap combineImages_Overlap(Bitmap b1_org, Bitmap b2_org, int width, int height) {
+
+		Bitmap b1 = createScaledBitmap(b1_org, width, height, false);
+		Bitmap b2 = createScaledBitmap(b2_org, (int) (2 * width / 3f), (int) (2 * height / 3f), false);
+
+		Bitmap result = Bitmap.createBitmap(width, height, bitmapConfig);
+
+		Canvas canvas = new Canvas(result);
+
+		canvas.drawBitmap(b1, 0f, 0f, null);
+		canvas.drawBitmap(b2, width / 6, height / 3, null);
+
+		recycle(result, b1);
+		recycle(result, b2);
+
+		return result;
+	}
+
+
 	public static Bitmap createFromText(int size, String text, int colour) {
 		
 		Paint paint = new Paint();
