@@ -76,8 +76,8 @@
 	<string name="app_ec_advertising1">Play game with colors and words</string>
 	<string name="app_ec_advertising2">Demonstrates for You the Stroop Effect</string>
 	
-	<string name="app_mos_name">The Squirrel\' Maze 2D</string>
-	<string name="app_mos_name_paid">The Squirrel\' Maze 2D (No Ads)</string>
+	<string name="app_mos_name">The Squirrel\'s Maze 2D</string>
+	<string name="app_mos_name_paid">The Squirrel\'s Maze 2D (No Ads)</string>
 	<string name="app_mos_advertising1">Help the Squirrel</string>
 	<string name="app_mos_advertising2">Different maze each time</string>
 

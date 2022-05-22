@@ -30,7 +30,7 @@ public class PublishedApplication_MOD extends PublishedApplication_Base {
 
     @Override
     public int getIconResID() {
-        return R.drawable.ic_logo_dinosaurs;
+        return R.drawable.ic_logo_dinosaurs_v2;
     }
 
 
