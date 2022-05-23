@@ -133,6 +133,9 @@
     <string name="rate">Rate</string>
     <string name="like">Like</string>
     <string name="home">Home</string>
+    <string name="sound">Sound</string>
+    <string name="silent">Silent</string>
+    <string name="on">On</string>
     <string name="description">Description</string>
     <string name="metatransapps">Metatrans Apps</string>
     <string name="company_home_online">Company Web Site</string>

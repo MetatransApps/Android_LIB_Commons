@@ -66,7 +66,8 @@ public interface IEvent_Base extends Serializable {
 	public static final int MENU_OPERATION_OPEN_COMPANY_ONLINE		= 23;
 	public static final int MENU_OPERATION_OPEN_COMPANY_OFFLINE		= 24;
 	public static final int MENU_OPERATION_OPEN_PAID_VERSION		= 25;
-	
+	public static final int MENU_OPERATION_CHANGE_SOUND				= 26;
+
 	public static final int NOTIFICATIONS_TIMEOFF_REMINDER_FIRED	= 1;
 	public static final int NOTIFICATIONS_TIMEOFF_REMINDER_MISSED 	= 2;
 	public static final int NOTIFICATIONS_TIMEOFF_REMINDER_CLICKED 	= 3;

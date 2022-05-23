@@ -94,7 +94,7 @@ public class ListAdapter_CIdTD extends BaseAdapter {
         TextView txtDesc = convertView.findViewById(resID_description);
 
         //Set text color
-        //IConfigurationColours coloursCfg = ConfigurationUtils_Colours.getConfigByID(((Application_Base)((Activity_Base) convertView.getContext()).getApplication()).getUserSettings().uiColoursID);
+        //IConfigurationSound coloursCfg = ConfigurationUtils_Sound.getConfigByID(((Application_Base)((Activity_Base) convertView.getContext()).getApplication()).getUserSettings().uiColoursID);
         txtTitle.setTextColor(Color.WHITE);//coloursCfg.getColour_Square_White());
         txtDesc.setTextColor(Color.WHITE);//coloursCfg.getColour_Square_White());
 
