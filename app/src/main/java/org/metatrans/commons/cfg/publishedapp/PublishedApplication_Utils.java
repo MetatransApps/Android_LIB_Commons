@@ -58,7 +58,7 @@ public class PublishedApplication_Utils {
 		app_gravityfinger137.setPaidVersion(app_gravityfinger137_paid);
 
 
-		APPSLIST_GOOGLE_ALL.add(app_mod);
+		//APPSLIST_GOOGLE_ALL.add(app_mod);
 		APPSLIST_GOOGLE_ALL.add(app_chessboardscanner);
 		APPSLIST_GOOGLE_ALL.add(app_chessboardscanner_paid);
 		APPSLIST_GOOGLE_ALL.add(app_wisconsin);

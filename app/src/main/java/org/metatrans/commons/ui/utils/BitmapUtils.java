@@ -86,22 +86,18 @@ public class BitmapUtils {
 		}
 		
 		Bitmap result = Bitmap.createScaledBitmap(src, dstWidth, dstHeight, filter);
-		
+
 		if (result == src) {
 			
 			result = Bitmap.createBitmap(dstWidth, dstHeight, bitmapConfig);
 			
 			Canvas canvas = new Canvas(result);
-			
-			Rect rect_src = new Rect(0, 0, src.getWidth(), src.getHeight());
-			RectF rect_dest = new RectF();
-			rect_dest.left = 0;
-			rect_dest.top = 0;
-			rect_dest.right = dstWidth;
-			rect_dest.bottom = dstHeight;
-			canvas.drawBitmap(src, rect_src, rect_dest, null);
+
+			RectF rect_dest = new RectF(0, 0, src.getWidth(), src.getHeight());
+
+			canvas.drawBitmap(src, null, rect_dest, null);
 		}
-		
+
 		return result;
 	}
 	
