@@ -21,37 +21,51 @@ public class BitmapCacheBase implements IBitmapCache {
 	}
 	
 	
-	public synchronized void addBitmap(int imageID, Bitmap bitmap) {
-		
+	protected synchronized void addBitmap(int imageID, Bitmap bitmap) {
+
+		System.out.println("BitmapCacheBase: Adding bitmap with ID " + imageID);
+
 		if (bitmaps.get(imageID) != null) {
+
 			throw new IllegalStateException("Image with ID " + imageID + " already exists");
+			//System.out.println("BitmapCacheBase: Image with ID " + imageID + " already exists");
 		}
-		
-		//if (log) System.out.println("Added bitmap with ID " + imageID);
 		
 		bitmaps.put(imageID, bitmap);
 	}
-	
-	
+
+
 	public synchronized Bitmap getBitmap(Context context, int imageID) {
-		
+
+		return getBitmap(context, imageID, 1, 1);
+	}
+
+
+	public synchronized Bitmap getBitmap(Context context, int imageID, float height_scale, float width_scale) {
+
 		Bitmap bitmap = bitmaps.get(imageID);
+
 		if (bitmap == null) {
-			
-			//if (log)
+
 			System.out.println("Bitmap with ID " + imageID + " not found. Cache instance=" + this);
-			
+
 			bitmap = BitmapUtils.fromResource(context, imageID);
-			if (bitmap != null) {
-				addBitmap(imageID, bitmap);
-			}
+
+			bitmap = BitmapUtils.cropTransparantPart(bitmap);
+
+			final int BOTTOM_MARGIN = Math.max(1, (int) (0.11f * bitmap.getHeight()));
+
+			bitmap = BitmapUtils.generateTransparantPart(bitmap, height_scale, width_scale, BOTTOM_MARGIN);
+
+			addBitmap(imageID, bitmap);
 		}
-				
+
 		return bitmap;
 	}
 	
 	
 	protected int getBitmapSize(Bitmap bitmap) {
+
 		return bitmap.getHeight();
 	}
 	
@@ -63,12 +77,14 @@ public class BitmapCacheBase implements IBitmapCache {
 	
 	
 	public synchronized int size() {
+
 		return bitmaps.size();
 	}
 	
 	
 	@Override
 	public synchronized void remove(Integer imgageID) {
+		
 		Bitmap bitmap = bitmaps.remove(imgageID);
 	}
 }

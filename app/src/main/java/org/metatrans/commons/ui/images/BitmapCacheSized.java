@@ -11,15 +11,15 @@ import android.graphics.Bitmap;
 
 public class BitmapCacheSized extends BitmapCacheBase implements IBitmapCache {
 
-	
-	private IBitmapCache parent;
+
 	private int sizeOfBitmaps;
 	
 	
-	public BitmapCacheSized(int _sizeOfBitmaps, IBitmapCache _parent, int cacheSize) {
+	public BitmapCacheSized(int _sizeOfBitmaps, int cacheSize) {
+
 		super(cacheSize);
+		
 		sizeOfBitmaps = _sizeOfBitmaps;
-		parent = _parent;
 	}
 	
 	
@@ -30,8 +30,6 @@ public class BitmapCacheSized extends BitmapCacheBase implements IBitmapCache {
 	
 	@Override
 	public synchronized void remove(Integer imageID) {
-		
-		parent.remove(imageID);
 		
 		super.remove(imageID);
 	}
@@ -47,21 +45,38 @@ public class BitmapCacheSized extends BitmapCacheBase implements IBitmapCache {
 		
 		super.addBitmap(imageID, bitmap);
 	}
-	
-	
-	public Bitmap getBitmap(Context context, int imageID) {
+
+
+	/**
+	 * This method calls addBitmap(imageID, bitmap); after scaling the image
+	 */
+	@Override
+	public synchronized Bitmap getBitmap(Context context, int imageID, float height_scale, float width_scale) {
+
 		Bitmap bitmap = bitmaps.get(imageID);
+
 		if (bitmap == null) {
-			bitmap = parent.getBitmap(context, imageID);
-			if (bitmap != null) {
-				//float factor = getBitmapSize(bitmap) / size;
-				bitmap = BitmapUtils.createScaledBitmap(bitmap, sizeOfBitmaps, sizeOfBitmaps, false);
-				if (getBitmapSize(bitmap) < sizeOfBitmaps) {
-					System.out.println("Image with ID " + imageID + " has not enough quality for size " + sizeOfBitmaps + ".");
-				}
-				addBitmap(imageID, bitmap);
+
+			System.out.println("Bitmap with ID " + imageID + " not found. Cache instance=" + this);
+
+			bitmap = BitmapUtils.fromResource(context, imageID);
+
+			bitmap = BitmapUtils.cropTransparantPart(bitmap);
+
+			final int BOTTOM_MARGIN = Math.max(1, (int) (0.11f * bitmap.getHeight()));
+
+			bitmap = BitmapUtils.generateTransparantPart(bitmap, height_scale, width_scale, BOTTOM_MARGIN);
+
+			bitmap = BitmapUtils.createScaledBitmap(bitmap, sizeOfBitmaps, sizeOfBitmaps);
+
+			if (getBitmapSize(bitmap) < sizeOfBitmaps) {
+				
+				System.out.println("Image with ID " + imageID + " has not enough quality for size " + sizeOfBitmaps + ".");
 			}
+
+			addBitmap(imageID, bitmap);
 		}
+
 		return bitmap;
 	}
 }

@@ -87,7 +87,7 @@ public abstract class Activity_Base extends Activity {
 
 		if (getBackgroundImageID() != 0) {
 
-			Drawable drawable = BitmapUtils.createDrawable(this, getBitmapCache().getBitmap(this, getBackgroundImageID()));
+			Drawable drawable = getResources().getDrawable(getBackgroundImageID());
 			drawable.setAlpha(alpha);
 
 			if (android.os.Build.VERSION.SDK_INT >= 16) {
@@ -167,7 +167,7 @@ public abstract class Activity_Base extends Activity {
 	}
 	
 	
-	protected IBitmapCache getBitmapCache() {
+	/*protected IBitmapCache getBitmapCache() {
 		
 		return new IBitmapCache() {	
 			
@@ -186,7 +186,7 @@ public abstract class Activity_Base extends Activity {
 			public void addBitmap(int imageID, Bitmap bitmap) {
 			}
 		};
-	}
+	}*/
 	
 	
 	private Application_Base getApp() {

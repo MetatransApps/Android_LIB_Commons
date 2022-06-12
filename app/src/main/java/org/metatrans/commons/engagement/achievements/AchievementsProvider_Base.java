@@ -122,7 +122,7 @@ public class AchievementsProvider_Base implements IAchievementsProvider {
 			if (earned) {
 				
 				Bitmap bitmap_org = BitmapUtils.fromResource(context, cfg.getIconResID(), iconSize);
-				bitmap = BitmapUtils.createScaledBitmap(bitmap_org, iconSize, iconSize, false);
+				bitmap = BitmapUtils.createScaledBitmap(bitmap_org, iconSize, iconSize);
 				//bitmap = CachesBitmap.getSingletonIcons(getIconSize()).getBitmap(this, cfg.getIconResID());
 				BitmapUtils.recycle(bitmap, bitmap_org);
 				

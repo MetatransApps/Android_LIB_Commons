@@ -3,6 +3,7 @@ package org.metatrans.commons.ui.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 
 import org.metatrans.commons.app.Application_Base;
 
@@ -27,14 +28,16 @@ import android.text.TextPaint;
 public class BitmapUtils {
 	
 	
-	private static Bitmap.Config bitmapConfig = Bitmap.Config.ARGB_8888;
-	
+	private static Bitmap.Config DEFAULT_CONFIG = Bitmap.Config.ARGB_8888;
+
+	private static final boolean FILTER = true;
 	
 	public static Bitmap fromResource(Context context, int resid) {
 		
 		Bitmap bitmap = null;
 		
 		InputStream is = null;
+
 		try {
 
 			is = context.getResources().openRawResource(resid);
@@ -62,8 +65,8 @@ public class BitmapUtils {
 		
 		return bitmap;
 	}
-	
-	
+
+
 	public static void recycle(Bitmap b_new, Bitmap b_old) {
 		//if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.GINGERBREAD) {
 			if (b_new != b_old) { 
@@ -73,7 +76,7 @@ public class BitmapUtils {
 	}
 	
 	
-	public static Bitmap createScaledBitmap(Bitmap src, int dstWidth, int dstHeight, boolean filter) {
+	public static Bitmap createScaledBitmap(Bitmap src, int dstWidth, int dstHeight) {
 		
 		//Fix for rare cases, where dstWidth and/or dstHeight is 0 or less. In this cases the Bitmap API throws IllegalArgumentException.
 		if (!Application_Base.getInstance().isTestMode()) {
@@ -85,11 +88,11 @@ public class BitmapUtils {
 			}
 		}
 		
-		Bitmap result = Bitmap.createScaledBitmap(src, dstWidth, dstHeight, filter);
+		Bitmap result = Bitmap.createScaledBitmap(src, dstWidth, dstHeight, FILTER);
 
 		if (result == src) {
 			
-			result = Bitmap.createBitmap(dstWidth, dstHeight, bitmapConfig);
+			result = Bitmap.createBitmap(dstWidth, dstHeight, DEFAULT_CONFIG);
 			
 			Canvas canvas = new Canvas(result);
 
@@ -111,7 +114,7 @@ public class BitmapUtils {
 			is = context.getResources().openRawResource(resid);
 			bitmap = BitmapFactory.decodeStream(is);
 			Bitmap old = bitmap;
-			bitmap = BitmapUtils.createScaledBitmap(bitmap, size, size, false);
+			bitmap = BitmapUtils.createScaledBitmap(bitmap, size, size);
 			if (bitmap != old) {
 				recycle(bitmap, old);
 			}
@@ -179,9 +182,9 @@ public class BitmapUtils {
 		Bitmap result;
 		
 		if (delta_width > delta_height) {
-			result = createScaledBitmap(source, (int) (width / delta_width), (int) (height / delta_width), false);
+			result = createScaledBitmap(source, (int) (width / delta_width), (int) (height / delta_width));
 		} else {
-			result = createScaledBitmap(source, (int) (width / delta_height), (int) (height / delta_height), false);
+			result = createScaledBitmap(source, (int) (width / delta_height), (int) (height / delta_height));
 		}
 		
 		recycle(result, source);
@@ -196,7 +199,7 @@ public class BitmapUtils {
 	    height = bmpOriginal.getHeight();
 	    width = bmpOriginal.getWidth();    
 
-	    Bitmap bmpGrayscale = Bitmap.createBitmap(width, height, bitmapConfig);
+	    Bitmap bmpGrayscale = Bitmap.createBitmap(width, height, DEFAULT_CONFIG);
 	    
 	    Canvas c = new Canvas(bmpGrayscale);
 	    Paint paint = new Paint();
@@ -204,7 +207,7 @@ public class BitmapUtils {
 	    cm.setSaturation(0);
 	    ColorMatrixColorFilter f = new ColorMatrixColorFilter(cm);
 	    paint.setColorFilter(f);
-	    c.drawBitmap(bmpOriginal, 0, 0, paint);
+	    c.drawBitmap(bmpOriginal, 0, 0, null);
 	    
 	    
 	    return bmpGrayscale;
@@ -222,15 +225,15 @@ public class BitmapUtils {
 		int width = 2 * Math.max(b1_org.getWidth(), b2_org.getWidth());
 		int height = Math.max(b1_org.getHeight(), b2_org.getHeight());
 		
-		Bitmap b1 = createScaledBitmap(b1_org, width / 2, height, false);
-		Bitmap b2 = createScaledBitmap(b2_org, width / 2, height, false);
+		Bitmap b1 = createScaledBitmap(b1_org, width / 2, height);
+		Bitmap b2 = createScaledBitmap(b2_org, width / 2, height);
 
 		if (recycle) {
 			recycle(b1, b1_org);
 			recycle(b2, b2_org);
 		}
 
-		Bitmap result = Bitmap.createBitmap(width, height, bitmapConfig);
+		Bitmap result = Bitmap.createBitmap(width, height, DEFAULT_CONFIG);
 		
 		Canvas canvas = new Canvas(result);
 		
@@ -249,13 +252,13 @@ public class BitmapUtils {
 		int width = Math.max(b1_org.getWidth(), b2_org.getWidth());
 		int height = 2 * Math.max(b1_org.getHeight(), b2_org.getHeight());
 		
-		Bitmap b1 = createScaledBitmap(b1_org, width, height / 2, false);
-		Bitmap b2 = createScaledBitmap(b2_org, width, height / 2, false);
+		Bitmap b1 = createScaledBitmap(b1_org, width, height / 2);
+		Bitmap b2 = createScaledBitmap(b2_org, width, height / 2);
 		
 		recycle(b1, b1_org);
 		recycle(b2, b2_org);
 		
-		Bitmap result = Bitmap.createBitmap(width, height, bitmapConfig);
+		Bitmap result = Bitmap.createBitmap(width, height, DEFAULT_CONFIG);
 		
 		Canvas canvas = new Canvas(result);
 		
@@ -271,10 +274,10 @@ public class BitmapUtils {
 
 	public static Bitmap combineImages_Overlap(Bitmap b1_org, Bitmap b2_org, int width, int height) {
 
-		Bitmap b1 = createScaledBitmap(b1_org, width, height, false);
-		Bitmap b2 = createScaledBitmap(b2_org, (int) (2 * width / 3f), (int) (2 * height / 3f), false);
+		Bitmap b1 = createScaledBitmap(b1_org, width, height);
+		Bitmap b2 = createScaledBitmap(b2_org, (int) (2 * width / 3f), (int) (2 * height / 3f));
 
-		Bitmap result = Bitmap.createBitmap(width, height, bitmapConfig);
+		Bitmap result = Bitmap.createBitmap(width, height, DEFAULT_CONFIG);
 
 		Canvas canvas = new Canvas(result);
 
@@ -304,7 +307,7 @@ public class BitmapUtils {
         float xCrd = x + pieceXDelta;
         float yCrd = y + pieceYDelta;
         
-		Bitmap bitmap = Bitmap.createBitmap(size, size, bitmapConfig);
+		Bitmap bitmap = Bitmap.createBitmap(size, size, DEFAULT_CONFIG);
 		Canvas canvas = new Canvas(bitmap);
         
 		canvas.drawText((String) text, xCrd, yCrd, paint);
@@ -378,7 +381,7 @@ public class BitmapUtils {
 		Paint paint = new Paint();
 		paint.setColor(colour); 
 		        
-		Bitmap bitmap = Bitmap.createBitmap(size_x, size_y, bitmapConfig);
+		Bitmap bitmap = Bitmap.createBitmap(size_x, size_y, DEFAULT_CONFIG);
 		Canvas canvas = new Canvas(bitmap);
         
 		canvas.drawRect(new Rect(0, 0, size_x, size_y), paint);
@@ -489,4 +492,112 @@ public class BitmapUtils {
         
         return image;
     }
+
+
+    private static final float MATCH_RATIO = 0.90f;
+
+
+	public static final Bitmap cropTransparantPart(Bitmap bitmap) {
+
+		int height = bitmap.getHeight();
+		int width = bitmap.getWidth();
+
+		int top = 0;
+		int left = 0;
+		int botton = height;
+		int right = width;
+
+		int[] empty = new int[width];
+		int[] buffer = new int[width];
+		Arrays.fill(empty,0);
+
+		for (int y = 0; y < height; y++) {
+			bitmap.getPixels(buffer, 0, width, 0, y, width, 1);
+			if (matchRatio(empty, buffer) >= MATCH_RATIO) {
+				top = y;
+				break;
+			}
+		}
+
+		for (int y = height - 1; y > top; y--) {
+			bitmap.getPixels(buffer, 0, width, 0, y, width, 1);
+			if (matchRatio(empty, buffer) >= MATCH_RATIO) {
+				botton = y;
+				break;
+			}
+		}
+
+		//System.out.println("bottom=" + botton + ", top=" + top);
+
+
+		int bufferSize = botton - top;
+		empty = new int[bufferSize];
+		Arrays.fill(empty,0);
+		buffer = new int[bufferSize];
+
+		//System.out.println("bufferSize=" + bufferSize);
+
+
+		for (int x = 0; x < width; x++) {
+			bitmap.getPixels(buffer, 0, 1, x, top + 1, 1, bufferSize);
+			if (matchRatio(empty, buffer) >= MATCH_RATIO) {
+				left = x;
+				break;
+			}
+		}
+
+		for (int x = width - 1; x > left; x--) {
+			bitmap.getPixels(buffer, 0, 1, x, top + 1, 1, bufferSize);
+			if (matchRatio(empty, buffer) >= MATCH_RATIO) {
+				right = x;
+				break;
+			}
+		}
+
+		Bitmap cropedBitmap = Bitmap.createBitmap(bitmap, left, top, right - left, botton - top);
+
+		bitmap.recycle();
+
+		return cropedBitmap;
+	}
+
+
+	private static float matchRatio(int[] empty, int[] buffer) {
+
+		return Arrays.equals(empty, buffer) ? 0 : 1;
+	}
+
+	public static Bitmap generateTransparantPart(Bitmap bitmap, float height_scale, float width_scale, int bottom_margin) {
+
+		if (height_scale <= 0 || height_scale > 1) {
+
+			throw new IllegalStateException("height_scale=" + height_scale);
+		}
+
+		if (width_scale <= 0 || width_scale > 1) {
+
+			throw new IllegalStateException("width_scale=" + width_scale);
+		}
+
+		int height_org 			= bitmap.getHeight();
+		int width_org 			= bitmap.getWidth();
+
+		int height_scaled 		= (int) (height_scale * (height_org - 2 * bottom_margin));
+		int width_scaled 		= (int) (height_scale * width_scale * width_org);
+
+		Bitmap bitmap_scaled 	= createScaledBitmap(bitmap, width_scaled, height_scaled);
+
+		Bitmap bitmap_extended 	= Bitmap.createBitmap(width_org, height_org, DEFAULT_CONFIG);
+
+		Canvas canvas 			= new Canvas(bitmap_extended);
+		
+		canvas.drawBitmap(bitmap_scaled,
+							(width_org - width_scaled) / 2,
+							(height_org - height_scaled) - bottom_margin,
+							null);
+
+		bitmap_scaled.recycle();
+
+		return bitmap_extended;
+	}
 }

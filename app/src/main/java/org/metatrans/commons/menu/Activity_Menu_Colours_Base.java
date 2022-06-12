@@ -68,7 +68,7 @@ public class Activity_Menu_Colours_Base extends Activity_Base {
 			
 			Bitmap bitmap = createColourBitmap(colourCfg);
 			Bitmap old = bitmap;
-			bitmap = BitmapUtils.createScaledBitmap(bitmap, getIconSize(), getIconSize(), false);
+			bitmap = BitmapUtils.createScaledBitmap(bitmap, getIconSize(), getIconSize());
 			BitmapUtils.recycle(bitmap, old);
 			Drawable drawable = BitmapUtils.createDrawable(this, bitmap);
 			
