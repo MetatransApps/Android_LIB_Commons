@@ -246,6 +246,21 @@ public class BitmapUtils {
 		return result;
 	}
 
+
+	public static Bitmap extend_H(Bitmap bitmap) {
+
+		int width = 2 * bitmap.getWidth();
+		int height = bitmap.getHeight();
+
+		Bitmap result = Bitmap.createBitmap(width, height, DEFAULT_CONFIG);
+
+		Canvas canvas = new Canvas(result);
+
+		canvas.drawBitmap(bitmap, width / 4, 0f, null);
+
+		return result;
+	}
+
 	
 	public static Bitmap combineImages_V(Bitmap b1_org, Bitmap b2_org) {
 		
@@ -471,8 +486,30 @@ public class BitmapUtils {
         
         return bmOverlay;
     }
-    
-    
+
+
+	public static Bitmap overlay_center(Bitmap bmp1, Bitmap bmp2) {
+
+		Bitmap bmOverlay = Bitmap.createBitmap(bmp1.getWidth(), bmp1.getHeight(), bmp1.getConfig());
+		Canvas canvas = new Canvas(bmOverlay);
+		canvas.drawBitmap(bmp1, new Matrix(), null);
+
+		int shapes_square_width = bmp2.getWidth();
+		int shapes_square_height = bmp2.getHeight();
+		Rect dst = new Rect();
+		dst.left = (bmp1.getWidth() - shapes_square_width) / 2;
+		dst.top = (bmp1.getHeight() - shapes_square_height) / 2;
+		dst.right = dst.left + shapes_square_width;
+		dst.bottom = dst.top + shapes_square_height;
+		canvas.drawBitmap(bmp2, null, dst, null);
+
+		recycle(bmOverlay, bmp1);
+		recycle(bmOverlay, bmp2);
+
+		return bmOverlay;
+	}
+
+
     public static Bitmap textAsBitmap(String text, float textSize, int textColor) {
         
     	Paint paint = new Paint();
