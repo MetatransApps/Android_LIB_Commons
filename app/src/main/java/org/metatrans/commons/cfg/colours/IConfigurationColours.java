@@ -1,5 +1,6 @@
 package org.metatrans.commons.cfg.colours;
 
+
 import org.metatrans.commons.cfg.IConfigurationEntry;
 
 

@@ -1,8 +1,6 @@
 package org.metatrans.commons.model;
 
 
-import org.metatrans.commons.app.Application_Base;
-
 import java.io.Serializable;
 
 
@@ -22,10 +20,5 @@ public class UserSettings_Base implements Serializable {
 	
 	protected UserSettings_Base() {
 		
-	}
-
-
-	public void save() {
-		Application_Base.getInstance().storeUserSettings(this);
 	}
 }

@@ -108,7 +108,7 @@ public class Activity_Menu_Colours_Base extends Activity_Base {
 			
 			//System.out.println("ColoursSelection POS=" + position + ", id=" + id);
 			
-			int currOrderNumber = ConfigurationUtils_Colours.getOrderNumber(((Application_Base)getApplication()).getUserSettings().uiColoursID);
+			int currOrderNumber = ConfigurationUtils_Colours.getOrderNumber(Application_Base.getInstance().getUserSettings().uiColoursID);
 			if (position != currOrderNumber) {
 				int newCfgID = ConfigurationUtils_Colours.getID(position);
 				changeColours(newCfgID);
@@ -120,10 +120,10 @@ public class Activity_Menu_Colours_Base extends Activity_Base {
 	
 	
 	public void changeColours(int uiColoursCfgID) {
-		
-		((Application_Base)getApplication()).getUserSettings().uiColoursID = uiColoursCfgID;
-		
-		((Application_Base)getApplication()).storeUserSettings();
+
+		Application_Base.getInstance().getUserSettings().uiColoursID = uiColoursCfgID;
+
+		Application_Base.getInstance().storeUserSettings();
 		
 		IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
 		eventsManager.register(this, eventsManager.create(IEvent_Base.MENU_OPERATION, IEvent_Base.MENU_OPERATION_CHANGE_COLOURS, uiColoursCfgID,
