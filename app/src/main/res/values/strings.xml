@@ -146,6 +146,7 @@
     <string name="alert_title">Action alert</string>
     <string name="alert_message_newgame">New game?</string>
     <string name="alert_message_newmove">Do you want to override the current sequence of moves starting from the current move?</string>
+    <string name="dont_ask_again">Don\'t ask again</string>
     <string name="alert_message_lower_difficulty">The difficulty will be switched to lower level</string>
     <string name="alert_message_notenoughmemory">Not enough memory</string>
     <string name="alert_message_lowmemory">Low memory than recommended</string>

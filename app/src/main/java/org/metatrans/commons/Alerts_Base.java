@@ -5,6 +5,11 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+
+import org.metatrans.commons.app.Application_Base;
 
 
 public class Alerts_Base {
@@ -37,8 +42,11 @@ public class Alerts_Base {
 	}
 
 
-	public static AlertDialog.Builder createAlertDialog_OverrideMoveSequence(Context context, OnClickListener possitive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener) {
-		return createAlertDialog(context, possitive, negative, onCancelListener, R.string.alert_message_newmove);
+	public static AlertDialog.Builder createAlertDialog_OverrideMoveSequence(Context context, OnClickListener possitive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener, CompoundButton.OnCheckedChangeListener onCheckedChangeListener) {
+
+		View checkBoxView = createCheckBoxInView(context, R.string.dont_ask_again, onCheckedChangeListener);
+
+		return createAlertDialog(context, possitive, negative, onCancelListener, R.string.alert_message_newmove, checkBoxView);
 	}
 
 
@@ -56,19 +64,31 @@ public class Alerts_Base {
 		return createAlertDialog_EXIT(context, negative, message);
 	}
 
+
 	public static AlertDialog.Builder createAlertDialog_LowMemory(Context context, OnClickListener negative, String message) {
 		return createAlertDialog_Continue(context, negative, message);
 	}
-	
-	protected static AlertDialog.Builder createAlertDialog(Context context, OnClickListener possitive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener, int messageID) {
-		
+
+
+	protected static AlertDialog.Builder createAlertDialog(Context context, OnClickListener positive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener, int messageID) {
+
+		return createAlertDialog(context, positive, negative, onCancelListener, messageID, null);
+	}
+
+
+	protected static AlertDialog.Builder createAlertDialog(Context context, OnClickListener positive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener, int messageID, View checkBoxView) {
+
 		AlertDialog.Builder adb = new AlertDialog.Builder(context);
 
 		adb.setIcon(android.R.drawable.ic_dialog_alert);
 		adb.setTitle(R.string.alert_title);
 		adb.setMessage(messageID);
-		adb.setPositiveButton(R.string.yes, possitive);
+		adb.setPositiveButton(R.string.yes, positive);
 		adb.setNegativeButton(R.string.no, negative);
+		if (checkBoxView != null) {
+			adb.setView(checkBoxView);
+		}
+		//adb.setCancelable(false);
 
 		if (onCancelListener != null) {
 
@@ -76,6 +96,20 @@ public class Alerts_Base {
 		}
 
 		return adb;
+	}
+
+
+	private static View createCheckBoxInView(Context context, int text_id, CompoundButton.OnCheckedChangeListener onCheckedChangeListener) {
+
+		View checkBoxView = View.inflate(context, R.layout.checkbox, null);
+
+		CheckBox checkBox = (CheckBox) checkBoxView.findViewById(R.id.checkbox);
+
+		checkBox.setOnCheckedChangeListener(onCheckedChangeListener);
+
+		checkBox.setText(text_id);
+
+		return checkBoxView;
 	}
 	
 	
