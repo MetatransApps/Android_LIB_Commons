@@ -100,7 +100,12 @@
 	<string name="app_wisconsin_name_paid">Wisconsin Card Sorting Test (WCST) (No Ads)</string>
 	<string name="app_wisconsin_advertising1">Psychology and Psychological test</string>
 	<string name="app_wisconsin_advertising2">Play with Wisconsin cards</string>
-	
+
+    <string name="app_mind_adaptivity_name">Mind Adaptivity Test Cards (MAT Cards)</string>
+    <string name="app_mind_adaptivity_name_paid">Mind Adaptivity Test Cards (MAT Cards) (No Ads)</string>
+    <string name="app_mind_adaptivity_advertising1">Psychology and Psychological Test</string>
+    <string name="app_mind_adaptivity_advertising2">Play with Mind Adaptivity Cards</string>
+
 	<string name="app_chessboardscanner_name">Chess Position Scanner Editor Analyzer</string>
 	<string name="app_chessboardscanner_name_paid">Chess Position Scanner Editor Analyzer (No Ads)</string>
 	<string name="app_chessboardscanner_advertising1">App which scans and analysis 2D boards</string>

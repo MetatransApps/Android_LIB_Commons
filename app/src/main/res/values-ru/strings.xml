@@ -103,6 +103,11 @@
     <string name="app_wisconsin_advertising1">Психологически Тест</string>
     <string name="app_wisconsin_advertising2">Играйте с Карты Висконсина</string>
 
+    <string name="app_mind_adaptivity_name">Тест на адаптивность карты (MAT Cards)</string>
+    <string name="app_mind_adaptivity_name_paid">Тест на адаптивность карты (MAT Cards) (No Ads)</string>
+    <string name="app_mind_adaptivity_advertising1">Психологический тест</string>
+    <string name="app_mind_adaptivity_advertising2">Играйте с картами адаптации</string>
+
     <string name="app_chessboardscanner_name">Сканер Шах Позиций: Редактор и Анализ</string>
     <string name="app_chessboardscanner_name_paid">Сканер Шах Позиций: Редактор и Анализ (Без Рекламы)</string>
     <string name="app_chessboardscanner_advertising1">Приложение Сканирующее Двухмерную Доску</string>

@@ -102,6 +102,11 @@
     <string name="app_wisconsin_advertising1">Psicología y Prueba Psicológica</string>
     <string name="app_wisconsin_advertising2">Juega con Cartas de Wisconsin</string>
 
+    <string name="app_mind_adaptivity_name">Tarjetas de prueba de adaptabilidad mental (MAT Cards)</string>
+    <string name="app_mind_adaptivity_name_paid">Tarjetas de prueba de adaptabilidad mental (MAT Cards) (No Ads)</string>
+    <string name="app_mind_adaptivity_advertising1">Psicología y Pruebas Psicológicas</string>
+    <string name="app_mind_adaptivity_advertising2">Juega con tarjetas de adaptabilidad mental</string>
+
     <string name="app_chessboardscanner_name">Escáner de Ajedrez de Posición Análisis Editor</string>
     <string name="app_chessboardscanner_name_paid">Escáner de Ajedrez de Posición Análisis Editor (No Ads)</string>
     <string name="app_chessboardscanner_advertising1">Aplicación que Escanea y Analiza Tableros 2D</string>
