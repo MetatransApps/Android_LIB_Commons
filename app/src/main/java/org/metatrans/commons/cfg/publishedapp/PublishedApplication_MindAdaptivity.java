@@ -20,7 +20,7 @@ public class PublishedApplication_MindAdaptivity extends PublishedApplication_Ba
 	
 	@Override
 	public String getPackage() {
-		return "com.mind_adaptivity_test_cards";
+		return "mat.cards";
 	}
 	
 	
