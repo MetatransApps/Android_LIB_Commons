@@ -14,14 +14,16 @@ public class PublishedApplication_Utils {
 	//Published applications per each store
 	public static final List<IPublishedApplication> APPSLIST_GOOGLE_ALL 			= new ArrayList<IPublishedApplication>();
 	public static final List<IPublishedApplication> APPSLIST_SAMSUNG_ALL 			= new ArrayList<IPublishedApplication>();
-	public static final List<IPublishedApplication> APPSLIST_OPERA_ALL 				= new ArrayList<IPublishedApplication>();
 	public static final List<IPublishedApplication> APPSLIST_AMAZON_ALL 			= new ArrayList<IPublishedApplication>();
-	public static final List<IPublishedApplication> APPSLIST_YANDEX_ALL 			= new ArrayList<IPublishedApplication>();
 	public static final List<IPublishedApplication> APPSLIST_HUAWEI_ALL 			= new ArrayList<IPublishedApplication>();
 	public static final List<IPublishedApplication> APPSLIST_FDROID_OWN_ALL 		= new ArrayList<IPublishedApplication>();
 	public static final List<IPublishedApplication> APPSLIST_FDROID_OFFICIAL_ALL	= new ArrayList<IPublishedApplication>();
-	
-	
+
+	//Store which are not used
+	public static final List<IPublishedApplication> APPSLIST_OPERA_ALL 				= new ArrayList<IPublishedApplication>();
+	public static final List<IPublishedApplication> APPSLIST_YANDEX_ALL 			= new ArrayList<IPublishedApplication>();
+
+
 	//Init Google store published applications
 	static {
 		
@@ -61,7 +63,6 @@ public class PublishedApplication_Utils {
 		app_gravityfinger137.setPaidVersion(app_gravityfinger137_paid);
 
 
-		APPSLIST_GOOGLE_ALL.add(app_mod);
 		APPSLIST_GOOGLE_ALL.add(app_chessboardscanner);
 		APPSLIST_GOOGLE_ALL.add(app_chessboardscanner_paid);
 		//APPSLIST_GOOGLE_ALL.add(app_wisconsin);
@@ -74,6 +75,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_GOOGLE_ALL.add(app_bagaturchess);
 		APPSLIST_GOOGLE_ALL.add(app_bagaturchess_paid);
 		APPSLIST_GOOGLE_ALL.add(app_mos);
+		APPSLIST_GOOGLE_ALL.add(app_mod);
 		APPSLIST_GOOGLE_ALL.add(app_mos_paid);
 		APPSLIST_GOOGLE_ALL.add(app_cafk);
 		APPSLIST_GOOGLE_ALL.add(app_cafk_paid);
@@ -96,6 +98,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_mafk 				= new PublishedApplication_MAFK(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_ec 				= new PublishedApplication_EC(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_mos 				= new PublishedApplication_MOS(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_mod 				= new PublishedApplication_MOD(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_bagaturchess		= new PublishedApplication_BagaturChess(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_stoptheballs 		= new PublishedApplication_Balloons(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_SAMSUNG);
@@ -108,6 +111,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_SAMSUNG_ALL.add(app_mafk);
 		APPSLIST_SAMSUNG_ALL.add(app_ec);
 		APPSLIST_SAMSUNG_ALL.add(app_mos);
+		APPSLIST_SAMSUNG_ALL.add(app_mod);
 		APPSLIST_SAMSUNG_ALL.add(app_bagaturchess);
 		APPSLIST_SAMSUNG_ALL.add(app_stoptheballs);
 		APPSLIST_SAMSUNG_ALL.add(app_gravityfinger137);
@@ -125,6 +129,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_mafk 				= new PublishedApplication_MAFK(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_ec 				= new PublishedApplication_EC(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_mos 				= new PublishedApplication_MOS(IAppStore.OBJ_HUAWEI);
+		IPublishedApplication app_mod 				= new PublishedApplication_MOD(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_bagaturchess		= new PublishedApplication_BagaturChess(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_stoptheballs 		= new PublishedApplication_Balloons(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_HUAWEI);
@@ -137,12 +142,43 @@ public class PublishedApplication_Utils {
 		APPSLIST_HUAWEI_ALL.add(app_mafk);
 		APPSLIST_HUAWEI_ALL.add(app_ec);
 		APPSLIST_HUAWEI_ALL.add(app_mos);
+		APPSLIST_HUAWEI_ALL.add(app_mod);
 		APPSLIST_HUAWEI_ALL.add(app_bagaturchess);
 		APPSLIST_HUAWEI_ALL.add(app_stoptheballs);
 		APPSLIST_HUAWEI_ALL.add(app_gravityfinger137);
 		APPSLIST_HUAWEI_ALL.add(app_wisconsin);
 		APPSLIST_HUAWEI_ALL.add(app_chessboardscanner);
 		APPSLIST_HUAWEI_ALL.add(app_words_de_for_bg);
+
+	}
+
+
+	//Init Amazon store published applications
+	static {
+
+		IPublishedApplication app_cafk 				= new PublishedApplication_CAFK(IAppStore.OBJ_AMAZON);
+		IPublishedApplication app_mafk 				= new PublishedApplication_MAFK(IAppStore.OBJ_AMAZON);
+		IPublishedApplication app_ec 				= new PublishedApplication_EC(IAppStore.OBJ_AMAZON);
+		IPublishedApplication app_mos 				= new PublishedApplication_MOS(IAppStore.OBJ_AMAZON);
+		IPublishedApplication app_mod 				= new PublishedApplication_MOD(IAppStore.OBJ_AMAZON);
+		IPublishedApplication app_bagaturchess		= new PublishedApplication_BagaturChess(IAppStore.OBJ_AMAZON);
+		IPublishedApplication app_stoptheballs 		= new PublishedApplication_Balloons(IAppStore.OBJ_AMAZON);
+		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_AMAZON);
+		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_AMAZON);
+		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_AMAZON);
+		IPublishedApplication app_words_de_for_bg 	= new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_AMAZON);
+
+		APPSLIST_AMAZON_ALL.add(app_cafk);
+		APPSLIST_AMAZON_ALL.add(app_mafk);
+		APPSLIST_AMAZON_ALL.add(app_ec);
+		APPSLIST_AMAZON_ALL.add(app_mos);
+		APPSLIST_AMAZON_ALL.add(app_mod);
+		APPSLIST_AMAZON_ALL.add(app_bagaturchess);
+		APPSLIST_AMAZON_ALL.add(app_stoptheballs);
+		APPSLIST_AMAZON_ALL.add(app_gravityfinger137);
+		APPSLIST_AMAZON_ALL.add(app_wisconsin);
+		APPSLIST_AMAZON_ALL.add(app_chessboardscanner);
+		APPSLIST_AMAZON_ALL.add(app_words_de_for_bg);
 
 	}
 
@@ -154,6 +190,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_mafk 				= new PublishedApplication_MAFK(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_ec 				= new PublishedApplication_EC(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_mos 				= new PublishedApplication_MOS(IAppStore.OBJ_FDROID_OWN);
+		IPublishedApplication app_mod 				= new PublishedApplication_MOD(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_bagaturchess		= new PublishedApplication_BagaturChess(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_stoptheballs 		= new PublishedApplication_Balloons(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_FDROID_OWN);
@@ -166,6 +203,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_FDROID_OWN_ALL.add(app_mafk);
 		APPSLIST_FDROID_OWN_ALL.add(app_ec);
 		APPSLIST_FDROID_OWN_ALL.add(app_mos);
+		APPSLIST_FDROID_OWN_ALL.add(app_mod);
 		APPSLIST_FDROID_OWN_ALL.add(app_bagaturchess);
 		APPSLIST_FDROID_OWN_ALL.add(app_stoptheballs);
 		APPSLIST_FDROID_OWN_ALL.add(app_gravityfinger137);
@@ -183,6 +221,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_mafk 				= new PublishedApplication_MAFK(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_ec 				= new PublishedApplication_EC(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_mos 				= new PublishedApplication_MOS(IAppStore.OBJ_FDROID_OFFICIAL);
+		IPublishedApplication app_mod 				= new PublishedApplication_MOD(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_bagaturchess		= new PublishedApplication_BagaturChess(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_stoptheballs 		= new PublishedApplication_Balloons(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_FDROID_OFFICIAL);
@@ -195,6 +234,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_mafk);
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_ec);
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_mos);
+		APPSLIST_FDROID_OFFICIAL_ALL.add(app_mod);
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_bagaturchess);
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_stoptheballs);
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_gravityfinger137);
@@ -202,22 +242,6 @@ public class PublishedApplication_Utils {
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_chessboardscanner);
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_words_de_for_bg);
 
-	}
-
-
-	//Init Amazon store published applications
-	static {
-
-		IPublishedApplication app_cafk 	= new PublishedApplication_CAFK(IAppStore.OBJ_AMAZON, 	"B00IWB69ZY");
-		IPublishedApplication app_mafk 	= new PublishedApplication_MAFK(IAppStore.OBJ_AMAZON,  	"B00TII2X3M");
-		IPublishedApplication app_ec 	= new PublishedApplication_EC(IAppStore.OBJ_AMAZON, 	"B00TIEQ7TW");
-		IPublishedApplication app_mos 	= new PublishedApplication_MOS(IAppStore.OBJ_AMAZON, 	"B017IVKW0G");
-
-
-		APPSLIST_AMAZON_ALL.add(app_mos);
-		APPSLIST_AMAZON_ALL.add(app_cafk);
-		APPSLIST_AMAZON_ALL.add(app_mafk);
-		APPSLIST_AMAZON_ALL.add(app_ec);
 	}
 
 
