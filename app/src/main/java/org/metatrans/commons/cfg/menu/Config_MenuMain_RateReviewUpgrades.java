@@ -46,7 +46,9 @@ public class Config_MenuMain_RateReviewUpgrades extends Config_MenuMain_Base {
 			public void run() {
 				
 				Activity currentActivity = Application_Base.getInstance().getCurrentActivity();
+
 				if (currentActivity != null) {
+
 					WebUtils.openApplicationStorePage(currentActivity, Application_Base.getInstance().getApp_Me());
 					
 					try {

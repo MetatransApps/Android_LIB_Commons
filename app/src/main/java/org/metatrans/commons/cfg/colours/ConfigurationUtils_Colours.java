@@ -65,7 +65,9 @@ public class ConfigurationUtils_Colours {
 		IConfigurationColours result = mapping.get(id);
 		
 		if (result == null) {
-			throw new IllegalStateException("Config with id = " + id + " not found.");
+
+			//throw new IllegalStateException("Config with id = " + id + " not found.");
+			return getAll()[0];
 		}
 		
 		return result;

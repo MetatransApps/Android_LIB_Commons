@@ -202,7 +202,7 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 	}
 	
 	
-	private void dettachTopViews(ViewGroup frame) {
+	private void detachTopViews(ViewGroup frame) {
 		View old_view_invite_friends = frame.findViewById(VIEW_ID_INVITE);
 		if (old_view_invite_friends != null) {
 			frame.removeView(old_view_invite_friends);
@@ -307,7 +307,7 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 
 
 		//Attach top view
-		dettachTopViews(frame);
+		detachTopViews(frame);
 		attachTopViews(frame);
 
 

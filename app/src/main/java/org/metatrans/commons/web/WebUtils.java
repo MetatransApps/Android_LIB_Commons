@@ -13,19 +13,27 @@ import android.net.Uri;
 
 
 public class WebUtils {
-	
-	
-	public static final boolean openApplicationStorePage(Context parent, IPublishedApplication app) {
-		return openApplicationStorePage(parent, app, false /*true*/ );
+
+
+	public static final boolean openApplicationWebpage(Context context, IPublishedApplication app) {
+
+		context.startActivity(getViewIntent(Uri.parse(app.getMarketURL())));
+
+		return true;
+	}
+
+
+	public static final boolean openApplicationStorePage(Context context, IPublishedApplication app) {
+		return openApplicationStorePage(context, app, false /*true*/ );
 	}
 	
 	
-	public static final boolean openApplicationStorePage(Context parent, IPublishedApplication app, boolean checkConnection) {
+	private static final boolean openApplicationStorePage(Context context, IPublishedApplication app, boolean checkConnection) {
 		
 		
 		if (checkConnection) {
 			if (!DeviceUtils.isConnected()) {
-				Toast_Base.showToast_InCenter_Short(parent, "  " + parent.getString(R.string.label_noconnection) + "  ");
+				Toast_Base.showToast_InCenter_Short(context, "  " + context.getString(R.string.label_noconnection) + "  ");
 				return false;
 			}
 		}
@@ -36,8 +44,8 @@ public class WebUtils {
 		if (app.getAppStore().getID() == IAppStore.ID_GOOGLE) {
 			
 			try {
-				
-				parent.startActivity(getViewIntent(Uri.parse("market://details?id=" + app.getPackage())));
+
+				context.startActivity(getViewIntent(Uri.parse("market://details?id=" + app.getPackage())));
 
 				opened = true;
 				
@@ -46,18 +54,18 @@ public class WebUtils {
 				e.printStackTrace();
 			}
 			
-		} /*else if (app.getAppStore().getID() == IAppStore.ID_SAMSUNG) {
+		} else if (app.getAppStore().getID() == IAppStore.ID_SAMSUNG) {
 			
 			try {
-				
-				parent.startActivity(getViewIntent(Uri.parse("samsungapps://ProductDetail/" + app.getPackage())));
+
+				context.startActivity(getViewIntent(Uri.parse("samsungapps://ProductDetail/" + app.getPackage())));
 				opened = true;
 				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			
-		} else if (app.getAppStore().getID() == IAppStore.ID_AMAZON) {
+		} /*else if (app.getAppStore().getID() == IAppStore.ID_AMAZON) {
 			
 			try {
 				
@@ -95,15 +103,7 @@ public class WebUtils {
 		//Standard flow
 		if (!opened) {
 			
-	    	/*Intent intent = new Intent(parent, Activity_WebView_StatePreservingImpl_With_VideoPlayer.class);
-	    	intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-	    	intent.putExtra("URL", app.getMarketURL());
-	    	intent.putExtra("titleID", app.getName());
-	    	parent.startActivity(intent);*/
-
-			parent.startActivity(getViewIntent(Uri.parse(app.getMarketURL())));
-
-	    	return true;
+	    	return openApplicationWebpage(context, app);
 	    	
 		} else {
 			

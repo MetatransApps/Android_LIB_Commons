@@ -95,31 +95,56 @@ public class PublishedApplication_Utils {
 		//IPublishedApplication app_cafk 			= new PublishedApplication_CAFK(IAppStore.OBJ_SAMSUNG, "000000806963");
 
 		IPublishedApplication app_cafk 				= new PublishedApplication_CAFK(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_cafk_paid 		= new PublishedApplication_CAFK_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_mafk 				= new PublishedApplication_MAFK(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_mafk_paid 		= new PublishedApplication_MAFK_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_ec 				= new PublishedApplication_EC(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_ec_paid 			= new PublishedApplication_EC_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_mos 				= new PublishedApplication_MOS(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_mos_paid 			= new PublishedApplication_MOS_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_mod 				= new PublishedApplication_MOD(IAppStore.OBJ_SAMSUNG);
+		//IPublishedApplication app_mod_paid			= new PublishedApplication_MOD_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_bagaturchess		= new PublishedApplication_BagaturChess(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_bagaturchess_paid	= new PublishedApplication_Bagatur_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_stoptheballs 		= new PublishedApplication_Balloons(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_stoptheballs_paid = new PublishedApplication_Balloons_Paid(IAppStore.OBJ_SAMSUNG);
-		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_gravity 			= new PublishedApplication_GravityFinger137(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_gravity_paid 		= new PublishedApplication_GravityFinger137_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_SAMSUNG);
-		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_SAMSUNG);
+		//IPublishedApplication app_wisconsin_paid	= new PublishedApplication_Wisconsin_Paid(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_scanner 			= new PublishedApplication_CBS(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_scanner_paid 		= new PublishedApplication_Scanner_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_words_de_for_bg 	= new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_SAMSUNG);
+		//IPublishedApplication app_words_de_for_bg_paid 	= new PublishedApplication_Words_DE_for_BG_Paid(IAppStore.OBJ_SAMSUNG);
 
+		app_cafk.setPaidVersion(app_cafk_paid);
+		app_mafk.setPaidVersion(app_mafk_paid);
+		app_ec.setPaidVersion(app_ec_paid);
+		app_mos.setPaidVersion(app_mos_paid);
+		app_bagaturchess.setPaidVersion(app_bagaturchess_paid);
 		app_stoptheballs.setPaidVersion(app_stoptheballs_paid);
+		app_gravity.setPaidVersion(app_gravity_paid);
+		app_scanner.setPaidVersion(app_scanner_paid);
 
 		APPSLIST_SAMSUNG_ALL.add(app_cafk);
+		APPSLIST_SAMSUNG_ALL.add(app_cafk_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_mafk);
+		APPSLIST_SAMSUNG_ALL.add(app_mafk_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_ec);
+		APPSLIST_SAMSUNG_ALL.add(app_ec_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_mos);
+		APPSLIST_SAMSUNG_ALL.add(app_mos_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_mod);
+		//APPSLIST_SAMSUNG_ALL.add(app_mod_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_bagaturchess);
+		APPSLIST_SAMSUNG_ALL.add(app_bagaturchess_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_stoptheballs);
 		APPSLIST_SAMSUNG_ALL.add(app_stoptheballs_paid);
-		APPSLIST_SAMSUNG_ALL.add(app_gravityfinger137);
+		APPSLIST_SAMSUNG_ALL.add(app_gravity);
+		APPSLIST_SAMSUNG_ALL.add(app_gravity_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_wisconsin);
-		APPSLIST_SAMSUNG_ALL.add(app_chessboardscanner);
+		APPSLIST_SAMSUNG_ALL.add(app_scanner);
+		APPSLIST_SAMSUNG_ALL.add(app_scanner_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_words_de_for_bg);
 
 	}
