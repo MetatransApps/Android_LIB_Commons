@@ -36,6 +36,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_mos 		= new PublishedApplication_MOS(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_mos_paid  = new PublishedApplication_MOS_Paid(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_mod 		= new PublishedApplication_MOD(IAppStore.OBJ_GOOGLE);
+		IPublishedApplication app_mod_paid	= new PublishedApplication_MOD_Paid(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_bagaturchess = new PublishedApplication_BagaturChess(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_bagaturchess_paid = new PublishedApplication_Bagatur_Paid(IAppStore.OBJ_GOOGLE);
 		//IPublishedApplication app_wisconsin = new PublishedApplication_Wisconsin(IAppStore.OBJ_GOOGLE);
@@ -51,7 +52,7 @@ public class PublishedApplication_Utils {
 
 
 		app_mos.setPaidVersion(app_mos_paid);
-		//app_mod.setPaidVersion(null);
+		app_mod.setPaidVersion(app_mod_paid);
 		app_ec.setPaidVersion(app_ec_paid);
 		app_mafk.setPaidVersion(app_mafk_paid);
 		app_cafk.setPaidVersion(app_cafk_paid);
@@ -75,8 +76,9 @@ public class PublishedApplication_Utils {
 		APPSLIST_GOOGLE_ALL.add(app_bagaturchess);
 		APPSLIST_GOOGLE_ALL.add(app_bagaturchess_paid);
 		APPSLIST_GOOGLE_ALL.add(app_mos);
-		APPSLIST_GOOGLE_ALL.add(app_mod);
 		APPSLIST_GOOGLE_ALL.add(app_mos_paid);
+		APPSLIST_GOOGLE_ALL.add(app_mod);
+		APPSLIST_GOOGLE_ALL.add(app_mod_paid);
 		APPSLIST_GOOGLE_ALL.add(app_cafk);
 		APPSLIST_GOOGLE_ALL.add(app_cafk_paid);
 		APPSLIST_GOOGLE_ALL.add(app_mafk);
@@ -103,7 +105,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_mos 				= new PublishedApplication_MOS(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_mos_paid 			= new PublishedApplication_MOS_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_mod 				= new PublishedApplication_MOD(IAppStore.OBJ_SAMSUNG);
-		//IPublishedApplication app_mod_paid			= new PublishedApplication_MOD_Paid(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_mod_paid			= new PublishedApplication_MOD_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_bagaturchess		= new PublishedApplication_BagaturChess(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_bagaturchess_paid	= new PublishedApplication_Bagatur_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_stoptheballs 		= new PublishedApplication_Balloons(IAppStore.OBJ_SAMSUNG);
@@ -121,6 +123,7 @@ public class PublishedApplication_Utils {
 		app_mafk.setPaidVersion(app_mafk_paid);
 		app_ec.setPaidVersion(app_ec_paid);
 		app_mos.setPaidVersion(app_mos_paid);
+		app_mod.setPaidVersion(app_mod_paid);
 		app_bagaturchess.setPaidVersion(app_bagaturchess_paid);
 		app_stoptheballs.setPaidVersion(app_stoptheballs_paid);
 		app_gravity.setPaidVersion(app_gravity_paid);
@@ -135,7 +138,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_SAMSUNG_ALL.add(app_mos);
 		APPSLIST_SAMSUNG_ALL.add(app_mos_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_mod);
-		//APPSLIST_SAMSUNG_ALL.add(app_mod_paid);
+		APPSLIST_SAMSUNG_ALL.add(app_mod_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_bagaturchess);
 		APPSLIST_SAMSUNG_ALL.add(app_bagaturchess_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_stoptheballs);
