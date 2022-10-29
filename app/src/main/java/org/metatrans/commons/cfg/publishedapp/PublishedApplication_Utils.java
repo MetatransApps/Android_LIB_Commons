@@ -101,11 +101,13 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_mod 				= new PublishedApplication_MOD(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_bagaturchess		= new PublishedApplication_BagaturChess(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_stoptheballs 		= new PublishedApplication_Balloons(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_stoptheballs_paid = new PublishedApplication_Balloons_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_words_de_for_bg 	= new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_SAMSUNG);
 
+		app_stoptheballs.setPaidVersion(app_stoptheballs_paid);
 
 		APPSLIST_SAMSUNG_ALL.add(app_cafk);
 		APPSLIST_SAMSUNG_ALL.add(app_mafk);
@@ -114,6 +116,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_SAMSUNG_ALL.add(app_mod);
 		APPSLIST_SAMSUNG_ALL.add(app_bagaturchess);
 		APPSLIST_SAMSUNG_ALL.add(app_stoptheballs);
+		APPSLIST_SAMSUNG_ALL.add(app_stoptheballs_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_gravityfinger137);
 		APPSLIST_SAMSUNG_ALL.add(app_wisconsin);
 		APPSLIST_SAMSUNG_ALL.add(app_chessboardscanner);

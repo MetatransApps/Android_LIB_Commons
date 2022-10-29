@@ -8,6 +8,7 @@ public class MarketURLGen_Google implements IMarketURLGen {
 	
 	
 	public MarketURLGen_Google(String _appID) {
+
 		url = "https://play.google.com/store/apps/details?id=" + _appID;
 	}
 	

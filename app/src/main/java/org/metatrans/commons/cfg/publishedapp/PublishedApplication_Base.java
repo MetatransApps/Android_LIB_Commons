@@ -83,10 +83,10 @@ public abstract class PublishedApplication_Base implements IPublishedApplication
 			case IAppStore.ID_GOOGLE:
 				return new MarketURLGen_Google(getPackage());
 				
-			/*case IAppStore.ID_SAMSUNG:
-				return new MarketURLGen_Samsung(app_storeID);
+			case IAppStore.ID_SAMSUNG:
+				return new MarketURLGen_Samsung(getPackage());
 				
-			case IAppStore.ID_AMAZON:
+			/*case IAppStore.ID_AMAZON:
 				return new MarketURLGen_Amazon(app_storeID);
 				
 			case IAppStore.ID_YANDEX:
