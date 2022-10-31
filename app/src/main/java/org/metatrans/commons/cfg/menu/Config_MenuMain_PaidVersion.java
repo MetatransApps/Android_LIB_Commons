@@ -57,7 +57,7 @@ public class Config_MenuMain_PaidVersion extends Config_MenuMain_Base {
 
 					if (app_paid == null) {
 
-						WebUtils.openApplicationWebpage(currentActivity, app);
+						WebUtils.openApplicationWebpage(currentActivity, app.getMarketURL());
 
 					} else {
 
