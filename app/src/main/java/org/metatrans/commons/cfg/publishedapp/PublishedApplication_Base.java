@@ -86,12 +86,8 @@ public abstract class PublishedApplication_Base implements IPublishedApplication
 			case IAppStore.ID_HUAWEI:
 				return new MarketURLGen_Huawei(getPackage());
 
-			/*case IAppStore.ID_YANDEX:
-				return new MarketURLGen_Google(getPackage());
-			
-			case IAppStore.ID_OPERA:
-				return new MarketURLGen_Opera(app_storeID);
-			*/
+			case IAppStore.ID_FDROID_OFFICIAL:
+				return new MarketURLGen_FDroidOfficial(getPackage());
 				
 			default:
 
