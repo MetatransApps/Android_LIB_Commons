@@ -86,9 +86,12 @@ public abstract class PublishedApplication_Base implements IPublishedApplication
 			case IAppStore.ID_HUAWEI:
 				return new MarketURLGen_Huawei(getPackage());
 
+			/*
+			//The apps must be available on FDROID_OFFICIAL! Currently only Gravity game is available.
 			case IAppStore.ID_FDROID_OFFICIAL:
 				return new MarketURLGen_FDroidOfficial(getPackage());
-				
+			*/
+
 			default:
 
 				return new MarketURLGen_OurWebsite(getPackage());
