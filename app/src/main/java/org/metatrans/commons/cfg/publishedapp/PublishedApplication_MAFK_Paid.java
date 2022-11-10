@@ -20,7 +20,12 @@ public class PublishedApplication_MAFK_Paid extends PublishedApplication_Base_Pa
 	
 	@Override
 	public String getPackage() {
-		return "com.mathforkids5.paid";
+
+		if (IAppStore.OBJ_HUAWEI.equals(getAppStore())) {
+			return "com.mathforkids5.paid.huawei";
+		} else {
+			return "com.mathforkids5.paid";
+		}
 	}
 	
 	

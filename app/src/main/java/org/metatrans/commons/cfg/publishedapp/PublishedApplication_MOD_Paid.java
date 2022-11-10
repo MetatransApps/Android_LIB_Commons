@@ -20,7 +20,12 @@ public class PublishedApplication_MOD_Paid extends PublishedApplication_Base_Pai
 
     @Override
     public String getPackage() {
-        return "com.maze_dinosaurs.paid";
+
+        if (IAppStore.OBJ_HUAWEI.equals(getAppStore())) {
+            return "com.maze_dinosaurs.paid.huawei";
+        } else {
+            return "com.maze_dinosaurs.paid";
+        }
     }
 
 

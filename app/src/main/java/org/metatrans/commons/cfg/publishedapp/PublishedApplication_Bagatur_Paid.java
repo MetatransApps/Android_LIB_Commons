@@ -20,7 +20,12 @@ public class PublishedApplication_Bagatur_Paid extends PublishedApplication_Base
 
     @Override
     public String getPackage() {
-        return "com.bagaturchess.paid";
+
+        if (IAppStore.OBJ_HUAWEI.equals(getAppStore())) {
+            return "com.bagaturchess.paid.huawei";
+        } else {
+            return "com.bagaturchess.paid";
+        }
     }
 
 

@@ -20,7 +20,12 @@ public class PublishedApplication_EC_Paid extends PublishedApplication_Base_Paid
 	
 	@Override
 	public String getPackage() {
-		return "com.easycolours.paid";
+
+		if (IAppStore.OBJ_HUAWEI.equals(getAppStore())) {
+			return "com.easycolours.paid.huawei";
+		} else {
+			return "com.easycolours.paid";
+		}
 	}
 	
 	

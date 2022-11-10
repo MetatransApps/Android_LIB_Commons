@@ -20,7 +20,12 @@ public class PublishedApplication_Wisconsin_Paid extends PublishedApplication_Ba
 
     @Override
     public String getPackage() {
-        return "com.wisconsin.paid";
+
+        if (IAppStore.OBJ_HUAWEI.equals(getAppStore())) {
+            return "com.wisconsin.paid.huawei";
+        } else {
+            return "com.wisconsin.paid";
+        }
     }
 
 

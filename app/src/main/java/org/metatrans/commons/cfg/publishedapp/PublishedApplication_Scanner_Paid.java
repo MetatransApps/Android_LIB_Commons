@@ -20,7 +20,12 @@ public class PublishedApplication_Scanner_Paid extends PublishedApplication_Base
 
     @Override
     public String getPackage() {
-        return "com.chessboardscanner.paid";
+
+        if (IAppStore.OBJ_HUAWEI.equals(getAppStore())) {
+            return "com.chessboardscanner.paid.huawei";
+        } else {
+            return "com.chessboardscanner.paid";
+        }
     }
 
 

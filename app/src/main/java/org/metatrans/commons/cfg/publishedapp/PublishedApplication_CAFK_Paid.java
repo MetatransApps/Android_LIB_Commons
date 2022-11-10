@@ -20,7 +20,11 @@ public class PublishedApplication_CAFK_Paid extends PublishedApplication_Base_Pa
 	
 	@Override
 	public String getPackage() {
-		return "com.chessartforkids.paid";
+		if (IAppStore.OBJ_HUAWEI.equals(getAppStore())) {
+			return "com.chessartforkids.paid.huawei";
+		} else {
+			return "com.chessartforkids.paid";
+		}
 	}
 	
 	

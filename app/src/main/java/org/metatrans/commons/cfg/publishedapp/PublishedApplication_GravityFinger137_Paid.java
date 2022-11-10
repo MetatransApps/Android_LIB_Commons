@@ -20,7 +20,12 @@ public class PublishedApplication_GravityFinger137_Paid extends PublishedApplica
 
 	@Override
 	public String getPackage() {
-		return "com.gravityplay.paid";
+
+		if (IAppStore.OBJ_HUAWEI.equals(getAppStore())) {
+			return "com.gravityplay.paid.huawei";
+		} else {
+			return "com.gravityplay.paid";
+		}
 	}
 	
 	

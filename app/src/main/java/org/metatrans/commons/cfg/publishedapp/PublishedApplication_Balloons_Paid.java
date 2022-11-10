@@ -20,7 +20,12 @@ public class PublishedApplication_Balloons_Paid extends PublishedApplication_Bas
 
 	@Override
 	public String getPackage() {
-		return "com.stoptheballs.paid";
+
+		if (IAppStore.OBJ_HUAWEI.equals(getAppStore())) {
+			return "com.stoptheballs.paid.huawei";
+		} else {
+			return "com.stoptheballs.paid";
+		}
 	}
 
 
