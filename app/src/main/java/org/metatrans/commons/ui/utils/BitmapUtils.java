@@ -28,7 +28,7 @@ import android.text.TextPaint;
 public class BitmapUtils {
 	
 	
-	private static Bitmap.Config DEFAULT_CONFIG = Bitmap.Config.ARGB_8888;
+	public static Bitmap.Config DEFAULT_CONFIG = Bitmap.Config.ARGB_8888;
 
 	private static final boolean FILTER = true;
 	

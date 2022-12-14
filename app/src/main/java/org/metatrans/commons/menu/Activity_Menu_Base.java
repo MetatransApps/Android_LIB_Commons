@@ -10,11 +10,13 @@ import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
 import org.metatrans.commons.cfg.colours.IConfigurationColours;
 import org.metatrans.commons.cfg.menu.IConfigurationMenu_Main;
+import org.metatrans.commons.model.BitmapCache_Base;
 import org.metatrans.commons.ui.Toast_Base;
 import org.metatrans.commons.ui.list.ListViewFactory;
 import org.metatrans.commons.ui.list.RowItem_IdTD;
 import org.metatrans.commons.ui.utils.BitmapUtils;
 
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -92,7 +94,24 @@ public abstract class Activity_Menu_Base extends Activity_Base {
 			/*if ("".equals(description.trim())) {
 				description = entry.getDescription() == 0 ? "" : getString(entry.getDescription());
 			}*/
-			Drawable drawable = BitmapUtils.createDrawable(this, BitmapUtils.fromResource(this, entry.getIconResID(), getIconSize()));
+
+			int bitmap_id = entry.getIconResID();
+			Bitmap bitmap = null;
+			//The try-catch block is for backward compatibility until all apps start using I2DBitmapCache
+			//and its immutable bitmap IDs. In contrasts the bitmap IDs in R.drawable could change because of Android build.
+			try {
+
+				bitmap = BitmapCache_Base.STATIC.getInstance(BitmapCache_Base.BITMAP_ID_COMMON).get(bitmap_id);
+				bitmap = BitmapUtils.createScaledBitmap(bitmap, getIconSize(), getIconSize());
+
+			} catch(Exception e) {
+
+				//The old way ...
+				bitmap = BitmapUtils.fromResource(Application_Base.getInstance(), bitmap_id, getIconSize());
+			}
+
+
+			Drawable drawable = BitmapUtils.createDrawable(this, bitmap);
 			
 			RowItem_IdTD item = new RowItem_IdTD(drawable, title, description);
 
@@ -102,8 +121,7 @@ public abstract class Activity_Menu_Base extends Activity_Base {
 		
 		return rowItems;
 	}
-	
-	
+
 	
 	private class OnItemClickListener_Menu implements
 			AdapterView.OnItemClickListener {
