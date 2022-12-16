@@ -18,6 +18,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.Layout.Alignment;
@@ -510,12 +511,13 @@ public class BitmapUtils {
 	}
 
 
-    public static Bitmap textAsBitmap(String text, float textSize, int textColor) {
+    /*public static Bitmap textAsBitmap_old(String text, float textSize, int textColor) {
         
     	Paint paint = new Paint();
         
     	paint.setTextSize(textSize);
         paint.setColor(textColor);
+
         paint.setTextAlign(Paint.Align.CENTER);
         
         //int width = (int) (paint.measureText(text) + 0.5f); // round
@@ -524,11 +526,39 @@ public class BitmapUtils {
         int width = 500;
         int height = 200;
         Bitmap image = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+
         Canvas canvas = new Canvas(image);
+
         canvas.drawText(text, 0, 0, paint);
         
         return image;
     }
+    */
+
+
+	public static Bitmap textAsBitmap(String text, float textSize, int textColor) {
+
+		Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+		paint.setTypeface(Typeface.DEFAULT_BOLD);
+		paint.setElegantTextHeight(true);
+		paint.setTextSize(textSize);
+		paint.setColor(textColor);
+
+		paint.setTextAlign(Paint.Align.LEFT);
+
+		float baseline = -paint.ascent(); // ascent() is negative
+		int width = (int) (paint.measureText(text) + 0.5f); // round
+		int height = (int) (baseline + paint.descent() + 0.5f);
+
+		Bitmap image = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+
+		Canvas canvas = new Canvas(image);
+
+		canvas.drawText(text, 0, baseline, paint);
+
+		return image;
+	}
 
 
     private static final float MATCH_RATIO = 0.90f;
