@@ -58,58 +58,58 @@
     <string name="label_advertising_paid_2">Без Рекламы</string>
 
 
-    <string name="app_cafk_name">Шахматы для Детей</string>
-    <string name="app_cafk_name_paid">Шахматы для Детей (Без Рекламы)</string>
-	<string name="app_cafk_advertising1">Учиться и Играть в Шахматы и Веселиться</string>
+    <string name="app_cafk_name">Шахматы от Детей до Гроссмейстеров</string>
+    <string name="app_cafk_name_paid">Шахматы от Детей до Гроссмейстеров</string>
+	<string name="app_cafk_advertising1">Учиться и Играть в Шахматы. Веселиться.</string>
 	<string name="app_cafk_advertising2">От детского Сада до Гроссмейстера</string>
 	
 	<string name="app_bagaturchess_name">Багатур Движок для Шахмат</string>
-    <string name="app_bagaturchess_name_paid">Багатур Движок для Шахмат (Без Рекламы)</string>
+    <string name="app_bagaturchess_name_paid">Багатур Движок для Шахмат</string>
 	<string name="app_bagaturchess_advertising1">Автономные Шахматы с 16 Уровнями Силы</string>
-	<string name="app_bagaturchess_advertising2">Играть с Багатур 2.2e</string>
+	<string name="app_bagaturchess_advertising2">Играть с Багатур AI</string>
 	
 	<string name="app_mafk_name">Детская Математика до 4 Класса</string>
-	<string name="app_mafk_name_paid">Детская Математика до 4 Класс (Без Рекламы)</string>
+	<string name="app_mafk_name_paid">Детская Математика до 4 Классa</string>
 	<string name="app_mafk_advertising1">Также Подходит для Детского Сада</string>
 	<string name="app_mafk_advertising2">Подсчет, Формы, Арифметика, Последовательности</string>
 	
 	<string name="app_ec_name">Струп Эффект Тест</string>
-	<string name="app_ec_name_paid">Струп Эффект Тест (Без Рекламы)</string>
+	<string name="app_ec_name_paid">Струп Эффект Тест</string>
 	<string name="app_ec_advertising1">Играйте в Игру с Цветами и Словами</string>
 	<string name="app_ec_advertising2">Демонстрирует вам эффект Струпа</string>
 	
 	<string name="app_mos_name">Лабиринт Белку 2D</string>
-	<string name="app_mos_name_paid">Лабиринт Белку 2D (Без Рекламы)</string>
+	<string name="app_mos_name_paid">Лабиринт Белку 2D</string>
 	<string name="app_mos_advertising1">Помогите Белку</string>
 	<string name="app_mos_advertising2">Каждый раз новый Лабиринт</string>
 
     <string name="app_mod_name">Лабиринт Динозавров 2D</string>
-    <string name="app_mod_name_paid">Лабиринт Динозавров 2D (Без Рекламы)</string>
+    <string name="app_mod_name_paid">Лабиринт Динозавров 2D</string>
     <string name="app_mod_advertising1">Помогите Динозавра</string>
     <string name="app_mod_advertising2">Каждый раз новый лабиринт</string>
 
 	<string name="app_stb_name">Беспосадочные Воздушные Шары</string>
-	<string name="app_stb_name_paid">Беспосадочные Воздушные Шары (Без Рекламы)</string>
+	<string name="app_stb_name_paid">Беспосадочные Воздушные Шары</string>
 	<string name="app_stb_advertising1">Простая Игра для Детей и Взрослых</string>
 	<string name="app_stb_advertising2">Стрельба по Летающим Шарам</string>
 	
 	<string name="app_gravity_name">Гравитационный Палец 137</string>
-	<string name="app_gravity_name_paid">Гравитационный Палец 137 (Без Рекламы)</string>
-	<string name="app_gravity_advertising1">Физическая Игра для Одного Пальца</string>
-	<string name="app_gravity_advertising2">Пересечь Орбиты Космических Объектов</string>
+	<string name="app_gravity_name_paid">Гравитационный Палец 137</string>
+	<string name="app_gravity_advertising1">Управляйте Обитами Астероидов</string>
+	<string name="app_gravity_advertising2">Демонстрирует Гравитацию в Космосе</string>
 
-    <string name="app_wisconsin_name">Карты Висконсина: Тест Сортировки</string>
-    <string name="app_wisconsin_name_paid">Карты Висконсина: Тест Сортировки (Без Рекламы)</string>
+    <string name="app_wisconsin_name">Тест Сортировки Карты Висконсина</string>
+    <string name="app_wisconsin_name_paid">Тест Сортировки Карты Висконсина</string>
     <string name="app_wisconsin_advertising1">Психологически Тест</string>
     <string name="app_wisconsin_advertising2">Играйте с Карты Висконсина</string>
 
     <string name="app_mind_adaptivity_name">Тест на адаптивность карты (MAT Cards)</string>
-    <string name="app_mind_adaptivity_name_paid">Тест на адаптивность карты (MAT Cards) (No Ads)</string>
+    <string name="app_mind_adaptivity_name_paid">Тест на адаптивность карты (MAT Cards)</string>
     <string name="app_mind_adaptivity_advertising1">Психологический тест</string>
     <string name="app_mind_adaptivity_advertising2">Играйте с картами адаптации</string>
 
-    <string name="app_chessboardscanner_name">Сканер Шах Позиций: Редактор и Анализ</string>
-    <string name="app_chessboardscanner_name_paid">Сканер Шах Позиций: Редактор и Анализ (Без Рекламы)</string>
+    <string name="app_chessboardscanner_name">Сканер Шахматных Позиций</string>
+    <string name="app_chessboardscanner_name_paid">Сканер Шахматных Позиций</string>
     <string name="app_chessboardscanner_advertising1">Приложение Сканирующее Двухмерную Доску</string>
     <string name="app_chessboardscanner_advertising2">Снимайте Другие экраны и Анализируйте</string>
 

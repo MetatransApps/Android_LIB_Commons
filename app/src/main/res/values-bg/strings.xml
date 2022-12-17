@@ -58,65 +58,65 @@
     <string name="label_advertising_paid_2">Без Реклами</string>
 
 
-    <string name="app_cafk_name">Шах за Деца</string>
-    <string name="app_cafk_name_paid">Шах за Деца (Без Реклами)</string>
-	<string name="app_cafk_advertising1">Играй и Учи Шах и се Забавлявай</string>
+    <string name="app_cafk_name">Шах от Деца до Грандмастери</string>
+    <string name="app_cafk_name_paid">Шах от Деца до Грандмастери</string>
+	<string name="app_cafk_advertising1">Играй и Учи Шах. Забавлявай се.</string>
 	<string name="app_cafk_advertising2">От Детската Градина до Гросмайстор</string>
 
 	<string name="app_bagaturchess_name">Шах Двигател Багатур</string>
-    <string name="app_bagaturchess_name_paid">Шах Двигател Багатур (Без Реклами)</string>
+    <string name="app_bagaturchess_name_paid">Шах Двигател Багатур</string>
 	<string name="app_bagaturchess_advertising1">Офлайн Шах с 16 Нива на Сила</string>
-	<string name="app_bagaturchess_advertising2">Играй с Багатур 2.2e</string>
+	<string name="app_bagaturchess_advertising2">Играй с Багатур AI</string>
 
-	<string name="app_mafk_name">Детска Математика до 4 Клас</string>
-	<string name="app_mafk_name_paid">Детска Математика до 4 Клас (Без Реклами)</string>
-	<string name="app_mafk_advertising1">Подходяща и за Детската Градина</string>
+	<string name="app_mafk_name">Математика от Градината до 4 Клас</string>
+	<string name="app_mafk_name_paid">Математика от Градината до 4 Клас</string>
+	<string name="app_mafk_advertising1">Подходяща от Детската Градина</string>
 	<string name="app_mafk_advertising2">Броене, Форми, Аритметика, Редици</string>
 
 	<string name="app_ec_name">Струп Ефект Тест</string>
-	<string name="app_ec_name_paid">Струп Ефект Тест (Без Реклами)</string>
+	<string name="app_ec_name_paid">Струп Ефект Тест</string>
 	<string name="app_ec_advertising1">Играй Игра с Цветове и Думи</string>
 	<string name="app_ec_advertising2">Демонстрира за Вас Ефекта на Струп</string>
 
 	<string name="app_mos_name">Лабиринтът на Катерицата 2D</string>
-	<string name="app_mos_name_paid">Лабиринтът на Катерицата 2D (Без Реклами)</string>
+	<string name="app_mos_name_paid">Лабиринтът на Катерицата 2D</string>
 	<string name="app_mos_advertising1">Помогни на Катерицата</string>
 	<string name="app_mos_advertising2">Всеки път различен лабиринт</string>
 
     <string name="app_mod_name">Лабиринтът на Динозавърът 2D</string>
-    <string name="app_mod_name_paid">Лабиринтът на Динозавърът 2D (Без Реклами)</string>
+    <string name="app_mod_name_paid">Лабиринтът на Динозавърът 2D</string>
     <string name="app_mod_advertising1">Помогни на Динозавърът</string>
     <string name="app_mod_advertising2">Всеки път различен лабиринт</string>
 
-	<string name="app_stb_name">Нонстоп Балони</string>
-	<string name="app_stb_name_paid">Нонстоп Балони (Без Реклами)</string>
+	<string name="app_stb_name">Нонстоп Балони Шутър</string>
+	<string name="app_stb_name_paid">Нонстоп Балони Шутър</string>
 	<string name="app_stb_advertising1">Проста Игра за Деца и Възрастни</string>
-	<string name="app_stb_advertising2">Стреляне по Летящите Балони</string>
+	<string name="app_stb_advertising2">Спукаите Летящите Балони</string>
 
 	<string name="app_gravity_name">Гравитационен Пръст 137</string>
-	<string name="app_gravity_name_paid">Гравитационен Пръст 137 (Без Реклами)</string>
-	<string name="app_gravity_advertising1">Физическа Игра за Един Пръст</string>
-	<string name="app_gravity_advertising2">Пресечи Орбитите на Космическите Обекти</string>
+	<string name="app_gravity_name_paid">Гравитационен Пръст 137</string>
+	<string name="app_gravity_advertising1">Управлявай орбитите на астероидите</string>
+	<string name="app_gravity_advertising2">Демонстрира гравитацията в космоса</string>
 
-    <string name="app_wisconsin_name">Уисконсин Карти: Тест за Сортиране</string>
-    <string name="app_wisconsin_name_paid">Уисконсин Карти: Тест за Сортиране (Без Реклами) </string>
+    <string name="app_wisconsin_name">Тест за Сортиране с Уисконсин Карти</string>
+    <string name="app_wisconsin_name_paid">Тест за Сортиране с Уисконсин Карти</string>
     <string name="app_wisconsin_advertising1">Психологически Тест</string>
     <string name="app_wisconsin_advertising2">Играй с Уисконсин Карти</string>
 
     <string name="app_mind_adaptivity_name">Тест за Адаптивност с Карти (MAT Cards)</string>
-    <string name="app_mind_adaptivity_name_paid">Тест за Адаптивност с Карти (MAT Cards) (No Ads)</string>
+    <string name="app_mind_adaptivity_name_paid">Тест за Адаптивност с Карти (MAT Cards)</string>
     <string name="app_mind_adaptivity_advertising1">Психологически Тест</string>
     <string name="app_mind_adaptivity_advertising2">Играй с Картите за Адаптивност</string>
 
-    <string name="app_chessboardscanner_name">Шах Скенер на Позиция: Редакция и Анализ</string>
-    <string name="app_chessboardscanner_name_paid">Шах Скенер на Позиция: Редакция и Анализ (Без Реклами)</string>
+    <string name="app_chessboardscanner_name">Шах Скенер на Позиция</string>
+    <string name="app_chessboardscanner_name_paid">Шах Скенер на Позиция</string>
     <string name="app_chessboardscanner_advertising1">Приложение което Сканира 2D Дъска</string>
     <string name="app_chessboardscanner_advertising2">Снимай Други Екрани и Анализирай</string>
 
     <string name="app_words_de_for_bg_name">Немски Думи за Българи</string>
-    <string name="app_words_de_for_bg_name_paid">Немски Думи за Българи (Без Реклами)</string>
+    <string name="app_words_de_for_bg_name_paid">Немски Думи за Българи</string>
     <string name="app_words_de_for_bg_advertising1">Обогати пасивната Си Памет</string>
-    <string name="app_words_de_for_bg_advertising2">Потвърди чрез Практика Играейки</string>
+    <string name="app_words_de_for_bg_advertising2">Затвърди думите чрез Практика Играейки</string>
 
     <string name="loading">Зареждане &#8230;</string>
     <string name="button_start">Старт</string>

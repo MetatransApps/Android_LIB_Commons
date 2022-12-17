@@ -56,63 +56,63 @@
     <string name="label_advertising_paid_1">Advertisement</string>
     <string name="label_advertising_paid_2">No Ads</string>
     
-    <string name="app_cafk_name">Chess Art for Kids</string>
-    <string name="app_cafk_name_paid">Chess Art for Kids (No Ads)</string>
-	<string name="app_cafk_advertising1">Play Chess and Learn and have Fun</string>
-	<string name="app_cafk_advertising2">Kindergarten to Grandmaster</string>
+    <string name="app_cafk_name">Kids to Grandmasters Chess</string>
+    <string name="app_cafk_name_paid">Kids to Grandmasters Chess</string>
+	<string name="app_cafk_advertising1">Play Chess and Learn. Have Fun</string>
+	<string name="app_cafk_advertising2">Kindergarten to Grandmaster Chess</string>
 	
-	<string name="app_bagaturchess_name">Bagatur Chess Engine with GUI</string>
-    <string name="app_bagaturchess_name_paid">Bagatur Chess Engine with GUI (No Ads)</string>
-	<string name="app_bagaturchess_advertising1">Offline chess play with 16 strengths</string>
-	<string name="app_bagaturchess_advertising2">Play with AI Bagatur 2.2e</string>
-	
-	<string name="app_mafk_name">Kids Math: Preschool to 4th Grade</string>
-	<string name="app_mafk_name_paid">Kids Math: Preschool to 4th Grade (No Ads)</string>
+	<string name="app_bagaturchess_name">Bagatur Chess Engine</string>
+    <string name="app_bagaturchess_name_paid">Bagatur Chess Engine</string>
+	<string name="app_bagaturchess_advertising1">Offline chess with 16 strengths levels</string>
+	<string name="app_bagaturchess_advertising2">Play chess with Bagatur AI</string>
+
+	<string name="app_mafk_name">Math Kindergarten to 4th Grade</string>
+	<string name="app_mafk_name_paid">Math Kindergarten to 4th Grade</string>
 	<string name="app_mafk_advertising1">Play, Exercise and Learn</string>
 	<string name="app_mafk_advertising2">Counting, Shapes, Arithmetic, Rows</string>
 	
-	<string name="app_ec_name">Stroop Effect Test</string>
-	<string name="app_ec_name_paid">Stroop Effect Test (No Ads)</string>
+	<string name="app_ec_name">Stroop Effect Challenge Test</string>
+	<string name="app_ec_name_paid">Stroop Effect Challenge Test</string>
 	<string name="app_ec_advertising1">Play game with colors and words</string>
 	<string name="app_ec_advertising2">Demonstrates for You the Stroop Effect</string>
 	
 	<string name="app_mos_name">The Squirrel\'s Maze 2D</string>
-	<string name="app_mos_name_paid">The Squirrel\'s Maze 2D (No Ads)</string>
+	<string name="app_mos_name_paid">The Squirrel\'s Maze 2D</string>
 	<string name="app_mos_advertising1">Help the Squirrel</string>
 	<string name="app_mos_advertising2">Different maze each time</string>
 
     <string name="app_mod_name">The Dinosaurs\' Maze 2D</string>
-    <string name="app_mod_name_paid">The Dinosaurs\' Maze 2D (No Ads)</string>
+    <string name="app_mod_name_paid">The Dinosaurs\' Maze 2D</string>
     <string name="app_mod_advertising1">Help the Dinosaur</string>
     <string name="app_mod_advertising2">Different maze each time</string>
 
-	<string name="app_stb_name">Non Stop Balloons</string>
-	<string name="app_stb_name_paid">Non Stop Balloons (No Ads)</string>
+	<string name="app_stb_name">Non Stop Balloons Shooter</string>
+	<string name="app_stb_name_paid">Non Stop Balloons Shooter</string>
 	<string name="app_stb_advertising1">Simple game for kids and adults</string>
 	<string name="app_stb_advertising2">Flying balloons shooter</string>
 	
 	<string name="app_gravity_name">Gravity Force Finger 137</string>
-	<string name="app_gravity_name_paid">Gravity Force Finger 137 (No Ads)</string>
-	<string name="app_gravity_advertising1">Physics play with one finger on the app</string>
-	<string name="app_gravity_advertising2">Cross the orbits of the space objects</string>
+	<string name="app_gravity_name_paid">Gravity Force Finger 137</string>
+	<string name="app_gravity_advertising1">Play with Asteroids Orbits</string>
+	<string name="app_gravity_advertising2">Demonstrates Gravity in Space</string>
 	
 	<string name="app_wisconsin_name">Wisconsin Card Sorting Test (WCST)</string>
-	<string name="app_wisconsin_name_paid">Wisconsin Card Sorting Test (WCST) (No Ads)</string>
+	<string name="app_wisconsin_name_paid">Wisconsin Card Sorting Test (WCST)</string>
 	<string name="app_wisconsin_advertising1">Psychology and Psychological test</string>
 	<string name="app_wisconsin_advertising2">Play with Wisconsin cards</string>
 
-    <string name="app_mind_adaptivity_name">Mind Adaptivity Test Cards (MAT Cards)</string>
-    <string name="app_mind_adaptivity_name_paid">Mind Adaptivity Test Cards (MAT Cards) (No Ads)</string>
+    <string name="app_mind_adaptivity_name">Mind Adaptivity Test Cards</string>
+    <string name="app_mind_adaptivity_name_paid">Mind Adaptivity Test Cards</string>
     <string name="app_mind_adaptivity_advertising1">Psychology and Psychological Test</string>
     <string name="app_mind_adaptivity_advertising2">Play with Mind Adaptivity Cards</string>
 
-	<string name="app_chessboardscanner_name">Chess Position Scanner Editor Analyzer</string>
-	<string name="app_chessboardscanner_name_paid">Chess Position Scanner Editor Analyzer (No Ads)</string>
+	<string name="app_chessboardscanner_name">Chess Position Scanner</string>
+	<string name="app_chessboardscanner_name_paid">Chess Position Scanner</string>
 	<string name="app_chessboardscanner_advertising1">App which scans and analysis 2D boards</string>
 	<string name="app_chessboardscanner_advertising2">Capture from other screens and analyse</string>
 
     <string name="app_words_de_for_bg_name">German Words for Bulgarians</string>
-    <string name="app_words_de_for_bg_name_paid">German Words for Bulgarians (No Ads)</string>
+    <string name="app_words_de_for_bg_name_paid">German Words for Bulgarians</string>
     <string name="app_words_de_for_bg_advertising1">Enrich Your passive Memory</string>
     <string name="app_words_de_for_bg_advertising2">Affirm with Practice by Playing</string>
 
