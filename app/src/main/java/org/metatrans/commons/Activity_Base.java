@@ -8,6 +8,7 @@ import org.metatrans.commons.ui.utils.BitmapUtils;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Application;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -33,15 +34,25 @@ public abstract class Activity_Base extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		initIconSize();
-		
-		((Application_Base)getApplication()).getAnalytics().onActivity_Create(this);
+
+		Application app = getApplication();
+
+		if (app instanceof Application_Base) {
+
+			((Application_Base) app).getAnalytics().onActivity_Create(this);
+		}
 	}
 
 
 	@Override
 	protected void onDestroy() {
 
-		((Application_Base)getApplication()).getAnalytics().onActivity_Destroy(this);
+		Application app = getApplication();
+
+		if (app instanceof Application_Base) {
+
+			((Application_Base) getApplication()).getAnalytics().onActivity_Destroy(this);
+		}
 
 		super.onDestroy();
 	}
