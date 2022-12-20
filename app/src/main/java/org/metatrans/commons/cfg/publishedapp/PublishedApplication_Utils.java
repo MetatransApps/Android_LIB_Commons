@@ -109,7 +109,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_scanner_paid 		= new PublishedApplication_Scanner_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_words_de_for_bg 	= new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_SAMSUNG);
 		//IPublishedApplication app_words_de_for_bg_paid 	= new PublishedApplication_Words_DE_for_BG_Paid(IAppStore.OBJ_SAMSUNG);
-		//IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_SAMSUNG);
 
 		app_cafk.setPaidVersion(app_cafk_paid);
 		app_mafk.setPaidVersion(app_mafk_paid);
@@ -141,6 +141,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_SAMSUNG_ALL.add(app_scanner);
 		APPSLIST_SAMSUNG_ALL.add(app_scanner_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_words_de_for_bg);
+		APPSLIST_SAMSUNG_ALL.add(app_mind_adaptivity);
 	}
 
 
@@ -169,7 +170,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_gravity_paid 		= new PublishedApplication_GravityFinger137_Paid(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_scanner_paid 		= new PublishedApplication_Scanner_Paid(IAppStore.OBJ_HUAWEI);
 		//IPublishedApplication app_de_for_bg_paid 	= new PublishedApplication_Words_DE_for_BG_Paid(IAppStore.OBJ_HUAWEI);
-		//IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_HUAWEI);
+		IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_HUAWEI);
 
 		app_cafk.setPaidVersion(app_cafk_paid);
 		app_mafk.setPaidVersion(app_mafk_paid);
@@ -201,7 +202,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_HUAWEI_ALL.add(app_scanner);
 		APPSLIST_HUAWEI_ALL.add(app_scanner_paid);
 		APPSLIST_HUAWEI_ALL.add(app_words_de_for_bg);
-
+		APPSLIST_HUAWEI_ALL.add(app_mind_adaptivity);
 	}
 
 
@@ -219,7 +220,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_gravityfinger137 	= new PublishedApplication_GravityFinger137(IAppStore.OBJ_AMAZON);
 		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_AMAZON);
 		IPublishedApplication app_words_de_for_bg 	= new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_AMAZON);
-		//IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_AMAZON);
+		IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_AMAZON);
 
 		APPSLIST_AMAZON_ALL.add(app_cafk);
 		APPSLIST_AMAZON_ALL.add(app_mafk);
@@ -231,6 +232,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_AMAZON_ALL.add(app_gravityfinger137);
 		APPSLIST_AMAZON_ALL.add(app_chessboardscanner);
 		APPSLIST_AMAZON_ALL.add(app_words_de_for_bg);
+		APPSLIST_AMAZON_ALL.add(app_mind_adaptivity);
 	}
 
 
@@ -249,7 +251,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_FDROID_OWN);
 		IPublishedApplication app_words_de_for_bg 	= new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_FDROID_OWN);
-		//IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_FDROID_OWN);
+		IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_FDROID_OWN);
 
 		APPSLIST_FDROID_OWN_ALL.add(app_cafk);
 		APPSLIST_FDROID_OWN_ALL.add(app_mafk);
@@ -262,7 +264,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_FDROID_OWN_ALL.add(app_wisconsin);
 		APPSLIST_FDROID_OWN_ALL.add(app_chessboardscanner);
 		APPSLIST_FDROID_OWN_ALL.add(app_words_de_for_bg);
-
+		APPSLIST_FDROID_OWN_ALL.add(app_mind_adaptivity);
 	}
 
 
@@ -281,7 +283,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_wisconsin 		= new PublishedApplication_Wisconsin(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_chessboardscanner = new PublishedApplication_CBS(IAppStore.OBJ_FDROID_OFFICIAL);
 		IPublishedApplication app_words_de_for_bg 	= new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_FDROID_OFFICIAL);
-		//IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_FDROID_OFFICIAL);
+		IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_FDROID_OFFICIAL);
 
 
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_cafk);
@@ -295,7 +297,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_wisconsin);
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_chessboardscanner);
 		APPSLIST_FDROID_OFFICIAL_ALL.add(app_words_de_for_bg);
-
+		APPSLIST_FDROID_OFFICIAL_ALL.add(app_mind_adaptivity);
 	}
 
 
