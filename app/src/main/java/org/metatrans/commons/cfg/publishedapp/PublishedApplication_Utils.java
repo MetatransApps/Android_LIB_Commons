@@ -445,26 +445,31 @@ public class PublishedApplication_Utils {
 		List<IPublishedApplication> all = getStoreApps(store);
 		
 		List<IPublishedApplication> filtered = new ArrayList<IPublishedApplication>();
-		
-		boolean preferSocial = Application_Base.getInstance().getApp_Me().isSocial();
-		
-		for (IPublishedApplication cur: all) {
-			
-			//Add only if there is no paid version.
-			if (!cur.isPaid()) {
-				
-				if (preferSocial) {
-					
-					if (cur.isSocial()) {
-						filtered.add(cur);
+
+		IPublishedApplication app = Application_Base.getInstance().getApp_Me();
+
+		if (app != null) {
+
+			boolean preferSocial = app.isSocial();
+
+			for (IPublishedApplication cur: all) {
+
+				//Add only if there is no paid version.
+				if (!cur.isPaid()) {
+
+					if (preferSocial) {
+
+						if (cur.isSocial()) {
+							filtered.add(cur);
+						}
+
+					} else {
+
+						if (!cur.isSocial()) {
+							filtered.add(cur);
+						}
+
 					}
-					
-				} else {
-					
-					if (!cur.isSocial()) {
-						filtered.add(cur);
-					}
-					
 				}
 			}
 		}

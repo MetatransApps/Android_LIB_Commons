@@ -22,13 +22,21 @@ public class Activity_Marketing_AppList extends Activity_Marketing_ItemsList_Bas
 	@Override
 	protected List<? extends IHomeAdInfo> getItemsList() {
 
+
+		IPublishedApplication app = Application_Base.getInstance().getApp_Me();
+
+
 		List<IPublishedApplication> apps = null;
 
-		if (Application_Base.getInstance().getApp_Me().isPaid()) {
+		if (app != null && app.isPaid()) {
+
 			apps = PublishedApplication_Utils.getStoreApps_PreferPaid(((Application_Base)getApplication()).getAppStore());
+
 		} else {
+
 			apps = PublishedApplication_Utils.getStoreApps_FreeOnly(((Application_Base)getApplication()).getAppStore());
 		}
+
 
 		return apps;
 	}

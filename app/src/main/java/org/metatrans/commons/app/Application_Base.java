@@ -241,33 +241,46 @@ public abstract class Application_Base extends Application {
 				System.out.println("Application_Base.getGameData: gameData == null ... recreateGameDataObject");
 
 				recreateGameDataObject();
+
 				gameData = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
 
-			} else {
+			} else if (gameData.model_version != GameData_Base.MODEL_VERSION_LATEST) {
+
+				//We have new model version and must re-create the GameData.
+				System.out.println("Application_Base.getGameData: gameData.model_version != GameData_Base.MODEL_VERSION_LATEST ... recreateGameDataObject");
+
+				recreateGameDataObject();
+
+				gameData = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
+
+			} else if (!gamedata_latest_model_class.equals(gameData.getClass())) {
 
 				//Check if model class has changed from prev version
-				if (!gamedata_latest_model_class.equals(gameData.getClass())) {
+				System.out.println("Application_Base.getGameData: !gamedata_latest_model_class.equals(gameData.getClass()) ... recreateGameDataObject");
 
-					System.out.println("Application_Base.getGameData: !gamedata_latest_model_class.equals(gameData.getClass())");
+				recreateGameDataObject();
 
-					recreateGameDataObject();
-					gameData = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
-				}
+				gameData = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
 			}
 
 		} catch (Exception e) {
 
-			System.out.println("Application_Base.getGameData: Exception");
+			System.out.println("Application_Base.getGameData: Exception.");
 
 			if (isTestMode()) {
+
+				System.out.println("Application_Base.getGameData: throw the Exception in the current mode - TestMode.");
 
 				throw e;
 			}
 
 			e.printStackTrace();
 
+			System.out.println("Application_Base.getGameData: Exception covered ... recreateGameDataObject");
+
 			//In case of incompatible change of GameData class and failed deserialization or BoardManager creation, we lose the current game and create new one
 			recreateGameDataObject();
+
 			gameData = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
 		}
 
@@ -363,7 +376,8 @@ public abstract class Application_Base extends Application {
 		}
 		
 		if (app == null) {
-			throw new IllegalStateException("IPublishedApplication with package " + getPackageName() + " not found.");
+
+			//throw new IllegalStateException("IPublishedApplication with package " + getPackageName() + " not found.");
 		}
 		
 		return app;

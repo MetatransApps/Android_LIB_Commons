@@ -13,8 +13,13 @@ public class GameData_Base implements Serializable {
 	
 	
 	public static final String FILE_NAME_GAME_DATA 		= "game_data";
-	
-	
+
+
+	public static final int MODEL_VERSION_LATEST 	= 3;
+
+
+	public int model_version = MODEL_VERSION_LATEST;
+
 	public long timestamp_created;
 	public boolean counted_as_started_game;
 	public boolean counted_as_completed_game;

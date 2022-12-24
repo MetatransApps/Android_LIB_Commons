@@ -4,6 +4,7 @@ package org.metatrans.commons.cfg.menu;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.ConfigurationUtils_Base;
 import org.metatrans.commons.cfg.IConfigurationEntry;
+import org.metatrans.commons.cfg.publishedapp.IPublishedApplication;
 
 
 public class ConfigurationUtils_Base_MenuMain extends ConfigurationUtils_Base {
@@ -20,9 +21,11 @@ public class ConfigurationUtils_Base_MenuMain extends ConfigurationUtils_Base {
 	public static void createInstance() {
 		
 		IConfigurationEntry[] cfgs_difficulties = null;
-		
+
+		IPublishedApplication app = Application_Base.getInstance().getApp_Me();
+
 		//SHIT: FIX this if-else in one block
-		if (Application_Base.getInstance().getApp_Me().getPaidVersion() != null) {
+		if (app != null && app.getPaidVersion() != null) {
 			
 			cfgs_difficulties = new IConfigurationEntry[] { 
 

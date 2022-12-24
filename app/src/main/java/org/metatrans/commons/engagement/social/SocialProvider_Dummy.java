@@ -4,6 +4,7 @@ package org.metatrans.commons.engagement.social;
 import org.metatrans.commons.R;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.colours.IConfigurationColours;
+import org.metatrans.commons.cfg.publishedapp.IPublishedApplication;
 import org.metatrans.commons.engagement.ISocialProvider;
 import org.metatrans.commons.events.api.IEvent_Base;
 import org.metatrans.commons.events.api.IEventsManager;
@@ -124,7 +125,14 @@ public class SocialProvider_Dummy implements ISocialProvider {
 	public void openInviteDialog() {
 		
 		if (isConnected()) {
-			
+
+
+			if (app == null || app.getApp_Me() == null) {
+
+				return;
+			}
+
+
 			String message = app.getString(app.getApp_Me().getName())
 					+ " "
 					+ app.getString(R.string.social_invite_isprettycool)

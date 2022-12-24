@@ -49,11 +49,12 @@ public class Config_MenuMain_PaidVersion extends Config_MenuMain_Base {
 			public void run() {
 
 				IPublishedApplication app	 	= Application_Base.getInstance().getApp_Me();
-				IPublishedApplication app_paid 	= app.getPaidVersion();
 
 				Activity currentActivity = Application_Base.getInstance().getCurrentActivity();
 
-				if (currentActivity != null) {
+				if (currentActivity != null && app != null) {
+
+					IPublishedApplication app_paid 	= app.getPaidVersion();
 
 					if (app_paid == null) {
 
