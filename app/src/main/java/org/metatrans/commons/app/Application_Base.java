@@ -8,7 +8,6 @@ import java.util.concurrent.Executors;
 import org.metatrans.commons.achievements.IAchievementsManager;
 import org.metatrans.commons.analytics.Analytics_DummyImpl;
 import org.metatrans.commons.analytics.IAnalytics;
-import org.metatrans.commons.cfg.app.IAppConfig;
 import org.metatrans.commons.cfg.appstore.IAppStore;
 import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
 import org.metatrans.commons.cfg.colours.IConfigurationColours;
@@ -100,12 +99,7 @@ public abstract class Application_Base extends Application {
 		//StorageUtils.clearStore(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
 		//StorageUtils.clearStore(this, GameData_Base.FILE_NAME_GAME_DATA);
 	}
-	
-	
-	public IAppConfig getAppConfig() {
-		throw new UnsupportedOperationException();
-	}
-	
+
 	
 	public String[] getKeywords() {
 		return KEYWORDS;
@@ -180,6 +174,16 @@ public abstract class Application_Base extends Application {
 				System.out.println("Application_Base.getUserSettings: settings == null ... recreateUserSettings");
 
 				recreateUserSettings();
+
+				settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
+
+			} else if (settings.model_version != UserSettings_Base.MODEL_VERSION_LATEST) {
+
+				//We have new model version and must re-create the GameData.
+				System.out.println("Application_Base.getUserSettings: settings.model_version != UserSettings_Base.MODEL_VERSION_LATEST ... recreateGameDataObject");
+
+				recreateUserSettings();
+
 				settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
 
 			} else {
@@ -207,6 +211,7 @@ public abstract class Application_Base extends Application {
 
 			//In case of incompatible change of UserSettings class and failed deserialization, we lose the current settings and create new one
 			recreateUserSettings();
+
 			settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
 		}
 

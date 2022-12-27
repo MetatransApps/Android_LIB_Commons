@@ -13,12 +13,17 @@ public class UserSettings_Base implements Serializable {
 	
 	
 	public static final String FILE_NAME_USER_SETTINGS 		= "user_settings";
-	
-	
+
+
+	public static final int MODEL_VERSION_LATEST 			= 1;
+
+
+	public int model_version = MODEL_VERSION_LATEST;
+
 	public int uiColoursID;
 
 	public int modeID;
-	
+
 	
 	protected UserSettings_Base() {
 		
