@@ -10,8 +10,10 @@ public class MarketURLGen_FDroidOfficial implements IMarketURLGen {
 	public MarketURLGen_FDroidOfficial(String _appID) {
 
 		//The apps must be available on F-DROID OFFICIAL.
-		//Currently only Gravity game is available.
-		if (_appID.startsWith("com.gravityplay")) {
+		//Currently 3 games is available.
+		if (_appID.startsWith("com.gravityplay")
+			|| _appID.startsWith("com.stoptheballs")
+			|| _appID.startsWith("com.bagaturchess")) {
 
 			url = "https://f-droid.org/packages/" + _appID + "/";
 
@@ -24,6 +26,7 @@ public class MarketURLGen_FDroidOfficial implements IMarketURLGen {
 	
 	@Override
 	public String getUrl() {
+
 		return url;
 	}
 }
