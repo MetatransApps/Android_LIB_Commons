@@ -58,18 +58,18 @@
     <string name="label_advertising_paid_2">Без Реклами</string>
 
 
-    <string name="app_cafk_name">Шах от Деца до Грандмастери</string>
-    <string name="app_cafk_name_paid">Шах от Деца до Грандмастери</string>
+    <string name="app_cafk_name">Гросмайстор в Детската Градина</string>
+    <string name="app_cafk_name_paid">Гросмайстор в Детската Градина</string>
 	<string name="app_cafk_advertising1">Играй и Учи Шах. Забавлявай се.</string>
 	<string name="app_cafk_advertising2">От Детската Градина до Гросмайстор</string>
 
-	<string name="app_bagaturchess_name">Шах Двигател Багатур</string>
-    <string name="app_bagaturchess_name_paid">Шах Двигател Багатур</string>
+	<string name="app_bagaturchess_name">Багатур Шах Енджин</string>
+    <string name="app_bagaturchess_name_paid">Багатур Шах Енджин</string>
 	<string name="app_bagaturchess_advertising1">Офлайн Шах с 16 Нива на Сила</string>
 	<string name="app_bagaturchess_advertising2">Играй с Багатур AI</string>
 
-	<string name="app_mafk_name">Математика от Градината до 4 Клас</string>
-	<string name="app_mafk_name_paid">Математика от Градината до 4 Клас</string>
+	<string name="app_mafk_name">Математика от Начало до Клас 4</string>
+	<string name="app_mafk_name_paid">Математика от Начало до Клас 4</string>
 	<string name="app_mafk_advertising1">Подходяща от Детската Градина</string>
 	<string name="app_mafk_advertising2">Броене, Форми, Аритметика, Редици</string>
 
@@ -78,23 +78,23 @@
 	<string name="app_ec_advertising1">Играй Игра с Цветове и Думи</string>
 	<string name="app_ec_advertising2">Демонстрира за Вас Ефекта на Струп</string>
 
-	<string name="app_mos_name">Лабиринтът на Катерицата 2D</string>
-	<string name="app_mos_name_paid">Лабиринтът на Катерицата 2D</string>
+	<string name="app_mos_name">Лабиринтът на Катерицата</string>
+	<string name="app_mos_name_paid">Лабиринтът на Катерицата</string>
 	<string name="app_mos_advertising1">Помогни на Катерицата</string>
 	<string name="app_mos_advertising2">Всеки път различен лабиринт</string>
 
-    <string name="app_mod_name">Лабиринтът на Динозавърът 2D</string>
-    <string name="app_mod_name_paid">Лабиринтът на Динозавърът 2D</string>
+    <string name="app_mod_name">Лабиринтът на Динозаврите</string>
+    <string name="app_mod_name_paid">Лабиринтът на Динозаврите</string>
     <string name="app_mod_advertising1">Помогни на Динозавърът</string>
     <string name="app_mod_advertising2">Всеки път различен лабиринт</string>
 
-	<string name="app_stb_name">Нонстоп Балони Шутър</string>
-	<string name="app_stb_name_paid">Нонстоп Балони Шутър</string>
+	<string name="app_stb_name">Нонстоп Стрелба по Балони</string>
+	<string name="app_stb_name_paid">Нонстоп Стрелба по Балони</string>
 	<string name="app_stb_advertising1">Проста Игра за Деца и Възрастни</string>
 	<string name="app_stb_advertising2">Спукаите Летящите Балони</string>
 
-	<string name="app_gravity_name">Гравитационен Пръст 137</string>
-	<string name="app_gravity_name_paid">Гравитационен Пръст 137</string>
+	<string name="app_gravity_name">Гравитационна Сила</string>
+	<string name="app_gravity_name_paid">Гравитационна Сила</string>
 	<string name="app_gravity_advertising1">Управлявай орбитите на астероидите</string>
 	<string name="app_gravity_advertising2">Демонстрира гравитацията в космоса</string>
 
@@ -103,13 +103,13 @@
     <string name="app_wisconsin_advertising1">Психологически Тест</string>
     <string name="app_wisconsin_advertising2">Играй с Уисконсин Карти</string>
 
-    <string name="app_mind_adaptivity_name">Тест за Адаптивност с Карти (MAT Cards)</string>
-    <string name="app_mind_adaptivity_name_paid">Тест за Адаптивност с Карти (MAT Cards)</string>
+    <string name="app_mind_adaptivity_name">Карти за Умствена Адаптивност</string>
+    <string name="app_mind_adaptivity_name_paid">Карти за Умствена Адаптивност</string>
     <string name="app_mind_adaptivity_advertising1">Психологически Тест</string>
     <string name="app_mind_adaptivity_advertising2">Играй с Картите за Адаптивност</string>
 
-    <string name="app_chessboardscanner_name">Шах Скенер на Позиция</string>
-    <string name="app_chessboardscanner_name_paid">Шах Скенер на Позиция</string>
+    <string name="app_chessboardscanner_name">Скенер на Шахматни Позиции</string>
+    <string name="app_chessboardscanner_name_paid">Скенер на Шахматни Позиции</string>
     <string name="app_chessboardscanner_advertising1">Приложение което Сканира 2D Дъска</string>
     <string name="app_chessboardscanner_advertising2">Снимай Други Екрани и Анализирай</string>
 
