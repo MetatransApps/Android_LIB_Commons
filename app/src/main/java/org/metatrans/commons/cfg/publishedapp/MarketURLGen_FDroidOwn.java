@@ -9,7 +9,8 @@ public class MarketURLGen_FDroidOwn implements IMarketURLGen {
 
 	public MarketURLGen_FDroidOwn(String _appID) {
 
-		url = "https://fdroid.metatransapps.com/fdroid/repo/index.html";
+		url = "https://metatransapps.com/fdroid/";
+		//url = "https://fdroid.metatransapps.com/fdroid/repo/index.html";
 	}
 	
 	
