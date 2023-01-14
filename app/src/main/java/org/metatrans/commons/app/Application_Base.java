@@ -1,6 +1,7 @@
 package org.metatrans.commons.app;
 
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -100,7 +101,16 @@ public abstract class Application_Base extends Application {
 		//StorageUtils.clearStore(this, GameData_Base.FILE_NAME_GAME_DATA);
 	}
 
-	
+
+	/**
+	 * It is used for showing appropriate ads where necessary
+	 */
+	public boolean isChildDirected() {
+
+		return false;
+	}
+
+
 	public String[] getKeywords() {
 		return KEYWORDS;
 	}
