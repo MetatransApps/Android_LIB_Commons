@@ -18,19 +18,28 @@ public class BitmapCache_Base implements I2DBitmapCache {
 	public static BitmapCache_Base STATIC;
 
 
-	public static final int MAX_BITMAP_SIZE = getMaxBitmapSize();
+	public static final int MAX_BITMAP_SIZE_ASSET = getMaxBitmapSize_Assets();
 
+	public static final int MAX_BITMAP_SIZE_BACKGROUND = getMaxBitmapSize_Background();
 
 	private static final Map<Integer, BitmapCache_Base> all_cfgs 	= new HashMap<Integer, BitmapCache_Base>();
 
 
-	private static final int getMaxBitmapSize() {
+	private static final int getMaxBitmapSize_Assets() {
 
 		int[] size_xy = ScreenUtils.getScreenSize(Application_Base.getInstance());
 
-		return (int) (0.1759 * Math.max(size_xy[0], size_xy[1]));
+		//return (int) (0.097531 * Math.max(size_xy[0], size_xy[1]));
+		return (int) (0.13579 * Math.max(size_xy[0], size_xy[1]));
 	}
 
+
+	private static final int getMaxBitmapSize_Background() {
+
+		int[] size_xy = ScreenUtils.getScreenSize(Application_Base.getInstance());
+
+		return (int) (1 * Math.max(size_xy[0], size_xy[1]));
+	}
 
 	public static I2DBitmapCache getStaticInstance(Integer tag) {
 
@@ -128,23 +137,36 @@ public class BitmapCache_Base implements I2DBitmapCache {
 	}
 
 
-	public void add(Integer BITMAP_ID, Bitmap bitmap, boolean fit_to_max_size) {
+	public void add(Integer BITMAP_ID, Bitmap bitmap, float scale_factor) {
 
-		if (fit_to_max_size) {
-
-			float scale_factor = MAX_BITMAP_SIZE / (float) Math.max(bitmap.getWidth(), bitmap.getHeight());
-
-			bitmap = BitmapUtils.createScaledBitmap(bitmap,
-					(int) (scale_factor * bitmap.getWidth()),
-					(int) (scale_factor * bitmap.getHeight()));
-		}
+		bitmap = BitmapUtils.createScaledBitmap(bitmap,
+				(int) (scale_factor * bitmap.getWidth()),
+				(int) (scale_factor * bitmap.getHeight()));
 
 		cache.put(BITMAP_ID, bitmap);
 	}
 
 
-	public void add(Integer BITMAP_ID, Bitmap bitmap) {
+	public void addAsset(Integer BITMAP_ID, Bitmap bitmap) {
 
-		add(BITMAP_ID, bitmap, true);
+		float scale_factor = MAX_BITMAP_SIZE_ASSET / (float) Math.max(bitmap.getWidth(), bitmap.getHeight());
+
+		add(BITMAP_ID, bitmap, scale_factor);
+	}
+
+
+	public void addBackground(Integer BITMAP_ID, Bitmap bitmap) {
+
+		float scale_factor = MAX_BITMAP_SIZE_BACKGROUND / (float) Math.max(bitmap.getWidth(), bitmap.getHeight());
+
+		add(BITMAP_ID, bitmap, scale_factor);
+	}
+
+
+	public void addOriginalSize(Integer BITMAP_ID, Bitmap bitmap) {
+
+		float scale_factor = 1f;
+
+		add(BITMAP_ID, bitmap, scale_factor);
 	}
 }

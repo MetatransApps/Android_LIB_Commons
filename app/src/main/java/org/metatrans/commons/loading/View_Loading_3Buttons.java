@@ -5,17 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-import org.metatrans.commons.R;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
 import org.metatrans.commons.events.api.IEvent_Base;
 import org.metatrans.commons.events.api.IEventsManager;
 import org.metatrans.commons.loading.logic.MovingEntry;
 import org.metatrans.commons.ui.ButtonAreaClick;
-import org.metatrans.commons.ui.ButtonAreaClick_Image;
 import org.metatrans.commons.ui.IButtonArea;
 import org.metatrans.commons.ui.TextArea;
-import org.metatrans.commons.ui.utils.BitmapUtils;
 import org.metatrans.commons.ui.utils.DrawingUtils;
 
 import android.app.Activity;
@@ -78,10 +75,14 @@ public abstract class View_Loading_3Buttons extends Activity_Loading_Base.ViewWi
 	
 	
 	public abstract void initPiecesBitmaps();
+
+
 	protected abstract Bitmap[] getCommonBitmaps();
+
+
 	protected abstract Bitmap getBitmapBackground();//Can be null
-	
-	
+
+
 	public RectF getRectangle_LeaderBoards() {
 		return null;
 	}

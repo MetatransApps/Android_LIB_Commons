@@ -84,16 +84,17 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 	
 	protected abstract Class<? extends Activity_Base> getActivityClass_Menu2();
 	
-	protected abstract View getLoadingView();
-	
-	protected abstract IConfigurationColours getColoursCfg();
-	
-	protected abstract void openInterstitial();
-	
 	
 	protected Class<? extends Activity_Base> getActivityClass_Menu1() {
 		return Activity_Menu_Colours_Base.class;
 	}
+
+
+	protected abstract View getLoadingView();
+
+	protected abstract IConfigurationColours getColoursCfg();
+
+	protected abstract void openInterstitial();
 
 
 	protected int getText_Loading() {

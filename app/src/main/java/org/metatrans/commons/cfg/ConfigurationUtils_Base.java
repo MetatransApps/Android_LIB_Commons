@@ -4,8 +4,6 @@ package org.metatrans.commons.cfg;
 import java.util.HashMap;
 import java.util.Map;
 
-import android.annotation.SuppressLint;
-
 
 public class ConfigurationUtils_Base {
 	
@@ -17,7 +15,6 @@ public class ConfigurationUtils_Base {
 	//private static String[] ALL_Names;
 
 
-	@SuppressLint("UseSparseArrays")
 	private final Map<Integer, IConfigurationEntry> mapping_id = new HashMap<Integer, IConfigurationEntry>();
 	//private static final Map<String, IConfigurationEntry> mapping_name = new HashMap<String, IConfigurationEntry>();
 
