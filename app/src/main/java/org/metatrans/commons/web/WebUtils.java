@@ -1,6 +1,7 @@
 package org.metatrans.commons.web;
 
 
+import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.publishedapp.IPublishedApplication;
 import org.metatrans.commons.cfg.publishedapp.MarketURLGen_OurWebsite;
 
@@ -24,7 +25,7 @@ public class WebUtils {
 	}
 
 
-	public static final boolean openApplicationStorePage(Context context, IPublishedApplication app) {
+	public static final void openApplicationStorePage(Context context, IPublishedApplication app) {
 
 
 		try {
@@ -33,19 +34,16 @@ public class WebUtils {
 
 			Intent intent = getViewIntent(url);
 
-			//if (intent.resolveActivity(context.getPackageManager()) != null) {
+			try {
 
-				try {
+				context.startActivity(intent);
 
-					context.startActivity(intent);
+				return;
 
-					return true;
+			} catch (Exception ex1) {
 
-				} catch (Exception ex1) {
-
-					ex1.printStackTrace();
-				}
-			//}
+				ex1.printStackTrace();
+			}
 
 		} catch (Exception e) {
 
@@ -53,21 +51,25 @@ public class WebUtils {
 		}
 
 
+		//If app store page is not opened, we open the app website page
 		try {
 
-			String app_home = (new MarketURLGen_OurWebsite(app.getPackage())).getUrl();
+			//Prevent opening browser for child directed app, because the browser could be used to surf in internet.
+			if (!Application_Base.getInstance().isChildDirected()) {
 
-			openApplicationWebpage(context, app_home);
+				String app_home = (new MarketURLGen_OurWebsite(app.getPackage())).getUrl();
 
-			return true;
+				openApplicationWebpage(context, app_home);
+
+			} else {
+
+				//Do nothing
+			}
 
 		} catch (Exception ex1) {
 
 			ex1.printStackTrace();
 		}
-
-
-		return false;
 	}
 
 

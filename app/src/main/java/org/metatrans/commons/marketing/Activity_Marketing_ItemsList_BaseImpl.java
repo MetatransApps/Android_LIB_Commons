@@ -86,7 +86,7 @@ public abstract class Activity_Marketing_ItemsList_BaseImpl extends Activity_Bas
 	protected abstract List<? extends IHomeAdInfo> getItemsList();
 
 
-	protected abstract boolean openTarget(IHomeAdInfo promoted);
+	protected abstract void openTarget(IHomeAdInfo promoted);
 
 
 	public List<RowItem_IdTD> buildRows() throws NotFoundException {

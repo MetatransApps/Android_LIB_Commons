@@ -43,7 +43,8 @@ public class Activity_Marketing_AppList extends Activity_Marketing_ItemsList_Bas
 
 
 	@Override
-	protected boolean openTarget(IHomeAdInfo promoted) {
-		return WebUtils.openApplicationStorePage(this, (IPublishedApplication) promoted);
+	protected void openTarget(IHomeAdInfo promoted) {
+
+		WebUtils.openApplicationStorePage(this, (IPublishedApplication) promoted);
 	}
 }

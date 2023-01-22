@@ -27,7 +27,9 @@ public class MarketURLGen_OurWebsite implements IMarketURLGen {
 		} else if ("com.maze_squirrel".equals(app_package)) {
 			url = "https://metatransapps.com/maze-runner-2d-old-school-labyrinth-offline-game/";
 		} else if ("com.maze_dinosaurs".equals(app_package)) {
-			url = "https://metatransapps.com/the-dinosaurs-maze-2d/";
+			url = "https://metatransapps.com/the-dinosaurs-maze/";
+		} else if ("mat.cards".equals(app_package)) {
+			url = "https://metatransapps.com/mind-adaptivity-test-cards-mat-cards/";
 		} else {
 			url = "https://metatransapps.com/";
 		}

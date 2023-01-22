@@ -46,7 +46,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_stoptheballs_paid = new PublishedApplication_Balloons_Paid(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_gravityfinger137 = new PublishedApplication_GravityFinger137(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_gravityfinger137_paid = new PublishedApplication_GravityFinger137_Paid(IAppStore.OBJ_GOOGLE);
-		IPublishedApplication app_words_de_for_bg = new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_GOOGLE);
+		//IPublishedApplication app_words_de_for_bg = new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_GOOGLE);
 
 
@@ -80,7 +80,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_GOOGLE_ALL.add(app_mafk_paid);
 		APPSLIST_GOOGLE_ALL.add(app_ec);
 		APPSLIST_GOOGLE_ALL.add(app_ec_paid);
-		APPSLIST_GOOGLE_ALL.add(app_words_de_for_bg);
+		//APPSLIST_GOOGLE_ALL.add(app_words_de_for_bg);
 
 	}
 	
