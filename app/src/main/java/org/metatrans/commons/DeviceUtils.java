@@ -19,25 +19,53 @@ public class DeviceUtils {
 	
 	
 	public static boolean isConnected() {
+
 		boolean isConnected = false;
-		ConnectivityManager cm = (ConnectivityManager)Application_Base.getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
-		if (cm != null) {
-			NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-			isConnected = activeNetwork != null && activeNetwork.isConnected();
+
+		try {
+
+			ConnectivityManager cm = (ConnectivityManager) Application_Base.getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+			if (cm != null) {
+
+				NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+
+				isConnected = activeNetwork != null && activeNetwork.isConnected();
+			}
+
+			//System.out.println("DeviceUtils: isConnected=" + isConnected);
+
+		} catch(Throwable t) {
+
+			t.printStackTrace();
 		}
-		//System.out.println("DeviceUtils: isConnected=" + isConnected);
+
 		return isConnected;
 	}
 	
 	
 	public static boolean isConnectedOrConnecting() {
+
 		boolean isConnected = false;
-		ConnectivityManager cm = (ConnectivityManager)Application_Base.getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
-		if (cm != null) {
-			NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-			isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+
+		try {
+
+			ConnectivityManager cm = (ConnectivityManager)Application_Base.getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+			if (cm != null) {
+
+				NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+
+				isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+			}
+
+			//System.out.println("DeviceUtils: isConnected=" + isConnected);
+
+		} catch(Throwable t) {
+
+			t.printStackTrace();
 		}
-		//System.out.println("DeviceUtils: isConnected=" + isConnected);
+
 		return isConnected;
 	}
 	
