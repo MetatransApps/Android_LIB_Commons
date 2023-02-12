@@ -168,8 +168,8 @@ public abstract class Activity_Marketing_ItemsList_BaseImpl extends Activity_Bas
         	try {
 	        	if (Application_Base.getInstance() != null && Application_Base.getInstance().getEventsManager() != null) {
 	        		IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
-	        		eventsManager.register(Activity_Marketing_ItemsList_BaseImpl.this, eventsManager.create(IEvent_Base.MARKETING, IEvent_Base.MARKETING_APPLIST_ITEM_CLICKED, promoted.getID().hashCode(),
-	        			"MARKETING", "APPLIST_ITEM_CLICKED", "" + promoted.getID()));
+	        		eventsManager.register(Activity_Marketing_ItemsList_BaseImpl.this,
+							IEvent_Base.EVENT_MARKETING_APPLIST_ITEM_CLICKED.createByVarianceInCategory3(promoted.getID().hashCode(), getString(promoted.getName())));
 	        	}
         	} catch(Exception e) {
         		e.printStackTrace();

@@ -1,84 +1,174 @@
 package org.metatrans.commons.events.api;
 
 
+import org.metatrans.commons.events.Event_Base;
+
 import java.io.Serializable;
 
 
 public interface IEvent_Base extends Serializable {
-	
-	
+
+
+	int ID_UNDEFINED 			= -1;
+
+
 	/*
 	 * Methods
 	 */
-	public int getID();
-	public int getSubID();
-	public int getSubSubID();
+	int getID();
+	int getSubID();
+	int getSubSubID();
 	
-	public String getName();
-	public String getSubName();
-	public String getSubSubName();
-	
-	public long getValue();
+	String getName();
+	String getSubName();
+	String getSubSubName();
+
+	IEvent_Base createByVarianceInCategory3(int cat3_id, String cat3_name);
 	
 	
 	/*
 	 * Categories
 	 */
-	public static final int LOADING				 					= 1;
+	int LOADING				 					= 1;
 	
-	public static final int WIN_GAME	 							= 2;	
-	public static final int START_GAME		 						= 3;
-	public static final int EXIT_GAME		 						= 4;
-	public static final int MENU_OPERATION 							= 5;
+	int WIN_GAME	 							= 2;
+	int START_GAME		 						= 3;
+	int EXIT_GAME		 						= 4;
+	int MENU_OPERATION 							= 5;
 	
-	public static final int NOTIFICATIONS							= 7;
-	public static final int CONNECTIVENESS							= 8;
-	public static final int MARKETING	 							= 9;
-	
+	int NOTIFICATIONS							= 7;
+	int CONNECTIVENESS							= 8;
+	int MARKETING	 							= 9;
+
+	int SCREEN_VIEW 							= 10;
 	
 	/*
 	 * Sub categories
 	 */
-	public static final int LOADING_STOPPED_PIECE 					= 1;
-	public static final int LOADING_STOPPED_PIECES 					= 2;
+	int LOADING_STOPPED_PIECE 					= 1;
+	int LOADING_STOPPED_PIECES 					= 2;
 	
-	public static final int EXIT_GAME_TOTAL 						= 1;
-	public static final int EXIT_GAME_MODE							= 3;
-	public static final int EXIT_GAME_COLOURS						= 4;
-	public static final int EXIT_GAME_SCORES						= 7;
-	public static final int EXIT_GAME_ONLINE						= 8;
-	public static final int EXIT_GAME_STORE							= 9;
+	int EXIT_GAME_TOTAL 						= 1;
+	int EXIT_GAME_MODE							= 3;
+	int EXIT_GAME_COLOURS						= 4;
+	int EXIT_GAME_SCORES						= 7;
+	int EXIT_GAME_ONLINE						= 8;
+	int EXIT_GAME_STORE							= 9;
 	
-	public static final int MENU_OPERATION_OPEN_HELP				= 1;
-	public static final int MENU_OPERATION_OPEN_ABOUT				= 2;
-	public static final int MENU_OPERATION_CHANGE_COLOURS			= 3;
-	public static final int MENU_OPERATION_CHANGE_MODE				= 4;
-	public static final int MENU_OPERATION_RATEIT					= 7;
-	public static final int MENU_OPERATION_ACHIEVEMENTS				= 9;
-	public static final int MENU_OPERATION_SCORES					= 10;
-	public static final int MENU_OPERATION_OPEN_HELP_SCORES			= 11;
-	public static final int MENU_OPERATION_NEW_GAME					= 14;
-	public static final int MENU_OPERATION_SHARE					= 15;
-	public static final int MENU_OPERATION_CHECKFORUPDATES			= 16;
-	public static final int MENU_OPERATION_ENG_PROV_ACHIEVEMENTS	= 20;
-	public static final int MENU_OPERATION_ENG_PROV_LEADERBOARDS	= 21;
-	public static final int MENU_OPERATION_OPEN_DESCRIPTION			= 22;
-	public static final int MENU_OPERATION_OPEN_COMPANY_ONLINE		= 23;
-	public static final int MENU_OPERATION_OPEN_COMPANY_OFFLINE		= 24;
-	public static final int MENU_OPERATION_OPEN_PAID_VERSION		= 25;
-	public static final int MENU_OPERATION_CHANGE_SOUND				= 26;
+	int MENU_OPERATION_OPEN_HELP				= 1;
+	int MENU_OPERATION_OPEN_ABOUT				= 2;
+	int MENU_OPERATION_CHANGE_COLOURS			= 3;
+	int MENU_OPERATION_CHANGE_LEVEL				= 4;
+	int MENU_OPERATION_RATEIT					= 7;
+	int MENU_OPERATION_ACHIEVEMENTS				= 9;
+	int MENU_OPERATION_SCORES					= 10;
+	int MENU_OPERATION_OPEN_HELP_SCORES			= 11;
+	int MENU_OPERATION_NEW_GAME					= 14;
+	int MENU_OPERATION_SHARE					= 15;
+	int MENU_OPERATION_CHECKFORUPDATES			= 16;
+	int MENU_OPERATION_ENG_PROV_ACHIEVEMENTS	= 20;
+	int MENU_OPERATION_ENG_PROV_LEADERBOARDS	= 21;
+	int MENU_OPERATION_OPEN_DESCRIPTION			= 22;
+	int MENU_OPERATION_OPEN_COMPANY_ONLINE		= 23;
+	int MENU_OPERATION_OPEN_COMPANY_OFFLINE		= 24;
+	int MENU_OPERATION_OPEN_PAID_VERSION		= 25;
+	int MENU_OPERATION_CHANGE_SOUND				= 26;
 
-	public static final int NOTIFICATIONS_TIMEOFF_REMINDER_FIRED	= 1;
-	public static final int NOTIFICATIONS_TIMEOFF_REMINDER_MISSED 	= 2;
-	public static final int NOTIFICATIONS_TIMEOFF_REMINDER_CLICKED 	= 3;
+	int NOTIFICATIONS_TIMEOFF_REMINDER_FIRED	= 1;
+	int NOTIFICATIONS_TIMEOFF_REMINDER_MISSED 	= 2;
+	int NOTIFICATIONS_TIMEOFF_REMINDER_CLICKED 	= 3;
 	
-	public static final int CONNECTIVENESS_BOOTS			 		= 1;
-	public static final int CONNECTIVENESS_DAILY_PING		 		= 2;
+	int CONNECTIVENESS_BOOTS			 		= 1;
+	int CONNECTIVENESS_DAILY_PING		 		= 2;
 	
-	public static final int MARKETING_APPLIST_ITEM_CLICKED			= 1;
-	public static final int MARKETING_HOME_AD_INITIAL_CLICKED		= 2;
-	public static final int MARKETING_INVITE_FRIENDS_CLICKED		= 3;
-	public static final int MARKETING_HOME_AD_PROVIDER_CLICKED		= 4;
-	public static final int MARKETING_HOME_AD_INTERSTITIAL_OPENED	= 5;
-	
+	int MARKETING_APPLIST_ITEM_CLICKED			= 1;
+	int MARKETING_HOME_AD_INITIAL_CLICKED		= 2;
+	int MARKETING_INVITE_FRIENDS_CLICKED		= 3;
+	int MARKETING_HOME_AD_PROVIDER_CLICKED		= 4;
+	int MARKETING_HOME_AD_INTERSTITIAL_OPENED	= 5;
+
+
+	/*
+	 * Events names
+	 */
+	String STR_MENU_OPERATION 					= "MENU_OPERATION";
+	String STR_WIN_GAME							= "WIN_GAME";
+
+	/*
+	 * Static events
+	 */
+	IEvent_Base EVENT_MENU_OPERATION_OPEN_HELP_SCORES = new Event_Base(
+			MENU_OPERATION,	MENU_OPERATION_OPEN_HELP_SCORES,
+			STR_MENU_OPERATION,	"OPEN_HELP_SCORES"
+	);
+
+	IEvent_Base EVENT_MENU_OPERATION_OPEN_COMPANY_OFFLINE = new Event_Base(
+			MENU_OPERATION,	MENU_OPERATION_OPEN_COMPANY_OFFLINE,
+			STR_MENU_OPERATION,	"OPEN_COMPANY_OFFLINE"
+	);
+
+	IEvent_Base EVENT_MENU_OPERATION_OPEN_PAID_VERSION = new Event_Base(
+			MENU_OPERATION,	MENU_OPERATION_OPEN_PAID_VERSION,
+			STR_MENU_OPERATION,"OPEN_PAID_VERSION"
+	);
+
+	IEvent_Base EVENT_MENU_OPERATION_CHECKFORUPDATES = new Event_Base(
+			MENU_OPERATION,	MENU_OPERATION_CHECKFORUPDATES,
+			STR_MENU_OPERATION,"CHECK_FOR_UPDATES"
+	);
+
+	IEvent_Base EVENT_MENU_OPERATION_LEADERBOARDS = new Event_Base(
+			MENU_OPERATION,	MENU_OPERATION_ENG_PROV_LEADERBOARDS,
+			STR_MENU_OPERATION,	"LEADERBOARDS"
+	);
+
+	IEvent_Base EVENT_MENU_OPERATION_ACHIEVEMENTS = new Event_Base(
+			MENU_OPERATION,	MENU_OPERATION_ENG_PROV_ACHIEVEMENTS,
+			STR_MENU_OPERATION,	"ACHIEVEMENTS"
+	);
+
+	IEvent_Base EVENT_MENU_OPERATION_CHANGE_COLOUR = new Event_Base(
+			MENU_OPERATION, MENU_OPERATION_CHANGE_COLOURS,
+			STR_MENU_OPERATION, "CHANGE_COLOUR"
+	);
+
+	IEvent_Base EVENT_MENU_OPERATION_CHANGE_SOUND = new Event_Base(
+			MENU_OPERATION, MENU_OPERATION_CHANGE_SOUND,
+			STR_MENU_OPERATION, "CHANGE_SOUND"
+	);
+
+	IEvent_Base EVENT_MENU_OPERATION_CHANGE_LEVEL  = new Event_Base(
+			MENU_OPERATION, MENU_OPERATION_CHANGE_LEVEL,
+			STR_MENU_OPERATION, "CHANGE_LEVEL"
+	);
+
+	IEvent_Base EVENT_LOADING_ALL_PIECES_STOPPED = new Event_Base(
+			LOADING, LOADING_STOPPED_PIECES,
+			"LOADING", "ALL_PIECES_STOPPED"
+	);
+
+	IEvent_Base EVENT_LOADING_1_PIECE_STOPPED = new Event_Base(
+			LOADING, LOADING_STOPPED_PIECE,
+			"LOADING", "1_PIECE_STOPPED"
+	);
+
+	IEvent_Base EVENT_MARKETING_INVITE_FRIENDS = new Event_Base(
+			MARKETING, MARKETING_INVITE_FRIENDS_CLICKED,
+			"MARKETING","INVITE_FRIENDS_CLICKED"
+	);
+
+	IEvent_Base EVENT_MARKETING_APPLIST_ITEM_CLICKED = new Event_Base(
+			MARKETING, MARKETING_APPLIST_ITEM_CLICKED,
+			"MARKETING", "APPLIST_ITEM_CLICKED"
+	);
+
+	IEvent_Base EVENT_MARKETING_HOME_AD_INTERSTITIAL_OPENED = new Event_Base(
+			MARKETING, MARKETING_HOME_AD_INTERSTITIAL_OPENED,
+			"MARKETING", "AD_HOME_INTERSTITIAL_OPENED"
+	);
+
+	IEvent_Base EVENT_GAME_START = new Event_Base(
+			START_GAME,
+			"START_GAME"
+	);
 }

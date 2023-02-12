@@ -255,18 +255,14 @@ public abstract class View_Achievements_And_Leaderboards_Base extends View imple
 			provider.getLeaderboardsProvider().openLeaderboard(modeID);
 			
         	IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
-    		eventsManager.register(getContext(),
-    				eventsManager.create(IEvent_Base.MENU_OPERATION, IEvent_Base.MENU_OPERATION_ENG_PROV_LEADERBOARDS,
-    				"MENU_OPERATION", "ENG_PROV_LEADERBOARDS"));
+    		eventsManager.register(getContext(), IEvent_Base.EVENT_MENU_OPERATION_LEADERBOARDS);
 			
 		} else if (isOverButton_OpenAchievements(x, y)) {
 			
 			provider.getAchievementsProvider().openAchievements();
 			
         	IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
-    		eventsManager.register(getContext(),
-    				eventsManager.create(IEvent_Base.MENU_OPERATION, IEvent_Base.MENU_OPERATION_ENG_PROV_ACHIEVEMENTS,
-    				"MENU_OPERATION", "ENG_PROV_ACHIEVEMENTS"));
+    		eventsManager.register(getContext(), IEvent_Base.EVENT_MENU_OPERATION_ACHIEVEMENTS);
 		}
 	}
 }

@@ -124,9 +124,12 @@ public class Activity_Menu_Colours_Base extends Activity_Base {
 		Application_Base.getInstance().getUserSettings().uiColoursID = uiColoursCfgID;
 
 		Application_Base.getInstance().storeUserSettings();
-		
+
+		IConfigurationColours colourCfg = ConfigurationUtils_Colours.getConfigByID(uiColoursCfgID);
+
 		IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
-		eventsManager.register(this, eventsManager.create(IEvent_Base.MENU_OPERATION, IEvent_Base.MENU_OPERATION_CHANGE_COLOURS, uiColoursCfgID,
-				"MENU_OPERATION", "CHANGE_COLOURS", "" + uiColoursCfgID));
+		eventsManager.register(this,
+				IEvent_Base.EVENT_MENU_OPERATION_CHANGE_COLOUR.createByVarianceInCategory3(uiColoursCfgID, getString(colourCfg.getName()))
+		);
 	}
 }

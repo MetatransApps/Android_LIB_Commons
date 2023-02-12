@@ -65,8 +65,7 @@ public class Config_MenuMain_PaidVersion extends Config_MenuMain_Base {
 					}
 
 					IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
-					eventsManager.register(Application_Base.getInstance(), eventsManager.create(IEvent_Base.MENU_OPERATION, IEvent_Base.MENU_OPERATION_OPEN_PAID_VERSION,
-							"MENU_OPERATION", "OPEN_PAID_VERSION"));
+					eventsManager.register(Application_Base.getInstance(), IEvent_Base.EVENT_MENU_OPERATION_OPEN_PAID_VERSION);
 				}
 			}
 		};

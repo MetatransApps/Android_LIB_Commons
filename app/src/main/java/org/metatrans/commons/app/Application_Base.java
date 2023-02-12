@@ -1,14 +1,11 @@
 package org.metatrans.commons.app;
 
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import org.metatrans.commons.achievements.IAchievementsManager;
-import org.metatrans.commons.analytics.Analytics_DummyImpl;
-import org.metatrans.commons.analytics.IAnalytics;
 import org.metatrans.commons.cfg.appstore.IAppStore;
 import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
 import org.metatrans.commons.cfg.colours.IConfigurationColours;
@@ -21,7 +18,9 @@ import org.metatrans.commons.engagement.ILeaderboardsProvider;
 import org.metatrans.commons.engagement.ISocialProvider;
 import org.metatrans.commons.engagement.achievements.AchievementsProvider_Base;
 import org.metatrans.commons.engagement.social.SocialProvider_Dummy;
+import org.metatrans.commons.events.EventSender_BaseImpl;
 import org.metatrans.commons.events.EventsManager_Base;
+import org.metatrans.commons.events.IEventSender;
 import org.metatrans.commons.events.api.IEventsManager;
 import org.metatrans.commons.model.GameData_Base;
 import org.metatrans.commons.model.UserSettings_Base;
@@ -35,18 +34,23 @@ public abstract class Application_Base extends Application {
 	
 	
 	private static final String[] KEYWORDS = new String[] {"games"};
-	
+
 	private static Application_Base singleton;
-	
+
+
 	private ExecutorService executor;
-	
+
+
 	private IEngagementProvider engagementProvider;
 
 	private IAchievementsManager achievementsManager;
-	
+
+	private IActivitiesStack acitvities_stack = new ActivitiesStack_BaseImpl();
+
 	private IEventsManager eventsManager;
-	
-	private IAnalytics analytics_dummy = new Analytics_DummyImpl();
+
+	private IEventSender eventSender = new EventSender_BaseImpl();
+
 
 	private Class <? extends UserSettings_Base> settings_latest_model_class;
 
@@ -132,15 +136,15 @@ public abstract class Application_Base extends Application {
 	
 	
 	protected IAchievementsManager createAchievementsManager() {
+
 		return null;
-		//return new AchievementsManager_Base(this);
 	}
 	
 	
 	protected IEventsManager createEventsManager() {
-		return new EventsManager_Base(executor, getAnalytics());
+
+		return new EventsManager_Base(executor);
 	}
-	
 	
 	
 	public IEngagementProvider getEngagementProvider() {
@@ -151,15 +155,22 @@ public abstract class Application_Base extends Application {
 	public IEventsManager getEventsManager() {
 		return eventsManager;
 	}
-	
-	
+
+
+	public IEventSender getEventSender() {
+
+		return eventSender;
+	}
+
+
 	public IAchievementsManager getAchievementsManager() {
 		return achievementsManager;
 	}
-	
-	
-	public IAnalytics getAnalytics() {
-		return analytics_dummy;
+
+
+	public IActivitiesStack getActivitiesStack() {
+
+		return acitvities_stack;
 	}
 
 
@@ -354,7 +365,8 @@ public abstract class Application_Base extends Application {
 	
 	
 	public Activity getCurrentActivity() {
-		return getAnalytics().getCurrentActivity();
+
+		return getActivitiesStack().getCurrentActivity();
 	}
 	
 	

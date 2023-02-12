@@ -170,9 +170,7 @@ public class SocialProvider_Dummy implements ISocialProvider {
 				app.getCurrentActivity().startActivityForResult(Intent.createChooser(shareIntent, "Share via"), ISocialProvider.REQUEST_CODE_INVITE);
 				
 	        	IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
-	    		eventsManager.register(app,
-	    				eventsManager.create(IEvent_Base.MARKETING, IEvent_Base.MARKETING_INVITE_FRIENDS_CLICKED,
-	    				"MARKETING", "INVITE_FRIENDS_CLICKED"));
+	    		eventsManager.register(app, IEvent_Base.EVENT_MARKETING_INVITE_FRIENDS);
 			}
 		      
 		} else {

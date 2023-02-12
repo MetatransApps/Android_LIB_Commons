@@ -22,12 +22,13 @@ public interface IEventsManager {
 	public long getLastMainScreenInteraction(Context context);
 	public void updateLastMainScreenInteraction(Context context, long timestamp);
 	
-	public IEvent_Base create(int id, String name);
+	/*public IEvent_Base create(int id, String name);
 	public IEvent_Base create(int id, int subid, String name, String subname);
 	public IEvent_Base create(int id, int subid, String name, String subname, long value);
 	public IEvent_Base create(int id, int subid, int subsubid, String name, String subname, String subsubname);
 	public IEvent_Base create(int id, int subid, int subsubid, String name, String subname, String subsubname, long value);
-	
+	 */
+
 	public void register(Context context, List<IEvent_Base> events);
 	public void register(Context context, final IEvent_Base event);
 	

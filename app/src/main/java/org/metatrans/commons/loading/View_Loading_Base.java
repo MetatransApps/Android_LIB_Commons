@@ -91,14 +91,14 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 	//@Override
 	protected void registerEvent_AllStopped() {
 		IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
-		eventsManager.register(((Activity)getContext()), eventsManager.create(IEvent_Base.LOADING, IEvent_Base.LOADING_STOPPED_PIECES, "LOADING", "LOADING_STOPPED_PIECES"));
+		eventsManager.register(((Activity)getContext()), IEvent_Base.EVENT_LOADING_ALL_PIECES_STOPPED);
 	}
 	
 	
 	//@Override
 	protected void registerEvent_1Stopped() {
 		IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
-		eventsManager.register(((Activity)getContext()), eventsManager.create(IEvent_Base.LOADING, IEvent_Base.LOADING_STOPPED_PIECE, "LOADING", "LOADING_STOPPED_PIECE"));
+		eventsManager.register(((Activity)getContext()), IEvent_Base.EVENT_LOADING_1_PIECE_STOPPED);
 	}
 	
 	

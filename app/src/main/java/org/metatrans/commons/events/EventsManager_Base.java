@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 
 import org.metatrans.commons.DeviceUtils;
-import org.metatrans.commons.analytics.IAnalytics;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.events.api.IEvent_Base;
 import org.metatrans.commons.events.api.IEventsManager;
@@ -25,12 +24,10 @@ public class EventsManager_Base implements IEventsManager {
 	private static final Object sync_events = new Object();
 	
 	protected final ExecutorService executor;
-	private final IAnalytics analytics;
 	
 	
-	public EventsManager_Base(ExecutorService _executor, IAnalytics _analytics) {
+	public EventsManager_Base(ExecutorService _executor) {
 		executor = _executor;
-		analytics = _analytics;
 	}
 	
 	
@@ -83,37 +80,7 @@ public class EventsManager_Base implements IEventsManager {
 		
 		return result;
 	}
-	
-	
-	@Override
-	public IEvent_Base create(int id, String name) {
-		return create(id, id, name, name);
-	}
-	
-	
-	@Override
-	public IEvent_Base create(int id, int subid, String name, String subname) {
-		return create(id, subid, name, subname, 0);
-	}
-	
 
-	@Override
-	public IEvent_Base create(int id, int subid, String name, String subname, long value) {
-		return create(id, subid, subid, name, subname, subname, value);
-	}
-	
-
-	@Override
-	public IEvent_Base create(int id, int subid, int subsubid, String name, String subname, String subsubname) {
-		return create(id, subid, subsubid, name, subname, subsubname, 0);
-	}
-	
-	
-	@Override
-	public IEvent_Base create(int id, int subid, int subsubid, String name, String subname, String subsubname, long value) {
-		return new Event_Base(id, subid, subsubid, name, subname, subsubname, value);
-	}
-	
 
 	@Override
 	public void register(Context context, List<IEvent_Base> events) {
@@ -187,7 +154,7 @@ public class EventsManager_Base implements IEventsManager {
 		
 		data.setCountedAsStarted();
 		
-		register(activity, create(IEvent_Base.START_GAME, "START_GAME"));
+		register(activity, IEvent_Base.EVENT_GAME_START);
 	}
 	
 	
@@ -201,49 +168,6 @@ public class EventsManager_Base implements IEventsManager {
 		
 		System.out.println("EventsManager_Base/handleGameEvents_OnExit: " + " game is NOT changed and will be counted");
 		data.setCountedAsExited();
-		
-		
-		long timeInMainScreen_inSec = data.getAccumulated_time_inmainscreen() / 1000;
-		
-		int modeID = settings.modeID;
-		int coloursID = settings.uiColoursID;
-		
-		boolean online = DeviceUtils.isConnectedOrConnecting();
-		
-		//GameStatistics.addPlayTime(activity, boardmanagerID, difficultyID, data.getAccumulated_time_inmainscreen() / 1000);
-		
-		List<IEvent_Base> events = new ArrayList<IEvent_Base>();
-		
-				
-		events.add(create(
-				IEvent_Base.EXIT_GAME, IEvent_Base.EXIT_GAME_TOTAL,
-				"EXIT_GAME", "TOTAL",
-				timeInMainScreen_inSec));
-		
-		events.add(create(
-				IEvent_Base.EXIT_GAME, IEvent_Base.EXIT_GAME_MODE, modeID,
-				"EXIT_GAME", "DIFFICULTY", "" + modeID,
-				timeInMainScreen_inSec));
-		
-		events.add(create(
-				IEvent_Base.EXIT_GAME, IEvent_Base.EXIT_GAME_COLOURS, coloursID,
-				"EXIT_GAME", "COLOURS", "" + coloursID,
-				timeInMainScreen_inSec));
-		
-		events.add(create(
-				IEvent_Base.EXIT_GAME, IEvent_Base.EXIT_GAME_ONLINE, online ? 1 : 0,
-				"EXIT_GAME", "ONLINE", "" + online,
-				timeInMainScreen_inSec));
-
-		if (Application_Base.getInstance() != null) {
-			
-			events.add(create(
-					IEvent_Base.EXIT_GAME, IEvent_Base.EXIT_GAME_STORE, Application_Base.getInstance().getAppStore().getID(),
-					"EXIT_GAME", "STORE", Application_Base.getInstance().getAppStore().getName(),
-					timeInMainScreen_inSec));
-		}
-		
-		register(activity, events);
 	}
 
 
@@ -315,14 +239,17 @@ public class EventsManager_Base implements IEventsManager {
 									System.out.println("PROCESS LOCAL EVENT: " + first_event);
 									
 									try {
+
 										handleEventsLocal(app_context, first_event);
 										handleAchievements(app_context, first_event);
 										
 										eventsData_Base.events_local.remove(0);
 										
 										if (eventsData_Base.events_remote == null) {
+
 											eventsData_Base.events_remote = new ArrayList<IEvent_Base>();
 										}
+
 										eventsData_Base.events_remote.add(first_event);
 										
 										StorageUtils.writeStore(app_context, FILE_NAME);
@@ -433,7 +360,7 @@ public class EventsManager_Base implements IEventsManager {
 	
 	
 	protected boolean isGameChange(final IEvent_Base event) {
-		return event.getID() == IEvent_Base.MENU_OPERATION && event.getSubID() == IEvent_Base.MENU_OPERATION_CHANGE_MODE;
+		return event.getID() == IEvent_Base.MENU_OPERATION && event.getSubID() == IEvent_Base.MENU_OPERATION_CHANGE_LEVEL;
 	}
 	
 	
@@ -481,14 +408,13 @@ public class EventsManager_Base implements IEventsManager {
 		
 		return true;
 	}
-	
-	
-	private void handleEventsRemote(final IEvent_Base event) {
+
+
+	protected void handleEventsRemote(final IEvent_Base event) {
 		
 		if (mustProcessRemote(event)) {
-		
-			analytics.sendEvent(event);
-		
+
+			Application_Base.getInstance().getEventSender().send(event);
 		}
 	}
 	

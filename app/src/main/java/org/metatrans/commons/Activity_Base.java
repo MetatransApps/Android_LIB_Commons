@@ -2,17 +2,16 @@ package org.metatrans.commons;
 
 
 import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.cfg.publishedapp.IPublishedApplication;
 import org.metatrans.commons.engagement.ISocialProvider;
-import org.metatrans.commons.ui.images.IBitmapCache;
-import org.metatrans.commons.ui.utils.BitmapUtils;
+import org.metatrans.commons.events.Event_Base;
+import org.metatrans.commons.events.api.IEvent_Base;
+import org.metatrans.commons.events.api.IEventsManager;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Application;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -39,7 +38,7 @@ public abstract class Activity_Base extends Activity {
 
 		if (app instanceof Application_Base) {
 
-			((Application_Base) app).getAnalytics().onActivity_Create(this);
+			((Application_Base) app).getActivitiesStack().onActivity_Create(this);
 		}
 	}
 
@@ -51,13 +50,39 @@ public abstract class Activity_Base extends Activity {
 
 		if (app instanceof Application_Base) {
 
-			((Application_Base) getApplication()).getAnalytics().onActivity_Destroy(this);
+			((Application_Base) getApplication()).getActivitiesStack().onActivity_Destroy(this);
 		}
 
 		super.onDestroy();
 	}
 
-	
+
+	@Override
+	protected void onResume() {
+
+		super.onResume();
+
+		IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
+
+		IPublishedApplication app_info = Application_Base.getInstance().getApp_Me();
+		String app_name = app_info.getPackage();
+		String screen_name = this.getClass().getSimpleName();
+
+		IEvent_Base view_screen_event = new Event_Base(
+				IEvent_Base.SCREEN_VIEW, app_name.hashCode(), screen_name.hashCode(),
+				"SCREEN_VIEW", app_name, screen_name);
+
+		eventsManager.register(this, view_screen_event);
+	}
+
+
+	@Override
+	protected void onPause() {
+
+		super.onPause();
+	}
+
+
 	/*@Override
 	public void onStart(){
 		
@@ -91,9 +116,7 @@ public abstract class Activity_Base extends Activity {
 		setBackgroundPoster(backgroundView, alpha);
 	}
 	
-	
-	@SuppressWarnings("deprecation")
-	@SuppressLint("NewApi")
+
 	private void setBackgroundPoster(View view, int alpha) {
 
 		if (getBackgroundImageID() != 0) {
@@ -114,9 +137,7 @@ public abstract class Activity_Base extends Activity {
 		return icon_size;
 	}
 	
-	
-	@SuppressWarnings("deprecation")
-	@SuppressLint("NewApi")
+
 	protected void initIconSize() {
 		//Rect icon_bounds = getResources().getDrawable(R.drawable.ic_about).getBounds();
 		//icon_size = Math.max(icon_bounds.right - icon_bounds.left, icon_bounds.bottom - icon_bounds.top);
