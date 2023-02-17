@@ -414,7 +414,10 @@ public class EventsManager_Base implements IEventsManager {
 		
 		if (mustProcessRemote(event)) {
 
-			Application_Base.getInstance().getEventSender().send(event);
+			if (Application_Base.getInstance().getEventSender() != null) {
+
+				Application_Base.getInstance().getEventSender().send(event);
+			}
 		}
 	}
 	
