@@ -23,6 +23,7 @@ import org.metatrans.commons.events.EventsManager_Base;
 import org.metatrans.commons.events.IEventSender;
 import org.metatrans.commons.events.api.IEventsManager;
 import org.metatrans.commons.model.GameData_Base;
+import org.metatrans.commons.model.UserData_Base;
 import org.metatrans.commons.model.UserSettings_Base;
 import org.metatrans.commons.storage.StorageUtils;
 
@@ -54,9 +55,9 @@ public abstract class Application_Base extends Application {
 
 	private Class <? extends UserSettings_Base> settings_latest_model_class;
 
-	private Class <? extends GameData_Base>  gamedata_latest_model_class;
+	private Class <? extends UserData_Base> userdata_latest_model_class;
 
-	protected UserSettings_Base settings_test;
+	private Class <? extends GameData_Base>  gamedata_latest_model_class;
 
 
 	@Override
@@ -93,16 +94,14 @@ public abstract class Application_Base extends Application {
 		ConfigurationUtils_Colours.class.getName();
 
 
-		settings_test = createUserSettingsObject();
+		UserSettings_Base settings_test = createUserSettingsObject();
 		settings_latest_model_class = settings_test.getClass();
+
+		UserData_Base userdata_test = createUserDataObject();
+		userdata_latest_model_class = userdata_test.getClass();
 
 		GameData_Base gameData_test = createGameDataObject();
 		gamedata_latest_model_class = gameData_test.getClass();
-
-		settings_test = null;
-
-		//StorageUtils.clearStore(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
-		//StorageUtils.clearStore(this, GameData_Base.FILE_NAME_GAME_DATA);
 	}
 
 
@@ -200,7 +199,7 @@ public abstract class Application_Base extends Application {
 
 			} else if (settings.model_version != UserSettings_Base.MODEL_VERSION_LATEST) {
 
-				//We have new model version and must re-create the GameData.
+				//We have new model version and must re-create the object.
 				System.out.println("Application_Base.getUserSettings: settings.model_version != UserSettings_Base.MODEL_VERSION_LATEST ... recreateGameDataObject");
 
 				recreateUserSettings();
@@ -250,10 +249,115 @@ public abstract class Application_Base extends Application {
 		settings = (UserSettings_Base) StorageUtils.readStorage(this, UserSettings_Base.FILE_NAME_USER_SETTINGS);
 	}
 
-	
+
+	public void storeUserSettings() {
+		storeUserSettings(getUserSettings());
+	}
+
+
+	public void storeUserSettings(UserSettings_Base settings) {
+
+		System.out.println("Application_Base.storeUserSettings");
+
+		StorageUtils.writeStore(this, UserSettings_Base.FILE_NAME_USER_SETTINGS, settings);
+	}
+
+
+	protected UserData_Base createUserDataObject() {
+
+		return new UserData_Base();
+	}
+
+
+	public UserData_Base getUserData() {
+
+		//System.out.println("Application_Base.getUserData: called");
+
+		UserData_Base user_data;
+
+		try {
+
+			user_data = (UserData_Base) StorageUtils.readStorage(this, UserData_Base.FILE_NAME_USER_DATA);
+
+			if (user_data == null) {
+
+				System.out.println("Application_Base.getUserData: user_data == null ... recreateUserData");
+
+				recreateUserData();
+
+				user_data = (UserData_Base) StorageUtils.readStorage(this, UserData_Base.FILE_NAME_USER_DATA);
+
+			} else if (user_data.model_version != UserData_Base.MODEL_VERSION_LATEST) {
+
+				//We have new model version and must re-create the object.
+				System.out.println("Application_Base.getUserData: user_data.model_version != UserData_Base.MODEL_VERSION_LATEST ... recreating object");
+
+				recreateUserData();
+
+				user_data = (UserData_Base) StorageUtils.readStorage(this, UserData_Base.FILE_NAME_USER_DATA);
+
+			} else {
+
+				//Check if model class has changed from prev version
+				if (!userdata_latest_model_class.equals(user_data.getClass())) {
+
+					System.out.println("Application_Base.getUserData: !userdata_latest_model_class.equals(user_data.getClass())");
+
+					recreateUserData();
+
+					user_data = (UserData_Base) StorageUtils.readStorage(this, UserData_Base.FILE_NAME_USER_DATA);
+				}
+			}
+
+		} catch (Exception e) {
+
+			System.out.println("Application_Base.getUserData: Exception");
+
+			if (isTestMode()) {
+
+				throw e;
+			}
+
+			e.printStackTrace();
+
+			//In case of incompatible change of UserData class and failed deserialization, we lose the current settings and create new one
+			recreateUserData();
+
+			user_data = (UserData_Base) StorageUtils.readStorage(this, UserData_Base.FILE_NAME_USER_DATA);
+		}
+
+		return user_data;
+	}
+
+
+	public void recreateUserData() {
+
+		System.out.println("Application_Base.recreateUserData");
+
+		UserData_Base user_data = createUserDataObject();
+
+		StorageUtils.writeStore(this, UserData_Base.FILE_NAME_USER_DATA, user_data);
+
+		user_data = (UserData_Base) StorageUtils.readStorage(this, UserData_Base.FILE_NAME_USER_DATA);
+	}
+
+
+	public void storeUserData() {
+		storeUserData(getUserData());
+	}
+
+
+	public void storeUserData(UserData_Base user_data) {
+
+		System.out.println("Application_Base.storeUserData");
+
+		StorageUtils.writeStore(this, UserData_Base.FILE_NAME_USER_DATA, user_data);
+	}
+
+
 	protected abstract GameData_Base createGameDataObject();
-	
-	
+
+
 	public GameData_Base getGameData() {
 
 		GameData_Base gameData;
@@ -272,7 +376,7 @@ public abstract class Application_Base extends Application {
 
 			} else if (gameData.model_version != GameData_Base.MODEL_VERSION_LATEST) {
 
-				//We have new model version and must re-create the GameData.
+				//We have new model version and must re-create the object.
 				System.out.println("Application_Base.getGameData: gameData.model_version != GameData_Base.MODEL_VERSION_LATEST ... recreateGameDataObject");
 
 				recreateGameDataObject();
@@ -317,30 +421,30 @@ public abstract class Application_Base extends Application {
 
 		return gameData;
 	}
-	
-	
+
+
 	public void storeGameData() {
 		storeGameData(getGameData());
 	}
-	
-	
+
+
 	public void storeGameData(GameData_Base gameData) {
-		
+
 		System.out.println("Application_Base.storeGameData");
-		
+
 		StorageUtils.writeStore(this, GameData_Base.FILE_NAME_GAME_DATA, gameData);
 	}
-	
-	
+
+
 	public void recreateGameDataObject() {
-		
+
 		System.out.println("Application_Base.recreateGameDataObject");
-		
+
 		GameData_Base data = createGameDataObject();
 		StorageUtils.writeStore(this, GameData_Base.FILE_NAME_GAME_DATA, data);
 
 		data = (GameData_Base) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
-		
+
 		//IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
 		//eventsManager.handleGameEvents_OnStart(Application_Base.getInstance().getCurrentActivity(), data);
 	}
@@ -348,19 +452,6 @@ public abstract class Application_Base extends Application {
 	
 	public IConfigurationColours getColoursCfg() {
 		return ConfigurationUtils_Colours.getConfigByID(getUserSettings().uiColoursID);
-	}
-
-
-	public void storeUserSettings() {
-		storeUserSettings(getUserSettings());
-	}
-
-
-	public void storeUserSettings(UserSettings_Base settings) {
-
-		System.out.println("Application_Base.storeUserSettings");
-
-		StorageUtils.writeStore(this, UserSettings_Base.FILE_NAME_USER_SETTINGS, settings);
 	}
 	
 	
