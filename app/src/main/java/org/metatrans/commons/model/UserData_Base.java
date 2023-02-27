@@ -15,7 +15,7 @@ public class UserData_Base implements Serializable {
 
     public static final int MODEL_VERSION_LATEST 		= 1;
 
-    public static final int INITIAL_COUNT_GAMES_BETWEEN_SHOWING_DIALOG = 1;
+    public static final int INITIAL_COUNT_GAMES_BETWEEN_SHOWING_DIALOG = 7;
 
 
     private int model_version = MODEL_VERSION_LATEST;
