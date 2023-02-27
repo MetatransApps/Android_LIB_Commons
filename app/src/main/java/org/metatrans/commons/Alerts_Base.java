@@ -49,6 +49,17 @@ public class Alerts_Base {
 		return createAlertDialog(context, possitive, negative, onCancelListener, R.string.alert_message_newmove, checkBoxView);
 	}
 
+	public static AlertDialog.Builder createAlertDialog_RateApp(Context context, OnClickListener possitive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener, CompoundButton.OnCheckedChangeListener onCheckedChangeListener) {
+
+		View checkBoxView = createCheckBoxInView(context, R.string.dont_ask_again, onCheckedChangeListener);
+
+		return createAlertDialog(context, possitive, negative, onCancelListener, R.string.alert_message_rateapp, checkBoxView);
+	}
+
+	public static AlertDialog.Builder createAlertDialog_RateApp(Context context, OnClickListener possitive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener) {
+
+		return createAlertDialog(context, possitive, negative, onCancelListener, R.string.alert_message_rateapp);
+	}
 
 	protected static AlertDialog.Builder createAlertDialog_LowerDifficulty(Context context, OnClickListener possitive, OnClickListener negative) {
 		return createAlertDialog(context, possitive, negative, null, R.string.alert_message_lower_difficulty);

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import org.metatrans.commons.Alerts_Base;
 import org.metatrans.commons.achievements.IAchievementsManager;
 import org.metatrans.commons.cfg.appstore.IAppStore;
 import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
@@ -26,9 +27,12 @@ import org.metatrans.commons.model.GameData_Base;
 import org.metatrans.commons.model.UserData_Base;
 import org.metatrans.commons.model.UserSettings_Base;
 import org.metatrans.commons.storage.StorageUtils;
+import org.metatrans.commons.web.WebUtils;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Application;
+import android.content.DialogInterface;
 
 
 public abstract class Application_Base extends Application {
@@ -287,7 +291,7 @@ public abstract class Application_Base extends Application {
 
 				user_data = (UserData_Base) StorageUtils.readStorage(this, UserData_Base.FILE_NAME_USER_DATA);
 
-			} else if (user_data.model_version != UserData_Base.MODEL_VERSION_LATEST) {
+			} else if (user_data.getModelVersion() != UserData_Base.MODEL_VERSION_LATEST) {
 
 				//We have new model version and must re-create the object.
 				System.out.println("Application_Base.getUserData: user_data.model_version != UserData_Base.MODEL_VERSION_LATEST ... recreating object");
@@ -499,5 +503,88 @@ public abstract class Application_Base extends Application {
 		}
 		
 		return app;
+	}
+
+
+	public void showRateAppDialog(Activity activity) {
+
+		//No way to give ratings on F-Droid stores
+		if (getAppStore().equals(IAppStore.OBJ_FDROID_OFFICIAL)
+			|| getAppStore().equals(IAppStore.OBJ_FDROID_OWN)
+			) {
+
+			return;
+		}
+
+		if (!Application_Base.getInstance().getUserSettings().dont_show_alert_rate_app) {
+
+			if (Application_Base.getInstance().getUserData().showAppRatingDialog()) {
+
+				//ALERT FOR RATE APP
+				AlertDialog.Builder adb = Alerts_Base.createAlertDialog_RateApp(activity,
+
+						new DialogInterface.OnClickListener() {
+
+							//User accepted to give feedback
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+
+								try {
+
+									WebUtils.openApplicationStorePage(Application_Base.this, Application_Base.getInstance().getApp_Me());
+
+								} catch (Exception e) {
+
+									e.printStackTrace();
+								}
+							}
+						},
+
+
+						new DialogInterface.OnClickListener() {
+
+							//User rejected to give feedback
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+
+								//Do nothing
+							}
+						},
+
+						new DialogInterface.OnCancelListener() {
+
+							//User canceled the dialog
+							@Override
+							public void onCancel(DialogInterface dialog) {
+
+								//Do nothing
+							}
+						}/*,
+
+						new CompoundButton.OnCheckedChangeListener() {
+
+							//User don't want to see again this dialog
+							@Override
+							public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+								try {
+
+									Application_Base.getInstance().getUserSettings().dont_show_alert_rate_app = isChecked;
+
+									Application_Base.getInstance().storeUserSettings();
+
+								} catch (Exception e) {
+
+									e.printStackTrace();
+								}
+							}
+						}*/
+				);
+
+				adb.show();
+
+				Application_Base.getInstance().getUserData().appRatingDialogShown();
+			}
+		}
 	}
 }

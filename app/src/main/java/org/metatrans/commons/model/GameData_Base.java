@@ -33,9 +33,8 @@ public class GameData_Base implements Serializable {
 		timestamp_created = System.currentTimeMillis();
 
 		UserData_Base user_data = Application_Base.getInstance().getUserData();
-		user_data.count_played_games++;
-		user_data.save();
-		System.out.println("GameData_Base.init(): UserData.count_played_games=" + user_data.count_played_games);
+		user_data.incPlayedGamesCount();
+		System.out.println("GameData_Base.init(): UserData.count_played_games=" + user_data.getPlayedGamesCount());
 	}
 	
 	

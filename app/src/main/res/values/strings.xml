@@ -151,6 +151,11 @@
     <string name="alert_title">Action alert</string>
     <string name="alert_message_newgame">New game?</string>
     <string name="alert_message_newmove">Do you want to override the current sequence of moves starting from the current move?</string>
+    <string name="alert_message_rateapp">Rate the app now?
+        \n\nThis app needs a fair rating on the app store in order to compete with the other similar apps.
+        \nYou have played a while and you could give a real rating, no matter if it is 5 stars or not.
+        \n
+    </string>
     <string name="dont_ask_again">Don\'t ask again</string>
     <string name="alert_message_lower_difficulty">The difficulty will be switched to lower level</string>
     <string name="alert_message_notenoughmemory">Not enough memory</string>

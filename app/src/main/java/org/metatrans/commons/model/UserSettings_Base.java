@@ -24,8 +24,10 @@ public class UserSettings_Base implements Serializable {
 
 	public int modeID;
 
-	
-	protected UserSettings_Base() {
+    public boolean dont_show_alert_rate_app;
+
+
+    protected UserSettings_Base() {
 		
 	}
 

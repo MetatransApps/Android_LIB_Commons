@@ -74,7 +74,8 @@ public abstract class Activity_Menu_Base extends Activity_Base {
 		System.out.println("Activity_Menu_Main: onResume()");
 		
 		super.onResume();
-		
+
+		Application_Base.getInstance().showRateAppDialog(this);
 	}
 	
 	
