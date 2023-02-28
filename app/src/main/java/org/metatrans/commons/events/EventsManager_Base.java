@@ -10,6 +10,7 @@ import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.events.api.IEvent_Base;
 import org.metatrans.commons.events.api.IEventsManager;
 import org.metatrans.commons.model.GameData_Base;
+import org.metatrans.commons.model.UserData_Base;
 import org.metatrans.commons.model.UserSettings_Base;
 import org.metatrans.commons.storage.StorageUtils;
 
@@ -155,6 +156,9 @@ public class EventsManager_Base implements IEventsManager {
 		data.setCountedAsStarted();
 		
 		register(activity, IEvent_Base.EVENT_GAME_START);
+
+		UserData_Base user_data = Application_Base.getInstance().getUserData();
+		user_data.incUsageEventsCount();
 	}
 	
 	

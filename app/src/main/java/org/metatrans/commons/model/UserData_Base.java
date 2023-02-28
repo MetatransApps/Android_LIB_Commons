@@ -15,21 +15,23 @@ public class UserData_Base implements Serializable {
 
     public static final int MODEL_VERSION_LATEST 		= 1;
 
-    public static final int INITIAL_COUNT_GAMES_BETWEEN_SHOWING_DIALOG = 11;
+    private static final int INITIAL_COUNT_USAGE_EVENTS_BETWEEN_SHOWING_DIALOG = 7;
 
 
     private int model_version = MODEL_VERSION_LATEST;
 
-    private int count_played_games;
+    private int count_usage_events;
 
-    private int count_last_shown_apprating_dialog_on_games;
+    private int count_apprating_dialog_shown;
 
-    protected int count_games_between_showing_apprating_dialog;
+    private int count_last_shown_apprating_dialog_on_usage_events;
+
+    protected int count_usage_events_between_showing_apprating_dialog;
 
 
     public UserData_Base() {
 
-        count_games_between_showing_apprating_dialog = INITIAL_COUNT_GAMES_BETWEEN_SHOWING_DIALOG;
+        count_usage_events_between_showing_apprating_dialog = INITIAL_COUNT_USAGE_EVENTS_BETWEEN_SHOWING_DIALOG;
     }
 
 
@@ -39,17 +41,19 @@ public class UserData_Base implements Serializable {
     }
 
 
-    public int getPlayedGamesCount() {
+    public int getUsageEventsCount() {
 
-        return count_played_games;
+        return count_usage_events;
     }
 
 
-    public void incPlayedGamesCount() {
+    public void incUsageEventsCount() {
 
-        count_played_games++;
+        count_usage_events++;
 
         save();
+
+        System.out.println("UserData_Base.incUsageEventsCount(): count_usage_events=" + count_usage_events);
     }
 
 
@@ -61,17 +65,25 @@ public class UserData_Base implements Serializable {
 
     public boolean showAppRatingDialog() {
 
-        return count_last_shown_apprating_dialog_on_games + count_games_between_showing_apprating_dialog < count_played_games;
+        return count_last_shown_apprating_dialog_on_usage_events + count_usage_events_between_showing_apprating_dialog <= count_usage_events;
+    }
+
+
+    public int getCountAppRatingDialogShown() {
+
+        return count_apprating_dialog_shown;
     }
 
 
     public void appRatingDialogShown() {
 
-        count_last_shown_apprating_dialog_on_games = count_played_games;
+        count_apprating_dialog_shown++;
 
-        count_games_between_showing_apprating_dialog = Math.max(
-                count_games_between_showing_apprating_dialog + 1,
-                INITIAL_COUNT_GAMES_BETWEEN_SHOWING_DIALOG);
+        count_last_shown_apprating_dialog_on_usage_events = count_usage_events;
+
+        count_usage_events_between_showing_apprating_dialog = Math.max(
+                count_usage_events_between_showing_apprating_dialog + 1,
+                INITIAL_COUNT_USAGE_EVENTS_BETWEEN_SHOWING_DIALOG);
 
         save();
     }

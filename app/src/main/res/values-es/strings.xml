@@ -133,6 +133,12 @@
     <string name="new_game">Nuevo</string>
     <string name="rate">Descrito</string>
     <string name="like">Likes</string>
+
+    <string name="home">Hogar</string>
+    <string name="sound">Sonido</string>
+    <string name="silent">Silencioso</string>
+    <string name="on">En</string>
+
     <string name="description">Descripción</string>
     <string name="metatransapps">Metatrans Apps</string>
     <string name="company_home_online">Sitio web de la Empresa</string>
@@ -143,6 +149,17 @@
     <string name="alert_title">Advertencia antes de la acción</string>
     <string name="alert_message_newgame">Nuevo juego?</string>
     <string name="alert_message_newmove">¿Quieres anular la secuencia actual de movimientos a partir del movimiento actual?</string>
+
+    <string name="alert_message_rateapp_needs_review">La aplicación necesita tu calificación</string>
+    <string name="alert_message_rateapp_long_text">\n¿Califica la aplicación ahora?
+        \n\nEsta aplicación necesita una calificación justa en la tienda de aplicaciones para poder competir con las otras aplicaciones.
+        \n\nLo has usado por un tiempo y podrías dar una calificación válida, sin importar si son 5 estrellas o no.
+        \n\n¡Gracias por tus comentarios!
+        \n
+    </string>
+    <string name="dont_ask_again">No vuelvas a preguntar</string>
+    <string name="not_now">Ahora no</string>
+
     <string name="alert_message_lower_difficulty">La dificultad se reducirá</string>
     <string name="alert_message_notenoughmemory">Hace falta memoria</string>
     <string name="alert_message_lowmemory">Menos memoria que la recomendada</string>
@@ -175,7 +192,8 @@
     <string name="colour_scheme_violet_mauve">Violeta</string>
     <string name="colour_scheme_gray">Gris</string>
     <string name="colour_scheme_brown">Marrón</string>
-    
+    <string name="colour_scheme_blue_sky_on_gray">Cielo Azul sobre gris</string>
+
     <string name="menu_difficulty">Dificultad</string>
     <string name="menu_difficulty_desc">Elección de dificultad</string>
     <string name="menu_difficulty_1">Nivel 1</string>

@@ -137,10 +137,12 @@
     <string name="new_game">New</string>
     <string name="rate">Rate</string>
     <string name="like">Like</string>
+
     <string name="home">Home</string>
     <string name="sound">Sound</string>
     <string name="silent">Silent</string>
     <string name="on">On</string>
+
     <string name="description">Description</string>
     <string name="metatransapps">Metatrans Apps</string>
     <string name="company_home_online">Company Web Site</string>
@@ -151,12 +153,17 @@
     <string name="alert_title">Action alert</string>
     <string name="alert_message_newgame">New game?</string>
     <string name="alert_message_newmove">Do you want to override the current sequence of moves starting from the current move?</string>
-    <string name="alert_message_rateapp">Rate the app now?
-        \n\nThis app needs a fair rating on the app store in order to compete with the other similar apps.
-        \nYou have use it for a while and you could give a real rating, no matter if it is 5 stars or not.
+
+    <string name="alert_message_rateapp_needs_review">The app needs your rating</string>
+    <string name="alert_message_rateapp_long_text">\nRate the app now?
+        \n\nThis app needs a fair rating on the app store in order to compete with the other apps.
+        \n\nYou have use it for a while and you could give a valid rating, no matter if it is 5 stars or not.
+        \n\nThanks for your feedback!
         \n
     </string>
     <string name="dont_ask_again">Don\'t ask again</string>
+    <string name="not_now">Not now</string>
+
     <string name="alert_message_lower_difficulty">The difficulty will be switched to lower level</string>
     <string name="alert_message_notenoughmemory">Not enough memory</string>
     <string name="alert_message_lowmemory">Low memory than recommended</string>
@@ -189,7 +196,7 @@
     <string name="colour_scheme_violet_mauve">Violet Mauve</string>
     <string name="colour_scheme_gray">Gray</string>
     <string name="colour_scheme_brown">Brown</string>
-    <string name="colour_scheme_blue_sky_on_gray">Blue Sky on gray</string>
+    <string name="colour_scheme_blue_sky_on_gray">Blue Sky on Gray</string>
 
     <string name="menu_difficulty">Difficulty</string>
     <string name="menu_difficulty_desc">Difficulty Selection</string>

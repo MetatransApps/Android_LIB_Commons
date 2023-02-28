@@ -134,6 +134,12 @@
     <string name="new_game">Новая</string>
     <string name="rate">Описанный</string>
     <string name="like">Симпатии</string>
+
+    <string name="home">Начало</string>
+    <string name="sound">Звук</string>
+    <string name="silent">Без</string>
+    <string name="on">Включено</string>
+
     <string name="description">Описание</string>
     <string name="metatransapps">Метатранс Апс</string>
     <string name="company_home_online">Сайт Компании</string>
@@ -144,6 +150,17 @@
     <string name="alert_title">Предупреждение перед действием</string>
     <string name="alert_message_newgame">Новая игра?</string>
     <string name="alert_message_newmove">Вы хотите отменить текущую последовательность ходов, начиная с текущего хода?</string>
+
+    <string name="alert_message_rateapp_needs_review">Приложению нужна ваша оценка</string>
+    <string name="alert_message_rateapp_long_text">\nОценить приложение сейчас?
+        \n\nЭтому приложению нужен справедливый рейтинг в магазине приложений, чтобы конкурировать с другими приложениями.
+        \n\nПользовался им какое-то время и могу дать действительную оценку, будь то 5 звезд или нет.
+        \n\nСпасибо за ваш отзыв!
+        \n
+    </string>
+    <string name="dont_ask_again">Больше не спрашивай</string>
+    <string name="not_now">Не сейчас</string>
+
     <string name="alert_message_lower_difficulty">Трудность будет снижена</string>
     <string name="alert_message_notenoughmemory">Недостаточно памяти</string>
     <string name="alert_message_lowmemory">Меньше памяти, чем рекомендуется</string>
@@ -176,7 +193,8 @@
     <string name="colour_scheme_violet_mauve">Виолетта</string>
     <string name="colour_scheme_gray">Грэй</string>
     <string name="colour_scheme_brown">Коричневый</string>
-    
+    <string name="colour_scheme_blue_sky_on_gray">Небесно-Голубой на сером фоне</string>
+
     <string name="menu_difficulty">Трудность</string>
     <string name="menu_difficulty_desc">Выберите Трудность</string>
     <string name="menu_difficulty_1">Уровень 1</string>

@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
-import org.metatrans.commons.app.Application_Base;
-
 
 public class Alerts_Base {
 	
@@ -22,52 +20,74 @@ public class Alerts_Base {
 	};
 	
 	
-	public static AlertDialog.Builder createAlertDialog_LoseGame(Context context, OnClickListener possitive) {
-		return createAlertDialog_LoseGame(context, possitive, listener_empty);
+	public static AlertDialog.Builder createAlertDialog_LoseGame(Context context, OnClickListener positive) {
+		return createAlertDialog_LoseGame(context, positive, listener_empty);
 	}
 	
 	
-	public static AlertDialog.Builder createAlertDialog_LowerDifficulty(Context context, OnClickListener possitive) {
-		return createAlertDialog_LowerDifficulty(context, possitive, listener_empty);
+	public static AlertDialog.Builder createAlertDialog_LowerDifficulty(Context context, OnClickListener positive) {
+		return createAlertDialog_LowerDifficulty(context, positive, listener_empty);
 	}
 	
 	
-	public static AlertDialog.Builder createAlertDialog_Exit(Context context, OnClickListener possitive) {
-		return createAlertDialog_Exit(context, possitive, listener_empty);
+	public static AlertDialog.Builder createAlertDialog_Exit(Context context, OnClickListener positive) {
+		return createAlertDialog_Exit(context, positive, listener_empty);
 	}
 	
 	
-	public static AlertDialog.Builder createAlertDialog_LoseGame(Context context, OnClickListener possitive, OnClickListener negative) {
-		return createAlertDialog(context, possitive, negative, null, R.string.alert_message_newgame);
+	public static AlertDialog.Builder createAlertDialog_LoseGame(Context context, OnClickListener positive, OnClickListener negative) {
+		return createAlertDialog(context, positive, negative, null, R.string.alert_message_newgame);
 	}
 
 
-	public static AlertDialog.Builder createAlertDialog_OverrideMoveSequence(Context context, OnClickListener possitive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener, CompoundButton.OnCheckedChangeListener onCheckedChangeListener) {
+	public static AlertDialog.Builder createAlertDialog_OverrideMoveSequence(Context context, OnClickListener positive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener, CompoundButton.OnCheckedChangeListener onCheckedChangeListener) {
 
 		View checkBoxView = createCheckBoxInView(context, R.string.dont_ask_again, onCheckedChangeListener);
 
-		return createAlertDialog(context, possitive, negative, onCancelListener, R.string.alert_message_newmove, checkBoxView);
+		return createAlertDialog(context, positive, negative, onCancelListener, R.string.alert_message_newmove, checkBoxView);
 	}
 
-	public static AlertDialog.Builder createAlertDialog_RateApp(Context context, OnClickListener possitive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener, CompoundButton.OnCheckedChangeListener onCheckedChangeListener) {
+	public static AlertDialog.Builder createAlertDialog_RateApp(Context context, OnClickListener positive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener) {
 
-		View checkBoxView = createCheckBoxInView(context, R.string.dont_ask_again, onCheckedChangeListener);
-
-		return createAlertDialog(context, possitive, negative, onCancelListener, R.string.alert_message_rateapp, checkBoxView);
+		return createAlertDialog_RateApp(context, positive, negative, onCancelListener, null);
 	}
 
-	public static AlertDialog.Builder createAlertDialog_RateApp(Context context, OnClickListener possitive, OnClickListener negative, DialogInterface.OnCancelListener onCancelListener) {
 
-		return createAlertDialog(context, possitive, negative, onCancelListener, R.string.alert_message_rateapp);
+	public static AlertDialog.Builder createAlertDialog_RateApp(Context context, OnClickListener positive, OnClickListener negative,
+																DialogInterface.OnCancelListener onCancelListener,
+																CompoundButton.OnCheckedChangeListener onCheckedChangeListener) {
+
+
+
+		AlertDialog.Builder adb = new AlertDialog.Builder(context);
+
+		adb.setIcon(R.drawable.ic_star_gold_v2_64);
+		adb.setTitle(R.string.alert_message_rateapp_needs_review);
+		adb.setMessage(R.string.alert_message_rateapp_long_text);
+		adb.setPositiveButton(R.string.ok, positive);
+		adb.setNegativeButton(R.string.not_now, negative);
+
+		if (onCancelListener != null) {
+
+			adb.setOnCancelListener(onCancelListener);
+		}
+
+		if (onCheckedChangeListener != null) {
+			View checkBoxView = createCheckBoxInView(context, R.string.dont_ask_again, onCheckedChangeListener);
+			adb.setView(checkBoxView);
+		}
+		//adb.setCancelable(false);
+
+		return adb;
 	}
 
-	protected static AlertDialog.Builder createAlertDialog_LowerDifficulty(Context context, OnClickListener possitive, OnClickListener negative) {
-		return createAlertDialog(context, possitive, negative, null, R.string.alert_message_lower_difficulty);
+	protected static AlertDialog.Builder createAlertDialog_LowerDifficulty(Context context, OnClickListener positive, OnClickListener negative) {
+		return createAlertDialog(context, positive, negative, null, R.string.alert_message_lower_difficulty);
 	}
 	
 	
-	protected static AlertDialog.Builder createAlertDialog_Exit(Context context, OnClickListener possitive, OnClickListener negative) {
-		return createAlertDialog(context, possitive, negative, null, R.string.alert_message_exit);
+	protected static AlertDialog.Builder createAlertDialog_Exit(Context context, OnClickListener positive, OnClickListener negative) {
+		return createAlertDialog(context, positive, negative, null, R.string.alert_message_exit);
 	}
 	
 	

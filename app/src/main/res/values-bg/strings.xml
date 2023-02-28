@@ -139,6 +139,12 @@
     <string name="new_game">Нова</string>
     <string name="rate">Окачестви</string>
     <string name="like">Харесай</string>
+
+    <string name="home">Начало</string>
+    <string name="sound">Звук</string>
+    <string name="silent">Без</string>
+    <string name="on">Включен</string>
+
     <string name="description">Описание</string>
     <string name="metatransapps">Метатранс Апс</string>
     <string name="company_home_online">Уеб Сайт на Компанията</string>
@@ -149,6 +155,17 @@
     <string name="alert_title">Предупреждение преди действие</string>
     <string name="alert_message_newgame">Нова игра?</string>
     <string name="alert_message_newmove">Искате ли да отмените текущата последователност от ходове, започвайки от текущия ход?</string>
+
+    <string name="alert_message_rateapp_needs_review">Приложението има нужда от вашия рейтинг</string>
+    <string name="alert_message_rateapp_long_text">\nОценете приложението сега?
+        \n\nТова приложение се нуждае от справедлива оценка в магазина за приложения, за да се конкурира с другите приложения.
+        \n\nИзползвали сте го известно време и можете да дадете валидна оценка, без значение дали е 5 звезди или не.
+        \n\nБлагодаря за обратната връзка!
+        \n
+    </string>
+    <string name="dont_ask_again">Не питай отново</string>
+    <string name="not_now">Не сега</string>
+
     <string name="alert_message_lower_difficulty">Трудността ще бъде намалена</string>
     <string name="alert_message_notenoughmemory">Няма достатъчно памет</string>
     <string name="alert_message_lowmemory">По-малко памет от препоръчителното</string>

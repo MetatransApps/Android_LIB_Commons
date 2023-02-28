@@ -33,6 +33,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Application;
 import android.content.DialogInterface;
+import android.widget.CompoundButton;
 
 
 public abstract class Application_Base extends Application {
@@ -520,66 +521,81 @@ public abstract class Application_Base extends Application {
 
 			if (Application_Base.getInstance().getUserData().showAppRatingDialog()) {
 
+
+				DialogInterface.OnClickListener positive = 	new DialogInterface.OnClickListener() {
+
+					//User accepted to give feedback
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+
+						try {
+
+							WebUtils.openApplicationStorePage(Application_Base.this, Application_Base.getInstance().getApp_Me());
+
+						} catch (Exception e) {
+
+							e.printStackTrace();
+						}
+					}
+				};
+
+				DialogInterface.OnClickListener negative = 	new DialogInterface.OnClickListener() {
+
+					//User rejected to give feedback
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+
+						//Do nothing
+					}
+				};
+
+				DialogInterface.OnCancelListener cancel = new DialogInterface.OnCancelListener() {
+
+					//User canceled the dialog
+					@Override
+					public void onCancel(DialogInterface dialog) {
+
+						//Do nothing
+					}
+				};
+
+				CompoundButton.OnCheckedChangeListener disable = new CompoundButton.OnCheckedChangeListener() {
+
+					//User don't want to see again this dialog
+					@Override
+					public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+						try {
+
+							Application_Base.getInstance().getUserSettings().dont_show_alert_rate_app = isChecked;
+
+							Application_Base.getInstance().storeUserSettings();
+
+						} catch (Exception e) {
+
+							e.printStackTrace();
+						}
+					}
+				};
+
+
 				//ALERT FOR RATE APP
-				AlertDialog.Builder adb = Alerts_Base.createAlertDialog_RateApp(activity,
+				int count_shown = Application_Base.getInstance().getUserData().getCountAppRatingDialogShown();
 
-						new DialogInterface.OnClickListener() {
+				AlertDialog.Builder adb;
 
-							//User accepted to give feedback
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
+				if (count_shown <= 2) {
 
-								try {
+					adb = Alerts_Base.createAlertDialog_RateApp(
+							activity, positive, negative, cancel
+					);
 
-									WebUtils.openApplicationStorePage(Application_Base.this, Application_Base.getInstance().getApp_Me());
+				} else {
 
-								} catch (Exception e) {
-
-									e.printStackTrace();
-								}
-							}
-						},
-
-
-						new DialogInterface.OnClickListener() {
-
-							//User rejected to give feedback
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-
-								//Do nothing
-							}
-						},
-
-						new DialogInterface.OnCancelListener() {
-
-							//User canceled the dialog
-							@Override
-							public void onCancel(DialogInterface dialog) {
-
-								//Do nothing
-							}
-						}/*,
-
-						new CompoundButton.OnCheckedChangeListener() {
-
-							//User don't want to see again this dialog
-							@Override
-							public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-								try {
-
-									Application_Base.getInstance().getUserSettings().dont_show_alert_rate_app = isChecked;
-
-									Application_Base.getInstance().storeUserSettings();
-
-								} catch (Exception e) {
-
-									e.printStackTrace();
-								}
-							}
-						}*/
-				);
+					adb = Alerts_Base.createAlertDialog_RateApp(
+							activity, positive, negative, cancel, disable
+					);
+				}
 
 				adb.show();
 
