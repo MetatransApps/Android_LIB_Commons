@@ -31,7 +31,10 @@
     <string name="new_game_fulltext">New Game</string>
     <string name="button_back">Back</string>
     <string name="label_mode">Mode</string>
-    
+
+    <string name="new_stopads_title">Stop Ads for 15 minutes</string>
+    <string name="new_stopads_desc">Watch a video</string>
+
     <string name="social_play_services_error">Google Play services are not available.</string>
     <string name="social_close">Close</string>
     

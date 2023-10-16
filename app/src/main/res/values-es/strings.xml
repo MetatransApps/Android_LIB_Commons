@@ -32,7 +32,10 @@
     <string name="new_game_fulltext">Nuevo Juego</string>
     <string name="button_back">Espalda</string>
     <string name="label_mode">Modo</string>
-    
+
+    <string name="new_stopads_title">Detener anuncios durante 15 minutos</string>
+    <string name="new_stopads_desc">Ver un vídeo</string>
+
     <string name="social_play_services_error">Servicios de Google Play no están disponibles.</string>
     <string name="social_close">Cerca</string>
     
