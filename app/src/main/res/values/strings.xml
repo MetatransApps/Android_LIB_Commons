@@ -32,8 +32,8 @@
     <string name="button_back">Back</string>
     <string name="label_mode">Mode</string>
 
-    <string name="new_stopads_title">Stop Ads for 7 minutes (Beta)</string>
-    <string name="new_stopads_desc">Watch a video</string>
+    <string name="new_stopads_title">Watch a video</string>
+    <string name="new_stopads_desc">Stop Ads for a while if any (Beta)</string>
 
     <string name="social_play_services_error">Google Play services are not available.</string>
     <string name="social_close">Close</string>

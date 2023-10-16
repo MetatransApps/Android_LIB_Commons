@@ -33,8 +33,8 @@
     <string name="button_back">Назад</string>
     <string name="label_mode">Режим</string>
 
-    <string name="new_stopads_title">Остановить рекламу на 7 минут (Beta)</string>
-    <string name="new_stopads_desc">Смотреть видео</string>
+    <string name="new_stopads_title">Смотреть видео</string>
+    <string name="new_stopads_desc">Отключите рекламу на время, если она есть (Beta)</string>
 
     <string name="social_play_services_error">Услуги Google Play не доступны.</string>
     <string name="social_close">Зкрытие</string>
