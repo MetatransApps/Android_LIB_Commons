@@ -48,6 +48,7 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_gravityfinger137_paid = new PublishedApplication_GravityFinger137_Paid(IAppStore.OBJ_GOOGLE);
 		//IPublishedApplication app_words_de_for_bg = new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_GOOGLE);
 		IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_GOOGLE);
+		IPublishedApplication app_mind_adaptivity_paid = new PublishedApplication_MindAdaptivity_Paid(IAppStore.OBJ_GOOGLE);
 
 
 		app_mos.setPaidVersion(app_mos_paid);
@@ -59,11 +60,11 @@ public class PublishedApplication_Utils {
 		app_chessboardscanner.setPaidVersion(app_chessboardscanner_paid);
 		app_stoptheballs.setPaidVersion(app_stoptheballs_paid);
 		app_gravityfinger137.setPaidVersion(app_gravityfinger137_paid);
+		app_mind_adaptivity.setPaidVersion(app_mind_adaptivity_paid);
 
 
 		APPSLIST_GOOGLE_ALL.add(app_chessboardscanner);
 		APPSLIST_GOOGLE_ALL.add(app_chessboardscanner_paid);
-		APPSLIST_GOOGLE_ALL.add(app_mind_adaptivity);
 		APPSLIST_GOOGLE_ALL.add(app_gravityfinger137);
 		APPSLIST_GOOGLE_ALL.add(app_gravityfinger137_paid);
 		APPSLIST_GOOGLE_ALL.add(app_stoptheballs);
@@ -81,7 +82,8 @@ public class PublishedApplication_Utils {
 		APPSLIST_GOOGLE_ALL.add(app_ec);
 		APPSLIST_GOOGLE_ALL.add(app_ec_paid);
 		//APPSLIST_GOOGLE_ALL.add(app_words_de_for_bg);
-
+		APPSLIST_GOOGLE_ALL.add(app_mind_adaptivity);
+		APPSLIST_GOOGLE_ALL.add(app_mind_adaptivity_paid);
 	}
 	
 	
@@ -110,6 +112,8 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_words_de_for_bg 	= new PublishedApplication_Words_DE_for_BG(IAppStore.OBJ_SAMSUNG);
 		//IPublishedApplication app_words_de_for_bg_paid 	= new PublishedApplication_Words_DE_for_BG_Paid(IAppStore.OBJ_SAMSUNG);
 		IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_SAMSUNG);
+		IPublishedApplication app_mind_adaptivity_paid = new PublishedApplication_MindAdaptivity_Paid(IAppStore.OBJ_SAMSUNG);
+
 
 		app_cafk.setPaidVersion(app_cafk_paid);
 		app_mafk.setPaidVersion(app_mafk_paid);
@@ -120,6 +124,7 @@ public class PublishedApplication_Utils {
 		app_stoptheballs.setPaidVersion(app_stoptheballs_paid);
 		app_gravity.setPaidVersion(app_gravity_paid);
 		app_scanner.setPaidVersion(app_scanner_paid);
+		app_mind_adaptivity.setPaidVersion(app_mind_adaptivity_paid);
 
 
 		APPSLIST_SAMSUNG_ALL.add(app_cafk);
@@ -142,6 +147,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_SAMSUNG_ALL.add(app_scanner_paid);
 		APPSLIST_SAMSUNG_ALL.add(app_words_de_for_bg);
 		APPSLIST_SAMSUNG_ALL.add(app_mind_adaptivity);
+		APPSLIST_SAMSUNG_ALL.add(app_mind_adaptivity_paid);
 	}
 
 
@@ -171,6 +177,8 @@ public class PublishedApplication_Utils {
 		IPublishedApplication app_scanner_paid 		= new PublishedApplication_Scanner_Paid(IAppStore.OBJ_HUAWEI);
 		//IPublishedApplication app_de_for_bg_paid 	= new PublishedApplication_Words_DE_for_BG_Paid(IAppStore.OBJ_HUAWEI);
 		IPublishedApplication app_mind_adaptivity = new PublishedApplication_MindAdaptivity(IAppStore.OBJ_HUAWEI);
+		IPublishedApplication app_mind_adaptivity_paid = new PublishedApplication_MindAdaptivity_Paid(IAppStore.OBJ_HUAWEI);
+
 
 		app_cafk.setPaidVersion(app_cafk_paid);
 		app_mafk.setPaidVersion(app_mafk_paid);
@@ -181,6 +189,7 @@ public class PublishedApplication_Utils {
 		app_stoptheballs.setPaidVersion(app_stoptheballs_paid);
 		app_gravity.setPaidVersion(app_gravity_paid);
 		app_scanner.setPaidVersion(app_scanner_paid);
+		app_mind_adaptivity.setPaidVersion(app_mind_adaptivity_paid);
 
 
 		APPSLIST_HUAWEI_ALL.add(app_cafk);
@@ -203,6 +212,7 @@ public class PublishedApplication_Utils {
 		APPSLIST_HUAWEI_ALL.add(app_scanner_paid);
 		APPSLIST_HUAWEI_ALL.add(app_words_de_for_bg);
 		APPSLIST_HUAWEI_ALL.add(app_mind_adaptivity);
+		APPSLIST_HUAWEI_ALL.add(app_mind_adaptivity_paid);
 	}
 
 
