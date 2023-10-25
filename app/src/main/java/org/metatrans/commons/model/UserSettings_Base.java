@@ -26,6 +26,7 @@ public class UserSettings_Base implements Serializable {
 
     public boolean dont_show_alert_rate_app;
 
+	public int melody_cfg_id;
 
     protected UserSettings_Base() {
 		

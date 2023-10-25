@@ -1,5 +1,6 @@
 package org.metatrans.commons.cfg.sound;
 
+
 import org.metatrans.commons.cfg.IConfigurationEntry;
 
 

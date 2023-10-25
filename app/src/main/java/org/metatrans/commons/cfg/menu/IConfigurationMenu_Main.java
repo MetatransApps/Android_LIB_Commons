@@ -21,5 +21,7 @@ public interface IConfigurationMenu_Main extends IConfigurationEntry {
 	public static int CFG_MENU_INVITE_FRIENDS		= 12;
 	public static int CFG_MENU_EXIT			 		= 99;
 
+	public static int CFG_MENU_MELODY		 		= 1029387;
+
 	public Runnable getAction();
 }
