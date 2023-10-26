@@ -23,6 +23,7 @@ import org.metatrans.commons.events.EventSender_BaseImpl;
 import org.metatrans.commons.events.EventsManager_Base;
 import org.metatrans.commons.events.IEventSender;
 import org.metatrans.commons.events.api.IEventsManager;
+import org.metatrans.commons.melody.IMelodiesManager;
 import org.metatrans.commons.model.GameData_Base;
 import org.metatrans.commons.model.UserData_Base;
 import org.metatrans.commons.model.UserSettings_Base;
@@ -56,6 +57,8 @@ public abstract class Application_Base extends Application {
 	private IEventsManager eventsManager;
 
 	private IEventSender eventSender = new EventSender_BaseImpl();
+
+	private IMelodiesManager melodiesManager;
 
 
 	private Class <? extends UserSettings_Base> settings_latest_model_class;
@@ -98,6 +101,17 @@ public abstract class Application_Base extends Application {
 		
 		ConfigurationUtils_Colours.class.getName();
 
+		setMelodiesManager(new IMelodiesManager() {
+			@Override
+			public void setMelody(int melody_cfg_id) {
+
+			}
+
+			@Override
+			public void stop() {
+
+			}
+		});
 
 		UserSettings_Base settings_test = createUserSettingsObject();
 		settings_latest_model_class = settings_test.getClass();
@@ -107,6 +121,18 @@ public abstract class Application_Base extends Application {
 
 		GameData_Base gameData_test = createGameDataObject();
 		gamedata_latest_model_class = gameData_test.getClass();
+	}
+
+
+	protected void setMelodiesManager(IMelodiesManager _melodiesManager) {
+
+		melodiesManager = _melodiesManager;
+	}
+
+
+	public IMelodiesManager getMelodiesManager() {
+
+		return melodiesManager;
 	}
 
 

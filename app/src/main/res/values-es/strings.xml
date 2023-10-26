@@ -138,9 +138,14 @@
     <string name="like">Likes</string>
 
     <string name="home">Hogar</string>
+
     <string name="sound">Sonido</string>
     <string name="silent">Silencioso</string>
     <string name="on">En</string>
+
+    <string name="melody_title">Melodía</string>
+    <string name="melody_none">Ninguna</string>
+    <string name="melody_adventure">Aventura</string>
 
     <string name="description">Descripción</string>
     <string name="metatransapps">Metatrans Apps</string>

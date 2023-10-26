@@ -139,9 +139,14 @@
     <string name="like">Симпатии</string>
 
     <string name="home">Начало</string>
+
     <string name="sound">Звук</string>
     <string name="silent">Без</string>
     <string name="on">Включено</string>
+
+    <string name="melody_title">Мелодия</string>
+    <string name="melody_none">Без</string>
+    <string name="melody_adventure">Приключение</string>
 
     <string name="description">Описание</string>
     <string name="metatransapps">Метатранс Апс</string>
