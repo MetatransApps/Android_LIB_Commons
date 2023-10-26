@@ -136,6 +136,12 @@ public abstract class Application_Base extends Application {
 	}
 
 
+	public boolean supportMelodies() {
+
+		return false;
+	}
+
+
 	/**
 	 * It is used for showing appropriate ads where necessary
 	 */
