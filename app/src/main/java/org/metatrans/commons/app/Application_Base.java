@@ -146,7 +146,7 @@ public abstract class Application_Base extends Application {
 
 	public ISFXManager getSFXManager() {
 
-		return new SFXManager_BaseImpl();
+		return SFXManager_BaseImpl.getSingleton();
 	}
 
 
