@@ -65,8 +65,6 @@ public class SFXManager_BaseImpl implements ISFXManager {
                             Thread.sleep(100);
 
                         } catch (InterruptedException e) {
-
-                            e.printStackTrace();
                         }
 
                         mediaPlayer.release();
