@@ -27,6 +27,8 @@ import org.metatrans.commons.melody.IMelodiesManager;
 import org.metatrans.commons.model.GameData_Base;
 import org.metatrans.commons.model.UserData_Base;
 import org.metatrans.commons.model.UserSettings_Base;
+import org.metatrans.commons.sfx.ISFXManager;
+import org.metatrans.commons.sfx.SFXManager_BaseImpl;
 import org.metatrans.commons.storage.StorageUtils;
 import org.metatrans.commons.web.WebUtils;
 
@@ -139,6 +141,12 @@ public abstract class Application_Base extends Application {
 	public boolean supportMelodies() {
 
 		return false;
+	}
+
+
+	public ISFXManager getSFXManager() {
+
+		return new SFXManager_BaseImpl();
 	}
 
 
