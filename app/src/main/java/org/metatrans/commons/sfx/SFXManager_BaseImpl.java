@@ -60,6 +60,15 @@ public class SFXManager_BaseImpl implements ISFXManager {
                     @Override
                     public void run() {
 
+                        try {
+
+                            Thread.sleep(100);
+
+                        } catch (InterruptedException e) {
+
+                            e.printStackTrace();
+                        }
+
                         mediaPlayer.release();
                     }
                 });
