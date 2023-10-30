@@ -41,12 +41,12 @@ public class SFXManager_BaseImpl implements ISFXManager {
     @Override
     public void playSound(int sound_res_id) {
 
-        if (true) {
+        //-1 is just marking places in code, where the sfx should be played
+        if (sound_res_id == -1) {
 
             return;
         }
-
-
+        
         final MediaPlayer mediaPlayer = createPlayerByResID(sound_res_id);
 
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
