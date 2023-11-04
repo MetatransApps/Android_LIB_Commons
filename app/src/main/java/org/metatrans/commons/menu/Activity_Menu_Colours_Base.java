@@ -107,10 +107,15 @@ public class Activity_Menu_Colours_Base extends Activity_Base {
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			
 			//System.out.println("ColoursSelection POS=" + position + ", id=" + id);
-			
+
+			Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_2);
+
 			int currOrderNumber = ConfigurationUtils_Colours.getOrderNumber(Application_Base.getInstance().getUserSettings().uiColoursID);
+
 			if (position != currOrderNumber) {
+
 				int newCfgID = ConfigurationUtils_Colours.getID(position);
+
 				changeColours(newCfgID);
 			}
 			

@@ -43,9 +43,13 @@ public class Config_MenuMain_MoreGames extends Config_MenuMain_Base {
 			
 			@Override
 			public void run() {
+
 				Activity currentActivity = Application_Base.getInstance().getCurrentActivity();
+
 				if (currentActivity != null) {
+
 					Intent i = new Intent(currentActivity, Activity_Marketing_AppList.class);
+
 					currentActivity.startActivity(i);
 				}
 			}

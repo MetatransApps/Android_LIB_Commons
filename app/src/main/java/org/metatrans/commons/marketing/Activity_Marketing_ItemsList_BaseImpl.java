@@ -156,6 +156,8 @@ public abstract class Activity_Marketing_ItemsList_BaseImpl extends Activity_Bas
 		
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+			Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_2);
 			
 			List<? extends IHomeAdInfo> apps = getItemsList();
 

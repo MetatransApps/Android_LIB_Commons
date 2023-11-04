@@ -102,6 +102,8 @@ public class Activity_Menu_Melody extends Activity_Base {
 
             //System.out.println("ColoursSelection POS=" + position + ", id=" + id);
 
+            Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_2);
+
             int melody_cfg_id = ((UserSettings_Base)Application_Base.getInstance().getUserSettings()).melody_cfg_id;
 
             int currOrderNumber = ConfigurationUtils_Melody.getOrderNumber(melody_cfg_id);
