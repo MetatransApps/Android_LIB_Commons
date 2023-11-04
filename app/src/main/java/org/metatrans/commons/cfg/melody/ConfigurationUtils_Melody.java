@@ -15,6 +15,7 @@ public class ConfigurationUtils_Melody {
 	private static final IConfigurationMelody[] ALL_CFGs = new IConfigurationMelody[] {
 		new Config_Melody_Base(IConfigurationMelody.CFG_MELODY_NONE, R.string.melody_none),
 		new Config_Melody_Base(IConfigurationMelody.CFG_MELODY_ADVENTURE, R.string.melody_adventure),
+		new Config_Melody_Base(IConfigurationMelody.CFG_MELODY_BATTLE, R.string.melody_battle)
 	};
 	
 	

@@ -146,6 +146,7 @@
     <string name="melody_title">Melodía</string>
     <string name="melody_none">Ninguna</string>
     <string name="melody_adventure">Aventura</string>
+    <string name="melody_battle">Batalla</string>
 
     <string name="description">Descripción</string>
     <string name="metatransapps">Metatrans Apps</string>

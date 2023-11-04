@@ -46,7 +46,7 @@ public class SFXManager_BaseImpl implements ISFXManager {
 
             return;
         }
-        
+
         final MediaPlayer mediaPlayer = createPlayerByResID(sound_res_id);
 
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
