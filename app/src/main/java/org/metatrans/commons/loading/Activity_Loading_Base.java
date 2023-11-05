@@ -345,9 +345,13 @@ public abstract class Activity_Loading_Base extends Activity_Base {
 	public void onBackPressed() {
 		
 		AlertDialog.Builder adb = Alerts_Base.createAlertDialog_Exit(Activity_Loading_Base.this,
+
 				new DialogInterface.OnClickListener() {
+
 					public void onClick(DialogInterface dialog, int which) {
-						
+
+						Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_1);
+
 						openInterstitial();
 						
 						dialog.dismiss();

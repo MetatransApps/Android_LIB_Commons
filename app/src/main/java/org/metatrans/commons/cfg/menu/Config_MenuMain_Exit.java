@@ -48,6 +48,9 @@ public class Config_MenuMain_Exit extends Config_MenuMain_Base {
 				AlertDialog.Builder adb = Alerts_Base.createAlertDialog_Exit(current_activity,
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int which) {
+
+								Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_1);
+
 								dialog.dismiss();
 								current_activity.finish();
 								Intent homeIntent = new Intent(Intent.ACTION_MAIN);

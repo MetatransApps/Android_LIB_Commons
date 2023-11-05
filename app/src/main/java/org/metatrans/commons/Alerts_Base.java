@@ -9,12 +9,18 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
+import org.metatrans.commons.app.Application_Base;
+
 
 public class Alerts_Base {
 	
 	
 	protected static final OnClickListener listener_empty = new DialogInterface.OnClickListener() {
+
 		public void onClick(DialogInterface dialog, int which) {
+
+			Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_1);
+
 			dialog.dismiss();
 		}
 	};
