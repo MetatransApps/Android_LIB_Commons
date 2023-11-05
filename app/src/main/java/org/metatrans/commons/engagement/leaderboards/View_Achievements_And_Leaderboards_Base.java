@@ -1,6 +1,7 @@
 package org.metatrans.commons.engagement.leaderboards;
 
 
+import org.metatrans.commons.R;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.colours.IConfigurationColours;
 import org.metatrans.commons.engagement.IEngagementProvider;
@@ -257,7 +258,9 @@ public abstract class View_Achievements_And_Leaderboards_Base extends View imple
 		buttonarea_button_achievements.deselect();
 		
 		if (isOverButton_OpenLeaderboard(x, y)) {
-			
+
+			Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_1);
+
 			int modeID = Application_Base.getInstance().getUserSettings().modeID;
 
 			provider.getLeaderboardsProvider().openLeaderboard_LocalOnly(modeID);
@@ -267,7 +270,9 @@ public abstract class View_Achievements_And_Leaderboards_Base extends View imple
     		eventsManager.register(getContext(), IEvent_Base.EVENT_MENU_OPERATION_LEADERBOARDS);
 			
 		} else if (isOverButton_OpenAchievements(x, y)) {
-			
+
+			Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_1);
+
 			provider.getAchievementsProvider().openAchievements();
 			
         	IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
