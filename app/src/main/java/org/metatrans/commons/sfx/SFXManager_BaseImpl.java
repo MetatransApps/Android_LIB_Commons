@@ -5,6 +5,7 @@ import android.media.AudioAttributes;
 import android.media.MediaPlayer;
 
 import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.cfg.sound.IConfigurationSound;
 
 
 /*
@@ -42,7 +43,12 @@ public class SFXManager_BaseImpl implements ISFXManager {
     public void playSound(int sound_res_id) {
 
         //-1 is just marking places in code, where the sfx should be played
-        if (sound_res_id == -1) {
+        /*if (DEBUG && sound_res_id == -1) {
+
+            return;
+        }*/
+
+        if (Application_Base.getInstance().getUserSettings().common_sound_cfg_id == IConfigurationSound.CFG_SOUND_OFF) {
 
             return;
         }

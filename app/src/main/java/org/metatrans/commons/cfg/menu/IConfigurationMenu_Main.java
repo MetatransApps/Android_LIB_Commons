@@ -22,6 +22,7 @@ public interface IConfigurationMenu_Main extends IConfigurationEntry {
 	public static int CFG_MENU_EXIT			 		= 99;
 
 	public static int CFG_MENU_MELODY		 		= 1029387;
+	public static int CFG_MENU_SOUND		 		= 1029390;
 
 	public Runnable getAction();
 }

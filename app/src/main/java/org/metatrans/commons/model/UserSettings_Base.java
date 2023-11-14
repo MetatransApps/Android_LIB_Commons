@@ -2,6 +2,7 @@ package org.metatrans.commons.model;
 
 
 import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.cfg.sound.IConfigurationSound;
 
 import java.io.Serializable;
 
@@ -30,9 +31,12 @@ public class UserSettings_Base implements Serializable {
 
 	public int common_sound_cfg_id; //0 or 1
 
+
     protected UserSettings_Base() {
-		
+
+		common_sound_cfg_id = IConfigurationSound.CFG_SOUND_ON;
 	}
+
 
 	public void save() {
 		Application_Base.getInstance().storeUserSettings(this);
