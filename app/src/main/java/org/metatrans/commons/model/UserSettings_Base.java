@@ -28,6 +28,8 @@ public class UserSettings_Base implements Serializable {
 
 	public int melody_cfg_id;
 
+	public int common_sound_cfg_id; //0 or 1
+
     protected UserSettings_Base() {
 		
 	}
