@@ -1,19 +1,18 @@
 package org.metatrans.commons.sfx;
 
 
-import android.media.MediaPlayer;
-
+import android.content.Context;
 
 public interface ISFXManager {
 
-    /*
-     * Creates MediaPlayer, play a sound and release the player - nothing to be called in addition.
-     */
-    void playSound(int sound_res_id);
+    //Load before play
+    void loadSounds(Context context, int[] sound_res_ids);
 
-    /*
-     * Need to call only start() of MediaPlayer many times as you need.
-     * Also mediaPlayer.release() have to be called for the instance when finished with it.
-     */
-    MediaPlayer createPlayerForSound(int sound_res_id);
+    //Returns stream_id
+    int playSound(int sound_res_id);
+
+    //Returns stream_id
+    int playSound_Repeat(int sound_res_id);
+
+    void stopSound(int stream_id);
 }

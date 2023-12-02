@@ -7,6 +7,11 @@ import android.media.MediaPlayer;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.sound.IConfigurationSound;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 
 /*
  * In summary, calling MediaPlayer.create() multiple times is generally efficient,
@@ -21,6 +26,8 @@ public class SFXManager_BaseImpl implements ISFXManager {
 
 
     private static SFXManager_BaseImpl singleton;
+
+    private static Map<Integer, List<MediaPlayer>> MEDIA_PLAYERS = new HashMap<Integer, List<MediaPlayer>>();
 
 
     public static ISFXManager getSingleton() {
@@ -53,40 +60,62 @@ public class SFXManager_BaseImpl implements ISFXManager {
             return;
         }
 
-        final MediaPlayer mediaPlayer = createPlayerByResID(sound_res_id);
-
-        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-
-                mediaPlayer.stop();
-                mediaPlayer.reset();
-
-                Application_Base.getInstance().getExecutor().submit(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        try {
-
-                            Thread.sleep(5);
-
-                        } catch (InterruptedException e) {
-                        }
-
-                        mediaPlayer.release();
-                    }
-                });
-            }
-        });
+        final MediaPlayer mediaPlayer = createOrReusePlayerByResID(sound_res_id);
 
         mediaPlayer.start();
     }
 
 
-    @Override
+    private MediaPlayer createOrReusePlayerByResID(int sound_res_id) {
+
+
+        synchronized (MEDIA_PLAYERS) {
+
+            List<MediaPlayer> players_list = MEDIA_PLAYERS.get(sound_res_id);
+
+            if (players_list == null) {
+
+                players_list = new ArrayList<MediaPlayer>();
+                MEDIA_PLAYERS.put(sound_res_id, players_list);
+            }
+
+            if (players_list.size() == 0) {
+
+                MediaPlayer player = MediaPlayer.create(Application_Base.getInstance(), sound_res_id);
+
+                player.setAudioAttributes(new AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_GAME)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .build());
+
+                player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+
+                        synchronized (MEDIA_PLAYERS) {
+
+                            List<MediaPlayer> players_list = MEDIA_PLAYERS.get(sound_res_id);
+                            players_list.add(mp);
+                        }
+                    }
+                });
+
+                return player;
+            }
+
+            MediaPlayer cached = players_list.remove(players_list.size() - 1);
+
+            cached.seekTo(0);
+
+            return cached;
+        }
+    }
+
+
+    /*@Override
     public MediaPlayer createPlayerForSound(int sound_res_id) {
 
-        final MediaPlayer mediaPlayer = createPlayerByResID(sound_res_id);
+        final MediaPlayer mediaPlayer = createOrReusePlayerByResID(sound_res_id);
 
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -98,18 +127,5 @@ public class SFXManager_BaseImpl implements ISFXManager {
         });
 
         return mediaPlayer;
-    }
-
-
-    private MediaPlayer createPlayerByResID(int sound_res_id) {
-
-        final MediaPlayer mediaPlayer = MediaPlayer.create(Application_Base.getInstance(), sound_res_id);
-
-        mediaPlayer.setAudioAttributes(new AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_MEDIA)
-                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                .build());
-
-        return mediaPlayer;
-    }
+    }*/
 }
