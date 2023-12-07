@@ -147,6 +147,8 @@
     <string name="melody_none">Ninguna</string>
     <string name="melody_adventure">Aventura</string>
     <string name="melody_battle">Batalla</string>
+    <string name="melody_space_v1">Espacio V1</string>
+    <string name="melody_space_v2">Espacio V2</string>
 
     <string name="description">Descripción</string>
     <string name="metatransapps">Metatrans Apps</string>

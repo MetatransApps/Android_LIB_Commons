@@ -20,11 +20,11 @@ public class Config_Melody_Base extends ConfigurationEntry_Base implements IConf
 	}
 
 
-	@Override
+	/*@Override
 	public boolean isEnabled() {
 
 		return id != CFG_MELODY_NONE;
-	}
+	}*/
 
 
 	@Override

@@ -100,7 +100,7 @@ public class SFXManager_SoundPoolImpl implements ISFXManager {
     public int playSound(int sound_res_id, int loop) {
 
         //-1 is just marking places in code, where the sfx should be played
-        /*if (DEBUG && sound_res_id == -1) {
+        /*if (sound_res_id == -1) {
 
             return;
         }*/
