@@ -115,11 +115,14 @@ public class SFXManager_SoundPoolImpl implements ISFXManager {
 
         if (id_obj == null) {
 
-            throw new IllegalStateException("Sound not found sound_res_id=" + sound_res_id);
+            //throw new IllegalStateException("Sound not found sound_res_id=" + sound_res_id);
+            return -1;
+
+        } else {
+
+            int stream_id = SOUND_POOL.play(id_obj, 1.0f, 1.0f, 1, loop, 1.0f);
+
+            return stream_id;
         }
-
-        int stream_id = SOUND_POOL.play(id_obj, 1.0f, 1.0f, 1, loop, 1.0f);
-
-        return stream_id;
     }
 }
