@@ -16,5 +16,5 @@ public interface IConfigurationMelody extends IConfigurationEntry {
 
 	public static int CFG_MELODY_SPACE_V2		= 4;
 
-	//public boolean isEnabled();
+	public static int CFG_MELODY_CREATIVITY		= 5;
 }

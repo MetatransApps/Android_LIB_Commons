@@ -460,6 +460,8 @@ public abstract class View_Loading_Base extends Activity_Loading_Base.ViewWithLe
 
 		if (isOverStartButton(x, y)) {
 
+			Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_1);
+
 			if (getLoadingActivity().isDone()) {
 
 				Intent i = new Intent(getContext(), ((Activity_Loading_Base) getContext()).getNextActivityClass());

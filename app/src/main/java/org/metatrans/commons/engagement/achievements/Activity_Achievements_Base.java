@@ -76,7 +76,9 @@ public class Activity_Achievements_Base extends Activity_Base {
 		
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-			
+
+			Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_2);
+
 			Intent intent = new Intent(
 					Activity_Achievements_Base.this,
 					Activity_Picture.class);

@@ -99,7 +99,9 @@ public class Activity_Menu_Sound extends Activity_Base {
 		
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-			
+
+			Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_2);
+
 			//System.out.println("ColoursSelection POS=" + position + ", id=" + id);
 
 			int sound_cfg_id = Application_Base.getInstance().getUserSettings().common_sound_cfg_id;
