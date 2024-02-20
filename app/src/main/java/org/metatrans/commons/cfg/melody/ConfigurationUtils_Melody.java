@@ -18,7 +18,8 @@ public class ConfigurationUtils_Melody {
 		new Config_Melody_Base(IConfigurationMelody.CFG_MELODY_BATTLE, R.string.melody_battle),
 		new Config_Melody_Base(IConfigurationMelody.CFG_MELODY_SPACE_V1, R.string.melody_space_v1),
 		new Config_Melody_Base(IConfigurationMelody.CFG_MELODY_SPACE_V2, R.string.melody_space_v2),
-		new Config_Melody_Base(IConfigurationMelody.CFG_MELODY_CREATIVITY, R.string.melody_creativity)
+		new Config_Melody_Base(IConfigurationMelody.CFG_MELODY_CREATIVITY, R.string.melody_creativity),
+		new Config_Melody_Base(IConfigurationMelody.CFG_MELODY_RELAXATION, R.string.melody_relaxation),
 	};
 	
 	
