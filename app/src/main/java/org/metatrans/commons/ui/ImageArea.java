@@ -1,6 +1,7 @@
 package org.metatrans.commons.ui;
 
 
+import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.ui.utils.DrawingUtils;
 
 import android.graphics.Bitmap;
@@ -8,6 +9,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
 
 
 public abstract class ImageArea implements IButtonArea {
@@ -98,14 +100,38 @@ public abstract class ImageArea implements IButtonArea {
 
 	public void draw(Canvas canvas) {
 
-		if (!drawImageOnly) {
+		//If it is a button which is NOT clicked
+		if (paint.getColor() == colour_area) {
 
-			DrawingUtils.drawRoundTextArea(canvas, paint, rect);
+			if (!drawImageOnly) {
+
+				DrawingUtils.drawRoundTextArea(canvas, paint, rect);
+			}
+
+			// Set the alpha value (0-255)
+			BitmapDrawable bitmapDrawable = new BitmapDrawable(Application_Base.getInstance().getResources(), bitmap);
+			bitmapDrawable.setAlpha(getAlpha_Bitmap());
+			bitmapDrawable.setBounds((int) rect.left, (int) rect.top, (int) rect.right, (int) rect.bottom);
+
+			canvas.save();
+			//canvas.drawBitmap(bitmap, src, dest, paint);
+			bitmapDrawable.draw(canvas);
+			canvas.restore();
+
+		} else {
+
+			//If it is a button which is clicked
+
+			if (!drawImageOnly) {
+
+				DrawingUtils.drawRoundTextArea(canvas, paint, rect);
+			}
 		}
-		
-		canvas.save();
-		canvas.drawBitmap(bitmap, src, dest, paint);
-		canvas.restore();
-		
+	}
+
+
+	protected int getAlpha_Bitmap() {
+
+		return 255;
 	}
 }
