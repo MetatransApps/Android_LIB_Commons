@@ -68,7 +68,7 @@ public class Activity_Picture extends Activity_Base {
 		
 		//Bitmap bitmap = getBitmapCache().getBitmap(this, imageID);
 		Bitmap bitmap_org = BitmapUtils.fromResource(this, imageID);
-		int[] screen_size = ScreenUtils.getScreenSize(this);
+		int[] screen_size = ScreenUtils.getScreenSize();
 		Bitmap bitmap = BitmapUtils.fitInRect(bitmap_org, screen_size[0], screen_size[1]);
 		
 		Drawable drawable = BitmapUtils.createDrawable(this, bitmap);
