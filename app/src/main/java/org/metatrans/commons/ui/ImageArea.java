@@ -100,33 +100,20 @@ public abstract class ImageArea implements IButtonArea {
 
 	public void draw(Canvas canvas) {
 
-		//If it is a button which is NOT clicked
-		if (paint.getColor() == colour_area) {
+		if (!drawImageOnly) {
 
-			if (!drawImageOnly) {
-
-				DrawingUtils.drawRoundTextArea(canvas, paint, rect);
-			}
-
-			// Set the alpha value (0-255)
-			BitmapDrawable bitmapDrawable = new BitmapDrawable(Application_Base.getInstance().getResources(), bitmap);
-			bitmapDrawable.setAlpha(getAlpha_Bitmap());
-			bitmapDrawable.setBounds((int) rect.left, (int) rect.top, (int) rect.right, (int) rect.bottom);
-
-			canvas.save();
-			//canvas.drawBitmap(bitmap, src, dest, paint);
-			bitmapDrawable.draw(canvas);
-			canvas.restore();
-
-		} else {
-
-			//If it is a button which is clicked
-
-			if (!drawImageOnly) {
-
-				DrawingUtils.drawRoundTextArea(canvas, paint, rect);
-			}
+			DrawingUtils.drawRoundTextArea(canvas, paint, rect);
 		}
+
+		// Set the alpha value (0-255)
+		BitmapDrawable bitmapDrawable = new BitmapDrawable(Application_Base.getInstance().getResources(), bitmap);
+		bitmapDrawable.setAlpha(getAlpha_Bitmap());
+		bitmapDrawable.setBounds((int) rect.left, (int) rect.top, (int) rect.right, (int) rect.bottom);
+
+		canvas.save();
+		//canvas.drawBitmap(bitmap, src, dest, paint);
+		bitmapDrawable.draw(canvas);
+		canvas.restore();
 	}
 
 
