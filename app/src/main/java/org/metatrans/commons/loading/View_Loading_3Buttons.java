@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
+import org.metatrans.commons.R;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
 import org.metatrans.commons.events.api.IEvent_Base;
@@ -508,6 +509,8 @@ public abstract class View_Loading_3Buttons extends Activity_Loading_Base.ViewWi
 
 				if (getLoadingActivity().isDone()) {
 
+					Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_1);
+
 					Intent main = new Intent(getContext(), ((Activity_Loading_Base) getContext()).getNextActivityClass());
 
 					getContext().startActivity(main);
@@ -516,12 +519,16 @@ public abstract class View_Loading_3Buttons extends Activity_Loading_Base.ViewWi
 
 			if (isOverMenu1Button(x, y)) {
 
+				Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_1);
+
 				Intent menu1 = new Intent(getContext(), ((Activity_Loading_Base) getContext()).getActivityClass_Menu1());
 
 				getContext().startActivity(menu1);
 			}
 
 			if (isOverMenu2Button(x, y)) {
+
+				Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_button_pressed_1);
 
 				Intent menu2 = new Intent(getContext(), ((Activity_Loading_Base) getContext()).getActivityClass_Menu2());
 
