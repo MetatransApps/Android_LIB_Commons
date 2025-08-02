@@ -1,11 +1,14 @@
 package org.metatrans.commons.ui.utils;
 
 
-import android.annotation.SuppressLint;
+//import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Insets;
 import android.graphics.Point;
 import android.view.Display;
+import android.view.WindowInsets;
 import android.view.WindowManager;
+import android.view.WindowMetrics;
 
 import org.metatrans.commons.app.Application_Base;
 
@@ -20,43 +23,50 @@ public class ScreenUtils {
 	}
 
 
-	public static int[] getScreenSize(/*Context context*/) {
+	public static int[] getScreenSize() {
 
 		return SCREEN_SIZE;
 	}
 
-	@SuppressWarnings("deprecation")
-	@SuppressLint("NewApi")
+
+	//@SuppressLint("NewApi")
 	public static int[] initScreenSize(Context context) {
 
-		//Rect icon_bounds = getResources().getDrawable(R.drawable.ic_about).getBounds();
-		//icon_size = Math.max(icon_bounds.right - icon_bounds.left, icon_bounds.bottom - icon_bounds.top);
-		WindowManager winman = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+		WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 
-		float density = 1; //context.getResources().getDisplayMetrics().density;
+		int screenWidth;
+		int screenHeight;
 
-		int screen_width;
-		int screen_height;
+		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
+			// API 30+ (Uses WindowMetrics)
+			WindowMetrics windowMetrics = wm.getCurrentWindowMetrics();
 
-		if (android.os.Build.VERSION.SDK_INT >= 13) {
+			// Exclude system bars using WindowInsets
+			Insets insets = windowMetrics.getWindowInsets()
+					.getInsetsIgnoringVisibility(WindowInsets.Type.systemBars());
 
-			Display display = winman.getDefaultDisplay();
+			int insetsWidth = insets.left + insets.right;
+			int insetsHeight = insets.top + insets.bottom;
+
+			screenWidth = windowMetrics.getBounds().width() - insetsWidth;
+			screenHeight = windowMetrics.getBounds().height() - insetsHeight;
+
+		} else if (android.os.Build.VERSION.SDK_INT >= 13) {
+			// Legacy for API 13–29
+			Display display = wm.getDefaultDisplay();
 			Point size = new Point();
 			display.getSize(size);
-			screen_width = (int) (size.x / density);
-			screen_height = (int) (size.y / density);
-
+			screenWidth = size.x;
+			screenHeight = size.y;
 		} else {
-
-			Display display = winman.getDefaultDisplay(); 
-			screen_width = (int) (display.getWidth() / density);  // deprecated
-			screen_height = (int) (display.getHeight() / density);  // deprecated
+			// Very old APIs
+			Display display = wm.getDefaultDisplay();
+			screenWidth = display.getWidth();
+			screenHeight = display.getHeight();
 		}
 
-		//System.out.println("SCREEN: screen_width=" + screen_width + ", screen_height=" + screen_height);
-
-		SCREEN_SIZE[0] = screen_width;
-		SCREEN_SIZE[1] = screen_height;
+		SCREEN_SIZE[0] = screenWidth;
+		SCREEN_SIZE[1] = screenHeight;
 
 		return SCREEN_SIZE;
 	}
