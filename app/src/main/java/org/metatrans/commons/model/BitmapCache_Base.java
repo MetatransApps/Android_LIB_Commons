@@ -27,7 +27,7 @@ public class BitmapCache_Base implements I2DBitmapCache {
 
 	private static final int getMaxBitmapSize_Assets() {
 
-		int[] size_xy = ScreenUtils.getScreenSize_WithBars();
+		int[] size_xy = ScreenUtils.getScreenSize(null);
 
 		//return (int) (0.097531 * Math.max(size_xy[0], size_xy[1]));
 		return (int) (0.13579 * Math.max(size_xy[0], size_xy[1]));
@@ -36,7 +36,7 @@ public class BitmapCache_Base implements I2DBitmapCache {
 
 	private static final int getMaxBitmapSize_Background() {
 
-		int[] size_xy = ScreenUtils.getScreenSize_WithBars();
+		int[] size_xy = ScreenUtils.getScreenSize(null);
 
 		return (int) (1 * Math.max(size_xy[0], size_xy[1]));
 	}

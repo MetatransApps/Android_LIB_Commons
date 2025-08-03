@@ -7,6 +7,7 @@ import org.metatrans.commons.engagement.ISocialProvider;
 import org.metatrans.commons.events.Event_Base;
 import org.metatrans.commons.events.api.IEvent_Base;
 import org.metatrans.commons.events.api.IEventsManager;
+import org.metatrans.commons.ui.utils.ScreenUtils;
 
 import android.app.Activity;
 import android.app.Application;
@@ -17,10 +18,12 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
-//import androidx.core.view.WindowCompat;
-//import androidx.core.view.WindowInsetsCompat;
-//import androidx.core.view.WindowInsetsControllerCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 
 
 public abstract class Activity_Base extends Activity {
@@ -45,8 +48,12 @@ public abstract class Activity_Base extends Activity {
 			((Application_Base) app).getActivitiesStack().onActivity_Create(this);
 		}
 
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+
 		// Force edge-to-edge fullscreen
-		/*WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+		WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
 		View decorView = getWindow().getDecorView();
 		WindowInsetsControllerCompat insetsController =
@@ -58,7 +65,7 @@ public abstract class Activity_Base extends Activity {
 			// Allow bars to show temporarily on swipe
 			insetsController.setSystemBarsBehavior(
 					WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
-		}*/
+		}
 	}
 
 
@@ -158,22 +165,11 @@ public abstract class Activity_Base extends Activity {
 	
 
 	protected void initIconSize() {
-		//Rect icon_bounds = getResources().getDrawable(R.drawable.ic_about).getBounds();
-		//icon_size = Math.max(icon_bounds.right - icon_bounds.left, icon_bounds.bottom - icon_bounds.top);
-		
-		int screen_width;
-		int screen_height;
-		if (android.os.Build.VERSION.SDK_INT >= 13) {
-			Display display = getWindowManager().getDefaultDisplay();
-			Point size = new Point();
-			display.getSize(size);
-			screen_width = size.x;
-			screen_height = size.y;
-		} else {
-			Display display = getWindowManager().getDefaultDisplay(); 
-			screen_width = display.getWidth();  // deprecated
-			screen_height = display.getHeight();  // deprecated
-		}
+
+		int sizes[] = ScreenUtils.getScreenSize(this);
+
+		int screen_width = sizes[0];
+		int screen_height = sizes[1];
 		
 		System.out.println("SCREEN: screen_width=" + screen_width + ", screen_height=" + screen_height);
 		
@@ -181,64 +177,9 @@ public abstract class Activity_Base extends Activity {
 		icon_size = Math.min(screen_width / factor, screen_height / factor);
 		icon_size = (int) (1.23 * icon_size);
 		
-		/*
-		BitmapFactory.Options o = new BitmapFactory.Options();
-		//o.inTargetDensity = DisplayMetrics.DENSITY_DEFAULT;
-		Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ic_about, o);
-		icon_size = Math.max(bmp.getWidth(), bmp.getHeight());
-		
-		DisplayMetrics metrics = new DisplayMetrics();
-		getWindowManager().getDefaultDisplay().getMetrics(metrics);
-		System.out.println("SCREEN DENSITY DPI: " + metrics.densityDpi);
-		switch (metrics.densityDpi) {
-			case DisplayMetrics.DENSITY_LOW:
-				break;
-			case DisplayMetrics.DENSITY_MEDIUM:
-				break;
-			case DisplayMetrics.DENSITY_HIGH:
-				break;
-			//case DisplayMetrics.DENSITY_DEFAULT:
-				//break;
-			case DisplayMetrics.DENSITY_TV:
-				break;
-			case DisplayMetrics.DENSITY_XHIGH:
-				break;
-			case DisplayMetrics.DENSITY_XXHIGH:
-				break;
-			default:
-				//throw new IllegalStateException("Density=" + metrics.densityDpi);
-		}
-		*/
-		
 		System.out.println("ICON SIZE: " + icon_size);
-		
-		//res/layout/main_activity.xml           # For handsets (smaller than 600dp available width)
-		//res/layout-sw600dp/main_activity.xml   # For 7 tablets (600dp wide and bigger)
-		//res/layout-sw720dp/main_activity.xml   # For 10 tablets (720dp wide and bigger)
 	}
-	
-	
-	/*protected IBitmapCache getBitmapCache() {
-		
-		return new IBitmapCache() {	
-			
-			@Override
-			public void remove(Integer id) {
-			}
-			
-			
-			@Override
-			public Bitmap getBitmap(Context context, int imageID) {
-				return BitmapUtils.fromResource(Activity_Base.this, imageID);
-			}
-			
-			
-			@Override
-			public void addBitmap(int imageID, Bitmap bitmap) {
-			}
-		};
-	}*/
-	
+
 	
 	private Application_Base getApp() {
 		return (Application_Base) getApplication();
