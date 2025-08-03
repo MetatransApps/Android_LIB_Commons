@@ -15,6 +15,7 @@ import org.metatrans.commons.ui.ButtonAreaClick;
 import org.metatrans.commons.ui.IButtonArea;
 import org.metatrans.commons.ui.TextArea;
 import org.metatrans.commons.ui.utils.DrawingUtils;
+import org.metatrans.commons.ui.utils.ScreenUtils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -118,19 +119,23 @@ public abstract class View_Loading_3Buttons extends Activity_Loading_Base.ViewWi
 		
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
+		int[] screen_size = ScreenUtils.getScreenSize(getContext());
+		int main_width = screen_size[0]; //getMeasuredWidth();
+		int main_height = screen_size[1]; //getMeasuredHeight();
+
 		rectf_main.left = 0;
-		rectf_main.right = getMeasuredWidth();
+		rectf_main.right = main_width;
 		rectf_main.top = 0;
-		rectf_main.bottom = getMeasuredHeight();
+		rectf_main.bottom = main_height;
 
 		int MARGIN = 10;
-		int buttons_width = getMeasuredWidth() / 2;
-		int buttons_height =  getMeasuredHeight() / 11;
-		int buttons_distance =  (getMeasuredHeight() - 6 * buttons_height) / 7;
+		int buttons_width = main_width / 2;
+		int buttons_height =  main_height / 11;
+		int buttons_distance =  (main_height - 6 * buttons_height) / 7;
 
-		if (getMeasuredWidth() > getMeasuredHeight()) {
+		if (main_width > main_height) {
 			buttons_height *= 1.5;
-			buttons_distance =  (getMeasuredHeight() - 6 * buttons_height) / 7;
+			buttons_distance =  (main_height - 6 * buttons_height) / 7;
 		}
 
 		rectf_button_start.left = (rectf_main.right - rectf_main.left) / 2 - buttons_width / 2;

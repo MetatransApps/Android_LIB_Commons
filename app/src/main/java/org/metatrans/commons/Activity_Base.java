@@ -18,6 +18,10 @@ import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
 
+//import androidx.core.view.WindowCompat;
+//import androidx.core.view.WindowInsetsCompat;
+//import androidx.core.view.WindowInsetsControllerCompat;
+
 
 public abstract class Activity_Base extends Activity {
 	
@@ -40,6 +44,21 @@ public abstract class Activity_Base extends Activity {
 
 			((Application_Base) app).getActivitiesStack().onActivity_Create(this);
 		}
+
+		// Force edge-to-edge fullscreen
+		/*WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+		View decorView = getWindow().getDecorView();
+		WindowInsetsControllerCompat insetsController =
+				WindowCompat.getInsetsController(getWindow(), decorView);
+
+		if (insetsController != null) {
+			// Hide status & nav bars
+			insetsController.hide(WindowInsetsCompat.Type.systemBars());
+			// Allow bars to show temporarily on swipe
+			insetsController.setSystemBarsBehavior(
+					WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+		}*/
 	}
 
 
