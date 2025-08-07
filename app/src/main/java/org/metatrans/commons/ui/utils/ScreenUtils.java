@@ -2,11 +2,9 @@ package org.metatrans.commons.ui.utils;
 
 
 import android.content.Context;
-import android.graphics.Insets;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.Display;
-import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.view.WindowMetrics;
 import android.os.Build;
