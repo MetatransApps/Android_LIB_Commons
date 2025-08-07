@@ -39,18 +39,13 @@ public class ScreenUtils {
 		int screenWidth;
 		int screenHeight;
 
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+		if (Build.VERSION.SDK_INT >= 35) {
 
 			WindowMetrics metrics = wm.getCurrentWindowMetrics();
 			Rect bounds = metrics.getBounds();
 
-			Insets visibleInsets = metrics.getWindowInsets()
-					.getInsets(
-							WindowInsets.Type.displayCutout()
-					);
-
-			screenWidth = bounds.width() - (visibleInsets.left + visibleInsets.right);
-			screenHeight = bounds.height() - (visibleInsets.top + visibleInsets.bottom);
+			screenWidth = bounds.width();
+			screenHeight = bounds.height();
 		}
 		else if (Build.VERSION.SDK_INT >= 13) {
 
@@ -58,6 +53,7 @@ public class ScreenUtils {
 			Display display = wm.getDefaultDisplay();
 			Point size = new Point();
 			display.getRealSize(size); // real size includes system bars
+
 			screenWidth = size.x;
 			screenHeight = size.y;
 		}
@@ -65,6 +61,7 @@ public class ScreenUtils {
 
 			// Very old APIs
 			Display display = wm.getDefaultDisplay();
+
 			screenWidth = display.getWidth();
 			screenHeight = display.getHeight();
 		}
