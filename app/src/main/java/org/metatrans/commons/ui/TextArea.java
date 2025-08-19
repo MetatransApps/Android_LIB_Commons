@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Paint.Align;
+import android.graphics.Typeface;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.Layout.Alignment;
@@ -78,6 +79,7 @@ public class TextArea implements IButtonArea {
 		textPaint.setColor(colour_text);
 		textPaint.setTextAlign(Align.CENTER);
 		textPaint.setAntiAlias(true);
+		textPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD));
 
 		paint = new Paint();
 
