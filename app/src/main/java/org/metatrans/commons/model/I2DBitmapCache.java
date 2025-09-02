@@ -17,4 +17,6 @@ public interface I2DBitmapCache {
     public Bitmap get(Integer BITMAP_ID);
 
     public Bitmap getRotated(Integer BITMAP_ID, int degrees);
+
+    public boolean contains(Integer BITMAP_ID);
 }

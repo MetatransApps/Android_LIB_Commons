@@ -3,7 +3,6 @@ package org.metatrans.commons.model;
 
 import android.graphics.Bitmap;
 
-import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.ui.utils.BitmapUtils;
 import org.metatrans.commons.ui.utils.ScreenUtils;
 
@@ -126,6 +125,12 @@ public class BitmapCache_Base implements I2DBitmapCache {
 		}
 
 		return result;
+	}
+
+
+	public boolean contains(Integer BITMAP_ID) {
+
+		return cache.containsKey(BITMAP_ID);
 	}
 
 
