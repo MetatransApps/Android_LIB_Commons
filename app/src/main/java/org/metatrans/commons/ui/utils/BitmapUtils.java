@@ -208,7 +208,7 @@ public class BitmapUtils {
 	    cm.setSaturation(0);
 	    ColorMatrixColorFilter f = new ColorMatrixColorFilter(cm);
 	    paint.setColorFilter(f);
-	    c.drawBitmap(bmpOriginal, 0, 0, null);
+	    c.drawBitmap(bmpOriginal, 0, 0, paint);
 	    
 	    
 	    return bmpGrayscale;
