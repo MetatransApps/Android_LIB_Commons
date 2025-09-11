@@ -215,6 +215,34 @@ public class BitmapUtils {
 	}
 
 
+	public static Bitmap toGrayMask(Bitmap bmpOriginal, int gray_component) {
+
+		int width = bmpOriginal.getWidth();
+		int height = bmpOriginal.getHeight();
+
+		Bitmap result = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+
+		int[] pixels = new int[width * height];
+		bmpOriginal.getPixels(pixels, 0, width, 0, 0, width, height);
+
+		for (int i = 0; i < pixels.length; i++) {
+			int color = pixels[i];
+			int alpha = Color.alpha(color);
+
+			if (alpha == 0) {
+				// leave fully transparent
+				pixels[i] = Color.TRANSPARENT;
+			} else {
+				// set to chosen gray but keep original alpha
+				pixels[i] = Color.argb(alpha, gray_component, gray_component, gray_component);
+			}
+		}
+
+		result.setPixels(pixels, 0, width, 0, 0, width, height);
+		return result;
+	}
+
+
 	public static Bitmap combineImages_H(Bitmap b1_org, Bitmap b2_org) {
 
 		return combineImages_H(b1_org, b2_org, true);
